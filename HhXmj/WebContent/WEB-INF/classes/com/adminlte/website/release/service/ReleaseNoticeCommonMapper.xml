@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="releaseNoticeCommonMapper" >
+  <sql id="Update_Sql" >
+    <trim prefix="set" suffixOverrides="," >
+			<if test="releaseNotice.release_notice_id != null  and releaseNotice.release_notice_id!= ''" >
+		        release_notice.release_notice_id = #{releaseNotice.release_notice_id},
+		    </if>
+			<if test="releaseNotice.title != null  and releaseNotice.title!= ''" >
+		        release_notice.title = #{releaseNotice.title},
+		    </if>
+			<if test="releaseNotice.text != null  and releaseNotice.text!= ''" >
+		        release_notice.text = #{releaseNotice.text},
+		    </if>
+			<if test="releaseNotice.release_notice_createuid != null  and releaseNotice.release_notice_createuid!= ''" >
+		        release_notice.release_notice_createuid = #{releaseNotice.release_notice_createuid},
+		    </if>
+			<if test="releaseNotice.release_notice_createtime != null  and releaseNotice.release_notice_createtime!= ''" >
+		        release_notice.release_notice_createtime = #{releaseNotice.release_notice_createtime},
+		    </if>
+			<if test="releaseNotice.release_notice_updatetime != null  and releaseNotice.release_notice_updatetime!= ''" >
+		        release_notice.release_notice_updatetime = #{releaseNotice.release_notice_updatetime},
+		    </if>
+    </trim>
+  </sql>
+  <sql id="Inserts_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+	         <if test="paramKey.release_notice_id != null  and paramKey.release_notice_id!= ''" >
+	          release_notice_id,
+	        </if>
+	         <if test="paramKey.title != null  and paramKey.title!= ''" >
+	          title,
+	        </if>
+	         <if test="paramKey.text != null  and paramKey.text!= ''" >
+	          text,
+	        </if>
+	         <if test="paramKey.release_notice_createuid != null  and paramKey.release_notice_createuid!= ''" >
+	          release_notice_createuid,
+	        </if>
+	         <if test="paramKey.release_notice_createtime != null  and paramKey.release_notice_createtime!= ''" >
+	          release_notice_createtime,
+	        </if>
+	         <if test="paramKey.release_notice_updatetime != null  and paramKey.release_notice_updatetime!= ''" >
+	          release_notice_updatetime,
+	        </if>
+    </trim>
+    values  
+    <foreach collection="paramValue" item="item" index="index" separator="," >  
+        (
+		          <if test="item.release_notice_id != null and item.release_notice_id!= ''" >
+			      	#{item.release_notice_id},
+			      </if>
+		          <if test="item.title != null and item.title!= ''" >
+			      	#{item.title},
+			      </if>
+		          <if test="item.text != null and item.text!= ''" >
+			      	#{item.text},
+			      </if>
+		          <if test="item.release_notice_createuid != null and item.release_notice_createuid!= ''" >
+			      	#{item.release_notice_createuid},
+			      </if>
+		          <if test="item.release_notice_createtime != null and item.release_notice_createtime!= ''" >
+			      	#{item.release_notice_createtime},
+			      </if>
+		          <if test="item.release_notice_updatetime != null and item.release_notice_updatetime!= ''" >
+			      	#{item.release_notice_updatetime},
+			      </if>
+        )  
+    </foreach> 
+  </sql>
+  <sql id="Insert_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+    		<if test="release_notice_id != null  and release_notice_id!= ''" >
+	          release_notice_id,
+	        </if>
+    		<if test="title != null  and title!= ''" >
+	          title,
+	        </if>
+    		<if test="text != null  and text!= ''" >
+	          text,
+	        </if>
+    		<if test="release_notice_createuid != null  and release_notice_createuid!= ''" >
+	          release_notice_createuid,
+	        </if>
+    		<if test="release_notice_createtime != null  and release_notice_createtime!= ''" >
+	          release_notice_createtime,
+	        </if>
+    		<if test="release_notice_updatetime != null  and release_notice_updatetime!= ''" >
+	          release_notice_updatetime,
+	        </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+	      <if test="release_notice_id != null and release_notice_id!= ''" >
+	      	#{release_notice_id},
+	      </if>
+	      <if test="title != null and title!= ''" >
+	      	#{title},
+	      </if>
+	      <if test="text != null and text!= ''" >
+	      	#{text},
+	      </if>
+	      <if test="release_notice_createuid != null and release_notice_createuid!= ''" >
+	      	#{release_notice_createuid},
+	      </if>
+	      <if test="release_notice_createtime != null and release_notice_createtime!= ''" >
+	      	#{release_notice_createtime},
+	      </if>
+	      <if test="release_notice_updatetime != null and release_notice_updatetime!= ''" >
+	      	#{release_notice_updatetime},
+	      </if>
+    </trim>
+  </sql>
+  <sql id="Where_Update_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="releaseNoticeQuery.release_notice_id != null and releaseNoticeQuery.release_notice_id!= ''" >
+	      	and release_notice.release_notice_id=#{releaseNoticeQuery.release_notice_id}
+	      </when>
+	      <when test="releaseNoticeQuery.title != null and releaseNoticeQuery.title!= ''" >
+	      	and release_notice.title=#{releaseNoticeQuery.title}
+	      </when>
+	      <when test="releaseNoticeQuery.text != null and releaseNoticeQuery.text!= ''" >
+	      	and release_notice.text=#{releaseNoticeQuery.text}
+	      </when>
+	      <when test="releaseNoticeQuery.release_notice_createuid != null and releaseNoticeQuery.release_notice_createuid!= ''" >
+	      	and release_notice.release_notice_createuid=#{releaseNoticeQuery.release_notice_createuid}
+	      </when>
+	      <when test="releaseNoticeQuery.release_notice_createtime != null and releaseNoticeQuery.release_notice_createtime!= ''" >
+	      	and release_notice.release_notice_createtime=#{releaseNoticeQuery.release_notice_createtime}
+	      </when>
+	      <when test="releaseNoticeQuery.release_notice_updatetime != null and releaseNoticeQuery.release_notice_updatetime!= ''" >
+	      	and release_notice.release_notice_updatetime=#{releaseNoticeQuery.release_notice_updatetime}
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+    <sql id="Where_Del_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="release_notice_id != null and release_notice_id!= ''" >
+	      	and release_notice.release_notice_id=#{release_notice_id}
+	      </when>
+	      <when test="title != null and title!= ''" >
+	      	and release_notice.title=#{title}
+	      </when>
+	      <when test="text != null and text!= ''" >
+	      	and release_notice.text=#{text}
+	      </when>
+	      <when test="release_notice_createuid != null and release_notice_createuid!= ''" >
+	      	and release_notice.release_notice_createuid=#{release_notice_createuid}
+	      </when>
+	      <when test="release_notice_createtime != null and release_notice_createtime!= ''" >
+	      	and release_notice.release_notice_createtime=#{release_notice_createtime}
+	      </when>
+	      <when test="release_notice_updatetime != null and release_notice_updatetime!= ''" >
+	      	and release_notice.release_notice_updatetime=#{release_notice_updatetime}
+	      </when>
+	     <when test="ids != null and ids!= ''" >
+	      		and release_notice.release_notice_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		           #{id}
+		        </foreach>
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+  <sql id="Where_Select_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="release_notice_id != null and release_notice_id!= ''" >
+	      	and release_notice.release_notice_id=#{release_notice_id}
+	      </if>
+	      <if test="title != null and title!= ''" >
+	      	and release_notice.title=#{title}
+	      </if>
+	      <if test="text != null and text!= ''" >
+	      	and release_notice.text=#{text}
+	      </if>
+	      <if test="release_notice_createuid != null and release_notice_createuid!= ''" >
+	      	and release_notice.release_notice_createuid=#{release_notice_createuid}
+	      </if>
+	      <if test="release_notice_createtime != null and release_notice_createtime!= ''" >
+	      	and release_notice.release_notice_createtime=#{release_notice_createtime}
+	      </if>
+	      <if test="release_notice_updatetime != null and release_notice_updatetime!= ''" >
+	      	and release_notice.release_notice_updatetime=#{release_notice_updatetime}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and release_notice.release_notice_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+	  ORDER BY release_notice_createtime DESC
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+  
+  <sql id="Where_SelectTree_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="release_notice_id != null and release_notice_id!= ''" >
+	      	and parent.release_notice_id=#{release_notice_id}
+	      </if>
+	      <if test="title != null and title!= ''" >
+	      	and parent.title=#{title}
+	      </if>
+	      <if test="text != null and text!= ''" >
+	      	and parent.text=#{text}
+	      </if>
+	      <if test="release_notice_createuid != null and release_notice_createuid!= ''" >
+	      	and parent.release_notice_createuid=#{release_notice_createuid}
+	      </if>
+	      <if test="release_notice_createtime != null and release_notice_createtime!= ''" >
+	      	and parent.release_notice_createtime=#{release_notice_createtime}
+	      </if>
+	      <if test="release_notice_updatetime != null and release_notice_updatetime!= ''" >
+	      	and parent.release_notice_updatetime=#{release_notice_updatetime}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and parent.release_notice_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+</mapper>

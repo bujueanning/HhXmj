@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sysAccCommonMapper" >
+  <sql id="Update_Sql" >
+    <trim prefix="set" suffixOverrides="," >
+			<if test="sysAcc.sys_acc_id != null  and sysAcc.sys_acc_id!= ''" >
+		        sys_acc.sys_acc_id = #{sysAcc.sys_acc_id},
+		    </if>
+			<if test="sysAcc.sys_acc_fid != null  and sysAcc.sys_acc_fid!= ''" >
+		        sys_acc.sys_acc_fid = #{sysAcc.sys_acc_fid},
+		    </if>
+			<if test="sysAcc.sys_acc_name != null  and sysAcc.sys_acc_name!= ''" >
+		        sys_acc.sys_acc_name = #{sysAcc.sys_acc_name},
+		    </if>
+			<if test="sysAcc.sys_acc_addr != null  and sysAcc.sys_acc_addr!= ''" >
+		        sys_acc.sys_acc_addr = #{sysAcc.sys_acc_addr},
+		    </if>
+			<if test="sysAcc.sys_acc_updatedate != null  and sysAcc.sys_acc_updatedate!= ''" >
+		        sys_acc.sys_acc_updatedate = #{sysAcc.sys_acc_updatedate},
+		    </if>
+			<if test="sysAcc.sys_file_createdate != null  and sysAcc.sys_file_createdate!= ''" >
+		        sys_acc.sys_file_createdate = #{sysAcc.sys_file_createdate},
+		    </if>
+			<if test="sysAcc.sys_file_updateuid != null  and sysAcc.sys_file_updateuid!= ''" >
+		        sys_acc.sys_file_updateuid = #{sysAcc.sys_file_updateuid},
+		    </if>
+			<if test="sysAcc.sys_file_createuid != null  and sysAcc.sys_file_createuid!= ''" >
+		        sys_acc.sys_file_createuid = #{sysAcc.sys_file_createuid},
+		    </if>
+    </trim>
+  </sql>
+  <sql id="Inserts_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+	         <if test="paramKey.sys_acc_id != null  and paramKey.sys_acc_id!= ''" >
+	          sys_acc_id,
+	        </if>
+	         <if test="paramKey.sys_acc_fid != null  and paramKey.sys_acc_fid!= ''" >
+	          sys_acc_fid,
+	        </if>
+	         <if test="paramKey.sys_acc_name != null  and paramKey.sys_acc_name!= ''" >
+	          sys_acc_name,
+	        </if>
+	         <if test="paramKey.sys_acc_addr != null  and paramKey.sys_acc_addr!= ''" >
+	          sys_acc_addr,
+	        </if>
+	         <if test="paramKey.sys_acc_updatedate != null  and paramKey.sys_acc_updatedate!= ''" >
+	          sys_acc_updatedate,
+	        </if>
+	         <if test="paramKey.sys_file_createdate != null  and paramKey.sys_file_createdate!= ''" >
+	          sys_file_createdate,
+	        </if>
+	         <if test="paramKey.sys_file_updateuid != null  and paramKey.sys_file_updateuid!= ''" >
+	          sys_file_updateuid,
+	        </if>
+	         <if test="paramKey.sys_file_createuid != null  and paramKey.sys_file_createuid!= ''" >
+	          sys_file_createuid,
+	        </if>
+    </trim>
+    values  
+    <foreach collection="paramValue" item="item" index="index" separator="," >  
+        (
+		          <if test="item.sys_acc_id != null and item.sys_acc_id!= ''" >
+			      	#{item.sys_acc_id},
+			      </if>
+		          <if test="item.sys_acc_fid != null and item.sys_acc_fid!= ''" >
+			      	#{item.sys_acc_fid},
+			      </if>
+		          <if test="item.sys_acc_name != null and item.sys_acc_name!= ''" >
+			      	#{item.sys_acc_name},
+			      </if>
+		          <if test="item.sys_acc_addr != null and item.sys_acc_addr!= ''" >
+			      	#{item.sys_acc_addr},
+			      </if>
+		          <if test="item.sys_acc_updatedate != null and item.sys_acc_updatedate!= ''" >
+			      	#{item.sys_acc_updatedate},
+			      </if>
+		          <if test="item.sys_file_createdate != null and item.sys_file_createdate!= ''" >
+			      	#{item.sys_file_createdate},
+			      </if>
+		          <if test="item.sys_file_updateuid != null and item.sys_file_updateuid!= ''" >
+			      	#{item.sys_file_updateuid},
+			      </if>
+		          <if test="item.sys_file_createuid != null and item.sys_file_createuid!= ''" >
+			      	#{item.sys_file_createuid},
+			      </if>
+        )  
+    </foreach> 
+  </sql>
+  <sql id="Insert_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+    		<if test="sys_acc_id != null  and sys_acc_id!= ''" >
+	          sys_acc_id,
+	        </if>
+    		<if test="sys_acc_fid != null  and sys_acc_fid!= ''" >
+	          sys_acc_fid,
+	        </if>
+    		<if test="sys_acc_name != null  and sys_acc_name!= ''" >
+	          sys_acc_name,
+	        </if>
+    		<if test="sys_acc_addr != null  and sys_acc_addr!= ''" >
+	          sys_acc_addr,
+	        </if>
+    		<if test="sys_acc_updatedate != null  and sys_acc_updatedate!= ''" >
+	          sys_acc_updatedate,
+	        </if>
+    		<if test="sys_file_createdate != null  and sys_file_createdate!= ''" >
+	          sys_file_createdate,
+	        </if>
+    		<if test="sys_file_updateuid != null  and sys_file_updateuid!= ''" >
+	          sys_file_updateuid,
+	        </if>
+    		<if test="sys_file_createuid != null  and sys_file_createuid!= ''" >
+	          sys_file_createuid,
+	        </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+	      <if test="sys_acc_id != null and sys_acc_id!= ''" >
+	      	#{sys_acc_id},
+	      </if>
+	      <if test="sys_acc_fid != null and sys_acc_fid!= ''" >
+	      	#{sys_acc_fid},
+	      </if>
+	      <if test="sys_acc_name != null and sys_acc_name!= ''" >
+	      	#{sys_acc_name},
+	      </if>
+	      <if test="sys_acc_addr != null and sys_acc_addr!= ''" >
+	      	#{sys_acc_addr},
+	      </if>
+	      <if test="sys_acc_updatedate != null and sys_acc_updatedate!= ''" >
+	      	#{sys_acc_updatedate},
+	      </if>
+	      <if test="sys_file_createdate != null and sys_file_createdate!= ''" >
+	      	#{sys_file_createdate},
+	      </if>
+	      <if test="sys_file_updateuid != null and sys_file_updateuid!= ''" >
+	      	#{sys_file_updateuid},
+	      </if>
+	      <if test="sys_file_createuid != null and sys_file_createuid!= ''" >
+	      	#{sys_file_createuid},
+	      </if>
+    </trim>
+  </sql>
+  <sql id="Where_Update_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="sysAccQuery.sys_acc_id != null and sysAccQuery.sys_acc_id!= ''" >
+	      	and sys_acc.sys_acc_id=#{sysAccQuery.sys_acc_id}
+	      </when>
+	      <when test="sysAccQuery.sys_acc_fid != null and sysAccQuery.sys_acc_fid!= ''" >
+	      	and sys_acc.sys_acc_fid=#{sysAccQuery.sys_acc_fid}
+	      </when>
+	      <when test="sysAccQuery.sys_acc_name != null and sysAccQuery.sys_acc_name!= ''" >
+	      	and sys_acc.sys_acc_name=#{sysAccQuery.sys_acc_name}
+	      </when>
+	      <when test="sysAccQuery.sys_acc_addr != null and sysAccQuery.sys_acc_addr!= ''" >
+	      	and sys_acc.sys_acc_addr=#{sysAccQuery.sys_acc_addr}
+	      </when>
+	      <when test="sysAccQuery.sys_acc_updatedate != null and sysAccQuery.sys_acc_updatedate!= ''" >
+	      	and sys_acc.sys_acc_updatedate=#{sysAccQuery.sys_acc_updatedate}
+	      </when>
+	      <when test="sysAccQuery.sys_file_createdate != null and sysAccQuery.sys_file_createdate!= ''" >
+	      	and sys_acc.sys_file_createdate=#{sysAccQuery.sys_file_createdate}
+	      </when>
+	      <when test="sysAccQuery.sys_file_updateuid != null and sysAccQuery.sys_file_updateuid!= ''" >
+	      	and sys_acc.sys_file_updateuid=#{sysAccQuery.sys_file_updateuid}
+	      </when>
+	      <when test="sysAccQuery.sys_file_createuid != null and sysAccQuery.sys_file_createuid!= ''" >
+	      	and sys_acc.sys_file_createuid=#{sysAccQuery.sys_file_createuid}
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+    <sql id="Where_Del_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="sys_acc_id != null and sys_acc_id!= ''" >
+	      	and sys_acc.sys_acc_id=#{sys_acc_id}
+	      </when>
+	      <when test="sys_acc_fid != null and sys_acc_fid!= ''" >
+	      	and sys_acc.sys_acc_fid=#{sys_acc_fid}
+	      </when>
+	      <when test="sys_acc_name != null and sys_acc_name!= ''" >
+	      	and sys_acc.sys_acc_name=#{sys_acc_name}
+	      </when>
+	      <when test="sys_acc_addr != null and sys_acc_addr!= ''" >
+	      	and sys_acc.sys_acc_addr=#{sys_acc_addr}
+	      </when>
+	      <when test="sys_acc_updatedate != null and sys_acc_updatedate!= ''" >
+	      	and sys_acc.sys_acc_updatedate=#{sys_acc_updatedate}
+	      </when>
+	      <when test="sys_file_createdate != null and sys_file_createdate!= ''" >
+	      	and sys_acc.sys_file_createdate=#{sys_file_createdate}
+	      </when>
+	      <when test="sys_file_updateuid != null and sys_file_updateuid!= ''" >
+	      	and sys_acc.sys_file_updateuid=#{sys_file_updateuid}
+	      </when>
+	      <when test="sys_file_createuid != null and sys_file_createuid!= ''" >
+	      	and sys_acc.sys_file_createuid=#{sys_file_createuid}
+	      </when>
+	     <when test="ids != null and ids!= ''" >
+	      		and sys_acc.sys_acc_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		           #{id}
+		        </foreach>
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+  <sql id="Where_Select_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="sys_acc_id != null and sys_acc_id!= ''" >
+	      	and sys_acc.sys_acc_id=#{sys_acc_id}
+	      </if>
+	      <if test="sys_acc_fid != null and sys_acc_fid!= ''" >
+	      	and sys_acc.sys_acc_fid=#{sys_acc_fid}
+	      </if>
+	      <if test="sys_acc_name != null and sys_acc_name!= ''" >
+	      	and sys_acc.sys_acc_name=#{sys_acc_name}
+	      </if>
+	      <if test="sys_acc_addr != null and sys_acc_addr!= ''" >
+	      	and sys_acc.sys_acc_addr=#{sys_acc_addr}
+	      </if>
+	      <if test="sys_acc_updatedate != null and sys_acc_updatedate!= ''" >
+	      	and sys_acc.sys_acc_updatedate=#{sys_acc_updatedate}
+	      </if>
+	      <if test="sys_file_createdate != null and sys_file_createdate!= ''" >
+	      	and sys_acc.sys_file_createdate=#{sys_file_createdate}
+	      </if>
+	      <if test="sys_file_updateuid != null and sys_file_updateuid!= ''" >
+	      	and sys_acc.sys_file_updateuid=#{sys_file_updateuid}
+	      </if>
+	      <if test="sys_file_createuid != null and sys_file_createuid!= ''" >
+	      	and sys_acc.sys_file_createuid=#{sys_file_createuid}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and sys_acc.sys_acc_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+  
+  <sql id="Where_SelectTree_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="sys_acc_id != null and sys_acc_id!= ''" >
+	      	and parent.sys_acc_id=#{sys_acc_id}
+	      </if>
+	      <if test="sys_acc_fid != null and sys_acc_fid!= ''" >
+	      	and parent.sys_acc_fid=#{sys_acc_fid}
+	      </if>
+	      <if test="sys_acc_name != null and sys_acc_name!= ''" >
+	      	and parent.sys_acc_name=#{sys_acc_name}
+	      </if>
+	      <if test="sys_acc_addr != null and sys_acc_addr!= ''" >
+	      	and parent.sys_acc_addr=#{sys_acc_addr}
+	      </if>
+	      <if test="sys_acc_updatedate != null and sys_acc_updatedate!= ''" >
+	      	and parent.sys_acc_updatedate=#{sys_acc_updatedate}
+	      </if>
+	      <if test="sys_file_createdate != null and sys_file_createdate!= ''" >
+	      	and parent.sys_file_createdate=#{sys_file_createdate}
+	      </if>
+	      <if test="sys_file_updateuid != null and sys_file_updateuid!= ''" >
+	      	and parent.sys_file_updateuid=#{sys_file_updateuid}
+	      </if>
+	      <if test="sys_file_createuid != null and sys_file_createuid!= ''" >
+	      	and parent.sys_file_createuid=#{sys_file_createuid}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and parent.sys_acc_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+</mapper>

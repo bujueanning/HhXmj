@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bondDisposalCommonMapper" >
+  <sql id="Update_Sql" >
+    <trim prefix="set" suffixOverrides="," >
+			<if test="bondDisposal.bond_disposal_id != null  and bondDisposal.bond_disposal_id!= ''" >
+		        bond_disposal.bond_disposal_id = #{bondDisposal.bond_disposal_id},
+		    </if>
+			<if test="bondDisposal.bond_company_name != null  and bondDisposal.bond_company_name!= ''" >
+		        bond_disposal.bond_company_name = #{bondDisposal.bond_company_name},
+		    </if>
+			<if test="bondDisposal.bond_asset_number != null  and bondDisposal.bond_asset_number!= ''" >
+		        bond_disposal.bond_asset_number = #{bondDisposal.bond_asset_number},
+		    </if>
+			<if test="bondDisposal.bond_disposal_arrears != null  and bondDisposal.bond_disposal_arrears!= ''" >
+		        bond_disposal.bond_disposal_arrears = #{bondDisposal.bond_disposal_arrears},
+		    </if>
+			<if test="bondDisposal.bond_listing_start_time != null  and bondDisposal.bond_listing_start_time!= ''" >
+		        bond_disposal.bond_listing_start_time = #{bondDisposal.bond_listing_start_time},
+		    </if>
+			<if test="bondDisposal.bond_listing_end_time != null  and bondDisposal.bond_listing_end_time!= ''" >
+		        bond_disposal.bond_listing_end_time = #{bondDisposal.bond_listing_end_time},
+		    </if>
+			<if test="bondDisposal.bond_transfer_ratio != null  and bondDisposal.bond_transfer_ratio!= ''" >
+		        bond_disposal.bond_transfer_ratio = #{bondDisposal.bond_transfer_ratio},
+		    </if>
+			<if test="bondDisposal.bond_disposal_state != null  and bondDisposal.bond_disposal_state!= ''" >
+		        bond_disposal.bond_disposal_state = #{bondDisposal.bond_disposal_state},
+		    </if>
+			<if test="bondDisposal.bond_release_time != null  and bondDisposal.bond_release_time!= ''" >
+		        bond_disposal.bond_release_time = #{bondDisposal.bond_release_time},
+		    </if>
+		    <!-- 多加的字段，在修改时使用 -->
+			<if test="bondDisposal.bond_product_solutions != null  and bondDisposal.bond_product_solutions!= ''" >
+		        bond_disposal.bond_product_solutions = #{bondDisposal.bond_product_solutions},
+		    </if>
+			<if test="bondDisposal.bond_ownership_amount != null  and bondDisposal.bond_ownership_amount!= ''" >
+		        bond_disposal.bond_ownership_amount = #{bondDisposal.bond_ownership_amount},
+		    </if>
+			<if test="bondDisposal.bond_bidding_cycle != null  and bondDisposal.bond_bidding_cycle!= ''" >
+		        bond_disposal.bond_bidding_cycle = #{bondDisposal.bond_bidding_cycle},
+		    </if>
+			<if test="bondDisposal.bond_classify != null  and bondDisposal.bond_classify!= ''" >
+		        bond_disposal.bond_classify = #{bondDisposal.bond_classify},
+		    </if>
+			<if test="bondDisposal.bond_location != null  and bondDisposal.bond_location!= ''" >
+		        bond_disposal.bond_location = #{bondDisposal.bond_location},
+		    </if>
+			<if test="bondDisposal.bond_contacts != null  and bondDisposal.bond_contacts!= ''" >
+		        bond_disposal.bond_contacts = #{bondDisposal.bond_contacts},
+		    </if>
+			<if test="bondDisposal.bond_contact_number != null  and bondDisposal.bond_contact_number!= ''" >
+		        bond_disposal.bond_contact_number = #{bondDisposal.bond_contact_number},
+		    </if>
+			<if test="bondDisposal.bond_disposal_img != null  and bondDisposal.bond_disposal_img!= ''" >
+		        bond_disposal.bond_disposal_img = #{bondDisposal.bond_disposal_img},
+		    </if>
+		    <!-- 审核 -->
+		    <if test="bondDisposal.bond_verify != null  and bondDisposal.bond_verify!= ''" >
+		        bond_disposal.bond_verify = #{bondDisposal.bond_verify},
+		    </if>
+		    <!-- 11月6号  创建人、修改时间、操作状态 -->
+		    <if test="bondDisposal.bond_disposal_createuid!= null  and bondDisposal.bond_disposal_createuid!= ''" >
+		        bond_disposal.bond_disposal_createuid = #{bondDisposal.bond_disposal_createuid},
+		    </if>
+		    <if test="bondDisposal.bond_disposal_updatetime!= null  and bondDisposal.bond_disposal_updatetime!= ''" >
+		        bond_disposal.bond_disposal_updatetime = #{bondDisposal.bond_disposal_updatetime},
+		    </if>
+		    <if test="bondDisposal.bond_unable != null  and bondDisposal.bond_unable!= ''" >
+		        bond_disposal.bond_unable = #{bondDisposal.bond_unable},
+		    </if>
+		    <!-- 附件 -->
+		      <if test="bondDisposal.bond_disposal_accessory != null and bondDisposal.bond_disposal_accessory!=''" >
+		      	 bond_disposal.bond_disposal_accessory=#{bondDisposal.bond_disposal_accessory},
+		      </if>
+		      <!-- 11月14日 大修页面 -->
+		      <if test="bondDisposal.bond_overdue != null and bondDisposal.bond_overdue!=''" >
+		      	 bond_disposal.bond_overdue=#{bondDisposal.bond_overdue},
+		      </if>
+		      <if test="bondDisposal.bond_case != null and bondDisposal.bond_case!=''" >
+		      	 bond_disposal.bond_case=#{bondDisposal.bond_case},
+		      </if>
+		      <if test="bondDisposal.bond_deadline != null and bondDisposal.bond_deadline!=''" >
+		      	 bond_disposal.bond_deadline=#{bondDisposal.bond_deadline},
+		      </if>
+		      <if test="bondDisposal.bond_deal != null and bondDisposal.bond_deal!=''" >
+		      	 bond_disposal.bond_deal=#{bondDisposal.bond_deal},
+		      </if>
+		      <!-- 11月24日  债务人地址-->
+		      <if test="bondDisposal.bond_debt_location != null and bondDisposal.bond_debt_location!=''" >
+		      	 bond_disposal.bond_debt_location=#{bondDisposal.bond_debt_location},
+		      </if>
+		      <!-- 11月28日 加盟方是否接单 -->
+		      <if test="bondDisposal.bond_show != null and bondDisposal.bond_show!=''" >
+		      	 bond_disposal.bond_show=#{bondDisposal.bond_show},
+		      </if>
+		      <!--11月29日 加盟方的id -->
+		      <if test="bondDisposal.bond_auditor != null and bondDisposal.bond_auditor!=''" >
+		      	 bond_disposal.bond_auditor=#{bondDisposal.bond_auditor},
+		      </if>
+		      <!-- 12月18日 -->
+		      <if test="bondDisposal.bond_major_issues != null and bondDisposal.bond_major_issues!=''" >
+		      	 bond_disposal.bond_major_issues=#{bondDisposal.bond_major_issues},
+		      </if>
+		      <if test="bondDisposal.bond_project_announcement != null and bondDisposal.bond_project_announcement!=''" >
+		      	 bond_disposal.bond_project_announcement=#{bondDisposal.bond_project_announcement},
+		      </if>
+		      
+    </trim>
+  </sql>
+  <sql id="UpdateNum_Sql" >
+    <trim prefix="set" suffixOverrides="," >
+			<if test="bondNumber.number != null  and bondNumber.number!= ''" >
+		        bond_number.number = #{bondNumber.number},
+		    </if>
+    </trim>
+  </sql>
+  <sql id="Inserts_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+	         <if test="paramKey.bond_disposal_id != null  and paramKey.bond_disposal_id!= ''" >
+	          bond_disposal_id,
+	        </if>
+	         <if test="paramKey.bond_company_name != null  and paramKey.bond_company_name!= ''" >
+	          bond_company_name,
+	        </if>
+	         <if test="paramKey.bond_asset_number != null  and paramKey.bond_asset_number!= ''" >
+	          bond_asset_number,
+	        </if>
+	         <if test="paramKey.bond_disposal_arrears != null  and paramKey.bond_disposal_arrears!= ''" >
+	          bond_disposal_arrears,
+	        </if>
+	         <if test="paramKey.bond_listing_start_time != null  and paramKey.bond_listing_start_time!= ''" >
+	          bond_listing_start_time,
+	        </if>
+	         <if test="paramKey.bond_listing_end_time != null  and paramKey.bond_listing_end_time!= ''" >
+	          bond_listing_end_time,
+	        </if>
+	         <if test="paramKey.bond_transfer_ratio != null  and paramKey.bond_transfer_ratio!= ''" >
+	          bond_transfer_ratio,
+	        </if>
+	         <if test="paramKey.bond_disposal_state != null  and paramKey.bond_disposal_state!= ''" >
+	          bond_disposal_state,
+	        </if>
+	         <if test="paramKey.bond_release_time != null  and paramKey.bond_release_time!= ''" >
+	          bond_release_time,
+	        </if>
+    </trim>
+    values  
+    <foreach collection="paramValue" item="item" index="index" separator="," >  
+        (
+		          <if test="item.bond_disposal_id != null and item.bond_disposal_id!= ''" >
+			      	#{item.bond_disposal_id},
+			      </if>
+		          <if test="item.bond_company_name != null and item.bond_company_name!= ''" >
+			      	#{item.bond_company_name},
+			      </if>
+		          <if test="item.bond_asset_number != null and item.bond_asset_number!= ''" >
+			      	#{item.bond_asset_number},
+			      </if>
+		          <if test="item.bond_disposal_arrears != null and item.bond_disposal_arrears!= ''" >
+			      	#{item.bond_disposal_arrears},
+			      </if>
+		          <if test="item.bond_listing_start_time != null and item.bond_listing_start_time!= ''" >
+			      	#{item.bond_listing_start_time},
+			      </if>
+		          <if test="item.bond_listing_end_time != null and item.bond_listing_end_time!= ''" >
+			      	#{item.bond_listing_end_time},
+			      </if>
+		          <if test="item.bond_transfer_ratio != null and item.bond_transfer_ratio!= ''" >
+			      	#{item.bond_transfer_ratio},
+			      </if>
+		          <if test="item.bond_disposal_state != null and item.bond_disposal_state!= ''" >
+			      	#{item.bond_disposal_state},
+			      </if>
+		          <if test="item.bond_release_time != null and item.bond_release_time!= ''" >
+			      	#{item.bond_release_time},
+			      </if>
+        )  
+    </foreach> 
+  </sql>
+  <sql id="Insert_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+    		<if test="bond_disposal_id != null  and bond_disposal_id!= ''" >
+	          bond_disposal_id,
+	        </if>
+    		<if test="bond_company_name != null  and bond_company_name!= ''" >
+	          bond_company_name,
+	        </if>
+    		<if test="bond_asset_number != null  and bond_asset_number!= ''" >
+	          bond_asset_number,
+	        </if>
+    		<if test="bond_disposal_arrears != null  and bond_disposal_arrears!= ''" >
+	          bond_disposal_arrears,
+	        </if>
+    		<if test="bond_listing_start_time != null  and bond_listing_start_time!= ''" >
+	          bond_listing_start_time,
+	        </if>
+    		<if test="bond_listing_end_time != null  and bond_listing_end_time!= ''" >
+	          bond_listing_end_time,
+	        </if>
+    		<if test="bond_transfer_ratio != null  and bond_transfer_ratio!= ''" >
+	          bond_transfer_ratio,
+	        </if>
+    		<if test="bond_disposal_state != null  and bond_disposal_state!= ''" >
+	          bond_disposal_state,
+	        </if>
+    		<if test="bond_release_time != null  and bond_release_time!= ''" >
+	          bond_release_time,
+	        </if>
+	        <!--新加的五个筛选条件  -->
+		      <if test="bond_product_solutions != null and bond_product_solutions!= ''" >
+		      	bond_product_solutions,
+		      </if>
+		      <if test="bond_ownership_amount != null and bond_ownership_amount!= ''" >
+				bond_ownership_amount,
+			  </if>
+			  <if test="bond_bidding_cycle != null and bond_bidding_cycle!= ''" >
+				bond_bidding_cycle,
+		      </if>
+		      <if test="bond_classify != null and bond_classify!= ''" >
+		      	bond_classify,
+		      </if>
+		      <if test="bond_location != null and bond_location!= ''" >
+		      	bond_location,
+		      </if>
+		     <!-- 在10月23日 周一 -->
+		     <!-- 在发布功能中，再添加一些功能，表中在添加一些字段 -->
+		      <if test="bond_contacts != null and bond_contacts!= ''" >
+				bond_contacts,
+		      </if>
+		      <if test="bond_contact_number != null and bond_contact_number!=''" >
+		      	bond_contact_number,
+		      </if>
+		      <if test="bond_disposal_img != null and bond_disposal_img!=''" >
+		      	bond_disposal_img,
+		      </if>
+		      <!-- 10月24日   周二 -->
+		      <!-- 发布附件 -->
+		      <!-- 审核 -->
+		      <if test="bond_verify != null and bond_verify!=''" >
+		      	bond_verify,
+		      </if>
+		      <!-- 11月6日添加发布人的id和修改时间 -->
+		      <if test="bond_disposal_createuid != null and bond_disposal_createuid!=''" >
+		      	bond_disposal_createuid,
+		      </if>
+		      <if test="bond_disposal_updatetime != null and bond_disposal_updatetime!=''" >
+		      	bond_disposal_updatetime,
+		      </if>
+		      <!-- 11月6日 操作状态 -->
+		      <if test="bond_unable != null and bond_unable!=''" >
+		      	bond_unable,
+		      </if>
+		      <!-- 11月8日附件 -->
+		      <if test="bond_disposal_accessory != null and bond_disposal_accessory!=''" >
+		      	bond_disposal_accessory,
+		      </if>
+		      <!-- 11月14日 大修页面 -->
+		      <if test="bond_overdue != null and bond_overdue!=''" >
+		      	bond_overdue,
+		      </if>
+		      <if test="bond_case != null and bond_case!=''" >
+		      	bond_case,
+		      </if>
+		      <if test="bond_deadline != null and bond_deadline!=''" >
+		      	bond_deadline,
+		      </if>
+		      <if test="bond_deal != null and bond_deal!=''" >
+		      	bond_deal,
+		      </if>
+		      <!-- 11月24日 增加债务人地址 -->
+		      <if test="bond_debt_location != null and bond_debt_location!=''" >
+		      	bond_debt_location,
+		      </if>
+		      <!-- 11月28日 增加加盟方是否优先接单 -->
+		      <if test="bond_show != null and bond_show!=''" >
+		      	bond_show,
+		      </if>
+		      <!-- 11月29日 加盟方的id -->
+		      <if test="bond_auditor != null and bond_auditor!=''" >
+		      	bond_auditor,
+		      </if>
+		      <!-- 12月18日 添加重要信息和项目公告 -->
+		      <if test="bond_major_issues != null and bond_major_issues!=''" >
+		      	bond_major_issues,
+		      </if>
+		      <if test="bond_project_announcement != null and bond_project_announcement!=''" >
+		      	bond_project_announcement,
+		      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+	      <if test="bond_disposal_id != null and bond_disposal_id!= ''" >
+	      	#{bond_disposal_id},
+	      </if>
+	      <if test="bond_company_name != null and bond_company_name!= ''" >
+	      	#{bond_company_name},
+	      </if>
+	      <if test="bond_asset_number != null and bond_asset_number!= ''" >
+	      	#{bond_asset_number},
+	      </if>
+	      <if test="bond_disposal_arrears != null and bond_disposal_arrears!= ''" >
+	      	#{bond_disposal_arrears},
+	      </if>
+	      <if test="bond_listing_start_time != null and bond_listing_start_time!= ''" >
+	      	#{bond_listing_start_time},
+	      </if>
+	      <if test="bond_listing_end_time != null and bond_listing_end_time!= ''" >
+	      	#{bond_listing_end_time},
+	      </if>
+	      <if test="bond_transfer_ratio != null and bond_transfer_ratio!= ''" >
+	      	#{bond_transfer_ratio},
+	      </if>
+	      <if test="bond_disposal_state != null and bond_disposal_state!= ''" >
+	      	#{bond_disposal_state},
+	      </if>
+	      <if test="bond_release_time != null and bond_release_time!= ''" >
+	      	#{bond_release_time},
+	      </if>
+	      <!--新加的五个筛选条件  -->
+		      <if test="bond_product_solutions != null and bond_product_solutions!= ''" >
+		      	#{bond_product_solutions},
+		      </if>
+		      <if test="bond_ownership_amount != null and bond_ownership_amount!= ''" >
+				#{bond_ownership_amount},
+			  </if>
+			  <if test="bond_bidding_cycle != null and bond_bidding_cycle!= ''" >
+				#{bond_bidding_cycle},
+		      </if>
+		      <if test="bond_classify != null and bond_classify!= ''" >
+		      	#{bond_classify},
+		      </if>
+		      <if test="bond_location != null and bond_location!= ''" >
+		      	#{bond_location},
+		      </if>
+		      <!-- 在发布功能中，再添加一些功能，表中在添加一些字段 -->
+		      <if test="bond_contacts != null and bond_contacts!= ''" >
+				#{bond_contacts},
+		      </if>
+		      <if test="bond_contact_number != null and bond_contact_number!=''" >
+		      	#{bond_contact_number},
+		      </if>
+		      <if test="bond_disposal_img != null and bond_disposal_img!= ''" >
+		      	#{bond_disposal_img},
+		      </if>
+		      <!-- 发布附件 -->
+		      <!-- 审核 -->
+		      <if test="bond_verify != null and bond_verify!=''" >
+		      	#{bond_verify},
+		      </if>
+		      <!-- 创建人和修改时间 -->
+		      <if test="bond_disposal_createuid != null and bond_disposal_createuid!=''" >
+		      	#{bond_disposal_createuid},
+		      </if>
+		      <if test="bond_disposal_updatetime != null and bond_disposal_updatetime!=''" >
+		      	#{bond_disposal_updatetime},
+		      </if>
+		       <!-- 11月6日 操作状态 -->
+		      <if test="bond_unable != null and bond_unable!=''" >
+		      	#{bond_unable},
+		      </if>
+		      <!-- 11月8日附件 -->
+		      <if test="bond_disposal_accessory != null and bond_disposal_accessory!=''" >
+		      	#{bond_disposal_accessory},
+		      </if>
+		      <!-- 11月14日 大修页面 -->
+		      <if test="bond_overdue != null and bond_overdue!=''" >
+		      	#{bond_overdue},
+		      </if>
+		      <if test="bond_case != null and bond_case!=''" >
+		      	#{bond_case},
+		      </if>
+		      <if test="bond_deadline != null and bond_deadline!=''" >
+		      	#{bond_deadline},
+		      </if>
+		      <if test="bond_deal != null and bond_deal!=''" >
+		      	#{bond_deal},
+		      </if>
+		      <!-- 债务人地址 -->
+		      <if test="bond_debt_location != null and bond_debt_location!=''" >
+		      	#{bond_debt_location},
+		      </if>
+		      <!-- 控制资产显示 -->
+		      <if test="bond_show != null and bond_show!=''" >
+		      	#{bond_show},
+		      </if>
+		      <!-- 加盟方的id -->
+		      <if test="bond_auditor != null and bond_auditor!=''" >
+		      	#{bond_auditor},
+		      </if>
+		      <!-- 信息和公告 -->
+		      <if test="bond_major_issues != null and bond_major_issues!=''" >
+		      	#{bond_major_issues},
+		      </if>
+		      <if test="bond_project_announcement != null and bond_project_announcement!=''" >
+		      	#{bond_project_announcement},
+		      </if>
+    </trim>
+  </sql>
+  <sql id="Where_Update_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="bondDisposalQuery.bond_disposal_id != null and bondDisposalQuery.bond_disposal_id!= ''" >
+	      	and bond_disposal.bond_disposal_id=#{bondDisposalQuery.bond_disposal_id}
+	      </when>
+	      <when test="bondDisposalQuery.bond_company_name != null and bondDisposalQuery.bond_company_name!= ''" >
+	      	and bond_disposal.bond_company_name=#{bondDisposalQuery.bond_company_name}
+	      </when>
+	      <when test="bondDisposalQuery.bond_asset_number != null and bondDisposalQuery.bond_asset_number!= ''" >
+	      	and bond_disposal.bond_asset_number=#{bondDisposalQuery.bond_asset_number}
+	      </when>
+	      <when test="bondDisposalQuery.bond_disposal_arrears != null and bondDisposalQuery.bond_disposal_arrears!= ''" >
+	      	and bond_disposal.bond_disposal_arrears=#{bondDisposalQuery.bond_disposal_arrears}
+	      </when>
+	      <when test="bondDisposalQuery.bond_listing_start_time != null and bondDisposalQuery.bond_listing_start_time!= ''" >
+	      	and bond_disposal.bond_listing_start_time=#{bondDisposalQuery.bond_listing_start_time}
+	      </when>
+	      <when test="bondDisposalQuery.bond_listing_end_time != null and bondDisposalQuery.bond_listing_end_time!= ''" >
+	      	and bond_disposal.bond_listing_end_time=#{bondDisposalQuery.bond_listing_end_time}
+	      </when>
+	      <when test="bondDisposalQuery.bond_transfer_ratio != null and bondDisposalQuery.bond_transfer_ratio!= ''" >
+	      	and bond_disposal.bond_transfer_ratio=#{bondDisposalQuery.bond_transfer_ratio}
+	      </when>
+	      <when test="bondDisposalQuery.bond_disposal_state != null and bondDisposalQuery.bond_disposal_state!= ''" >
+	      	and bond_disposal.bond_disposal_state=#{bondDisposalQuery.bond_disposal_state}
+	      </when>
+	      <when test="bondDisposalQuery.bond_release_time != null and bondDisposalQuery.bond_release_time!= ''" >
+	      	and bond_disposal.bond_release_time=#{bondDisposalQuery.bond_release_time}
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+  <sql id="Where_UpdateNum_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="bondNumberQuery.bond_asset_number_id != null and bondNumberQuery.bond_asset_number_id!= ''" >
+	      	and bond_number.bond_asset_number_id=#{bondNumberQuery.bond_asset_number_id}
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+    <sql id="Where_Del_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="bond_disposal_id != null and bond_disposal_id!= ''" >
+	      	and bond_disposal.bond_disposal_id=#{bond_disposal_id}
+	      </when>
+	      <when test="bond_company_name != null and bond_company_name!= ''" >
+	      	and bond_disposal.bond_company_name=#{bond_company_name}
+	      </when>
+	      <when test="bond_asset_number != null and bond_asset_number!= ''" >
+	      	and bond_disposal.bond_asset_number=#{bond_asset_number}
+	      </when>
+	      <when test="bond_disposal_arrears != null and bond_disposal_arrears!= ''" >
+	      	and bond_disposal.bond_disposal_arrears=#{bond_disposal_arrears}
+	      </when>
+	      <when test="bond_listing_start_time != null and bond_listing_start_time!= ''" >
+	      	and bond_disposal.bond_listing_start_time=#{bond_listing_start_time}
+	      </when>
+	      <when test="bond_listing_end_time != null and bond_listing_end_time!= ''" >
+	      	and bond_disposal.bond_listing_end_time=#{bond_listing_end_time}
+	      </when>
+	      <when test="bond_transfer_ratio != null and bond_transfer_ratio!= ''" >
+	      	and bond_disposal.bond_transfer_ratio=#{bond_transfer_ratio}
+	      </when>
+	      <when test="bond_disposal_state != null and bond_disposal_state!= ''" >
+	      	and bond_disposal.bond_disposal_state=#{bond_disposal_state}
+	      </when>
+	      <when test="bond_release_time != null and bond_release_time!= ''" >
+	      	and bond_disposal.bond_release_time=#{bond_release_time}
+	      </when>
+	     <when test="ids != null and ids!= ''" >
+	      		and bond_disposal.bond_disposal_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		           #{id}
+		        </foreach>
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+  <sql id="Where_Select_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="bond_disposal_id != null and bond_disposal_id!= ''" >
+	      	and bond_disposal.bond_disposal_id=#{bond_disposal_id}
+	      </if>
+	      <if test="bond_company_name != null and bond_company_name!= ''" >
+	      	and bond_disposal.bond_company_name=#{bond_company_name}
+	      </if>
+	      <if test="bond_asset_number != null and bond_asset_number!= ''" >
+	      	and bond_disposal.bond_asset_number=#{bond_asset_number}
+	      </if>
+	      <if test="bond_disposal_arrears != null and bond_disposal_arrears!= ''" >
+	      	and bond_disposal.bond_disposal_arrears=#{bond_disposal_arrears}
+	      </if>
+	      <if test="bond_listing_start_time != null and bond_listing_start_time!= ''" >
+	      	and bond_disposal.bond_listing_start_time=#{bond_listing_start_time}
+	      </if>
+	      <if test="bond_listing_end_time != null and bond_listing_end_time!= ''" >
+	      	and bond_disposal.bond_listing_end_time=#{bond_listing_end_time}
+	      </if>
+	      <if test="bond_transfer_ratio != null and bond_transfer_ratio!= ''" >
+	      	and bond_disposal.bond_transfer_ratio=#{bond_transfer_ratio}
+	      </if>
+	      <if test="bond_disposal_state != null and bond_disposal_state!= ''" >
+	      	and bond_disposal.bond_disposal_state=#{bond_disposal_state}
+	      </if>
+	      <if test="bond_release_time != null and bond_release_time!= ''" >
+	      	and bond_disposal.bond_release_time=#{bond_release_time}
+	      </if>
+	      <!--新加的五个筛选条件  -->
+	      <if test="bond_product_solutions != null and bond_product_solutions!= ''" >
+	      	and bond_disposal.bond_product_solutions=#{bond_product_solutions}
+	      </if>
+	      <if test="bond_ownership_amount != null and bond_ownership_amount!= ''" >
+			and bond_disposal.bond_ownership_amount=#{bond_ownership_amount}
+		  </if>
+		  <if test="bond_bidding_cycle != null and bond_bidding_cycle!= ''" >
+			  <![CDATA[ and bond_disposal.bond_bidding_cycle <= #{bond_bidding_cycle}]]>
+	      </if>
+	      <if test="bond_classify != null and bond_classify!= ''" >
+	      	and bond_disposal.bond_classify=#{bond_classify}
+	      </if>
+	      <if test="bond_location != null and bond_location!= ''" >
+	      	and bond_disposal.bond_location=#{bond_location}
+	      </if>
+	      <!-- 加个有没有审核 -->
+	      <if test="bond_verify != null and bond_verify!= ''" >
+	      	and bond_disposal.bond_verify=#{bond_verify}
+	      </if>
+	      <!-- 加创建（发布）人与修改时间 -->
+	      <if test="bond_disposal_createuid != null and bond_disposal_createuid!= ''" >
+	      	and bond_disposal.bond_disposal_createuid=#{bond_disposal_createuid}
+	      </if>
+	      <if test="bond_disposal_updatetime != null and bond_disposal_updatetime!= ''" >
+	      	and bond_disposal.bond_disposal_updatetime=#{bond_disposal_updatetime}
+	      </if>
+	      <!-- 加操作状态 -->
+	      <if test="bond_unable != null and bond_unable!= ''" >
+	      	and bond_disposal.bond_unable=#{bond_unable}
+	      </if>
+	      <!-- 附件 -->
+	      <if test="bond_disposal_accessory != null and bond_disposal_accessory!=''" >
+	      	and bond_disposal.bond_disposal_accessory=#{bond_disposal_accessory}
+	      </if>
+	      <!-- 11月14日 大修页面 -->
+	      <if test="bond_overdue != null and bond_overdue!=''" >
+	      	and bond_disposal.bond_overdue=${bond_overdue}
+	      </if>
+	      <if test="bond_case != null and bond_case!=''" >
+	      	and bond_disposal.bond_case=${bond_case}
+	      </if>
+	      <if test="bond_deadline != null and bond_deadline!=''" >
+	      	and bond_disposal.bond_deadline=${bond_deadline}
+	      </if>
+	      <if test="bond_deal != null and bond_deal!=''" >
+	      	and bond_disposal.bond_deal=${bond_deal}
+	      </if>
+	      <!-- 债务人地址 -->
+	      <if test="bond_debt_location != null and bond_debt_location!=''" >
+	      	and bond_disposal.bond_debt_location=${bond_debt_location}
+	      </if>
+	      <!-- 是否优先接单 -->
+	      <if test="bond_show != null and bond_show!=''" >
+	      	and bond_disposal.bond_show=${bond_show}
+	      </if>
+	      <!-- 加盟方的id -->
+	      <if test="bond_auditor != null and bond_auditor!=''" >
+	      	and bond_disposal.bond_auditor=${bond_auditor}
+	      </if>
+	      <!-- 在个人中心待审核中使用 -->
+	      <if test="bond_verifys != null and bond_verifys!=''" >
+	      	 <![CDATA[ and bond_disposal.bond_verify != #{bond_verifys}]]>
+	      </if>
+	      <!-- 信息和公告 -->
+	      <if test="bond_major_issues != null and bond_major_issues!=''" >
+	      	and bond_disposal.bond_major_issues=${bond_major_issues}
+	      </if>
+	      <if test="bond_project_announcement != null and bond_project_announcement!=''" >
+	      	and bond_disposal.bond_project_announcement=${bond_project_announcement}
+	      </if>
+	      <if test="allSearch != null and allSearch!= ''" >
+			and bond_disposal.bond_company_name like  '%${allSearch}%'
+				or bond_disposal.bond_asset_number like  '%${allSearch}%'
+			
+		  </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and bond_disposal.bond_disposal_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+	     <if test="begin != null and begin!='' and end != null and end != '' ">
+	     	 <![CDATA[and bond_disposal.bond_disposal_arrears >= ${begin}]]>
+	     	 <![CDATA[and bond_disposal.bond_disposal_arrears <= ${end}]]>
+	     </if>
+	     <if test="beginol != null and beginol!=''">
+	     	 <![CDATA[and bond_disposal.bond_disposal_arrears <= ${beginol}]]>
+	     </if>
+	     <if test="endol != null and endol != '' ">
+	     	 <![CDATA[and bond_disposal.bond_disposal_arrears >= ${endol}]]>
+	     </if>
+    </trim>
+    <![CDATA[ order by bond_release_time desc ]]>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+  <sql id="Where_SelectSys_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="bond_disposal_id != null and bond_disposal_id!= ''" >
+	      	and bond_disposal.bond_disposal_id=#{bond_disposal_id}
+	      </if>
+	      <if test="bond_company_name != null and bond_company_name!= ''" >
+	      	and bond_disposal.bond_company_name like '%${bond_company_name}%'
+	      </if>
+	      <if test="bond_asset_number != null and bond_asset_number!= ''" >
+	      	and bond_disposal.bond_asset_number=#{bond_asset_number}
+	      </if>
+	      <if test="bond_disposal_arrears != null and bond_disposal_arrears!= ''" >
+	      	and bond_disposal.bond_disposal_arrears=#{bond_disposal_arrears}
+	      </if>
+	      <if test="bond_listing_start_time != null and bond_listing_start_time!= ''" >
+	      	and bond_disposal.bond_listing_start_time=#{bond_listing_start_time}
+	      </if>
+	      <if test="bond_listing_end_time != null and bond_listing_end_time!= ''" >
+	      	and bond_disposal.bond_listing_end_time=#{bond_listing_end_time}
+	      </if>
+	      <if test="bond_transfer_ratio != null and bond_transfer_ratio!= ''" >
+	      	and bond_disposal.bond_transfer_ratio=#{bond_transfer_ratio}
+	      </if>
+	      <if test="bond_disposal_state != null and bond_disposal_state!= ''" >
+	      	and bond_disposal.bond_disposal_state=#{bond_disposal_state}
+	      </if>
+	      <if test="bond_release_time != null and bond_release_time!= ''" >
+	      	and bond_disposal.bond_release_time=#{bond_release_time}
+	      </if>
+	      <!--新加的五个筛选条件  -->
+	      <if test="bond_product_solutions != null and bond_product_solutions!= ''" >
+	      	and bond_disposal.bond_product_solutions=#{bond_product_solutions}
+	      </if>
+	      <if test="bond_ownership_amount != null and bond_ownership_amount!= ''" >
+			and bond_disposal.bond_ownership_amount=#{bond_ownership_amount}
+		  </if>
+		  <if test="bond_bidding_cycle != null and bond_bidding_cycle!= ''" >
+			  <![CDATA[ and bond_disposal.bond_bidding_cycle <= #{bond_bidding_cycle}]]>
+	      </if>
+	      <if test="bond_classify != null and bond_classify!= ''" >
+	      	and bond_disposal.bond_classify=#{bond_classify}
+	      </if>
+	      <if test="bond_location != null and bond_location!= ''" >
+	      	and bond_disposal.bond_location=#{bond_location}
+	      </if>
+	      <!-- 加个有没有审核 -->
+	      <if test="bond_verify != null and bond_verify!= ''" >
+	      	and bond_disposal.bond_verify=#{bond_verify}
+	      </if>
+	      <!-- 加创建（发布）人与修改时间 -->
+	      <if test="bond_disposal_createuid != null and bond_disposal_createuid!= ''" >
+	      	and bond_disposal.bond_disposal_createuid=#{bond_disposal_createuid}
+	      </if>
+	      <if test="bond_disposal_updatetime != null and bond_disposal_updatetime!= ''" >
+	      	and bond_disposal.bond_disposal_updatetime=#{bond_disposal_updatetime}
+	      </if>
+	      <!-- 加操作状态 -->
+	      <if test="bond_unable != null and bond_unable!= ''" >
+	      	and bond_disposal.bond_unable=#{bond_unable}
+	      </if>
+	      <!-- 附件 -->
+	      <if test="bond_disposal_accessory != null and bond_disposal_accessory!=''" >
+	      	and bond_disposal.bond_disposal_accessory=#{bond_disposal_accessory}
+	      </if>
+	      <!-- 11月14日 大修页面 -->
+	      <if test="bond_overdue != null and bond_overdue!=''" >
+	      	and bond_disposal.bond_overdue=${bond_overdue}
+	      </if>
+	      <if test="bond_case != null and bond_case!=''" >
+	      	and bond_disposal.bond_case=${bond_case}
+	      </if>
+	      <if test="bond_deadline != null and bond_deadline!=''" >
+	      	and bond_disposal.bond_deadline=${bond_deadline}
+	      </if>
+	      <if test="bond_deal != null and bond_deal!=''" >
+	      	and bond_disposal.bond_deal=${bond_deal}
+	      </if>
+	      <!-- 债务人地址 -->
+	      <if test="bond_debt_location != null and bond_debt_location!=''" >
+	      	and bond_disposal.bond_debt_location=${bond_debt_location}
+	      </if>
+	      <!-- 是否优先接单 -->
+	      <if test="bond_show != null and bond_show!=''" >
+	      	and bond_disposal.bond_show=${bond_show}
+	      </if>
+	      <!-- 加盟方的id -->
+	      <if test="bond_auditor != null and bond_auditor!=''" >
+	      	and bond_disposal.bond_auditor=${bond_auditor}
+	      </if>
+	      <!-- 在个人中心待审核中使用 -->
+	      <if test="bond_verifys != null and bond_verifys!=''" >
+	      	 <![CDATA[ and bond_disposal.bond_verify != #{bond_verifys}]]>
+	      </if>
+	      <!-- 信息和公告 -->
+	      <if test="bond_major_issues != null and bond_major_issues!=''" >
+	      	and bond_disposal.bond_major_issues=${bond_major_issues}
+	      </if>
+	      <if test="bond_project_announcement != null and bond_project_announcement!=''" >
+	      	and bond_disposal.bond_project_announcement=${bond_project_announcement}
+	      </if>
+	      <if test="allSearch != null and allSearch!= ''" >
+			and bond_disposal.bond_company_name like  '%${allSearch}%'
+				or bond_disposal.bond_asset_number like  '%${allSearch}%'
+			
+		  </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and bond_disposal.bond_disposal_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <![CDATA[ order by bond_verify,bond_show,bond_release_time desc ]]>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+  <sql id="Where_SelectNum_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="bond_asset_number_id != null and bond_asset_number_id!= ''" >
+	      	and bond_number.bond_asset_number_id=#{bond_asset_number_id}
+	      </if>
+    </trim>
+  </sql>
+  
+  <sql id="Where_SelectTree_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="bond_disposal_id != null and bond_disposal_id!= ''" >
+	      	and parent.bond_disposal_id=#{bond_disposal_id}
+	      </if>
+	      <if test="bond_company_name != null and bond_company_name!= ''" >
+	      	and parent.bond_company_name=#{bond_company_name}
+	      </if>
+	      <if test="bond_asset_number != null and bond_asset_number!= ''" >
+	      	and parent.bond_asset_number=#{bond_asset_number}
+	      </if>
+	      <if test="bond_disposal_arrears != null and bond_disposal_arrears!= ''" >
+	      	and parent.bond_disposal_arrears=#{bond_disposal_arrears}
+	      </if>
+	      <if test="bond_listing_start_time != null and bond_listing_start_time!= ''" >
+	      	and parent.bond_listing_start_time=#{bond_listing_start_time}
+	      </if>
+	      <if test="bond_listing_end_time != null and bond_listing_end_time!= ''" >
+	      	and parent.bond_listing_end_time=#{bond_listing_end_time}
+	      </if>
+	      <if test="bond_transfer_ratio != null and bond_transfer_ratio!= ''" >
+	      	and parent.bond_transfer_ratio=#{bond_transfer_ratio}
+	      </if>
+	      <if test="bond_disposal_state != null and bond_disposal_state!= ''" >
+	      	and parent.bond_disposal_state=#{bond_disposal_state}
+	      </if>
+	      <if test="bond_release_time != null and bond_release_time!= ''" >
+	      	and parent.bond_release_time=#{bond_release_time}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and parent.bond_disposal_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+</mapper>

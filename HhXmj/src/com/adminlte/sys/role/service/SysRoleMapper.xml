@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sysRoleMapper" >
+  <select id="select" resultType="java.util.Map" parameterType="java.util.Map" >
+    select sys_role.* 
+        	,sysroletestdd.sys_dict_name sys_role_testd_n
+			,sysroletestcc.sys_dict_name sys_role_testc_n  
+    from sys_role 
+        	LEFT JOIN sys_dict sysroletestdd ON sysroletestdd.sys_dict_id=sys_role_testd_d
+			LEFT JOIN sys_dict sysroletestcc ON sysroletestcc.sys_dict_id=sys_role_testc_c  
+     
+    <include refid="sysRoleCommonMapper.Where_Select_Sql" />
+  </select>
+  <select id="selectTree" resultType="java.util.Map" parameterType="java.util.Map" >
+  	select *,if(childNu=0,false,true) lazy from(
+	    select
+	    parent.*, 
+	    sys_role_id  treekey,
+	    sys_role_name  treetitle,
+	    (SELECT COUNT(*) FROM SYS_ROLE child WHERE child.SYS_ROLE_PID=parent.SYS_ROLE_ID) childNu
+	    from sys_role parent
+	    <include refid="sysRoleCommonMapper.Where_Select_Sql" />
+	   ) tree
+  </select>
+  <select id="selectAllTree" resultType="java.util.Map" parameterType="java.util.Map" >
+	    select
+	    parent.*,
+	    sys_role_id  treekey,
+	    sys_role_name  treetitle,
+	    (SELECT COUNT(*) FROM SYS_ROLE child WHERE child.SYS_ROLE_PID=parent.SYS_ROLE_ID) childNu
+	    from sys_role parent
+	   <include refid="sysRoleCommonMapper.Where_Select_Sql" />
+  </select>
+  
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from sys_role
+    <include refid="sysRoleCommonMapper.Where_Del_Sql" />
+  </delete>
+  <insert id="insert" parameterType="java.util.Map" >
+    insert into sys_role <include refid="sysRoleCommonMapper.Insert_Sql" />
+  </insert>
+  <insert id="inserts" parameterType="java.util.List" >
+    insert into sys_role <include refid="sysRoleCommonMapper.Inserts_Sql" />
+  </insert>
+  <update id="update" parameterType="java.util.Map" >
+    update sys_role 
+    <include refid="sysRoleCommonMapper.Update_Sql" />
+    <include refid="sysRoleCommonMapper.Where_Update_Sql" />
+  </update>
+  <select id="count" parameterType="java.util.Map" resultType="java.lang.Integer" >
+    select count(*) from sys_role 
+    <if test="_parameter != null" >
+      <include refid="sysRoleCommonMapper.Where_Select_Sql" />
+    </if>
+  </select>	
+</mapper>

@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sysRoleCommonMapper" >
+  <sql id="Update_Sql" >
+    <trim prefix="set" suffixOverrides="," >
+			<if test="sysRole.sys_role_id != null  and sysRole.sys_role_id!= ''" >
+		        sys_role_id = #{sysRole.sys_role_id},
+		    </if>
+			<if test="sysRole.sys_role_pid != null  and sysRole.sys_role_pid!= ''" >
+		        sys_role_pid = #{sysRole.sys_role_pid},
+		    </if>
+			<if test="sysRole.sys_role_name != null  and sysRole.sys_role_name!= ''" >
+		        sys_role_name = #{sysRole.sys_role_name},
+		    </if>
+			<if test="sysRole.sys_role_flag != null  and sysRole.sys_role_flag!= ''" >
+		        sys_role_flag = #{sysRole.sys_role_flag},
+		    </if>
+			<if test="sysRole.sys_role_createdate != null  and sysRole.sys_role_createdate!= ''" >
+		        sys_role_createdate = #{sysRole.sys_role_createdate},
+		    </if>
+			<if test="sysRole.sys_role_updatedate != null  and sysRole.sys_role_updatedate!= ''" >
+		        sys_role_updatedate = #{sysRole.sys_role_updatedate},
+		    </if>
+			<if test="sysRole.sys_role_createuid != null  and sysRole.sys_role_createuid!= ''" >
+		        sys_role_createuid = #{sysRole.sys_role_createuid},
+		    </if>
+			<if test="sysRole.sys_role_updateuid != null  and sysRole.sys_role_updateuid!= ''" >
+		        sys_role_updateuid = #{sysRole.sys_role_updateuid},
+		    </if>
+			<if test="sysRole.sys_role_testd_d != null  and sysRole.sys_role_testd_d!= ''" >
+		        sys_role_testd_d = #{sysRole.sys_role_testd_d},
+		    </if>
+			<if test="sysRole.sys_role_testc_c != null  and sysRole.sys_role_testc_c!= ''" >
+		        sys_role_testc_c = #{sysRole.sys_role_testc_c},
+		    </if>
+    </trim>
+  </sql>
+  <sql id="Inserts_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+	         <if test="paramKey.sys_role_id != null  and paramKey.sys_role_id!= ''" >
+	          sys_role_id,
+	        </if>
+	         <if test="paramKey.sys_role_pid != null  and paramKey.sys_role_pid!= ''" >
+	          sys_role_pid,
+	        </if>
+	         <if test="paramKey.sys_role_name != null  and paramKey.sys_role_name!= ''" >
+	          sys_role_name,
+	        </if>
+	         <if test="paramKey.sys_role_flag != null  and paramKey.sys_role_flag!= ''" >
+	          sys_role_flag,
+	        </if>
+	         <if test="paramKey.sys_role_createdate != null  and paramKey.sys_role_createdate!= ''" >
+	          sys_role_createdate,
+	        </if>
+	         <if test="paramKey.sys_role_updatedate != null  and paramKey.sys_role_updatedate!= ''" >
+	          sys_role_updatedate,
+	        </if>
+	         <if test="paramKey.sys_role_createuid != null  and paramKey.sys_role_createuid!= ''" >
+	          sys_role_createuid,
+	        </if>
+	         <if test="paramKey.sys_role_updateuid != null  and paramKey.sys_role_updateuid!= ''" >
+	          sys_role_updateuid,
+	        </if>
+	         <if test="paramKey.sys_role_testd_d != null  and paramKey.sys_role_testd_d!= ''" >
+	          sys_role_testd_d,
+	        </if>
+	         <if test="paramKey.sys_role_testc_c != null  and paramKey.sys_role_testc_c!= ''" >
+	          sys_role_testc_c,
+	        </if>
+    </trim>
+    values  
+    <foreach collection="paramValue" item="item" index="index" separator="," >  
+        (
+		          <if test="item.sys_role_id != null and item.sys_role_id!= ''" >
+			      	#{item.sys_role_id},
+			      </if>
+		          <if test="item.sys_role_pid != null and item.sys_role_pid!= ''" >
+			      	#{item.sys_role_pid},
+			      </if>
+		          <if test="item.sys_role_name != null and item.sys_role_name!= ''" >
+			      	#{item.sys_role_name},
+			      </if>
+		          <if test="item.sys_role_flag != null and item.sys_role_flag!= ''" >
+			      	#{item.sys_role_flag},
+			      </if>
+		          <if test="item.sys_role_createdate != null and item.sys_role_createdate!= ''" >
+			      	#{item.sys_role_createdate},
+			      </if>
+		          <if test="item.sys_role_updatedate != null and item.sys_role_updatedate!= ''" >
+			      	#{item.sys_role_updatedate},
+			      </if>
+		          <if test="item.sys_role_createuid != null and item.sys_role_createuid!= ''" >
+			      	#{item.sys_role_createuid},
+			      </if>
+		          <if test="item.sys_role_updateuid != null and item.sys_role_updateuid!= ''" >
+			      	#{item.sys_role_updateuid},
+			      </if>
+		          <if test="item.sys_role_testd_d != null and item.sys_role_testd_d!= ''" >
+			      	#{item.sys_role_testd_d},
+			      </if>
+		          <if test="item.sys_role_testc_c != null and item.sys_role_testc_c!= ''" >
+			      	#{item.sys_role_testc_c},
+			      </if>
+        )  
+    </foreach> 
+  </sql>
+  <sql id="Insert_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+    		<if test="sys_role_id != null  and sys_role_id!= ''" >
+	          sys_role_id,
+	        </if>
+    		<if test="sys_role_pid != null  and sys_role_pid!= ''" >
+	          sys_role_pid,
+	        </if>
+    		<if test="sys_role_name != null  and sys_role_name!= ''" >
+	          sys_role_name,
+	        </if>
+    		<if test="sys_role_flag != null  and sys_role_flag!= ''" >
+	          sys_role_flag,
+	        </if>
+    		<if test="sys_role_createdate != null  and sys_role_createdate!= ''" >
+	          sys_role_createdate,
+	        </if>
+    		<if test="sys_role_updatedate != null  and sys_role_updatedate!= ''" >
+	          sys_role_updatedate,
+	        </if>
+    		<if test="sys_role_createuid != null  and sys_role_createuid!= ''" >
+	          sys_role_createuid,
+	        </if>
+    		<if test="sys_role_updateuid != null  and sys_role_updateuid!= ''" >
+	          sys_role_updateuid,
+	        </if>
+    		<if test="sys_role_testd_d != null  and sys_role_testd_d!= ''" >
+	          sys_role_testd_d,
+	        </if>
+    		<if test="sys_role_testc_c != null  and sys_role_testc_c!= ''" >
+	          sys_role_testc_c,
+	        </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+	      <if test="sys_role_id != null and sys_role_id!= ''" >
+	      	#{sys_role_id},
+	      </if>
+	      <if test="sys_role_pid != null and sys_role_pid!= ''" >
+	      	#{sys_role_pid},
+	      </if>
+	      <if test="sys_role_name != null and sys_role_name!= ''" >
+	      	#{sys_role_name},
+	      </if>
+	      <if test="sys_role_flag != null and sys_role_flag!= ''" >
+	      	#{sys_role_flag},
+	      </if>
+	      <if test="sys_role_createdate != null and sys_role_createdate!= ''" >
+	      	#{sys_role_createdate},
+	      </if>
+	      <if test="sys_role_updatedate != null and sys_role_updatedate!= ''" >
+	      	#{sys_role_updatedate},
+	      </if>
+	      <if test="sys_role_createuid != null and sys_role_createuid!= ''" >
+	      	#{sys_role_createuid},
+	      </if>
+	      <if test="sys_role_updateuid != null and sys_role_updateuid!= ''" >
+	      	#{sys_role_updateuid},
+	      </if>
+	      <if test="sys_role_testd_d != null and sys_role_testd_d!= ''" >
+	      	#{sys_role_testd_d},
+	      </if>
+	      <if test="sys_role_testc_c != null and sys_role_testc_c!= ''" >
+	      	#{sys_role_testc_c},
+	      </if>
+    </trim>
+  </sql>
+  <sql id="Where_Update_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="sysRoleQuery.sys_role_id != null and sysRoleQuery.sys_role_id!= ''" >
+	      	and sys_role_id=#{sysRoleQuery.sys_role_id}
+	      </when>
+	      <when test="sysRoleQuery.sys_role_pid != null and sysRoleQuery.sys_role_pid!= ''" >
+	      	and sys_role_pid=#{sysRoleQuery.sys_role_pid}
+	      </when>
+	      <when test="sysRoleQuery.sys_role_name != null and sysRoleQuery.sys_role_name!= ''" >
+	      	and sys_role_name=#{sysRoleQuery.sys_role_name}
+	      </when>
+	      <when test="sysRoleQuery.sys_role_flag != null and sysRoleQuery.sys_role_flag!= ''" >
+	      	and sys_role_flag=#{sysRoleQuery.sys_role_flag}
+	      </when>
+	      <when test="sysRoleQuery.sys_role_createdate != null and sysRoleQuery.sys_role_createdate!= ''" >
+	      	and sys_role_createdate=#{sysRoleQuery.sys_role_createdate}
+	      </when>
+	      <when test="sysRoleQuery.sys_role_updatedate != null and sysRoleQuery.sys_role_updatedate!= ''" >
+	      	and sys_role_updatedate=#{sysRoleQuery.sys_role_updatedate}
+	      </when>
+	      <when test="sysRoleQuery.sys_role_createuid != null and sysRoleQuery.sys_role_createuid!= ''" >
+	      	and sys_role_createuid=#{sysRoleQuery.sys_role_createuid}
+	      </when>
+	      <when test="sysRoleQuery.sys_role_updateuid != null and sysRoleQuery.sys_role_updateuid!= ''" >
+	      	and sys_role_updateuid=#{sysRoleQuery.sys_role_updateuid}
+	      </when>
+	      <when test="sysRoleQuery.sys_role_testd_d != null and sysRoleQuery.sys_role_testd_d!= ''" >
+	      	and sys_role_testd_d=#{sysRoleQuery.sys_role_testd_d}
+	      </when>
+	      <when test="sysRoleQuery.sys_role_testc_c != null and sysRoleQuery.sys_role_testc_c!= ''" >
+	      	and sys_role_testc_c=#{sysRoleQuery.sys_role_testc_c}
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+    <sql id="Where_Del_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="sys_role_id != null and sys_role_id!= ''" >
+	      	and sys_role_id=#{sys_role_id}
+	      </when>
+	      <when test="sys_role_pid != null and sys_role_pid!= ''" >
+	      	and sys_role_pid=#{sys_role_pid}
+	      </when>
+	      <when test="sys_role_name != null and sys_role_name!= ''" >
+	      	and sys_role_name=#{sys_role_name}
+	      </when>
+	      <when test="sys_role_flag != null and sys_role_flag!= ''" >
+	      	and sys_role_flag=#{sys_role_flag}
+	      </when>
+	      <when test="sys_role_createdate != null and sys_role_createdate!= ''" >
+	      	and sys_role_createdate=#{sys_role_createdate}
+	      </when>
+	      <when test="sys_role_updatedate != null and sys_role_updatedate!= ''" >
+	      	and sys_role_updatedate=#{sys_role_updatedate}
+	      </when>
+	      <when test="sys_role_createuid != null and sys_role_createuid!= ''" >
+	      	and sys_role_createuid=#{sys_role_createuid}
+	      </when>
+	      <when test="sys_role_updateuid != null and sys_role_updateuid!= ''" >
+	      	and sys_role_updateuid=#{sys_role_updateuid}
+	      </when>
+	      <when test="sys_role_testd_d != null and sys_role_testd_d!= ''" >
+	      	and sys_role_testd_d=#{sys_role_testd_d}
+	      </when>
+	      <when test="sys_role_testc_c != null and sys_role_testc_c!= ''" >
+	      	and sys_role_testc_c=#{sys_role_testc_c}
+	      </when>
+	     <when test="ids != null and ids!= ''" >
+	      		and sys_role_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		           #{id}
+		        </foreach>
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+  <sql id="Where_Select_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="sys_role_id != null and sys_role_id!= ''" >
+	      	and sys_role_id=#{sys_role_id}
+	      </if>
+	      <if test="sys_role_pid != null and sys_role_pid!= ''" >
+	      	and sys_role_pid=#{sys_role_pid}
+	      </if>
+	      <if test="sys_role_name != null and sys_role_name!= ''" >
+	      	and sys_role_name=#{sys_role_name}
+	      </if>
+	      <if test="sys_role_flag != null and sys_role_flag!= ''" >
+	      	and sys_role_flag=#{sys_role_flag}
+	      </if>
+	      <if test="sys_role_createdate != null and sys_role_createdate!= ''" >
+	      	and sys_role_createdate=#{sys_role_createdate}
+	      </if>
+	      <if test="sys_role_updatedate != null and sys_role_updatedate!= ''" >
+	      	and sys_role_updatedate=#{sys_role_updatedate}
+	      </if>
+	      <if test="sys_role_createuid != null and sys_role_createuid!= ''" >
+	      	and sys_role_createuid=#{sys_role_createuid}
+	      </if>
+	      <if test="sys_role_updateuid != null and sys_role_updateuid!= ''" >
+	      	and sys_role_updateuid=#{sys_role_updateuid}
+	      </if>
+	      <if test="sys_role_testd_d != null and sys_role_testd_d!= ''" >
+	      	and sys_role_testd_d=#{sys_role_testd_d}
+	      </if>
+	      <if test="sys_role_testc_c != null and sys_role_testc_c!= ''" >
+	      	and sys_role_testc_c=#{sys_role_testc_c}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and sys_role_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+</mapper>

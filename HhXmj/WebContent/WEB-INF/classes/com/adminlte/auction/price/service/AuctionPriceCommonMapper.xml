@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="auctionPriceCommonMapper" >
+  <sql id="Update_Sql" >
+    <trim prefix="set" suffixOverrides="," >
+			<if test="auctionPrice.auction_price_id != null  and auctionPrice.auction_price_id!= ''" >
+		        auction_price.auction_price_id = #{auctionPrice.auction_price_id},
+		    </if>
+			<if test="auctionPrice.auction_assets_id != null  and auctionPrice.auction_assets_id!= ''" >
+		        auction_price.auction_assets_id = #{auctionPrice.auction_assets_id},
+		    </if>
+			<if test="auctionPrice.auction_current_price != null  and auctionPrice.auction_current_price!= ''" >
+		        auction_price.auction_current_price = #{auctionPrice.auction_current_price},
+		    </if>
+			<if test="auctionPrice.auction_current_people != null  and auctionPrice.auction_current_people!= ''" >
+		        auction_price.auction_current_people = #{auctionPrice.auction_current_people},
+		    </if>
+			<if test="auctionPrice.auction_price_createtime != null  and auctionPrice.auction_price_createtime!= ''" >
+		        auction_price.auction_price_createtime = #{auctionPrice.auction_price_createtime},
+		    </if>
+    </trim>
+  </sql>
+  <sql id="Inserts_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+	         <if test="paramKey.auction_price_id != null  and paramKey.auction_price_id!= ''" >
+	          auction_price_id,
+	        </if>
+	         <if test="paramKey.auction_assets_id != null  and paramKey.auction_assets_id!= ''" >
+	          auction_assets_id,
+	        </if>
+	         <if test="paramKey.auction_current_price != null  and paramKey.auction_current_price!= ''" >
+	          auction_current_price,
+	        </if>
+	         <if test="paramKey.auction_current_people != null  and paramKey.auction_current_people!= ''" >
+	          auction_current_people,
+	        </if>
+	         <if test="paramKey.auction_price_createtime != null  and paramKey.auction_price_createtime!= ''" >
+	          auction_price_createtime,
+	        </if>
+    </trim>
+    values  
+    <foreach collection="paramValue" item="item" index="index" separator="," >  
+        (
+		          <if test="item.auction_price_id != null and item.auction_price_id!= ''" >
+			      	#{item.auction_price_id},
+			      </if>
+		          <if test="item.auction_assets_id != null and item.auction_assets_id!= ''" >
+			      	#{item.auction_assets_id},
+			      </if>
+		          <if test="item.auction_current_price != null and item.auction_current_price!= ''" >
+			      	#{item.auction_current_price},
+			      </if>
+		          <if test="item.auction_current_people != null and item.auction_current_people!= ''" >
+			      	#{item.auction_current_people},
+			      </if>
+		          <if test="item.auction_price_createtime != null and item.auction_price_createtime!= ''" >
+			      	#{item.auction_price_createtime},
+			      </if>
+        )  
+    </foreach> 
+  </sql>
+  <sql id="Insert_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+    		<if test="auction_price_id != null  and auction_price_id!= ''" >
+	          auction_price_id,
+	        </if>
+    		<if test="auction_assets_id != null  and auction_assets_id!= ''" >
+	          auction_assets_id,
+	        </if>
+    		<if test="auction_current_price != null  and auction_current_price!= ''" >
+	          auction_current_price,
+	        </if>
+    		<if test="auction_current_people != null  and auction_current_people!= ''" >
+	          auction_current_people,
+	        </if>
+    		<if test="auction_price_createtime != null  and auction_price_createtime!= ''" >
+	          auction_price_createtime,
+	        </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+	      <if test="auction_price_id != null and auction_price_id!= ''" >
+	      	#{auction_price_id},
+	      </if>
+	      <if test="auction_assets_id != null and auction_assets_id!= ''" >
+	      	#{auction_assets_id},
+	      </if>
+	      <if test="auction_current_price != null and auction_current_price!= ''" >
+	      	#{auction_current_price},
+	      </if>
+	      <if test="auction_current_people != null and auction_current_people!= ''" >
+	      	#{auction_current_people},
+	      </if>
+	      <if test="auction_price_createtime != null and auction_price_createtime!= ''" >
+	      	#{auction_price_createtime},
+	      </if>
+    </trim>
+  </sql>
+  <sql id="Where_Update_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="auctionPriceQuery.auction_price_id != null and auctionPriceQuery.auction_price_id!= ''" >
+	      	and auction_price.auction_price_id=#{auctionPriceQuery.auction_price_id}
+	      </when>
+	      <when test="auctionPriceQuery.auction_assets_id != null and auctionPriceQuery.auction_assets_id!= ''" >
+	      	and auction_price.auction_assets_id=#{auctionPriceQuery.auction_assets_id}
+	      </when>
+	      <when test="auctionPriceQuery.auction_current_price != null and auctionPriceQuery.auction_current_price!= ''" >
+	      	and auction_price.auction_current_price=#{auctionPriceQuery.auction_current_price}
+	      </when>
+	      <when test="auctionPriceQuery.auction_current_people != null and auctionPriceQuery.auction_current_people!= ''" >
+	      	and auction_price.auction_current_people=#{auctionPriceQuery.auction_current_people}
+	      </when>
+	      <when test="auctionPriceQuery.auction_price_createtime != null and auctionPriceQuery.auction_price_createtime!= ''" >
+	      	and auction_price.auction_price_createtime=#{auctionPriceQuery.auction_price_createtime}
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+    <sql id="Where_Del_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="auction_price_id != null and auction_price_id!= ''" >
+	      	and auction_price.auction_price_id=#{auction_price_id}
+	      </when>
+	      <when test="auction_assets_id != null and auction_assets_id!= ''" >
+	      	and auction_price.auction_assets_id=#{auction_assets_id}
+	      </when>
+	      <when test="auction_current_price != null and auction_current_price!= ''" >
+	      	and auction_price.auction_current_price=#{auction_current_price}
+	      </when>
+	      <when test="auction_current_people != null and auction_current_people!= ''" >
+	      	and auction_price.auction_current_people=#{auction_current_people}
+	      </when>
+	      <when test="auction_price_createtime != null and auction_price_createtime!= ''" >
+	      	and auction_price.auction_price_createtime=#{auction_price_createtime}
+	      </when>
+	     <when test="ids != null and ids!= ''" >
+	      		and auction_price.auction_price_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		           #{id}
+		        </foreach>
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+  <sql id="Where_Select_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="auction_price_id != null and auction_price_id!= ''" >
+	      	and auction_price.auction_price_id=#{auction_price_id}
+	      </if>
+	      <if test="auction_assets_id != null and auction_assets_id!= ''" >
+	      	and auction_price.auction_assets_id=#{auction_assets_id}
+	      </if>
+	      <if test="auction_current_price != null and auction_current_price!= ''" >
+	      	and auction_price.auction_current_price=#{auction_current_price}
+	      </if>
+	      <if test="auction_current_people != null and auction_current_people!= ''" >
+	      	and auction_price.auction_current_people=#{auction_current_people}
+	      </if>
+	      <if test="auction_price_createtime != null and auction_price_createtime!= ''" >
+	      	and auction_price.auction_price_createtime=#{auction_price_createtime}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and auction_price.auction_price_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+	   ORDER BY auction_current_price DESC
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+  
+  <sql id="Where_SelectTree_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="auction_price_id != null and auction_price_id!= ''" >
+	      	and parent.auction_price_id=#{auction_price_id}
+	      </if>
+	      <if test="auction_assets_id != null and auction_assets_id!= ''" >
+	      	and parent.auction_assets_id=#{auction_assets_id}
+	      </if>
+	      <if test="auction_current_price != null and auction_current_price!= ''" >
+	      	and parent.auction_current_price=#{auction_current_price}
+	      </if>
+	      <if test="auction_current_people != null and auction_current_people!= ''" >
+	      	and parent.auction_current_people=#{auction_current_people}
+	      </if>
+	      <if test="auction_price_createtime != null and auction_price_createtime!= ''" >
+	      	and parent.auction_price_createtime=#{auction_price_createtime}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and parent.auction_price_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+</mapper>

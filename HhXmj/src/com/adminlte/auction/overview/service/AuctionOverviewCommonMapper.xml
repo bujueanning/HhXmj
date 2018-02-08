@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="auctionOverviewCommonMapper" >
+  <sql id="Update_Sql" >
+    <trim prefix="set" suffixOverrides="," >
+			<if test="auctionOverview.auction_overview_id != null  and auctionOverview.auction_overview_id!= ''" >
+		        auction_overview.auction_overview_id = #{auctionOverview.auction_overview_id},
+		    </if>
+			<if test="auctionOverview.auction_ownership_amount != null  and auctionOverview.auction_ownership_amount!= ''" >
+		        auction_overview.auction_ownership_amount = #{auctionOverview.auction_ownership_amount},
+		    </if>
+			<if test="auctionOverview.auction_assets_id != null  and auctionOverview.auction_assets_id!= ''" >
+		        auction_overview.auction_assets_id = #{auctionOverview.auction_assets_id},
+		    </if>
+			<if test="auctionOverview.auction_transaction_type != null  and auctionOverview.auction_transaction_type!= ''" >
+		        auction_overview.auction_transaction_type = #{auctionOverview.auction_transaction_type},
+		    </if>
+			<if test="auctionOverview.auction_target_asset_name != null  and auctionOverview.auction_target_asset_name!= ''" >
+		        auction_overview.auction_target_asset_name = #{auctionOverview.auction_target_asset_name},
+		    </if>
+			<if test="auctionOverview.auction_target_enterprise_nature != null  and auctionOverview.auction_target_enterprise_nature!= ''" >
+		        auction_overview.auction_target_enterprise_nature = #{auctionOverview.auction_target_enterprise_nature},
+		    </if>
+			<if test="auctionOverview.auction_industry != null  and auctionOverview.auction_industry!= ''" >
+		        auction_overview.auction_industry = #{auctionOverview.auction_industry},
+		    </if>
+			<if test="auctionOverview.auction_law_firm != null  and auctionOverview.auction_law_firm!= ''" >
+		        auction_overview.auction_law_firm = #{auctionOverview.auction_law_firm},
+		    </if>
+    </trim>
+  </sql>
+  <sql id="Inserts_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+	         <if test="paramKey.auction_overview_id != null  and paramKey.auction_overview_id!= ''" >
+	          auction_overview_id,
+	        </if>
+	         <if test="paramKey.auction_ownership_amount != null  and paramKey.auction_ownership_amount!= ''" >
+	          auction_ownership_amount,
+	        </if>
+	         <if test="paramKey.auction_assets_id != null  and paramKey.auction_assets_id!= ''" >
+	          auction_assets_id,
+	        </if>
+	         <if test="paramKey.auction_transaction_type != null  and paramKey.auction_transaction_type!= ''" >
+	          auction_transaction_type,
+	        </if>
+	         <if test="paramKey.auction_target_asset_name != null  and paramKey.auction_target_asset_name!= ''" >
+	          auction_target_asset_name,
+	        </if>
+	         <if test="paramKey.auction_target_enterprise_nature != null  and paramKey.auction_target_enterprise_nature!= ''" >
+	          auction_target_enterprise_nature,
+	        </if>
+	         <if test="paramKey.auction_industry != null  and paramKey.auction_industry!= ''" >
+	          auction_industry,
+	        </if>
+	         <if test="paramKey.auction_law_firm != null  and paramKey.auction_law_firm!= ''" >
+	          auction_law_firm,
+	        </if>
+    </trim>
+    values  
+    <foreach collection="paramValue" item="item" index="index" separator="," >  
+        (
+		          <if test="item.auction_overview_id != null and item.auction_overview_id!= ''" >
+			      	#{item.auction_overview_id},
+			      </if>
+		          <if test="item.auction_ownership_amount != null and item.auction_ownership_amount!= ''" >
+			      	#{item.auction_ownership_amount},
+			      </if>
+		          <if test="item.auction_assets_id != null and item.auction_assets_id!= ''" >
+			      	#{item.auction_assets_id},
+			      </if>
+		          <if test="item.auction_transaction_type != null and item.auction_transaction_type!= ''" >
+			      	#{item.auction_transaction_type},
+			      </if>
+		          <if test="item.auction_target_asset_name != null and item.auction_target_asset_name!= ''" >
+			      	#{item.auction_target_asset_name},
+			      </if>
+		          <if test="item.auction_target_enterprise_nature != null and item.auction_target_enterprise_nature!= ''" >
+			      	#{item.auction_target_enterprise_nature},
+			      </if>
+		          <if test="item.auction_industry != null and item.auction_industry!= ''" >
+			      	#{item.auction_industry},
+			      </if>
+		          <if test="item.auction_law_firm != null and item.auction_law_firm!= ''" >
+			      	#{item.auction_law_firm},
+			      </if>
+        )  
+    </foreach> 
+  </sql>
+  <sql id="Insert_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+    		<if test="auction_overview_id != null  and auction_overview_id!= ''" >
+	          auction_overview_id,
+	        </if>
+    		<if test="auction_ownership_amount != null  and auction_ownership_amount!= ''" >
+	          auction_ownership_amount,
+	        </if>
+    		<if test="auction_assets_id != null  and auction_assets_id!= ''" >
+	          auction_assets_id,
+	        </if>
+    		<if test="auction_transaction_type != null  and auction_transaction_type!= ''" >
+	          auction_transaction_type,
+	        </if>
+    		<if test="auction_target_asset_name != null  and auction_target_asset_name!= ''" >
+	          auction_target_asset_name,
+	        </if>
+    		<if test="auction_target_enterprise_nature != null  and auction_target_enterprise_nature!= ''" >
+	          auction_target_enterprise_nature,
+	        </if>
+    		<if test="auction_industry != null  and auction_industry!= ''" >
+	          auction_industry,
+	        </if>
+    		<if test="auction_law_firm != null  and auction_law_firm!= ''" >
+	          auction_law_firm,
+	        </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+	      <if test="auction_overview_id != null and auction_overview_id!= ''" >
+	      	#{auction_overview_id},
+	      </if>
+	      <if test="auction_ownership_amount != null and auction_ownership_amount!= ''" >
+	      	#{auction_ownership_amount},
+	      </if>
+	      <if test="auction_assets_id != null and auction_assets_id!= ''" >
+	      	#{auction_assets_id},
+	      </if>
+	      <if test="auction_transaction_type != null and auction_transaction_type!= ''" >
+	      	#{auction_transaction_type},
+	      </if>
+	      <if test="auction_target_asset_name != null and auction_target_asset_name!= ''" >
+	      	#{auction_target_asset_name},
+	      </if>
+	      <if test="auction_target_enterprise_nature != null and auction_target_enterprise_nature!= ''" >
+	      	#{auction_target_enterprise_nature},
+	      </if>
+	      <if test="auction_industry != null and auction_industry!= ''" >
+	      	#{auction_industry},
+	      </if>
+	      <if test="auction_law_firm != null and auction_law_firm!= ''" >
+	      	#{auction_law_firm},
+	      </if>
+    </trim>
+  </sql>
+  <sql id="Where_Update_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="auctionOverviewQuery.auction_overview_id != null and auctionOverviewQuery.auction_overview_id!= ''" >
+	      	and auction_overview.auction_overview_id=#{auctionOverviewQuery.auction_overview_id}
+	      </when>
+	      <when test="auctionOverviewQuery.auction_ownership_amount != null and auctionOverviewQuery.auction_ownership_amount!= ''" >
+	      	and auction_overview.auction_ownership_amount=#{auctionOverviewQuery.auction_ownership_amount}
+	      </when>
+	      <when test="auctionOverviewQuery.auction_assets_id != null and auctionOverviewQuery.auction_assets_id!= ''" >
+	      	and auction_overview.auction_assets_id=#{auctionOverviewQuery.auction_assets_id}
+	      </when>
+	      <when test="auctionOverviewQuery.auction_transaction_type != null and auctionOverviewQuery.auction_transaction_type!= ''" >
+	      	and auction_overview.auction_transaction_type=#{auctionOverviewQuery.auction_transaction_type}
+	      </when>
+	      <when test="auctionOverviewQuery.auction_target_asset_name != null and auctionOverviewQuery.auction_target_asset_name!= ''" >
+	      	and auction_overview.auction_target_asset_name=#{auctionOverviewQuery.auction_target_asset_name}
+	      </when>
+	      <when test="auctionOverviewQuery.auction_target_enterprise_nature != null and auctionOverviewQuery.auction_target_enterprise_nature!= ''" >
+	      	and auction_overview.auction_target_enterprise_nature=#{auctionOverviewQuery.auction_target_enterprise_nature}
+	      </when>
+	      <when test="auctionOverviewQuery.auction_industry != null and auctionOverviewQuery.auction_industry!= ''" >
+	      	and auction_overview.auction_industry=#{auctionOverviewQuery.auction_industry}
+	      </when>
+	      <when test="auctionOverviewQuery.auction_law_firm != null and auctionOverviewQuery.auction_law_firm!= ''" >
+	      	and auction_overview.auction_law_firm=#{auctionOverviewQuery.auction_law_firm}
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+    <sql id="Where_Del_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="auction_overview_id != null and auction_overview_id!= ''" >
+	      	and auction_overview.auction_overview_id=#{auction_overview_id}
+	      </when>
+	      <when test="auction_ownership_amount != null and auction_ownership_amount!= ''" >
+	      	and auction_overview.auction_ownership_amount=#{auction_ownership_amount}
+	      </when>
+	      <when test="auction_assets_id != null and auction_assets_id!= ''" >
+	      	and auction_overview.auction_assets_id=#{auction_assets_id}
+	      </when>
+	      <when test="auction_transaction_type != null and auction_transaction_type!= ''" >
+	      	and auction_overview.auction_transaction_type=#{auction_transaction_type}
+	      </when>
+	      <when test="auction_target_asset_name != null and auction_target_asset_name!= ''" >
+	      	and auction_overview.auction_target_asset_name=#{auction_target_asset_name}
+	      </when>
+	      <when test="auction_target_enterprise_nature != null and auction_target_enterprise_nature!= ''" >
+	      	and auction_overview.auction_target_enterprise_nature=#{auction_target_enterprise_nature}
+	      </when>
+	      <when test="auction_industry != null and auction_industry!= ''" >
+	      	and auction_overview.auction_industry=#{auction_industry}
+	      </when>
+	      <when test="auction_law_firm != null and auction_law_firm!= ''" >
+	      	and auction_overview.auction_law_firm=#{auction_law_firm}
+	      </when>
+	     <when test="ids != null and ids!= ''" >
+	      		and auction_overview.auction_overview_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		           #{id}
+		        </foreach>
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+  <sql id="Where_Select_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="auction_overview_id != null and auction_overview_id!= ''" >
+	      	and auction_overview.auction_overview_id=#{auction_overview_id}
+	      </if>
+	      <if test="auction_ownership_amount != null and auction_ownership_amount!= ''" >
+	      	and auction_overview.auction_ownership_amount=#{auction_ownership_amount}
+	      </if>
+	      <if test="auction_assets_id != null and auction_assets_id!= ''" >
+	      	and auction_overview.auction_assets_id=#{auction_assets_id}
+	      </if>
+	      <if test="auction_transaction_type != null and auction_transaction_type!= ''" >
+	      	and auction_overview.auction_transaction_type=#{auction_transaction_type}
+	      </if>
+	      <if test="auction_target_asset_name != null and auction_target_asset_name!= ''" >
+	      	and auction_overview.auction_target_asset_name=#{auction_target_asset_name}
+	      </if>
+	      <if test="auction_target_enterprise_nature != null and auction_target_enterprise_nature!= ''" >
+	      	and auction_overview.auction_target_enterprise_nature=#{auction_target_enterprise_nature}
+	      </if>
+	      <if test="auction_industry != null and auction_industry!= ''" >
+	      	and auction_overview.auction_industry=#{auction_industry}
+	      </if>
+	      <if test="auction_law_firm != null and auction_law_firm!= ''" >
+	      	and auction_overview.auction_law_firm=#{auction_law_firm}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and auction_overview.auction_overview_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+  
+  <sql id="Where_SelectTree_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="auction_overview_id != null and auction_overview_id!= ''" >
+	      	and parent.auction_overview_id=#{auction_overview_id}
+	      </if>
+	      <if test="auction_ownership_amount != null and auction_ownership_amount!= ''" >
+	      	and parent.auction_ownership_amount=#{auction_ownership_amount}
+	      </if>
+	      <if test="auction_assets_id != null and auction_assets_id!= ''" >
+	      	and parent.auction_assets_id=#{auction_assets_id}
+	      </if>
+	      <if test="auction_transaction_type != null and auction_transaction_type!= ''" >
+	      	and parent.auction_transaction_type=#{auction_transaction_type}
+	      </if>
+	      <if test="auction_target_asset_name != null and auction_target_asset_name!= ''" >
+	      	and parent.auction_target_asset_name=#{auction_target_asset_name}
+	      </if>
+	      <if test="auction_target_enterprise_nature != null and auction_target_enterprise_nature!= ''" >
+	      	and parent.auction_target_enterprise_nature=#{auction_target_enterprise_nature}
+	      </if>
+	      <if test="auction_industry != null and auction_industry!= ''" >
+	      	and parent.auction_industry=#{auction_industry}
+	      </if>
+	      <if test="auction_law_firm != null and auction_law_firm!= ''" >
+	      	and parent.auction_law_firm=#{auction_law_firm}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and parent.auction_overview_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+</mapper>

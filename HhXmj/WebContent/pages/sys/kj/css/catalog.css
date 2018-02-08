@@ -1,0 +1,89 @@
+.cont_left {
+    float: left;
+    width: 200px;
+    background: #f2f2f2;
+}
+.cont_left ul {
+    padding: 0 0 50px 40px;
+}
+.cont_left ul li img {
+}
+.cont_left ul li ul {
+    padding-left: 5px;
+    padding-bottom: 0;
+}
+.cont_left ul li ul li {
+    color: #666;
+}
+h3 {
+    font-weight: normal;
+}
+.cont_left ul li ul li h3 a.curr {
+    color: #bb1c21;
+}
+.cont_left ul li ul li h3 a {
+    font-weight: bold;
+    line-height: 36px;
+}
+.cont_right {
+    float: right;
+    width: 780px;
+    padding-top: 5px;
+}
+.cont_right .page_pos {
+    color: #666;
+}
+.cont_right .page_pos span {
+    color: #bb1c21;
+}
+.cont_right .information {
+    margin: 10px auto 0;
+    border: 1px solid #e6e6e6;
+    text-align: center;
+    overflow: hidden;
+    _overflow: none;
+}
+.information .info_cont {
+    padding-top: 20px;
+    margin: 0 20px 30px;
+    overflow: hidden;
+}
+.info_cont ul {
+    margin-bottom: 20px;
+    text-align: left;
+}
+.info_cont ul li {
+    height: 32px;
+    padding-right: 15px;
+    line-height: 32px;
+    border-bottom: 1px dashed #f2f2f2;
+    background: url(../img/point.gif) 5px 13px no-repeat;
+    text-indent: 20px;
+}
+.info_cont ul li span {
+    float: right;
+}
+.page {
+    padding: 10px 0;
+    line-height: 20px;
+    text-align: left;
+}
+.page a.pageOn {
+    background: #da0b25;
+    color: #fff;
+    font-weight: bold;
+    border: 1px solid #da0b25;
+}
+.page a {
+    display: inline-block;
+    border: 1px solid #ccc;
+    padding: 0 7px;
+}
+.content {
+    min-height: 300px;
+    background: #fff;
+    text-align: left;
+    overflow: hidden;
+    width: 1000px;
+    margin: 10px auto;
+}

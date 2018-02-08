@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="auctionListingCommonMapper" >
+  <sql id="Update_Sql" >
+    <trim prefix="set" suffixOverrides="," >
+			<if test="auctionListing.auction_listing_id != null  and auctionListing.auction_listing_id!= ''" >
+		        auction_listing.auction_listing_id = #{auctionListing.auction_listing_id},
+		    </if>
+			<if test="auctionListing.auction_assets_id != null  and auctionListing.auction_assets_id!= ''" >
+		        auction_listing.auction_assets_id = #{auctionListing.auction_assets_id},
+		    </if>
+			<if test="auctionListing.auction_creditor_capital != null  and auctionListing.auction_creditor_capital!= ''" >
+		        auction_listing.auction_creditor_capital = #{auctionListing.auction_creditor_capital},
+		    </if>
+			<if test="auctionListing.auction_pledge_capital != null  and auctionListing.auction_pledge_capital!= ''" >
+		        auction_listing.auction_pledge_capital = #{auctionListing.auction_pledge_capital},
+		    </if>
+			<if test="auctionListing.auction_mortgage_capital != null  and auctionListing.auction_mortgage_capital!= ''" >
+		        auction_listing.auction_mortgage_capital = #{auctionListing.auction_mortgage_capital},
+		    </if>
+			<if test="auctionListing.auction_impawn_capital != null  and auctionListing.auction_impawn_capital!= ''" >
+		        auction_listing.auction_impawn_capital = #{auctionListing.auction_impawn_capital},
+		    </if>
+			<if test="auctionListing.auction_creditor_interest != null  and auctionListing.auction_creditor_interest!= ''" >
+		        auction_listing.auction_creditor_interest = #{auctionListing.auction_creditor_interest},
+		    </if>
+			<if test="auctionListing.auction_creditor_yield != null  and auctionListing.auction_creditor_yield!= ''" >
+		        auction_listing.auction_creditor_yield = #{auctionListing.auction_creditor_yield},
+		    </if>
+			<if test="auctionListing.auction_real_right != null  and auctionListing.auction_real_right!= ''" >
+		        auction_listing.auction_real_right = #{auctionListing.auction_real_right},
+		    </if>
+			<if test="auctionListing.auction_stock_right != null  and auctionListing.auction_stock_right!= ''" >
+		        auction_listing.auction_stock_right = #{auctionListing.auction_stock_right},
+		    </if>
+			<if test="auctionListing.auction_major_issues != null  and auctionListing.auction_major_issues!= ''" >
+		        auction_listing.auction_major_issues = #{auctionListing.auction_major_issues},
+		    </if>
+    </trim>
+  </sql>
+  <sql id="Inserts_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+	         <if test="paramKey.auction_listing_id != null  and paramKey.auction_listing_id!= ''" >
+	          auction_listing_id,
+	        </if>
+	         <if test="paramKey.auction_assets_id != null  and paramKey.auction_assets_id!= ''" >
+	          auction_assets_id,
+	        </if>
+	         <if test="paramKey.auction_creditor_capital != null  and paramKey.auction_creditor_capital!= ''" >
+	          auction_creditor_capital,
+	        </if>
+	         <if test="paramKey.auction_pledge_capital != null  and paramKey.auction_pledge_capital!= ''" >
+	          auction_pledge_capital,
+	        </if>
+	         <if test="paramKey.auction_mortgage_capital != null  and paramKey.auction_mortgage_capital!= ''" >
+	          auction_mortgage_capital,
+	        </if>
+	         <if test="paramKey.auction_impawn_capital != null  and paramKey.auction_impawn_capital!= ''" >
+	          auction_impawn_capital,
+	        </if>
+	         <if test="paramKey.auction_creditor_interest != null  and paramKey.auction_creditor_interest!= ''" >
+	          auction_creditor_interest,
+	        </if>
+	         <if test="paramKey.auction_creditor_yield != null  and paramKey.auction_creditor_yield!= ''" >
+	          auction_creditor_yield,
+	        </if>
+	         <if test="paramKey.auction_real_right != null  and paramKey.auction_real_right!= ''" >
+	          auction_real_right,
+	        </if>
+	         <if test="paramKey.auction_stock_right != null  and paramKey.auction_stock_right!= ''" >
+	          auction_stock_right,
+	        </if>
+	         <if test="paramKey.auction_major_issues != null  and paramKey.auction_major_issues!= ''" >
+	          auction_major_issues,
+	        </if>
+    </trim>
+    values  
+    <foreach collection="paramValue" item="item" index="index" separator="," >  
+        (
+		          <if test="item.auction_listing_id != null and item.auction_listing_id!= ''" >
+			      	#{item.auction_listing_id},
+			      </if>
+		          <if test="item.auction_assets_id != null and item.auction_assets_id!= ''" >
+			      	#{item.auction_assets_id},
+			      </if>
+		          <if test="item.auction_creditor_capital != null and item.auction_creditor_capital!= ''" >
+			      	#{item.auction_creditor_capital},
+			      </if>
+		          <if test="item.auction_pledge_capital != null and item.auction_pledge_capital!= ''" >
+			      	#{item.auction_pledge_capital},
+			      </if>
+		          <if test="item.auction_mortgage_capital != null and item.auction_mortgage_capital!= ''" >
+			      	#{item.auction_mortgage_capital},
+			      </if>
+		          <if test="item.auction_impawn_capital != null and item.auction_impawn_capital!= ''" >
+			      	#{item.auction_impawn_capital},
+			      </if>
+		          <if test="item.auction_creditor_interest != null and item.auction_creditor_interest!= ''" >
+			      	#{item.auction_creditor_interest},
+			      </if>
+		          <if test="item.auction_creditor_yield != null and item.auction_creditor_yield!= ''" >
+			      	#{item.auction_creditor_yield},
+			      </if>
+		          <if test="item.auction_real_right != null and item.auction_real_right!= ''" >
+			      	#{item.auction_real_right},
+			      </if>
+		          <if test="item.auction_stock_right != null and item.auction_stock_right!= ''" >
+			      	#{item.auction_stock_right},
+			      </if>
+		          <if test="item.auction_major_issues != null and item.auction_major_issues!= ''" >
+			      	#{item.auction_major_issues},
+			      </if>
+        )  
+    </foreach> 
+  </sql>
+  <sql id="Insert_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+    		<if test="auction_listing_id != null  and auction_listing_id!= ''" >
+	          auction_listing_id,
+	        </if>
+    		<if test="auction_assets_id != null  and auction_assets_id!= ''" >
+	          auction_assets_id,
+	        </if>
+    		<if test="auction_creditor_capital != null  and auction_creditor_capital!= ''" >
+	          auction_creditor_capital,
+	        </if>
+    		<if test="auction_pledge_capital != null  and auction_pledge_capital!= ''" >
+	          auction_pledge_capital,
+	        </if>
+    		<if test="auction_mortgage_capital != null  and auction_mortgage_capital!= ''" >
+	          auction_mortgage_capital,
+	        </if>
+    		<if test="auction_impawn_capital != null  and auction_impawn_capital!= ''" >
+	          auction_impawn_capital,
+	        </if>
+    		<if test="auction_creditor_interest != null  and auction_creditor_interest!= ''" >
+	          auction_creditor_interest,
+	        </if>
+    		<if test="auction_creditor_yield != null  and auction_creditor_yield!= ''" >
+	          auction_creditor_yield,
+	        </if>
+    		<if test="auction_real_right != null  and auction_real_right!= ''" >
+	          auction_real_right,
+	        </if>
+    		<if test="auction_stock_right != null  and auction_stock_right!= ''" >
+	          auction_stock_right,
+	        </if>
+    		<if test="auction_major_issues != null  and auction_major_issues!= ''" >
+	          auction_major_issues,
+	        </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+	      <if test="auction_listing_id != null and auction_listing_id!= ''" >
+	      	#{auction_listing_id},
+	      </if>
+	      <if test="auction_assets_id != null and auction_assets_id!= ''" >
+	      	#{auction_assets_id},
+	      </if>
+	      <if test="auction_creditor_capital != null and auction_creditor_capital!= ''" >
+	      	#{auction_creditor_capital},
+	      </if>
+	      <if test="auction_pledge_capital != null and auction_pledge_capital!= ''" >
+	      	#{auction_pledge_capital},
+	      </if>
+	      <if test="auction_mortgage_capital != null and auction_mortgage_capital!= ''" >
+	      	#{auction_mortgage_capital},
+	      </if>
+	      <if test="auction_impawn_capital != null and auction_impawn_capital!= ''" >
+	      	#{auction_impawn_capital},
+	      </if>
+	      <if test="auction_creditor_interest != null and auction_creditor_interest!= ''" >
+	      	#{auction_creditor_interest},
+	      </if>
+	      <if test="auction_creditor_yield != null and auction_creditor_yield!= ''" >
+	      	#{auction_creditor_yield},
+	      </if>
+	      <if test="auction_real_right != null and auction_real_right!= ''" >
+	      	#{auction_real_right},
+	      </if>
+	      <if test="auction_stock_right != null and auction_stock_right!= ''" >
+	      	#{auction_stock_right},
+	      </if>
+	      <if test="auction_major_issues != null and auction_major_issues!= ''" >
+	      	#{auction_major_issues},
+	      </if>
+    </trim>
+  </sql>
+  <sql id="Where_Update_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="auctionListingQuery.auction_listing_id != null and auctionListingQuery.auction_listing_id!= ''" >
+	      	and auction_listing.auction_listing_id=#{auctionListingQuery.auction_listing_id}
+	      </when>
+	      <when test="auctionListingQuery.auction_assets_id != null and auctionListingQuery.auction_assets_id!= ''" >
+	      	and auction_listing.auction_assets_id=#{auctionListingQuery.auction_assets_id}
+	      </when>
+	      <when test="auctionListingQuery.auction_creditor_capital != null and auctionListingQuery.auction_creditor_capital!= ''" >
+	      	and auction_listing.auction_creditor_capital=#{auctionListingQuery.auction_creditor_capital}
+	      </when>
+	      <when test="auctionListingQuery.auction_pledge_capital != null and auctionListingQuery.auction_pledge_capital!= ''" >
+	      	and auction_listing.auction_pledge_capital=#{auctionListingQuery.auction_pledge_capital}
+	      </when>
+	      <when test="auctionListingQuery.auction_mortgage_capital != null and auctionListingQuery.auction_mortgage_capital!= ''" >
+	      	and auction_listing.auction_mortgage_capital=#{auctionListingQuery.auction_mortgage_capital}
+	      </when>
+	      <when test="auctionListingQuery.auction_impawn_capital != null and auctionListingQuery.auction_impawn_capital!= ''" >
+	      	and auction_listing.auction_impawn_capital=#{auctionListingQuery.auction_impawn_capital}
+	      </when>
+	      <when test="auctionListingQuery.auction_creditor_interest != null and auctionListingQuery.auction_creditor_interest!= ''" >
+	      	and auction_listing.auction_creditor_interest=#{auctionListingQuery.auction_creditor_interest}
+	      </when>
+	      <when test="auctionListingQuery.auction_creditor_yield != null and auctionListingQuery.auction_creditor_yield!= ''" >
+	      	and auction_listing.auction_creditor_yield=#{auctionListingQuery.auction_creditor_yield}
+	      </when>
+	      <when test="auctionListingQuery.auction_real_right != null and auctionListingQuery.auction_real_right!= ''" >
+	      	and auction_listing.auction_real_right=#{auctionListingQuery.auction_real_right}
+	      </when>
+	      <when test="auctionListingQuery.auction_stock_right != null and auctionListingQuery.auction_stock_right!= ''" >
+	      	and auction_listing.auction_stock_right=#{auctionListingQuery.auction_stock_right}
+	      </when>
+	      <when test="auctionListingQuery.auction_major_issues != null and auctionListingQuery.auction_major_issues!= ''" >
+	      	and auction_listing.auction_major_issues=#{auctionListingQuery.auction_major_issues}
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+    <sql id="Where_Del_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="auction_listing_id != null and auction_listing_id!= ''" >
+	      	and auction_listing.auction_listing_id=#{auction_listing_id}
+	      </when>
+	      <when test="auction_assets_id != null and auction_assets_id!= ''" >
+	      	and auction_listing.auction_assets_id=#{auction_assets_id}
+	      </when>
+	      <when test="auction_creditor_capital != null and auction_creditor_capital!= ''" >
+	      	and auction_listing.auction_creditor_capital=#{auction_creditor_capital}
+	      </when>
+	      <when test="auction_pledge_capital != null and auction_pledge_capital!= ''" >
+	      	and auction_listing.auction_pledge_capital=#{auction_pledge_capital}
+	      </when>
+	      <when test="auction_mortgage_capital != null and auction_mortgage_capital!= ''" >
+	      	and auction_listing.auction_mortgage_capital=#{auction_mortgage_capital}
+	      </when>
+	      <when test="auction_impawn_capital != null and auction_impawn_capital!= ''" >
+	      	and auction_listing.auction_impawn_capital=#{auction_impawn_capital}
+	      </when>
+	      <when test="auction_creditor_interest != null and auction_creditor_interest!= ''" >
+	      	and auction_listing.auction_creditor_interest=#{auction_creditor_interest}
+	      </when>
+	      <when test="auction_creditor_yield != null and auction_creditor_yield!= ''" >
+	      	and auction_listing.auction_creditor_yield=#{auction_creditor_yield}
+	      </when>
+	      <when test="auction_real_right != null and auction_real_right!= ''" >
+	      	and auction_listing.auction_real_right=#{auction_real_right}
+	      </when>
+	      <when test="auction_stock_right != null and auction_stock_right!= ''" >
+	      	and auction_listing.auction_stock_right=#{auction_stock_right}
+	      </when>
+	      <when test="auction_major_issues != null and auction_major_issues!= ''" >
+	      	and auction_listing.auction_major_issues=#{auction_major_issues}
+	      </when>
+	     <when test="ids != null and ids!= ''" >
+	      		and auction_listing.auction_listing_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		           #{id}
+		        </foreach>
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+  <sql id="Where_Select_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="auction_listing_id != null and auction_listing_id!= ''" >
+	      	and auction_listing.auction_listing_id=#{auction_listing_id}
+	      </if>
+	      <if test="auction_assets_id != null and auction_assets_id!= ''" >
+	      	and auction_listing.auction_assets_id=#{auction_assets_id}
+	      </if>
+	      <if test="auction_creditor_capital != null and auction_creditor_capital!= ''" >
+	      	and auction_listing.auction_creditor_capital=#{auction_creditor_capital}
+	      </if>
+	      <if test="auction_pledge_capital != null and auction_pledge_capital!= ''" >
+	      	and auction_listing.auction_pledge_capital=#{auction_pledge_capital}
+	      </if>
+	      <if test="auction_mortgage_capital != null and auction_mortgage_capital!= ''" >
+	      	and auction_listing.auction_mortgage_capital=#{auction_mortgage_capital}
+	      </if>
+	      <if test="auction_impawn_capital != null and auction_impawn_capital!= ''" >
+	      	and auction_listing.auction_impawn_capital=#{auction_impawn_capital}
+	      </if>
+	      <if test="auction_creditor_interest != null and auction_creditor_interest!= ''" >
+	      	and auction_listing.auction_creditor_interest=#{auction_creditor_interest}
+	      </if>
+	      <if test="auction_creditor_yield != null and auction_creditor_yield!= ''" >
+	      	and auction_listing.auction_creditor_yield=#{auction_creditor_yield}
+	      </if>
+	      <if test="auction_real_right != null and auction_real_right!= ''" >
+	      	and auction_listing.auction_real_right=#{auction_real_right}
+	      </if>
+	      <if test="auction_stock_right != null and auction_stock_right!= ''" >
+	      	and auction_listing.auction_stock_right=#{auction_stock_right}
+	      </if>
+	      <if test="auction_major_issues != null and auction_major_issues!= ''" >
+	      	and auction_listing.auction_major_issues=#{auction_major_issues}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and auction_listing.auction_listing_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+  
+  <sql id="Where_SelectTree_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="auction_listing_id != null and auction_listing_id!= ''" >
+	      	and parent.auction_listing_id=#{auction_listing_id}
+	      </if>
+	      <if test="auction_assets_id != null and auction_assets_id!= ''" >
+	      	and parent.auction_assets_id=#{auction_assets_id}
+	      </if>
+	      <if test="auction_creditor_capital != null and auction_creditor_capital!= ''" >
+	      	and parent.auction_creditor_capital=#{auction_creditor_capital}
+	      </if>
+	      <if test="auction_pledge_capital != null and auction_pledge_capital!= ''" >
+	      	and parent.auction_pledge_capital=#{auction_pledge_capital}
+	      </if>
+	      <if test="auction_mortgage_capital != null and auction_mortgage_capital!= ''" >
+	      	and parent.auction_mortgage_capital=#{auction_mortgage_capital}
+	      </if>
+	      <if test="auction_impawn_capital != null and auction_impawn_capital!= ''" >
+	      	and parent.auction_impawn_capital=#{auction_impawn_capital}
+	      </if>
+	      <if test="auction_creditor_interest != null and auction_creditor_interest!= ''" >
+	      	and parent.auction_creditor_interest=#{auction_creditor_interest}
+	      </if>
+	      <if test="auction_creditor_yield != null and auction_creditor_yield!= ''" >
+	      	and parent.auction_creditor_yield=#{auction_creditor_yield}
+	      </if>
+	      <if test="auction_real_right != null and auction_real_right!= ''" >
+	      	and parent.auction_real_right=#{auction_real_right}
+	      </if>
+	      <if test="auction_stock_right != null and auction_stock_right!= ''" >
+	      	and parent.auction_stock_right=#{auction_stock_right}
+	      </if>
+	      <if test="auction_major_issues != null and auction_major_issues!= ''" >
+	      	and parent.auction_major_issues=#{auction_major_issues}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and parent.auction_listing_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+</mapper>

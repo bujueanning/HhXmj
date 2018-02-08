@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sysGoodsCommonMapper" >
+  <sql id="Update_Sql" >
+    <trim prefix="set" suffixOverrides="," >
+			<if test="sysGoods.sys_goods_id != null  and sysGoods.sys_goods_id!= ''" >
+		        sys_goods.sys_goods_id = #{sysGoods.sys_goods_id},
+		    </if>
+			<if test="sysGoods.sys_goods_name != null  and sysGoods.sys_goods_name!= ''" >
+		        sys_goods.sys_goods_name = #{sysGoods.sys_goods_name},
+		    </if>
+			<if test="sysGoods.sys_goods_description != null  and sysGoods.sys_goods_description!= ''" >
+		        sys_goods.sys_goods_description = #{sysGoods.sys_goods_description},
+		    </if>
+			<if test="sysGoods.sys_goods_price != null  and sysGoods.sys_goods_price!= ''" >
+		        sys_goods.sys_goods_price = #{sysGoods.sys_goods_price},
+		    </if>
+			<if test="sysGoods.sys_goods_imagepath != null  and sysGoods.sys_goods_imagepath!= ''" >
+		        sys_goods.sys_goods_imagepath = #{sysGoods.sys_goods_imagepath},
+		    </if>
+			<if test="sysGoods.sys_goods_amount != null  and sysGoods.sys_goods_amount!= ''" >
+		        sys_goods.sys_goods_amount = #{sysGoods.sys_goods_amount},
+		    </if>
+			<if test="sysGoods.sys_goods_stime != null  and sysGoods.sys_goods_stime!= ''" >
+		        sys_goods.sys_goods_stime = #{sysGoods.sys_goods_stime},
+		    </if>
+			<if test="sysGoods.sys_goods_etime != null  and sysGoods.sys_goods_etime!= ''" >
+		        sys_goods.sys_goods_etime = #{sysGoods.sys_goods_etime},
+		    </if>
+			<if test="sysGoods.sys_goods_type_d != null  and sysGoods.sys_goods_type_d!= ''" >
+		        sys_goods.sys_goods_type_d = #{sysGoods.sys_goods_type_d},
+		    </if>
+			<if test="sysGoods.sys_goods_addr != null  and sysGoods.sys_goods_addr!= ''" >
+		        sys_goods.sys_goods_addr = #{sysGoods.sys_goods_addr},
+		    </if>
+			<if test="sysGoods.sys_user_id != null  and sysGoods.sys_user_id!= ''" >
+		        sys_goods.sys_user_id = #{sysGoods.sys_user_id},
+		    </if>
+			<if test="sysGoods.sys_goods_audit_d != null  and sysGoods.sys_goods_audit_d!= ''" >
+		        sys_goods.sys_goods_audit_d = #{sysGoods.sys_goods_audit_d},
+		    </if>
+			<if test="sysGoods.sys_goods_createdate != null  and sysGoods.sys_goods_createdate!= ''" >
+		        sys_goods.sys_goods_createdate = #{sysGoods.sys_goods_createdate},
+		    </if>
+			<if test="sysGoods.sys_goods_updatedate != null  and sysGoods.sys_goods_updatedate!= ''" >
+		        sys_goods.sys_goods_updatedate = #{sysGoods.sys_goods_updatedate},
+		    </if>
+			<if test="sysGoods.sys_goods_createuid != null  and sysGoods.sys_goods_createuid!= ''" >
+		        sys_goods.sys_goods_createuid = #{sysGoods.sys_goods_createuid},
+		    </if>
+			<if test="sysGoods.sys_goods_updateuid != null  and sysGoods.sys_goods_updateuid!= ''" >
+		        sys_goods.sys_goods_updateuid = #{sysGoods.sys_goods_updateuid},
+		    </if>
+    </trim>
+  </sql>
+  <sql id="Inserts_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+	         <if test="paramKey.sys_goods_id != null  and paramKey.sys_goods_id!= ''" >
+	          sys_goods_id,
+	        </if>
+	         <if test="paramKey.sys_goods_name != null  and paramKey.sys_goods_name!= ''" >
+	          sys_goods_name,
+	        </if>
+	         <if test="paramKey.sys_goods_description != null  and paramKey.sys_goods_description!= ''" >
+	          sys_goods_description,
+	        </if>
+	         <if test="paramKey.sys_goods_price != null  and paramKey.sys_goods_price!= ''" >
+	          sys_goods_price,
+	        </if>
+	         <if test="paramKey.sys_goods_imagepath != null  and paramKey.sys_goods_imagepath!= ''" >
+	          sys_goods_imagepath,
+	        </if>
+	         <if test="paramKey.sys_goods_amount != null  and paramKey.sys_goods_amount!= ''" >
+	          sys_goods_amount,
+	        </if>
+	         <if test="paramKey.sys_goods_stime != null  and paramKey.sys_goods_stime!= ''" >
+	          sys_goods_stime,
+	        </if>
+	         <if test="paramKey.sys_goods_etime != null  and paramKey.sys_goods_etime!= ''" >
+	          sys_goods_etime,
+	        </if>
+	         <if test="paramKey.sys_goods_type_d != null  and paramKey.sys_goods_type_d!= ''" >
+	          sys_goods_type_d,
+	        </if>
+	         <if test="paramKey.sys_goods_addr != null  and paramKey.sys_goods_addr!= ''" >
+	          sys_goods_addr,
+	        </if>
+	         <if test="paramKey.sys_user_id != null  and paramKey.sys_user_id!= ''" >
+	          sys_user_id,
+	        </if>
+	         <if test="paramKey.sys_goods_audit_d != null  and paramKey.sys_goods_audit_d!= ''" >
+	          sys_goods_audit_d,
+	        </if>
+	         <if test="paramKey.sys_goods_createdate != null  and paramKey.sys_goods_createdate!= ''" >
+	          sys_goods_createdate,
+	        </if>
+	         <if test="paramKey.sys_goods_updatedate != null  and paramKey.sys_goods_updatedate!= ''" >
+	          sys_goods_updatedate,
+	        </if>
+	         <if test="paramKey.sys_goods_createuid != null  and paramKey.sys_goods_createuid!= ''" >
+	          sys_goods_createuid,
+	        </if>
+	         <if test="paramKey.sys_goods_updateuid != null  and paramKey.sys_goods_updateuid!= ''" >
+	          sys_goods_updateuid,
+	        </if>
+    </trim>
+    values  
+    <foreach collection="paramValue" item="item" index="index" separator="," >  
+        (
+		          <if test="item.sys_goods_id != null and item.sys_goods_id!= ''" >
+			      	#{item.sys_goods_id},
+			      </if>
+		          <if test="item.sys_goods_name != null and item.sys_goods_name!= ''" >
+			      	#{item.sys_goods_name},
+			      </if>
+		          <if test="item.sys_goods_description != null and item.sys_goods_description!= ''" >
+			      	#{item.sys_goods_description},
+			      </if>
+		          <if test="item.sys_goods_price != null and item.sys_goods_price!= ''" >
+			      	#{item.sys_goods_price},
+			      </if>
+		          <if test="item.sys_goods_imagepath != null and item.sys_goods_imagepath!= ''" >
+			      	#{item.sys_goods_imagepath},
+			      </if>
+		          <if test="item.sys_goods_amount != null and item.sys_goods_amount!= ''" >
+			      	#{item.sys_goods_amount},
+			      </if>
+		          <if test="item.sys_goods_stime != null and item.sys_goods_stime!= ''" >
+			      	#{item.sys_goods_stime},
+			      </if>
+		          <if test="item.sys_goods_etime != null and item.sys_goods_etime!= ''" >
+			      	#{item.sys_goods_etime},
+			      </if>
+		          <if test="item.sys_goods_type_d != null and item.sys_goods_type_d!= ''" >
+			      	#{item.sys_goods_type_d},
+			      </if>
+		          <if test="item.sys_goods_addr != null and item.sys_goods_addr!= ''" >
+			      	#{item.sys_goods_addr},
+			      </if>
+		          <if test="item.sys_user_id != null and item.sys_user_id!= ''" >
+			      	#{item.sys_user_id},
+			      </if>
+		          <if test="item.sys_goods_audit_d != null and item.sys_goods_audit_d!= ''" >
+			      	#{item.sys_goods_audit_d},
+			      </if>
+		          <if test="item.sys_goods_createdate != null and item.sys_goods_createdate!= ''" >
+			      	#{item.sys_goods_createdate},
+			      </if>
+		          <if test="item.sys_goods_updatedate != null and item.sys_goods_updatedate!= ''" >
+			      	#{item.sys_goods_updatedate},
+			      </if>
+		          <if test="item.sys_goods_createuid != null and item.sys_goods_createuid!= ''" >
+			      	#{item.sys_goods_createuid},
+			      </if>
+		          <if test="item.sys_goods_updateuid != null and item.sys_goods_updateuid!= ''" >
+			      	#{item.sys_goods_updateuid},
+			      </if>
+        )  
+    </foreach> 
+  </sql>
+  <sql id="Insert_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+    		<if test="sys_goods_id != null  and sys_goods_id!= ''" >
+	          sys_goods_id,
+	        </if>
+    		<if test="sys_goods_name != null  and sys_goods_name!= ''" >
+	          sys_goods_name,
+	        </if>
+    		<if test="sys_goods_description != null  and sys_goods_description!= ''" >
+	          sys_goods_description,
+	        </if>
+    		<if test="sys_goods_price != null  and sys_goods_price!= ''" >
+	          sys_goods_price,
+	        </if>
+    		<if test="sys_goods_imagepath != null  and sys_goods_imagepath!= ''" >
+	          sys_goods_imagepath,
+	        </if>
+    		<if test="sys_goods_amount != null  and sys_goods_amount!= ''" >
+	          sys_goods_amount,
+	        </if>
+    		<if test="sys_goods_stime != null  and sys_goods_stime!= ''" >
+	          sys_goods_stime,
+	        </if>
+    		<if test="sys_goods_etime != null  and sys_goods_etime!= ''" >
+	          sys_goods_etime,
+	        </if>
+    		<if test="sys_goods_type_d != null  and sys_goods_type_d!= ''" >
+	          sys_goods_type_d,
+	        </if>
+    		<if test="sys_goods_addr != null  and sys_goods_addr!= ''" >
+	          sys_goods_addr,
+	        </if>
+    		<if test="sys_user_id != null  and sys_user_id!= ''" >
+	          sys_user_id,
+	        </if>
+    		<if test="sys_goods_audit_d != null  and sys_goods_audit_d!= ''" >
+	          sys_goods_audit_d,
+	        </if>
+    		<if test="sys_goods_createdate != null  and sys_goods_createdate!= ''" >
+	          sys_goods_createdate,
+	        </if>
+    		<if test="sys_goods_updatedate != null  and sys_goods_updatedate!= ''" >
+	          sys_goods_updatedate,
+	        </if>
+    		<if test="sys_goods_createuid != null  and sys_goods_createuid!= ''" >
+	          sys_goods_createuid,
+	        </if>
+    		<if test="sys_goods_updateuid != null  and sys_goods_updateuid!= ''" >
+	          sys_goods_updateuid,
+	        </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+	      <if test="sys_goods_id != null and sys_goods_id!= ''" >
+	      	#{sys_goods_id},
+	      </if>
+	      <if test="sys_goods_name != null and sys_goods_name!= ''" >
+	      	#{sys_goods_name},
+	      </if>
+	      <if test="sys_goods_description != null and sys_goods_description!= ''" >
+	      	#{sys_goods_description},
+	      </if>
+	      <if test="sys_goods_price != null and sys_goods_price!= ''" >
+	      	#{sys_goods_price},
+	      </if>
+	      <if test="sys_goods_imagepath != null and sys_goods_imagepath!= ''" >
+	      	#{sys_goods_imagepath},
+	      </if>
+	      <if test="sys_goods_amount != null and sys_goods_amount!= ''" >
+	      	#{sys_goods_amount},
+	      </if>
+	      <if test="sys_goods_stime != null and sys_goods_stime!= ''" >
+	      	#{sys_goods_stime},
+	      </if>
+	      <if test="sys_goods_etime != null and sys_goods_etime!= ''" >
+	      	#{sys_goods_etime},
+	      </if>
+	      <if test="sys_goods_type_d != null and sys_goods_type_d!= ''" >
+	      	#{sys_goods_type_d},
+	      </if>
+	      <if test="sys_goods_addr != null and sys_goods_addr!= ''" >
+	      	#{sys_goods_addr},
+	      </if>
+	      <if test="sys_user_id != null and sys_user_id!= ''" >
+	      	#{sys_user_id},
+	      </if>
+	      <if test="sys_goods_audit_d != null and sys_goods_audit_d!= ''" >
+	      	#{sys_goods_audit_d},
+	      </if>
+	      <if test="sys_goods_createdate != null and sys_goods_createdate!= ''" >
+	      	#{sys_goods_createdate},
+	      </if>
+	      <if test="sys_goods_updatedate != null and sys_goods_updatedate!= ''" >
+	      	#{sys_goods_updatedate},
+	      </if>
+	      <if test="sys_goods_createuid != null and sys_goods_createuid!= ''" >
+	      	#{sys_goods_createuid},
+	      </if>
+	      <if test="sys_goods_updateuid != null and sys_goods_updateuid!= ''" >
+	      	#{sys_goods_updateuid},
+	      </if>
+    </trim>
+  </sql>
+  <sql id="Where_Update_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="sysGoodsQuery.sys_goods_id != null and sysGoodsQuery.sys_goods_id!= ''" >
+	      	and sys_goods.sys_goods_id=#{sysGoodsQuery.sys_goods_id}
+	      </when>
+	      <when test="sysGoodsQuery.sys_goods_name != null and sysGoodsQuery.sys_goods_name!= ''" >
+	      	and sys_goods.sys_goods_name=#{sysGoodsQuery.sys_goods_name}
+	      </when>
+	      <when test="sysGoodsQuery.sys_goods_description != null and sysGoodsQuery.sys_goods_description!= ''" >
+	      	and sys_goods.sys_goods_description=#{sysGoodsQuery.sys_goods_description}
+	      </when>
+	      <when test="sysGoodsQuery.sys_goods_price != null and sysGoodsQuery.sys_goods_price!= ''" >
+	      	and sys_goods.sys_goods_price=#{sysGoodsQuery.sys_goods_price}
+	      </when>
+	      <when test="sysGoodsQuery.sys_goods_imagepath != null and sysGoodsQuery.sys_goods_imagepath!= ''" >
+	      	and sys_goods.sys_goods_imagepath=#{sysGoodsQuery.sys_goods_imagepath}
+	      </when>
+	      <when test="sysGoodsQuery.sys_goods_amount != null and sysGoodsQuery.sys_goods_amount!= ''" >
+	      	and sys_goods.sys_goods_amount=#{sysGoodsQuery.sys_goods_amount}
+	      </when>
+	      <when test="sysGoodsQuery.sys_goods_stime != null and sysGoodsQuery.sys_goods_stime!= ''" >
+	      	and sys_goods.sys_goods_stime=#{sysGoodsQuery.sys_goods_stime}
+	      </when>
+	      <when test="sysGoodsQuery.sys_goods_etime != null and sysGoodsQuery.sys_goods_etime!= ''" >
+	      	and sys_goods.sys_goods_etime=#{sysGoodsQuery.sys_goods_etime}
+	      </when>
+	      <when test="sysGoodsQuery.sys_goods_type_d != null and sysGoodsQuery.sys_goods_type_d!= ''" >
+	      	and sys_goods.sys_goods_type_d=#{sysGoodsQuery.sys_goods_type_d}
+	      </when>
+	      <when test="sysGoodsQuery.sys_goods_addr != null and sysGoodsQuery.sys_goods_addr!= ''" >
+	      	and sys_goods.sys_goods_addr=#{sysGoodsQuery.sys_goods_addr}
+	      </when>
+	      <when test="sysGoodsQuery.sys_user_id != null and sysGoodsQuery.sys_user_id!= ''" >
+	      	and sys_goods.sys_user_id=#{sysGoodsQuery.sys_user_id}
+	      </when>
+	      <when test="sysGoodsQuery.sys_goods_audit_d != null and sysGoodsQuery.sys_goods_audit_d!= ''" >
+	      	and sys_goods.sys_goods_audit_d=#{sysGoodsQuery.sys_goods_audit_d}
+	      </when>
+	      <when test="sysGoodsQuery.sys_goods_createdate != null and sysGoodsQuery.sys_goods_createdate!= ''" >
+	      	and sys_goods.sys_goods_createdate=#{sysGoodsQuery.sys_goods_createdate}
+	      </when>
+	      <when test="sysGoodsQuery.sys_goods_updatedate != null and sysGoodsQuery.sys_goods_updatedate!= ''" >
+	      	and sys_goods.sys_goods_updatedate=#{sysGoodsQuery.sys_goods_updatedate}
+	      </when>
+	      <when test="sysGoodsQuery.sys_goods_createuid != null and sysGoodsQuery.sys_goods_createuid!= ''" >
+	      	and sys_goods.sys_goods_createuid=#{sysGoodsQuery.sys_goods_createuid}
+	      </when>
+	      <when test="sysGoodsQuery.sys_goods_updateuid != null and sysGoodsQuery.sys_goods_updateuid!= ''" >
+	      	and sys_goods.sys_goods_updateuid=#{sysGoodsQuery.sys_goods_updateuid}
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+    <sql id="Where_Del_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="sys_goods_id != null and sys_goods_id!= ''" >
+	      	and sys_goods.sys_goods_id=#{sys_goods_id}
+	      </when>
+	      <when test="sys_goods_name != null and sys_goods_name!= ''" >
+	      	and sys_goods.sys_goods_name=#{sys_goods_name}
+	      </when>
+	      <when test="sys_goods_description != null and sys_goods_description!= ''" >
+	      	and sys_goods.sys_goods_description=#{sys_goods_description}
+	      </when>
+	      <when test="sys_goods_price != null and sys_goods_price!= ''" >
+	      	and sys_goods.sys_goods_price=#{sys_goods_price}
+	      </when>
+	      <when test="sys_goods_imagepath != null and sys_goods_imagepath!= ''" >
+	      	and sys_goods.sys_goods_imagepath=#{sys_goods_imagepath}
+	      </when>
+	      <when test="sys_goods_amount != null and sys_goods_amount!= ''" >
+	      	and sys_goods.sys_goods_amount=#{sys_goods_amount}
+	      </when>
+	      <when test="sys_goods_stime != null and sys_goods_stime!= ''" >
+	      	and sys_goods.sys_goods_stime=#{sys_goods_stime}
+	      </when>
+	      <when test="sys_goods_etime != null and sys_goods_etime!= ''" >
+	      	and sys_goods.sys_goods_etime=#{sys_goods_etime}
+	      </when>
+	      <when test="sys_goods_type_d != null and sys_goods_type_d!= ''" >
+	      	and sys_goods.sys_goods_type_d=#{sys_goods_type_d}
+	      </when>
+	      <when test="sys_goods_addr != null and sys_goods_addr!= ''" >
+	      	and sys_goods.sys_goods_addr=#{sys_goods_addr}
+	      </when>
+	      <when test="sys_user_id != null and sys_user_id!= ''" >
+	      	and sys_goods.sys_user_id=#{sys_user_id}
+	      </when>
+	      <when test="sys_goods_audit_d != null and sys_goods_audit_d!= ''" >
+	      	and sys_goods.sys_goods_audit_d=#{sys_goods_audit_d}
+	      </when>
+	      <when test="sys_goods_createdate != null and sys_goods_createdate!= ''" >
+	      	and sys_goods.sys_goods_createdate=#{sys_goods_createdate}
+	      </when>
+	      <when test="sys_goods_updatedate != null and sys_goods_updatedate!= ''" >
+	      	and sys_goods.sys_goods_updatedate=#{sys_goods_updatedate}
+	      </when>
+	      <when test="sys_goods_createuid != null and sys_goods_createuid!= ''" >
+	      	and sys_goods.sys_goods_createuid=#{sys_goods_createuid}
+	      </when>
+	      <when test="sys_goods_updateuid != null and sys_goods_updateuid!= ''" >
+	      	and sys_goods.sys_goods_updateuid=#{sys_goods_updateuid}
+	      </when>
+	     <when test="ids != null and ids!= ''" >
+	      		and sys_goods.sys_goods_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		           #{id}
+		        </foreach>
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+  <sql id="Where_Select_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="sys_goods_id != null and sys_goods_id!= ''" >
+	      	and sys_goods.sys_goods_id=#{sys_goods_id}
+	      </if>
+	      <if test="sys_goods_name != null and sys_goods_name!= ''" >
+	      	and sys_goods.sys_goods_name=#{sys_goods_name}
+	      </if>
+	      <if test="sys_goods_description != null and sys_goods_description!= ''" >
+	      	and sys_goods.sys_goods_description=#{sys_goods_description}
+	      </if>
+	      <if test="sys_goods_price != null and sys_goods_price!= ''" >
+	      	and sys_goods.sys_goods_price=#{sys_goods_price}
+	      </if>
+	      <if test="sys_goods_imagepath != null and sys_goods_imagepath!= ''" >
+	      	and sys_goods.sys_goods_imagepath=#{sys_goods_imagepath}
+	      </if>
+	      <if test="sys_goods_amount != null and sys_goods_amount!= ''" >
+	      	and sys_goods.sys_goods_amount=#{sys_goods_amount}
+	      </if>
+	      <if test="sys_goods_stime != null and sys_goods_stime!= ''" >
+	      	and sys_goods.sys_goods_stime=#{sys_goods_stime}
+	      </if>
+	      <if test="sys_goods_etime != null and sys_goods_etime!= ''" >
+	      	and sys_goods.sys_goods_etime=#{sys_goods_etime}
+	      </if>
+	      <if test="sys_goods_type_d != null and sys_goods_type_d!= ''" >
+	      	and sys_goods.sys_goods_type_d=#{sys_goods_type_d}
+	      </if>
+	      <if test="sys_goods_addr != null and sys_goods_addr!= ''" >
+	      	and sys_goods.sys_goods_addr=#{sys_goods_addr}
+	      </if>
+	      <if test="sys_user_id != null and sys_user_id!= ''" >
+	      	and sys_goods.sys_user_id=#{sys_user_id}
+	      </if>
+	      <if test="sys_goods_audit_d != null and sys_goods_audit_d!= ''" >
+	      	and sys_goods.sys_goods_audit_d=#{sys_goods_audit_d}
+	      </if>
+	      <if test="sys_goods_createdate != null and sys_goods_createdate!= ''" >
+	      	and sys_goods.sys_goods_createdate=#{sys_goods_createdate}
+	      </if>
+	      <if test="sys_goods_updatedate != null and sys_goods_updatedate!= ''" >
+	      	and sys_goods.sys_goods_updatedate=#{sys_goods_updatedate}
+	      </if>
+	      <if test="sys_goods_createuid != null and sys_goods_createuid!= ''" >
+	      	and sys_goods.sys_goods_createuid=#{sys_goods_createuid}
+	      </if>
+	      <if test="sys_goods_updateuid != null and sys_goods_updateuid!= ''" >
+	      	and sys_goods.sys_goods_updateuid=#{sys_goods_updateuid}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and sys_goods.sys_goods_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+  
+  <sql id="Where_SelectTree_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="sys_goods_id != null and sys_goods_id!= ''" >
+	      	and parent.sys_goods_id=#{sys_goods_id}
+	      </if>
+	      <if test="sys_goods_name != null and sys_goods_name!= ''" >
+	      	and parent.sys_goods_name=#{sys_goods_name}
+	      </if>
+	      <if test="sys_goods_description != null and sys_goods_description!= ''" >
+	      	and parent.sys_goods_description=#{sys_goods_description}
+	      </if>
+	      <if test="sys_goods_price != null and sys_goods_price!= ''" >
+	      	and parent.sys_goods_price=#{sys_goods_price}
+	      </if>
+	      <if test="sys_goods_imagepath != null and sys_goods_imagepath!= ''" >
+	      	and parent.sys_goods_imagepath=#{sys_goods_imagepath}
+	      </if>
+	      <if test="sys_goods_amount != null and sys_goods_amount!= ''" >
+	      	and parent.sys_goods_amount=#{sys_goods_amount}
+	      </if>
+	      <if test="sys_goods_stime != null and sys_goods_stime!= ''" >
+	      	and parent.sys_goods_stime=#{sys_goods_stime}
+	      </if>
+	      <if test="sys_goods_etime != null and sys_goods_etime!= ''" >
+	      	and parent.sys_goods_etime=#{sys_goods_etime}
+	      </if>
+	      <if test="sys_goods_type_d != null and sys_goods_type_d!= ''" >
+	      	and parent.sys_goods_type_d=#{sys_goods_type_d}
+	      </if>
+	      <if test="sys_goods_addr != null and sys_goods_addr!= ''" >
+	      	and parent.sys_goods_addr=#{sys_goods_addr}
+	      </if>
+	      <if test="sys_user_id != null and sys_user_id!= ''" >
+	      	and parent.sys_user_id=#{sys_user_id}
+	      </if>
+	      <if test="sys_goods_audit_d != null and sys_goods_audit_d!= ''" >
+	      	and parent.sys_goods_audit_d=#{sys_goods_audit_d}
+	      </if>
+	      <if test="sys_goods_createdate != null and sys_goods_createdate!= ''" >
+	      	and parent.sys_goods_createdate=#{sys_goods_createdate}
+	      </if>
+	      <if test="sys_goods_updatedate != null and sys_goods_updatedate!= ''" >
+	      	and parent.sys_goods_updatedate=#{sys_goods_updatedate}
+	      </if>
+	      <if test="sys_goods_createuid != null and sys_goods_createuid!= ''" >
+	      	and parent.sys_goods_createuid=#{sys_goods_createuid}
+	      </if>
+	      <if test="sys_goods_updateuid != null and sys_goods_updateuid!= ''" >
+	      	and parent.sys_goods_updateuid=#{sys_goods_updateuid}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and parent.sys_goods_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+</mapper>

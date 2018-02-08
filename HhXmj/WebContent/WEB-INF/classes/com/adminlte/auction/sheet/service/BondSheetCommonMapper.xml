@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bondSheetCommonMapper" >
+  <sql id="Update_Sql" >
+    <trim prefix="set" suffixOverrides="," >
+			<if test="bondSheet.bond_sheet_id != null  and bondSheet.bond_sheet_id!= ''" >
+		        bond_sheet.bond_sheet_id = #{bondSheet.bond_sheet_id},
+		    </if>
+			<if test="bondSheet.bond_company_name != null  and bondSheet.bond_company_name!= ''" >
+		        bond_sheet.bond_company_name = #{bondSheet.bond_company_name},
+		    </if>
+			<if test="bondSheet.bond_asset_number != null  and bondSheet.bond_asset_number!= ''" >
+		        bond_sheet.bond_asset_number = #{bondSheet.bond_asset_number},
+		    </if>
+			<if test="bondSheet.bond_sheet_time != null  and bondSheet.bond_sheet_time!= ''" >
+		        bond_sheet.bond_sheet_time = #{bondSheet.bond_sheet_time},
+		    </if>
+			<if test="bondSheet.bond_accept_name != null  and bondSheet.bond_accept_name!= ''" >
+		        bond_sheet.bond_accept_name = #{bondSheet.bond_accept_name},
+		    </if>
+			<if test="bondSheet.bond_accept_property != null  and bondSheet.bond_accept_property!= ''" >
+		        bond_sheet.bond_accept_property = #{bondSheet.bond_accept_property},
+		    </if>
+			<if test="bondSheet.bond_deal_name != null  and bondSheet.bond_deal_name!= ''" >
+		        bond_sheet.bond_deal_name = #{bondSheet.bond_deal_name},
+		    </if>
+			<if test="bondSheet.bond_deal_phone != null  and bondSheet.bond_deal_phone!= ''" >
+		        bond_sheet.bond_deal_phone = #{bondSheet.bond_deal_phone},
+		    </if>
+			<if test="bondSheet.bond_deal_type != null  and bondSheet.bond_deal_type!= ''" >
+		        bond_sheet.bond_deal_type = #{bondSheet.bond_deal_type},
+		    </if>
+		    <!-- 加入接单人 -->
+		    <if test="bondSheet.bond_recipientid != null  and bondSheet.bond_recipientid!= ''" >
+		        bond_sheet.bond_recipientid = #{bondSheet.bond_recipientid},
+		    </if>
+		    <!-- 加入交易类别 -->
+		    <if test="bondSheet.bond_deal != null  and bondSheet.bond_deal!= ''" >
+		        bond_sheet.bond_deal = #{bondSheet.bond_deal},
+		    </if>
+		     <!-- 11月17日  订单状态、过期时间 -->
+		     <if test="bondSheet.bond_sheet_state != null  and bondSheet.bond_sheet_state!= ''" >
+		        bond_sheet.bond_sheet_state = #{bondSheet.bond_sheet_state},
+		    </if>
+		    <if test="bondSheet.bond_lose_efficacy_time != null  and bondSheet.bond_lose_efficacy_time!= ''" >
+		        bond_sheet.bond_lose_efficacy_time = #{bondSheet.bond_lose_efficacy_time},
+		    </if>
+		    <if test="bondSheet.bond_disposal_id != null  and bondSheet.bond_disposal_id!= ''" >
+		        bond_sheet.bond_disposal_id = #{bondSheet.bond_disposal_id},
+		    </if>
+		    
+    </trim>
+  </sql>
+  <sql id="Inserts_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+	         <if test="paramKey.bond_sheet_id != null  and paramKey.bond_sheet_id!= ''" >
+	          bond_sheet_id,
+	        </if>
+	         <if test="paramKey.bond_company_name != null  and paramKey.bond_company_name!= ''" >
+	          bond_company_name,
+	        </if>
+	         <if test="paramKey.bond_asset_number != null  and paramKey.bond_asset_number!= ''" >
+	          bond_asset_number,
+	        </if>
+	         <if test="paramKey.bond_sheet_time != null  and paramKey.bond_sheet_time!= ''" >
+	          bond_sheet_time,
+	        </if>
+	         <if test="paramKey.bond_accept_name != null  and paramKey.bond_accept_name!= ''" >
+	          bond_accept_name,
+	        </if>
+	         <if test="paramKey.bond_accept_property != null  and paramKey.bond_accept_property!= ''" >
+	          bond_accept_property,
+	        </if>
+	         <if test="paramKey.bond_deal_name != null  and paramKey.bond_deal_name!= ''" >
+	          bond_deal_name,
+	        </if>
+	         <if test="paramKey.bond_deal_phone != null  and paramKey.bond_deal_phone!= ''" >
+	          bond_deal_phone,
+	        </if>
+	         <if test="paramKey.bond_deal_type != null  and paramKey.bond_deal_type!= ''" >
+	          bond_deal_type,
+	        </if>
+    </trim>
+    values  
+    <foreach collection="paramValue" item="item" index="index" separator="," >  
+        (
+		          <if test="item.bond_sheet_id != null and item.bond_sheet_id!= ''" >
+			      	#{item.bond_sheet_id},
+			      </if>
+		          <if test="item.bond_company_name != null and item.bond_company_name!= ''" >
+			      	#{item.bond_company_name},
+			      </if>
+		          <if test="item.bond_asset_number != null and item.bond_asset_number!= ''" >
+			      	#{item.bond_asset_number},
+			      </if>
+		          <if test="item.bond_sheet_time != null and item.bond_sheet_time!= ''" >
+			      	#{item.bond_sheet_time},
+			      </if>
+		          <if test="item.bond_accept_name != null and item.bond_accept_name!= ''" >
+			      	#{item.bond_accept_name},
+			      </if>
+		          <if test="item.bond_accept_property != null and item.bond_accept_property!= ''" >
+			      	#{item.bond_accept_property},
+			      </if>
+		          <if test="item.bond_deal_name != null and item.bond_deal_name!= ''" >
+			      	#{item.bond_deal_name},
+			      </if>
+		          <if test="item.bond_deal_phone != null and item.bond_deal_phone!= ''" >
+			      	#{item.bond_deal_phone},
+			      </if>
+		          <if test="item.bond_deal_type != null and item.bond_deal_type!= ''" >
+			      	#{item.bond_deal_type},
+			      </if>
+        )  
+    </foreach> 
+  </sql>
+  <sql id="Insert_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+    		<if test="bond_sheet_id != null  and bond_sheet_id!= ''" >
+	          bond_sheet_id,
+	        </if>
+    		<if test="bond_company_name != null  and bond_company_name!= ''" >
+	          bond_company_name,
+	        </if>
+    		<if test="bond_asset_number != null  and bond_asset_number!= ''" >
+	          bond_asset_number,
+	        </if>
+    		<if test="bond_sheet_time != null  and bond_sheet_time!= ''" >
+	          bond_sheet_time,
+	        </if>
+    		<if test="bond_accept_name != null  and bond_accept_name!= ''" >
+	          bond_accept_name,
+	        </if>
+    		<if test="bond_accept_property != null  and bond_accept_property!= ''" >
+	          bond_accept_property,
+	        </if>
+    		<if test="bond_deal_name != null  and bond_deal_name!= ''" >
+	          bond_deal_name,
+	        </if>
+    		<if test="bond_deal_phone != null  and bond_deal_phone!= ''" >
+	          bond_deal_phone,
+	        </if>
+    		<if test="bond_deal_type != null  and bond_deal_type!= ''" >
+	          bond_deal_type,
+	        </if>
+	        <!-- 多加了个图片 -->
+	        <if test="bond_deal_img !=null and bond_deal_img!=''">
+	          bond_deal_img,
+	        </if>
+	        <!-- 11月6日加入发布人的id -->
+	        <if test="bond_disposal_createuid !=null and bond_disposal_createuid!=''">
+	          bond_disposal_createuid,
+	        </if>
+	        <!--11月16日 加入接单人 在个人中心显示  -->
+	        <if test="bond_recipientid !=null and bond_recipientid!=''">
+	          bond_recipientid,
+	        </if>
+	        <!-- 11月17日 加入区分单笔、委外包的属性 -->
+	        <if test="bond_deal !=null and bond_deal!=''">
+	          bond_deal,
+	        </if>
+	         <!-- 11月17日  订单状态、过期时间 -->
+	        <if test="bond_sheet_state !=null and bond_sheet_state!=''">
+	          bond_sheet_state,
+	        </if>
+	        <if test="bond_lose_efficacy_time !=null and bond_lose_efficacy_time!=''">
+	          bond_lose_efficacy_time,
+	        </if>
+	        <if test="bond_disposal_id !=null and bond_disposal_id!=''">
+	          bond_disposal_id,
+	        </if>
+	        
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+	      <if test="bond_sheet_id != null and bond_sheet_id!= ''" >
+	      	#{bond_sheet_id},
+	      </if>
+	      <if test="bond_company_name != null and bond_company_name!= ''" >
+	      	#{bond_company_name},
+	      </if>
+	      <if test="bond_asset_number != null and bond_asset_number!= ''" >
+	      	#{bond_asset_number},
+	      </if>
+	      <if test="bond_sheet_time != null and bond_sheet_time!= ''" >
+	      	#{bond_sheet_time},
+	      </if>
+	      <if test="bond_accept_name != null and bond_accept_name!= ''" >
+	      	#{bond_accept_name},
+	      </if>
+	      <if test="bond_accept_property != null and bond_accept_property!= ''" >
+	      	#{bond_accept_property},
+	      </if>
+	      <if test="bond_deal_name != null and bond_deal_name!= ''" >
+	      	#{bond_deal_name},
+	      </if>
+	      <if test="bond_deal_phone != null and bond_deal_phone!= ''" >
+	      	#{bond_deal_phone},
+	      </if>
+	      <if test="bond_deal_type != null and bond_deal_type!= ''" >
+	      	#{bond_deal_type},
+	      </if>
+	      <!-- 多加了个图片 -->
+	      <if test="bond_deal_img != null and bond_deal_img!= ''" >
+	      	#{bond_deal_img},
+	      </if>
+	      <!-- 发布人id -->
+	      <if test="bond_disposal_createuid !=null and bond_disposal_createuid!=''">
+	          #{bond_disposal_createuid},
+	      </if>
+	      <!--11月16日 加入接单人 在个人中心显示  -->
+	        <if test="bond_recipientid !=null and bond_recipientid!=''">
+	          #{bond_recipientid},
+	        </if>
+	        <!-- 11月17日 加入区分单笔、委外包的属性 -->
+	        <if test="bond_deal !=null and bond_deal!=''">
+	          #{bond_deal},
+	        </if>
+	        <!-- 11月17日  订单状态、过期时间 -->
+	        <if test="bond_sheet_state !=null and bond_sheet_state!=''">
+	          #{bond_sheet_state},
+	        </if>
+	        <if test="bond_lose_efficacy_time !=null and bond_lose_efficacy_time!=''">
+	          #{bond_lose_efficacy_time},
+	        </if>
+	        <if test="bond_disposal_id !=null and bond_disposal_id!=''">
+	          #{bond_disposal_id},
+	        </if>
+	        
+    </trim>
+  </sql>
+  <sql id="Where_Update_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="bondSheetQuery.bond_sheet_id != null and bondSheetQuery.bond_sheet_id!= ''" >
+	      	and bond_sheet.bond_sheet_id=#{bondSheetQuery.bond_sheet_id}
+	      </when>
+	      <when test="bondSheetQuery.bond_company_name != null and bondSheetQuery.bond_company_name!= ''" >
+	      	and bond_sheet.bond_company_name=#{bondSheetQuery.bond_company_name}
+	      </when>
+	      <when test="bondSheetQuery.bond_asset_number != null and bondSheetQuery.bond_asset_number!= ''" >
+	      	and bond_sheet.bond_asset_number=#{bondSheetQuery.bond_asset_number}
+	      </when>
+	      <when test="bondSheetQuery.bond_sheet_time != null and bondSheetQuery.bond_sheet_time!= ''" >
+	      	and bond_sheet.bond_sheet_time=#{bondSheetQuery.bond_sheet_time}
+	      </when>
+	      <when test="bondSheetQuery.bond_accept_name != null and bondSheetQuery.bond_accept_name!= ''" >
+	      	and bond_sheet.bond_accept_name=#{bondSheetQuery.bond_accept_name}
+	      </when>
+	      <when test="bondSheetQuery.bond_accept_property != null and bondSheetQuery.bond_accept_property!= ''" >
+	      	and bond_sheet.bond_accept_property=#{bondSheetQuery.bond_accept_property}
+	      </when>
+	      <when test="bondSheetQuery.bond_deal_name != null and bondSheetQuery.bond_deal_name!= ''" >
+	      	and bond_sheet.bond_deal_name=#{bondSheetQuery.bond_deal_name}
+	      </when>
+	      <when test="bondSheetQuery.bond_deal_phone != null and bondSheetQuery.bond_deal_phone!= ''" >
+	      	and bond_sheet.bond_deal_phone=#{bondSheetQuery.bond_deal_phone}
+	      </when>
+	      <when test="bondSheetQuery.bond_deal_type != null and bondSheetQuery.bond_deal_type!= ''" >
+	      	and bond_sheet.bond_deal_type=#{bondSheetQuery.bond_deal_type}
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+    <sql id="Where_Del_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="bond_sheet_id != null and bond_sheet_id!= ''" >
+	      	and bond_sheet.bond_sheet_id=#{bond_sheet_id}
+	      </when>
+	      <when test="bond_company_name != null and bond_company_name!= ''" >
+	      	and bond_sheet.bond_company_name=#{bond_company_name}
+	      </when>
+	      <when test="bond_asset_number != null and bond_asset_number!= ''" >
+	      	and bond_sheet.bond_asset_number=#{bond_asset_number}
+	      </when>
+	      <when test="bond_sheet_time != null and bond_sheet_time!= ''" >
+	      	and bond_sheet.bond_sheet_time=#{bond_sheet_time}
+	      </when>
+	      <when test="bond_accept_name != null and bond_accept_name!= ''" >
+	      	and bond_sheet.bond_accept_name=#{bond_accept_name}
+	      </when>
+	      <when test="bond_accept_property != null and bond_accept_property!= ''" >
+	      	and bond_sheet.bond_accept_property=#{bond_accept_property}
+	      </when>
+	      <when test="bond_deal_name != null and bond_deal_name!= ''" >
+	      	and bond_sheet.bond_deal_name=#{bond_deal_name}
+	      </when>
+	      <when test="bond_deal_phone != null and bond_deal_phone!= ''" >
+	      	and bond_sheet.bond_deal_phone=#{bond_deal_phone}
+	      </when>
+	      <when test="bond_deal_type != null and bond_deal_type!= ''" >
+	      	and bond_sheet.bond_deal_type=#{bond_deal_type}
+	      </when>
+	     <when test="ids != null and ids!= ''" >
+	      		and bond_sheet.bond_sheet_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		           #{id}
+		        </foreach>
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+  <sql id="Where_Select_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="bond_sheet_id != null and bond_sheet_id!= ''" >
+	      	and bond_sheet.bond_sheet_id=#{bond_sheet_id}
+	      </if>
+	      <if test="bond_company_name != null and bond_company_name!= ''" >
+	      	and bond_sheet.bond_company_name=#{bond_company_name}
+	      </if>
+	      <if test="bond_asset_number != null and bond_asset_number!= ''" >
+	      	and bond_sheet.bond_asset_number=#{bond_asset_number}
+	      </if>
+	      <if test="bond_sheet_time != null and bond_sheet_time!= ''" >
+	      	and bond_sheet.bond_sheet_time=#{bond_sheet_time}
+	      </if>
+	      <if test="bond_accept_name != null and bond_accept_name!= ''" >
+	      	and bond_sheet.bond_accept_name=#{bond_accept_name}
+	      </if>
+	      <if test="bond_accept_property != null and bond_accept_property!= ''" >
+	      	and bond_sheet.bond_accept_property=#{bond_accept_property}
+	      </if>
+	      <if test="bond_deal_name != null and bond_deal_name!= ''" >
+	      	and bond_sheet.bond_deal_name=#{bond_deal_name}
+	      </if>
+	      <if test="bond_deal_phone != null and bond_deal_phone!= ''" >
+	      	and bond_sheet.bond_deal_phone=#{bond_deal_phone}
+	      </if>
+	      <if test="bond_deal_type != null and bond_deal_type!= ''" >
+	      	and bond_sheet.bond_deal_type=#{bond_deal_type}
+	      </if>
+	      <!-- 11月6日加入筛选条件发布人 -->
+	      <if test="bond_disposal_createuid != null and bond_disposal_createuid!= ''" >
+	      	and bond_sheet.bond_disposal_createuid=#{bond_disposal_createuid}
+	      </if>
+	      <!-- 11月16日加入接单人 -->
+	      <if test="bond_recipientid != null and bond_recipientid!= ''" >
+	      	and bond_sheet.bond_recipientid=#{bond_recipientid}
+	      </if>
+	      <!-- 11月17日 交易类别 -->
+	      <if test="bond_deal != null and bond_deal!= ''" >
+	      	and bond_sheet.bond_deal=#{bond_deal}
+	      </if>
+	      <!-- 11月17日  订单状态、过期时间 -->
+	      <if test="bond_sheet_state != null and bond_sheet_state!= ''" >
+	      	and bond_sheet.bond_sheet_state=#{bond_sheet_state}
+	      </if>
+	      <if test="bond_lose_efficacy_time != null and bond_lose_efficacy_time!= ''" >
+	      	and bond_sheet.bond_lose_efficacy_time=#{bond_lose_efficacy_time}
+	      </if>
+	      
+	       <if test="bond_disposal_id != null and bond_disposal_id!= ''" >
+	      	and bond_sheet.bond_disposal_id=#{bond_disposal_id}
+	      </if>
+	      <!-- 进行时间的判定 -->
+	      <if test="bond_new_time != null and bond_new_time!= ''" >
+	      	<![CDATA[and bond_sheet.bond_lose_efficacy_time>=#{bond_new_time} ]]>
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and bond_sheet.bond_sheet_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    
+    </trim>
+     <![CDATA[ order by bond_sheet_time desc ]]>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+    
+  </sql>
+  <sql id="Where_SelectTwo_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+   		 	and bond_sheet.bond_disposal_id = bond_disposal.bond_disposal_id
+	      <if test="bond_sheet_id != null and bond_sheet_id!= ''" >
+	      	and bond_sheet.bond_sheet_id=#{bond_sheet_id}
+	      </if>
+	      <if test="bond_company_name != null and bond_company_name!= ''" >
+	      	and bond_sheet.bond_company_name like '%${bond_company_name}%'
+	      </if>
+	      <if test="bond_asset_number != null and bond_asset_number!= ''" >
+	      	and bond_sheet.bond_asset_number=#{bond_asset_number}
+	      </if>
+	      <if test="bond_sheet_time != null and bond_sheet_time!= ''" >
+	      	<![CDATA[ and date_format(bond_sheet.bond_sheet_time,'%Y-%c-%d')=#{bond_sheet_time} ]]>
+	      </if>
+	      <if test="bond_accept_name != null and bond_accept_name!= ''" >
+	      	and bond_sheet.bond_accept_name=#{bond_accept_name}
+	      </if>
+	      <if test="bond_accept_property != null and bond_accept_property!= ''" >
+	      	and bond_sheet.bond_accept_property=#{bond_accept_property}
+	      </if>
+	      <if test="bond_deal_name != null and bond_deal_name!= ''" >
+	      	and bond_sheet.bond_deal_name=#{bond_deal_name}
+	      </if>
+	      <if test="bond_deal_phone != null and bond_deal_phone!= ''" >
+	      	and bond_sheet.bond_deal_phone=#{bond_deal_phone}
+	      </if>
+	      <if test="bond_deal_type != null and bond_deal_type!= ''" >
+	      	and bond_sheet.bond_deal_type=#{bond_deal_type}
+	      </if>
+	      <!-- 11月6日加入筛选条件发布人 -->
+	      <if test="bond_disposal_createuid != null and bond_disposal_createuid!= ''" >
+	      	and bond_sheet.bond_disposal_createuid=#{bond_disposal_createuid}
+	      </if>
+	      <!-- 11月16日加入接单人 -->
+	      <if test="bond_recipientid != null and bond_recipientid!= ''" >
+	      	and bond_sheet.bond_recipientid=#{bond_recipientid}
+	      </if>
+	      <!-- 11月17日 交易类别 -->
+	      <if test="bond_deal != null and bond_deal!= ''" >
+	      	and bond_sheet.bond_deal=#{bond_deal}
+	      </if>
+	      <!-- 11月17日  订单状态、过期时间 -->
+	      <if test="bond_sheet_state != null and bond_sheet_state!= ''" >
+	      	and bond_sheet.bond_sheet_state=#{bond_sheet_state}
+	      </if>
+	      <if test="bond_lose_efficacy_time != null and bond_lose_efficacy_time!= ''" >
+	      	and bond_sheet.bond_lose_efficacy_time=#{bond_lose_efficacy_time}
+	      </if>
+	      
+	       <if test="bond_disposal_id != null and bond_disposal_id!= ''" >
+	      	and bond_sheet.bond_disposal_id=#{bond_disposal_id}
+	      </if>
+	      <!-- 进行时间的判定 -->
+	      <if test="bond_new_time != null and bond_new_time!= ''" >
+	      	<![CDATA[and bond_sheet.bond_lose_efficacy_time>=#{bond_new_time} ]]>
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and bond_sheet.bond_sheet_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    
+    </trim>
+     <![CDATA[ order by bond_disposal.bond_unable,bond_sheet.bond_sheet_time desc ]]>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+    
+  </sql>
+  
+  <sql id="Where_SelectTree_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="bond_sheet_id != null and bond_sheet_id!= ''" >
+	      	and parent.bond_sheet_id=#{bond_sheet_id}
+	      </if>
+	      <if test="bond_company_name != null and bond_company_name!= ''" >
+	      	and parent.bond_company_name=#{bond_company_name}
+	      </if>
+	      <if test="bond_asset_number != null and bond_asset_number!= ''" >
+	      	and parent.bond_asset_number=#{bond_asset_number}
+	      </if>
+	      <if test="bond_sheet_time != null and bond_sheet_time!= ''" >
+	      	and parent.bond_sheet_time=#{bond_sheet_time}
+	      </if>
+	      <if test="bond_accept_name != null and bond_accept_name!= ''" >
+	      	and parent.bond_accept_name=#{bond_accept_name}
+	      </if>
+	      <if test="bond_accept_property != null and bond_accept_property!= ''" >
+	      	and parent.bond_accept_property=#{bond_accept_property}
+	      </if>
+	      <if test="bond_deal_name != null and bond_deal_name!= ''" >
+	      	and parent.bond_deal_name=#{bond_deal_name}
+	      </if>
+	      <if test="bond_deal_phone != null and bond_deal_phone!= ''" >
+	      	and parent.bond_deal_phone=#{bond_deal_phone}
+	      </if>
+	      <if test="bond_deal_type != null and bond_deal_type!= ''" >
+	      	and parent.bond_deal_type=#{bond_deal_type}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and parent.bond_sheet_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+</mapper>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bondSheetMapper" >
+  <select id="select" resultType="java.util.Map" parameterType="java.util.Map" >
+    select bond_sheet.*
+    from bond_sheet
+    <include refid="bondSheetCommonMapper.Where_Select_Sql" />
+  </select>
+  <select id="selectall" resultType="java.util.Map" parameterType="java.util.Map" >
+    select bond_sheet.* ,bond_disposal.*
+    from bond_sheet,bond_disposal 
+    <include refid="bondSheetCommonMapper.Where_SelectTwo_Sql" />
+  </select>
+  
+  
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from bond_sheet
+    <include refid="bondSheetCommonMapper.Where_Del_Sql" />
+  </delete>
+  <insert id="insert" parameterType="java.util.Map" >
+    insert into bond_sheet <include refid="bondSheetCommonMapper.Insert_Sql" />
+  </insert>
+  <insert id="inserts" parameterType="java.util.List" >
+    insert into bond_sheet <include refid="bondSheetCommonMapper.Inserts_Sql" />
+  </insert>
+  <update id="update" parameterType="java.util.Map" >
+    update bond_sheet 
+    <include refid="bondSheetCommonMapper.Update_Sql" />
+    <include refid="bondSheetCommonMapper.Where_Update_Sql" />
+  </update>
+  <select id="count" parameterType="java.util.Map" resultType="java.lang.Integer" >
+    select count(*) from bond_sheet 
+    <if test="_parameter != null" >
+      <include refid="bondSheetCommonMapper.Where_Select_Sql" />
+    </if>
+  </select>	
+</mapper>

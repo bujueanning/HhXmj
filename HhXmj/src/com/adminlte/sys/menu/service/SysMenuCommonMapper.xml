@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sysMenuCommonMapper" >
+  <sql id="Update_Sql" >
+    <trim prefix="set" suffixOverrides="," >
+			<if test="sysMenu.sys_menu_id != null  and sysMenu.sys_menu_id!= ''" >
+		        sys_menu_id = #{sysMenu.sys_menu_id},
+		    </if>
+			<if test="sysMenu.sys_menu_pid != null  and sysMenu.sys_menu_pid!= ''" >
+		        sys_menu_pid = #{sysMenu.sys_menu_pid},
+		    </if>
+			<if test="sysMenu.sys_menu_name != null  and sysMenu.sys_menu_name!= ''" >
+		        sys_menu_name = #{sysMenu.sys_menu_name},
+		    </if>
+			<if test="sysMenu.sys_menu_url != null  and sysMenu.sys_menu_url!= ''" >
+		        sys_menu_url = #{sysMenu.sys_menu_url},
+		    </if>
+			<if test="sysMenu.sys_menu_order != null  and sysMenu.sys_menu_order!= ''" >
+		        sys_menu_order = #{sysMenu.sys_menu_order},
+		    </if>
+			<if test="sysMenu.sys_menu_icon_url != null  and sysMenu.sys_menu_icon_url!= ''" >
+		        sys_menu_icon_url = #{sysMenu.sys_menu_icon_url},
+		    </if>
+    </trim>
+  </sql>
+  <sql id="Inserts_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+	         <if test="paramKey.sys_menu_id != null  and paramKey.sys_menu_id!= ''" >
+	          sys_menu_id,
+	        </if>
+	         <if test="paramKey.sys_menu_pid != null  and paramKey.sys_menu_pid!= ''" >
+	          sys_menu_pid,
+	        </if>
+	         <if test="paramKey.sys_menu_name != null  and paramKey.sys_menu_name!= ''" >
+	          sys_menu_name,
+	        </if>
+	         <if test="paramKey.sys_menu_url != null  and paramKey.sys_menu_url!= ''" >
+	          sys_menu_url,
+	        </if>
+	         <if test="paramKey.sys_menu_order != null  and paramKey.sys_menu_order!= ''" >
+	          sys_menu_order,
+	        </if>
+	         <if test="paramKey.sys_menu_icon_url != null  and paramKey.sys_menu_icon_url!= ''" >
+	          sys_menu_icon_url,
+	        </if>
+    </trim>
+    values  
+    <foreach collection="paramValue" item="item" index="index" separator="," >  
+        (
+		          <if test="item.sys_menu_id != null and item.sys_menu_id!= ''" >
+			      	#{item.sys_menu_id},
+			      </if>
+		          <if test="item.sys_menu_pid != null and item.sys_menu_pid!= ''" >
+			      	#{item.sys_menu_pid},
+			      </if>
+		          <if test="item.sys_menu_name != null and item.sys_menu_name!= ''" >
+			      	#{item.sys_menu_name},
+			      </if>
+		          <if test="item.sys_menu_url != null and item.sys_menu_url!= ''" >
+			      	#{item.sys_menu_url},
+			      </if>
+		          <if test="item.sys_menu_order != null and item.sys_menu_order!= ''" >
+			      	#{item.sys_menu_order},
+			      </if>
+		          <if test="item.sys_menu_icon_url != null and item.sys_menu_icon_url!= ''" >
+			      	#{item.sys_menu_icon_url},
+			      </if>
+        )  
+    </foreach> 
+  </sql>
+  <sql id="Insert_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+    		<if test="sys_menu_id != null  and sys_menu_id!= ''" >
+	          sys_menu_id,
+	        </if>
+    		<if test="sys_menu_pid != null  and sys_menu_pid!= ''" >
+	          sys_menu_pid,
+	        </if>
+    		<if test="sys_menu_name != null  and sys_menu_name!= ''" >
+	          sys_menu_name,
+	        </if>
+    		<if test="sys_menu_url != null  and sys_menu_url!= ''" >
+	          sys_menu_url,
+	        </if>
+    		<if test="sys_menu_order != null  and sys_menu_order!= ''" >
+	          sys_menu_order,
+	        </if>
+    		<if test="sys_menu_icon_url != null  and sys_menu_icon_url!= ''" >
+	          sys_menu_icon_url,
+	        </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+	      <if test="sys_menu_id != null and sys_menu_id!= ''" >
+	      	#{sys_menu_id},
+	      </if>
+	      <if test="sys_menu_pid != null and sys_menu_pid!= ''" >
+	      	#{sys_menu_pid},
+	      </if>
+	      <if test="sys_menu_name != null and sys_menu_name!= ''" >
+	      	#{sys_menu_name},
+	      </if>
+	      <if test="sys_menu_url != null and sys_menu_url!= ''" >
+	      	#{sys_menu_url},
+	      </if>
+	      <if test="sys_menu_order != null and sys_menu_order!= ''" >
+	      	#{sys_menu_order},
+	      </if>
+	      <if test="sys_menu_icon_url != null and sys_menu_icon_url!= ''" >
+	      	#{sys_menu_icon_url},
+	      </if>
+    </trim>
+  </sql>
+  <sql id="Where_Update_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="sysMenuQuery.sys_menu_id != null and sysMenuQuery.sys_menu_id!= ''" >
+	      	and sys_menu_id=#{sysMenuQuery.sys_menu_id}
+	      </when>
+	      <when test="sysMenuQuery.sys_menu_pid != null and sysMenuQuery.sys_menu_pid!= ''" >
+	      	and sys_menu_pid=#{sysMenuQuery.sys_menu_pid}
+	      </when>
+	      <when test="sysMenuQuery.sys_menu_name != null and sysMenuQuery.sys_menu_name!= ''" >
+	      	and sys_menu_name=#{sysMenuQuery.sys_menu_name}
+	      </when>
+	      <when test="sysMenuQuery.sys_menu_url != null and sysMenuQuery.sys_menu_url!= ''" >
+	      	and sys_menu_url=#{sysMenuQuery.sys_menu_url}
+	      </when>
+	      <when test="sysMenuQuery.sys_menu_order != null and sysMenuQuery.sys_menu_order!= ''" >
+	      	and sys_menu_order=#{sysMenuQuery.sys_menu_order}
+	      </when>
+	      <when test="sysMenuQuery.sys_menu_icon_url != null and sysMenuQuery.sys_menu_icon_url!= ''" >
+	      	and sys_menu_icon_url=#{sysMenuQuery.sys_menu_icon_url}
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+    <sql id="Where_Del_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="sys_menu_id != null and sys_menu_id!= ''" >
+	      	and sys_menu_id=#{sys_menu_id}
+	      </when>
+	      <when test="sys_menu_pid != null and sys_menu_pid!= ''" >
+	      	and sys_menu_pid=#{sys_menu_pid}
+	      </when>
+	      <when test="sys_menu_name != null and sys_menu_name!= ''" >
+	      	and sys_menu_name=#{sys_menu_name}
+	      </when>
+	      <when test="sys_menu_url != null and sys_menu_url!= ''" >
+	      	and sys_menu_url=#{sys_menu_url}
+	      </when>
+	      <when test="sys_menu_order != null and sys_menu_order!= ''" >
+	      	and sys_menu_order=#{sys_menu_order}
+	      </when>
+	      <when test="sys_menu_icon_url != null and sys_menu_icon_url!= ''" >
+	      	and sys_menu_icon_url=#{sys_menu_icon_url}
+	      </when>
+	     <when test="ids != null and ids!= ''" >
+	      		and sys_menu_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		           #{id}
+		        </foreach>
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+  <sql id="Where_Select_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="sys_menu_id != null and sys_menu_id!= ''" >
+	      	and sys_menu_id=#{sys_menu_id}
+	      </if>
+	      <if test="sys_menu_pid != null and sys_menu_pid!= ''" >
+	      	and sys_menu_pid=#{sys_menu_pid}
+	      </if>
+	      <if test="sys_menu_name != null and sys_menu_name!= ''" >
+	      	and sys_menu_name=#{sys_menu_name}
+	      </if>
+	      <if test="sys_menu_url != null and sys_menu_url!= ''" >
+	      	and sys_menu_url=#{sys_menu_url}
+	      </if>
+	      <if test="sys_menu_order != null and sys_menu_order!= ''" >
+	      	and sys_menu_order=#{sys_menu_order}
+	      </if>
+	      <if test="sys_menu_icon_url != null and sys_menu_icon_url!= ''" >
+	      	and sys_menu_icon_url=#{sys_menu_icon_url}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and sys_menu_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+</mapper>

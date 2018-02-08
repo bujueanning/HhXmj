@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sysBuyCommonMapper" >
+  <sql id="Update_Sql" >
+    <trim prefix="set" suffixOverrides="," >
+			<if test="sysBuy.sys_buy_id != null  and sysBuy.sys_buy_id!= ''" >
+		        sys_buy.sys_buy_id = #{sysBuy.sys_buy_id},
+		    </if>
+			<if test="sysBuy.sys_user_id != null  and sysBuy.sys_user_id!= ''" >
+		        sys_buy.sys_user_id = #{sysBuy.sys_user_id},
+		    </if>
+			<if test="sysBuy.sys_goods_id != null  and sysBuy.sys_goods_id!= ''" >
+		        sys_buy.sys_goods_id = #{sysBuy.sys_goods_id},
+		    </if>
+			<if test="sysBuy.sys_buy_price != null  and sysBuy.sys_buy_price!= ''" >
+		        sys_buy.sys_buy_price = #{sysBuy.sys_buy_price},
+		    </if>
+			<if test="sysBuy.sys_buy_count != null  and sysBuy.sys_buy_count!= ''" >
+		        sys_buy.sys_buy_count = #{sysBuy.sys_buy_count},
+		    </if>
+			<if test="sysBuy.sys_buy_time != null  and sysBuy.sys_buy_time!= ''" >
+		        sys_buy.sys_buy_time = #{sysBuy.sys_buy_time},
+		    </if>
+			<if test="sysBuy.sys_buy_succ_d != null  and sysBuy.sys_buy_succ_d!= ''" >
+		        sys_buy.sys_buy_succ_d = #{sysBuy.sys_buy_succ_d},
+		    </if>
+			<if test="sysBuy.sys_buy_createdate != null  and sysBuy.sys_buy_createdate!= ''" >
+		        sys_buy.sys_buy_createdate = #{sysBuy.sys_buy_createdate},
+		    </if>
+			<if test="sysBuy.sys_buy_updatedate != null  and sysBuy.sys_buy_updatedate!= ''" >
+		        sys_buy.sys_buy_updatedate = #{sysBuy.sys_buy_updatedate},
+		    </if>
+			<if test="sysBuy.sys_buy_createuid != null  and sysBuy.sys_buy_createuid!= ''" >
+		        sys_buy.sys_buy_createuid = #{sysBuy.sys_buy_createuid},
+		    </if>
+			<if test="sysBuy.sys_buy_updateuid != null  and sysBuy.sys_buy_updateuid!= ''" >
+		        sys_buy.sys_buy_updateuid = #{sysBuy.sys_buy_updateuid},
+		    </if>
+    </trim>
+  </sql>
+  <sql id="Inserts_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+	         <if test="paramKey.sys_buy_id != null  and paramKey.sys_buy_id!= ''" >
+	          sys_buy_id,
+	        </if>
+	         <if test="paramKey.sys_user_id != null  and paramKey.sys_user_id!= ''" >
+	          sys_user_id,
+	        </if>
+	         <if test="paramKey.sys_goods_id != null  and paramKey.sys_goods_id!= ''" >
+	          sys_goods_id,
+	        </if>
+	         <if test="paramKey.sys_buy_price != null  and paramKey.sys_buy_price!= ''" >
+	          sys_buy_price,
+	        </if>
+	         <if test="paramKey.sys_buy_count != null  and paramKey.sys_buy_count!= ''" >
+	          sys_buy_count,
+	        </if>
+	         <if test="paramKey.sys_buy_time != null  and paramKey.sys_buy_time!= ''" >
+	          sys_buy_time,
+	        </if>
+	         <if test="paramKey.sys_buy_succ_d != null  and paramKey.sys_buy_succ_d!= ''" >
+	          sys_buy_succ_d,
+	        </if>
+	         <if test="paramKey.sys_buy_createdate != null  and paramKey.sys_buy_createdate!= ''" >
+	          sys_buy_createdate,
+	        </if>
+	         <if test="paramKey.sys_buy_updatedate != null  and paramKey.sys_buy_updatedate!= ''" >
+	          sys_buy_updatedate,
+	        </if>
+	         <if test="paramKey.sys_buy_createuid != null  and paramKey.sys_buy_createuid!= ''" >
+	          sys_buy_createuid,
+	        </if>
+	         <if test="paramKey.sys_buy_updateuid != null  and paramKey.sys_buy_updateuid!= ''" >
+	          sys_buy_updateuid,
+	        </if>
+    </trim>
+    values  
+    <foreach collection="paramValue" item="item" index="index" separator="," >  
+        (
+		          <if test="item.sys_buy_id != null and item.sys_buy_id!= ''" >
+			      	#{item.sys_buy_id},
+			      </if>
+		          <if test="item.sys_user_id != null and item.sys_user_id!= ''" >
+			      	#{item.sys_user_id},
+			      </if>
+		          <if test="item.sys_goods_id != null and item.sys_goods_id!= ''" >
+			      	#{item.sys_goods_id},
+			      </if>
+		          <if test="item.sys_buy_price != null and item.sys_buy_price!= ''" >
+			      	#{item.sys_buy_price},
+			      </if>
+		          <if test="item.sys_buy_count != null and item.sys_buy_count!= ''" >
+			      	#{item.sys_buy_count},
+			      </if>
+		          <if test="item.sys_buy_time != null and item.sys_buy_time!= ''" >
+			      	#{item.sys_buy_time},
+			      </if>
+		          <if test="item.sys_buy_succ_d != null and item.sys_buy_succ_d!= ''" >
+			      	#{item.sys_buy_succ_d},
+			      </if>
+		          <if test="item.sys_buy_createdate != null and item.sys_buy_createdate!= ''" >
+			      	#{item.sys_buy_createdate},
+			      </if>
+		          <if test="item.sys_buy_updatedate != null and item.sys_buy_updatedate!= ''" >
+			      	#{item.sys_buy_updatedate},
+			      </if>
+		          <if test="item.sys_buy_createuid != null and item.sys_buy_createuid!= ''" >
+			      	#{item.sys_buy_createuid},
+			      </if>
+		          <if test="item.sys_buy_updateuid != null and item.sys_buy_updateuid!= ''" >
+			      	#{item.sys_buy_updateuid},
+			      </if>
+        )  
+    </foreach> 
+  </sql>
+  <sql id="Insert_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+    		<if test="sys_buy_id != null  and sys_buy_id!= ''" >
+	          sys_buy_id,
+	        </if>
+    		<if test="sys_user_id != null  and sys_user_id!= ''" >
+	          sys_user_id,
+	        </if>
+    		<if test="sys_goods_id != null  and sys_goods_id!= ''" >
+	          sys_goods_id,
+	        </if>
+    		<if test="sys_buy_price != null  and sys_buy_price!= ''" >
+	          sys_buy_price,
+	        </if>
+    		<if test="sys_buy_count != null  and sys_buy_count!= ''" >
+	          sys_buy_count,
+	        </if>
+    		<if test="sys_buy_time != null  and sys_buy_time!= ''" >
+	          sys_buy_time,
+	        </if>
+    		<if test="sys_buy_succ_d != null  and sys_buy_succ_d!= ''" >
+	          sys_buy_succ_d,
+	        </if>
+    		<if test="sys_buy_createdate != null  and sys_buy_createdate!= ''" >
+	          sys_buy_createdate,
+	        </if>
+    		<if test="sys_buy_updatedate != null  and sys_buy_updatedate!= ''" >
+	          sys_buy_updatedate,
+	        </if>
+    		<if test="sys_buy_createuid != null  and sys_buy_createuid!= ''" >
+	          sys_buy_createuid,
+	        </if>
+    		<if test="sys_buy_updateuid != null  and sys_buy_updateuid!= ''" >
+	          sys_buy_updateuid,
+	        </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+	      <if test="sys_buy_id != null and sys_buy_id!= ''" >
+	      	#{sys_buy_id},
+	      </if>
+	      <if test="sys_user_id != null and sys_user_id!= ''" >
+	      	#{sys_user_id},
+	      </if>
+	      <if test="sys_goods_id != null and sys_goods_id!= ''" >
+	      	#{sys_goods_id},
+	      </if>
+	      <if test="sys_buy_price != null and sys_buy_price!= ''" >
+	      	#{sys_buy_price},
+	      </if>
+	      <if test="sys_buy_count != null and sys_buy_count!= ''" >
+	      	#{sys_buy_count},
+	      </if>
+	      <if test="sys_buy_time != null and sys_buy_time!= ''" >
+	      	#{sys_buy_time},
+	      </if>
+	      <if test="sys_buy_succ_d != null and sys_buy_succ_d!= ''" >
+	      	#{sys_buy_succ_d},
+	      </if>
+	      <if test="sys_buy_createdate != null and sys_buy_createdate!= ''" >
+	      	#{sys_buy_createdate},
+	      </if>
+	      <if test="sys_buy_updatedate != null and sys_buy_updatedate!= ''" >
+	      	#{sys_buy_updatedate},
+	      </if>
+	      <if test="sys_buy_createuid != null and sys_buy_createuid!= ''" >
+	      	#{sys_buy_createuid},
+	      </if>
+	      <if test="sys_buy_updateuid != null and sys_buy_updateuid!= ''" >
+	      	#{sys_buy_updateuid},
+	      </if>
+    </trim>
+  </sql>
+  <sql id="Where_Update_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="sysBuyQuery.sys_buy_id != null and sysBuyQuery.sys_buy_id!= ''" >
+	      	and sys_buy.sys_buy_id=#{sysBuyQuery.sys_buy_id}
+	      </when>
+	      <when test="sysBuyQuery.sys_user_id != null and sysBuyQuery.sys_user_id!= ''" >
+	      	and sys_buy.sys_user_id=#{sysBuyQuery.sys_user_id}
+	      </when>
+	      <when test="sysBuyQuery.sys_goods_id != null and sysBuyQuery.sys_goods_id!= ''" >
+	      	and sys_buy.sys_goods_id=#{sysBuyQuery.sys_goods_id}
+	      </when>
+	      <when test="sysBuyQuery.sys_buy_price != null and sysBuyQuery.sys_buy_price!= ''" >
+	      	and sys_buy.sys_buy_price=#{sysBuyQuery.sys_buy_price}
+	      </when>
+	      <when test="sysBuyQuery.sys_buy_count != null and sysBuyQuery.sys_buy_count!= ''" >
+	      	and sys_buy.sys_buy_count=#{sysBuyQuery.sys_buy_count}
+	      </when>
+	      <when test="sysBuyQuery.sys_buy_time != null and sysBuyQuery.sys_buy_time!= ''" >
+	      	and sys_buy.sys_buy_time=#{sysBuyQuery.sys_buy_time}
+	      </when>
+	      <when test="sysBuyQuery.sys_buy_succ_d != null and sysBuyQuery.sys_buy_succ_d!= ''" >
+	      	and sys_buy.sys_buy_succ_d=#{sysBuyQuery.sys_buy_succ_d}
+	      </when>
+	      <when test="sysBuyQuery.sys_buy_createdate != null and sysBuyQuery.sys_buy_createdate!= ''" >
+	      	and sys_buy.sys_buy_createdate=#{sysBuyQuery.sys_buy_createdate}
+	      </when>
+	      <when test="sysBuyQuery.sys_buy_updatedate != null and sysBuyQuery.sys_buy_updatedate!= ''" >
+	      	and sys_buy.sys_buy_updatedate=#{sysBuyQuery.sys_buy_updatedate}
+	      </when>
+	      <when test="sysBuyQuery.sys_buy_createuid != null and sysBuyQuery.sys_buy_createuid!= ''" >
+	      	and sys_buy.sys_buy_createuid=#{sysBuyQuery.sys_buy_createuid}
+	      </when>
+	      <when test="sysBuyQuery.sys_buy_updateuid != null and sysBuyQuery.sys_buy_updateuid!= ''" >
+	      	and sys_buy.sys_buy_updateuid=#{sysBuyQuery.sys_buy_updateuid}
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+    <sql id="Where_Del_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="sys_buy_id != null and sys_buy_id!= ''" >
+	      	and sys_buy.sys_buy_id=#{sys_buy_id}
+	      </when>
+	      <when test="sys_user_id != null and sys_user_id!= ''" >
+	      	and sys_buy.sys_user_id=#{sys_user_id}
+	      </when>
+	      <when test="sys_goods_id != null and sys_goods_id!= ''" >
+	      	and sys_buy.sys_goods_id=#{sys_goods_id}
+	      </when>
+	      <when test="sys_buy_price != null and sys_buy_price!= ''" >
+	      	and sys_buy.sys_buy_price=#{sys_buy_price}
+	      </when>
+	      <when test="sys_buy_count != null and sys_buy_count!= ''" >
+	      	and sys_buy.sys_buy_count=#{sys_buy_count}
+	      </when>
+	      <when test="sys_buy_time != null and sys_buy_time!= ''" >
+	      	and sys_buy.sys_buy_time=#{sys_buy_time}
+	      </when>
+	      <when test="sys_buy_succ_d != null and sys_buy_succ_d!= ''" >
+	      	and sys_buy.sys_buy_succ_d=#{sys_buy_succ_d}
+	      </when>
+	      <when test="sys_buy_createdate != null and sys_buy_createdate!= ''" >
+	      	and sys_buy.sys_buy_createdate=#{sys_buy_createdate}
+	      </when>
+	      <when test="sys_buy_updatedate != null and sys_buy_updatedate!= ''" >
+	      	and sys_buy.sys_buy_updatedate=#{sys_buy_updatedate}
+	      </when>
+	      <when test="sys_buy_createuid != null and sys_buy_createuid!= ''" >
+	      	and sys_buy.sys_buy_createuid=#{sys_buy_createuid}
+	      </when>
+	      <when test="sys_buy_updateuid != null and sys_buy_updateuid!= ''" >
+	      	and sys_buy.sys_buy_updateuid=#{sys_buy_updateuid}
+	      </when>
+	     <when test="ids != null and ids!= ''" >
+	      		and sys_buy.sys_buy_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		           #{id}
+		        </foreach>
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+  <sql id="Where_Select_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="sys_buy_id != null and sys_buy_id!= ''" >
+	      	and sys_buy.sys_buy_id=#{sys_buy_id}
+	      </if>
+	      <if test="sys_user_id != null and sys_user_id!= ''" >
+	      	and sys_buy.sys_user_id=#{sys_user_id}
+	      </if>
+	      <if test="sys_goods_id != null and sys_goods_id!= ''" >
+	      	and sys_buy.sys_goods_id=#{sys_goods_id}
+	      </if>
+	      <if test="sys_buy_price != null and sys_buy_price!= ''" >
+	      	and sys_buy.sys_buy_price=#{sys_buy_price}
+	      </if>
+	      <if test="sys_buy_count != null and sys_buy_count!= ''" >
+	      	and sys_buy.sys_buy_count=#{sys_buy_count}
+	      </if>
+	      <if test="sys_buy_time != null and sys_buy_time!= ''" >
+	      	and sys_buy.sys_buy_time=#{sys_buy_time}
+	      </if>
+	      <if test="sys_buy_succ_d != null and sys_buy_succ_d!= ''" >
+	      	and sys_buy.sys_buy_succ_d=#{sys_buy_succ_d}
+	      </if>
+	      <if test="sys_buy_createdate != null and sys_buy_createdate!= ''" >
+	      	and sys_buy.sys_buy_createdate=#{sys_buy_createdate}
+	      </if>
+	      <if test="sys_buy_updatedate != null and sys_buy_updatedate!= ''" >
+	      	and sys_buy.sys_buy_updatedate=#{sys_buy_updatedate}
+	      </if>
+	      <if test="sys_buy_createuid != null and sys_buy_createuid!= ''" >
+	      	and sys_buy.sys_buy_createuid=#{sys_buy_createuid}
+	      </if>
+	      <if test="sys_buy_updateuid != null and sys_buy_updateuid!= ''" >
+	      	and sys_buy.sys_buy_updateuid=#{sys_buy_updateuid}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and sys_buy.sys_buy_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+  
+  <sql id="Where_SelectTree_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="sys_buy_id != null and sys_buy_id!= ''" >
+	      	and parent.sys_buy_id=#{sys_buy_id}
+	      </if>
+	      <if test="sys_user_id != null and sys_user_id!= ''" >
+	      	and parent.sys_user_id=#{sys_user_id}
+	      </if>
+	      <if test="sys_goods_id != null and sys_goods_id!= ''" >
+	      	and parent.sys_goods_id=#{sys_goods_id}
+	      </if>
+	      <if test="sys_buy_price != null and sys_buy_price!= ''" >
+	      	and parent.sys_buy_price=#{sys_buy_price}
+	      </if>
+	      <if test="sys_buy_count != null and sys_buy_count!= ''" >
+	      	and parent.sys_buy_count=#{sys_buy_count}
+	      </if>
+	      <if test="sys_buy_time != null and sys_buy_time!= ''" >
+	      	and parent.sys_buy_time=#{sys_buy_time}
+	      </if>
+	      <if test="sys_buy_succ_d != null and sys_buy_succ_d!= ''" >
+	      	and parent.sys_buy_succ_d=#{sys_buy_succ_d}
+	      </if>
+	      <if test="sys_buy_createdate != null and sys_buy_createdate!= ''" >
+	      	and parent.sys_buy_createdate=#{sys_buy_createdate}
+	      </if>
+	      <if test="sys_buy_updatedate != null and sys_buy_updatedate!= ''" >
+	      	and parent.sys_buy_updatedate=#{sys_buy_updatedate}
+	      </if>
+	      <if test="sys_buy_createuid != null and sys_buy_createuid!= ''" >
+	      	and parent.sys_buy_createuid=#{sys_buy_createuid}
+	      </if>
+	      <if test="sys_buy_updateuid != null and sys_buy_updateuid!= ''" >
+	      	and parent.sys_buy_updateuid=#{sys_buy_updateuid}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and parent.sys_buy_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+</mapper>

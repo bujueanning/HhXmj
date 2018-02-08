@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="auctionInfoMapper" >
+  <select id="select" resultType="java.util.Map" parameterType="java.util.Map" >
+    select auction_info.* 
+    from auction_info 
+     
+    <include refid="auctionInfoCommonMapper.Where_Select_Sql" />
+  </select>
+  
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from auction_info
+    <include refid="auctionInfoCommonMapper.Where_Del_Sql" />
+  </delete>
+  <insert id="insert" parameterType="java.util.Map" >
+    insert into auction_info <include refid="auctionInfoCommonMapper.Insert_Sql" />
+  </insert>
+  <insert id="inserts" parameterType="java.util.List" >
+    insert into auction_info <include refid="auctionInfoCommonMapper.Inserts_Sql" />
+  </insert>
+  <update id="update" parameterType="java.util.Map" >
+    update auction_info 
+    <include refid="auctionInfoCommonMapper.Update_Sql" />
+    <include refid="auctionInfoCommonMapper.Where_Update_Sql" />
+  </update>
+  <select id="count" parameterType="java.util.Map" resultType="java.lang.Integer" >
+    select count(*) from auction_info 
+    <if test="_parameter != null" >
+      <include refid="auctionInfoCommonMapper.Where_Select_Sql" />
+    </if>
+  </select>	
+</mapper>

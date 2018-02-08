@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sysFilexCommonMapper" >
+  <sql id="Update_Sql" >
+    <trim prefix="set" suffixOverrides="," >
+			<if test="sysFilex.sys_filex_id != null  and sysFilex.sys_filex_id!= ''" >
+		        sys_filex.sys_filex_id = #{sysFilex.sys_filex_id},
+		    </if>
+			<if test="sysFilex.sys_filex_name != null  and sysFilex.sys_filex_name!= ''" >
+		        sys_filex.sys_filex_name = #{sysFilex.sys_filex_name},
+		    </if>
+			<if test="sysFilex.sys_filex_addr != null  and sysFilex.sys_filex_addr!= ''" >
+		        sys_filex.sys_filex_addr = #{sysFilex.sys_filex_addr},
+		    </if>
+			<if test="sysFilex.sys_filex_updatedate != null  and sysFilex.sys_filex_updatedate!= ''" >
+		        sys_filex.sys_filex_updatedate = #{sysFilex.sys_filex_updatedate},
+		    </if>
+			<if test="sysFilex.sys_filex_createdate != null  and sysFilex.sys_filex_createdate!= ''" >
+		        sys_filex.sys_filex_createdate = #{sysFilex.sys_filex_createdate},
+		    </if>
+			<if test="sysFilex.sys_filex_updateuid != null  and sysFilex.sys_filex_updateuid!= ''" >
+		        sys_filex.sys_filex_updateuid = #{sysFilex.sys_filex_updateuid},
+		    </if>
+			<if test="sysFilex.sys_filex_createuid != null  and sysFilex.sys_filex_createuid!= ''" >
+		        sys_filex.sys_filex_createuid = #{sysFilex.sys_filex_createuid},
+		    </if>
+    </trim>
+  </sql>
+  <sql id="Inserts_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+	         <if test="paramKey.sys_filex_id != null  and paramKey.sys_filex_id!= ''" >
+	          sys_filex_id,
+	        </if>
+	         <if test="paramKey.sys_filex_name != null  and paramKey.sys_filex_name!= ''" >
+	          sys_filex_name,
+	        </if>
+	         <if test="paramKey.sys_filex_addr != null  and paramKey.sys_filex_addr!= ''" >
+	          sys_filex_addr,
+	        </if>
+	         <if test="paramKey.sys_filex_updatedate != null  and paramKey.sys_filex_updatedate!= ''" >
+	          sys_filex_updatedate,
+	        </if>
+	         <if test="paramKey.sys_filex_createdate != null  and paramKey.sys_filex_createdate!= ''" >
+	          sys_filex_createdate,
+	        </if>
+	         <if test="paramKey.sys_filex_updateuid != null  and paramKey.sys_filex_updateuid!= ''" >
+	          sys_filex_updateuid,
+	        </if>
+	         <if test="paramKey.sys_filex_createuid != null  and paramKey.sys_filex_createuid!= ''" >
+	          sys_filex_createuid,
+	        </if>
+    </trim>
+    values  
+    <foreach collection="paramValue" item="item" index="index" separator="," >  
+        (
+		          <if test="item.sys_filex_id != null and item.sys_filex_id!= ''" >
+			      	#{item.sys_filex_id},
+			      </if>
+		          <if test="item.sys_filex_name != null and item.sys_filex_name!= ''" >
+			      	#{item.sys_filex_name},
+			      </if>
+		          <if test="item.sys_filex_addr != null and item.sys_filex_addr!= ''" >
+			      	#{item.sys_filex_addr},
+			      </if>
+		          <if test="item.sys_filex_updatedate != null and item.sys_filex_updatedate!= ''" >
+			      	#{item.sys_filex_updatedate},
+			      </if>
+		          <if test="item.sys_filex_createdate != null and item.sys_filex_createdate!= ''" >
+			      	#{item.sys_filex_createdate},
+			      </if>
+		          <if test="item.sys_filex_updateuid != null and item.sys_filex_updateuid!= ''" >
+			      	#{item.sys_filex_updateuid},
+			      </if>
+		          <if test="item.sys_filex_createuid != null and item.sys_filex_createuid!= ''" >
+			      	#{item.sys_filex_createuid},
+			      </if>
+        )  
+    </foreach> 
+  </sql>
+  <sql id="Insert_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+    		<if test="sys_filex_id != null  and sys_filex_id!= ''" >
+	          sys_filex_id,
+	        </if>
+    		<if test="sys_filex_name != null  and sys_filex_name!= ''" >
+	          sys_filex_name,
+	        </if>
+    		<if test="sys_filex_addr != null  and sys_filex_addr!= ''" >
+	          sys_filex_addr,
+	        </if>
+    		<if test="sys_filex_updatedate != null  and sys_filex_updatedate!= ''" >
+	          sys_filex_updatedate,
+	        </if>
+    		<if test="sys_filex_createdate != null  and sys_filex_createdate!= ''" >
+	          sys_filex_createdate,
+	        </if>
+    		<if test="sys_filex_updateuid != null  and sys_filex_updateuid!= ''" >
+	          sys_filex_updateuid,
+	        </if>
+    		<if test="sys_filex_createuid != null  and sys_filex_createuid!= ''" >
+	          sys_filex_createuid,
+	        </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+	      <if test="sys_filex_id != null and sys_filex_id!= ''" >
+	      	#{sys_filex_id},
+	      </if>
+	      <if test="sys_filex_name != null and sys_filex_name!= ''" >
+	      	#{sys_filex_name},
+	      </if>
+	      <if test="sys_filex_addr != null and sys_filex_addr!= ''" >
+	      	#{sys_filex_addr},
+	      </if>
+	      <if test="sys_filex_updatedate != null and sys_filex_updatedate!= ''" >
+	      	#{sys_filex_updatedate},
+	      </if>
+	      <if test="sys_filex_createdate != null and sys_filex_createdate!= ''" >
+	      	#{sys_filex_createdate},
+	      </if>
+	      <if test="sys_filex_updateuid != null and sys_filex_updateuid!= ''" >
+	      	#{sys_filex_updateuid},
+	      </if>
+	      <if test="sys_filex_createuid != null and sys_filex_createuid!= ''" >
+	      	#{sys_filex_createuid},
+	      </if>
+    </trim>
+  </sql>
+  <sql id="Where_Update_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="sysFilexQuery.sys_filex_id != null and sysFilexQuery.sys_filex_id!= ''" >
+	      	and sys_filex.sys_filex_id=#{sysFilexQuery.sys_filex_id}
+	      </when>
+	      <when test="sysFilexQuery.sys_filex_name != null and sysFilexQuery.sys_filex_name!= ''" >
+	      	and sys_filex.sys_filex_name=#{sysFilexQuery.sys_filex_name}
+	      </when>
+	      <when test="sysFilexQuery.sys_filex_addr != null and sysFilexQuery.sys_filex_addr!= ''" >
+	      	and sys_filex.sys_filex_addr=#{sysFilexQuery.sys_filex_addr}
+	      </when>
+	      <when test="sysFilexQuery.sys_filex_updatedate != null and sysFilexQuery.sys_filex_updatedate!= ''" >
+	      	and sys_filex.sys_filex_updatedate=#{sysFilexQuery.sys_filex_updatedate}
+	      </when>
+	      <when test="sysFilexQuery.sys_filex_createdate != null and sysFilexQuery.sys_filex_createdate!= ''" >
+	      	and sys_filex.sys_filex_createdate=#{sysFilexQuery.sys_filex_createdate}
+	      </when>
+	      <when test="sysFilexQuery.sys_filex_updateuid != null and sysFilexQuery.sys_filex_updateuid!= ''" >
+	      	and sys_filex.sys_filex_updateuid=#{sysFilexQuery.sys_filex_updateuid}
+	      </when>
+	      <when test="sysFilexQuery.sys_filex_createuid != null and sysFilexQuery.sys_filex_createuid!= ''" >
+	      	and sys_filex.sys_filex_createuid=#{sysFilexQuery.sys_filex_createuid}
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+    <sql id="Where_Del_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="sys_filex_id != null and sys_filex_id!= ''" >
+	      	and sys_filex.sys_filex_id=#{sys_filex_id}
+	      </when>
+	      <when test="sys_filex_name != null and sys_filex_name!= ''" >
+	      	and sys_filex.sys_filex_name=#{sys_filex_name}
+	      </when>
+	      <when test="sys_filex_addr != null and sys_filex_addr!= ''" >
+	      	and sys_filex.sys_filex_addr=#{sys_filex_addr}
+	      </when>
+	      <when test="sys_filex_updatedate != null and sys_filex_updatedate!= ''" >
+	      	and sys_filex.sys_filex_updatedate=#{sys_filex_updatedate}
+	      </when>
+	      <when test="sys_filex_createdate != null and sys_filex_createdate!= ''" >
+	      	and sys_filex.sys_filex_createdate=#{sys_filex_createdate}
+	      </when>
+	      <when test="sys_filex_updateuid != null and sys_filex_updateuid!= ''" >
+	      	and sys_filex.sys_filex_updateuid=#{sys_filex_updateuid}
+	      </when>
+	      <when test="sys_filex_createuid != null and sys_filex_createuid!= ''" >
+	      	and sys_filex.sys_filex_createuid=#{sys_filex_createuid}
+	      </when>
+	     <when test="ids != null and ids!= ''" >
+	      		and sys_filex.sys_filex_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		           #{id}
+		        </foreach>
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+  <sql id="Where_Select_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="sys_filex_id != null and sys_filex_id!= ''" >
+	      	and sys_filex.sys_filex_id=#{sys_filex_id}
+	      </if>
+	      <if test="sys_filex_name != null and sys_filex_name!= ''" >
+	      	and sys_filex.sys_filex_name=#{sys_filex_name}
+	      </if>
+	      <if test="sys_filex_addr != null and sys_filex_addr!= ''" >
+	      	and sys_filex.sys_filex_addr=#{sys_filex_addr}
+	      </if>
+	      <if test="sys_filex_updatedate != null and sys_filex_updatedate!= ''" >
+	      	and sys_filex.sys_filex_updatedate=#{sys_filex_updatedate}
+	      </if>
+	      <if test="sys_filex_createdate != null and sys_filex_createdate!= ''" >
+	      	and sys_filex.sys_filex_createdate=#{sys_filex_createdate}
+	      </if>
+	      <if test="sys_filex_updateuid != null and sys_filex_updateuid!= ''" >
+	      	and sys_filex.sys_filex_updateuid=#{sys_filex_updateuid}
+	      </if>
+	      <if test="sys_filex_createuid != null and sys_filex_createuid!= ''" >
+	      	and sys_filex.sys_filex_createuid=#{sys_filex_createuid}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and sys_filex.sys_filex_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+  
+  <sql id="Where_SelectTree_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="sys_filex_id != null and sys_filex_id!= ''" >
+	      	and parent.sys_filex_id=#{sys_filex_id}
+	      </if>
+	      <if test="sys_filex_name != null and sys_filex_name!= ''" >
+	      	and parent.sys_filex_name=#{sys_filex_name}
+	      </if>
+	      <if test="sys_filex_addr != null and sys_filex_addr!= ''" >
+	      	and parent.sys_filex_addr=#{sys_filex_addr}
+	      </if>
+	      <if test="sys_filex_updatedate != null and sys_filex_updatedate!= ''" >
+	      	and parent.sys_filex_updatedate=#{sys_filex_updatedate}
+	      </if>
+	      <if test="sys_filex_createdate != null and sys_filex_createdate!= ''" >
+	      	and parent.sys_filex_createdate=#{sys_filex_createdate}
+	      </if>
+	      <if test="sys_filex_updateuid != null and sys_filex_updateuid!= ''" >
+	      	and parent.sys_filex_updateuid=#{sys_filex_updateuid}
+	      </if>
+	      <if test="sys_filex_createuid != null and sys_filex_createuid!= ''" >
+	      	and parent.sys_filex_createuid=#{sys_filex_createuid}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and parent.sys_filex_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+</mapper>

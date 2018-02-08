@@ -1,0 +1,266 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache,no-store">
+    <meta http-equiv="expires" content="0"/>
+    <title>鑫淼聚不良资产处置平台</title>
+    <meta http-equiv="keywords" content="鑫淼聚,资产管理,鑫淼聚,东方证券资产管理有限公司,投资,理财,基金，私募,集合理财,券商,专户理财,券商资管,资管,定向客户,宏观经济,业绩,领先"/>
+    <meta http-equiv="description" content="鑫淼聚资产管理有限公司是中国证券会批准设立的首家券商资产管理公司；自1998年开始从事客户资产管理业务，2002年首批获得从事客户资产管理业务资格，2005年成为首批开展券商集合理财业务的证券公司，2010年成为首家获准设立的券商资产管理公司。 "/>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+     <link rel="stylesheet" type="text/css" href="../css/login.css"/>
+    <script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="../js/global.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/jcarousellite_1.0.1.js"></script>
+    <script type="text/javascript" src="../js/iepng.js"></script>
+    <script type="text/javascript" src="../js/jquery.extend.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+  
+</head>
+<body>
+<div class="top_wrap">
+	<!--头部-->
+    <div class="top">
+        <a href="../index.html"><img src="../img/logo9.png" class="fl logo"/></a>
+        <img src="../img/tel.png" alt="" class="fl tel" />
+        <div class="fl links">
+            <a href="login.html">登录</a><br />
+            <a href="reg_index.html">注册</a>
+        </div>
+        <div class="fr search">
+            <form name="formT" id="formT" method="post" target="_blank" action="http://www.dfham.com/infoseek/search">
+                <input class="input inputFocus" type="text" name="inputSearchQuery" id="inputSearchQueryT" maxlength="12"/>
+                <input type="hidden" name="service" value="direct/0/Home/searchForm"/>
+                <input type="hidden" name="sp" value="S0"/>
+                <input type="hidden" name="Form0" value="category,inputSearchQuery,$Submit"/>
+                <input type="hidden" name="category" value="-1"/>
+                <input type="submit" value="" class="btn_search hand" />
+            </form>
+        </div>
+    </div>
+</div>
+<!--导航-->
+<div class="w1000 bc mt10">
+    			<div class="clear"></div>
+    			<div class="clear"></div>
+    			<div class="box">
+    			   	    
+<script type="text/javascript">
+	
+	jQuery(function(){
+		jQuery("#userAccount").bind("keydown", function(){
+			if(event.keyCode == "13") {
+				return false;
+			}
+		});
+	})
+
+	var certNo = "";
+	var encryptIdNo = "";
+	function onSubmit(){
+		jQuery("#pwdType_span").html("");
+		var flag = true;
+		var userAccount = jQuery.trim($("#userAccount").val());
+		$("#userAccount").val(userAccount);
+		if(userAccount == ""){
+			$("#userAccount_span").html("* 请输入账号");
+			flag = false;
+		}else if(!ajaxGetIsActivated(userAccount)){
+//            $("#userAccount_span").html("* 账号还没有激活");
+            if(encryptIdNo!=""&&encryptIdNo!=undefined&&encryptIdNo!=null){
+                $("#userAccount_span").html("<span id='encryptCertNoInfo' style='color:red'>*请前往<a href='https://tradereg.tjfae.com/custm/user/user_reg_add.htm?formCode=REG_FORM'>注册</a>&nbsp;</span>");
+            }else if(certNo!=""&&certNo!=undefined&&certNo!=null){
+                $("#userAccount_span").html("<span id='encryptCertNoInfo' style='color:red'>*该证件号已经注册，请<a href='https://tradereg.tjfae.com/custm/user/user_active.htm?certNo="+certNo+"'>认证</a>&nbsp;</span>");
+            }
+            flag = false;
+            return;
+		} else if(!ajaxGetPwdWayByAccount(userAccount,jQuery('input[type="radio"][name="way"]:checked').val(),
+			$("#exchangeId").val())) {
+			flag = false;
+		} else{
+			$("#userAccount_span").html("");
+		}
+		
+		if(flag){
+			$("#form1").submit();
+		}
+	}
+
+	//判断账户是否已经激活
+	function ajaxGetIsActivated(account) {
+        $("#userAccount_span").html("");
+		var res = false;
+		jQuery.ajax({
+			type : 'POST',
+			url : '/forget/getIsActivatedByAccount.json',
+			data : {account:account},
+			async : false,
+			success : function (data) {
+				if(data.isActived != null && data.isActived == "unactivated"){
+					certNo = data.certNo;
+                    encryptIdNo = data.encryptIdNo;
+					res = false;
+				}else {
+				    res = true;
+				}
+            },
+			error : function () {
+                alert("获取用户信息异常");
+            }
+		});
+		return res;
+    }
+	function ajaxGetPwdWayByAccount(account,way,exchangeId) {
+		$("#userAccount_span").html("");
+		//alert(exchangeId);
+		var res = false;
+		jQuery.ajax({
+			type : 'POST',
+	   	 	url : '/forget/get_pwd_way_by_account.json',		
+			data:{account:account,way:way,
+			exchangeId:exchangeId},
+			async:false,
+	   	 	success : function(data) {
+			    jQuery("#pwdTypeArea").html(" ");
+			    jQuery("#pwdType_span").html(" ");
+				var tempStr=""
+				
+				if(data.user != null) {
+			
+					   if(way=='email'){
+					    if(data.user.ucUserInfo.email==undefined || data.user.ucUserInfo.email=="" || data.user.ucUserInfo.email==null){
+					         
+					         tempStr = "帐号没有Email！";
+					    	jQuery("#pwdType_span").html(tempStr);
+					    }else{
+					    	res = true;
+					    }
+					   }else if(way=='sms'){
+					   	if(data.user.ucUserInfo.mobile==undefined || data.user.ucUserInfo.mobile=="" || data.user.ucUserInfo.mobile==null){
+					         
+					         
+					    	tempStr = "帐号没有手机号码！";
+					    	jQuery("#pwdType_span").html(tempStr);
+					         
+					    }else{
+					    	res = true;
+					    }	
+					   }else if(way=='question'){
+					   
+					   	if(data.question==undefined || data.question=="" || data.question==null){
+					         tempStr = "帐号没有密保问题！";
+					    	jQuery("#pwdType_span").html(tempStr);
+					    }else{
+					    	res = true;
+					    }	
+					   }
+    				}
+				else {
+				     tempStr = "帐号不存在！";
+					jQuery("#pwdType_span").html(tempStr);
+					res = false;
+				}
+				
+	   	 	},
+			error : function() {
+				alert("获取用户信息异常");
+			}
+		});
+		return res;
+	}
+	
+</script>
+<div class="box_con2">
+	<div class="login_box">
+    <div class="register-left">
+        <div class="invest-step-2">
+        	<ul>
+                <li>1.找回方式</li>
+                <li>2.验证</li>
+                <li class="bg-last">3.修改密码</li>
+            </ul>
+        </div>
+    </div>
+    <div class="register-right">
+        <div class="register-title">
+            <h3>忘记登录密码</h3>
+        </div>
+    	<form id="form1" action="https://tradereg.tjfae.com/forget/forget_way.htm" method="post">
+			    		<input type="hidden" id="pwdType" name="pwdType" value="password"> 
+            <table width="50%" border="0" cellspacing="0" cellpadding="0" class="register-table">
+                <tbody>
+                	<tr>
+	                  <th *valign="top" *=""><font color="red">*</font> 
+					              手机号：
+					  </th>
+	                  <td>
+						<input id="userAccount" name="userAccount" type="text" class="input-txt" value="" maxlength="20">
+						<span id="userAccount_span" style="color:red"></span>
+						
+					  </td>
+	                </tr>
+	                <tr>
+	                  <th > 
+					          
+					  </th>
+					  
+	                  <td>
+						<a id="" class="yzmhq" >获取验证码</a>
+					  </td>
+	                </tr>
+        			<tr>
+	                  <th *valign="top" *=""><font color="red">*</font> 
+					              验证码：
+					  </th>
+	                  <td>
+						<input id="userAccount" name="userAccount" type="text" class="input-txt" value="" maxlength="20">
+						<span id="userAccount_span" style="color:red"></span>
+					  </td>
+	                </tr>
+	                <tr>
+	                  <th *valign="top" *=""><font color="red">*</font> 
+					              新密码：
+					  </th>
+	                  <td>
+						<input id="userAccount" name="userAccount" type="text" class="input-txt" value="" maxlength="20">
+						<span id="userAccount_span" style="color:red"></span>
+					  </td>
+	                </tr>
+	                <tr>
+	                  <th>&nbsp;</th> 
+	        		  <td><input class="btn-register cur" type="button" name="button" id="button" value="提交修改" onclick="onSubmit()"></td>
+	                </tr>
+            </tbody>
+            </table>
+    	</form>
+    </div>
+	<div class="clr"></div>
+  </div>
+</div>
+</div>
+</div>
+<!--尾部-->
+<div class="sitemap">
+    <div class="sitemap_c">
+  		<div class="foot-box clearfix">
+			<p class="a-box">
+				<a href="javascript:void(0);" >客户中心</a> |
+				<a href="javascript:void(0);">关于我们</a> |
+				<a href="javascript:void(0);" title="联系我们">联系我们</a> |
+				<a href="" title="">服务热线</a>
+				<strong style="color: #fff;">0311-8853898</strong>
+			</p>
+			<p class="foot-auth">版权所有·鑫淼聚 © 2018 |<a href="http://www.miitbeian.gov.cn" style="color: #fff;"> 京ICP证160759</a></p>
+			<p class="a-box" style="font-size: 12px;">鑫淼聚技有限公司&nbsp; &nbsp;&nbsp; |&nbsp; &nbsp;&nbsp;  北京市通州区东三环西路16号</p>
+		</div>
+    </div>
+</div>
+
+</body>
+</html>

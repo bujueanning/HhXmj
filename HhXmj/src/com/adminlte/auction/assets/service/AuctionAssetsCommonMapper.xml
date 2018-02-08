@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="auctionAssetsCommonMapper" >
+  <sql id="Update_Sql" >
+    <trim prefix="set" suffixOverrides="," >
+			<if test="auctionAssets.auction_assets_id != null  and auctionAssets.auction_assets_id!= ''" >
+		        auction_assets.auction_assets_id = #{auctionAssets.auction_assets_id},
+		    </if>
+			<if test="auctionAssets.auction_project_name != null  and auctionAssets.auction_project_name!= ''" >
+		        auction_assets.auction_project_name = #{auctionAssets.auction_project_name},
+		    </if>
+			<if test="auctionAssets.auction_project_number != null  and auctionAssets.auction_project_number!= ''" >
+		        auction_assets.auction_project_number = #{auctionAssets.auction_project_number},
+		    </if>
+			<if test="auctionAssets.auction_product_solutions != null  and auctionAssets.auction_product_solutions!= ''" >
+		        auction_assets.auction_product_solutions = #{auctionAssets.auction_product_solutions},
+		    </if>
+			<if test="auctionAssets.auction_classify != null  and auctionAssets.auction_classify!= ''" >
+		        auction_assets.auction_classify = #{auctionAssets.auction_classify},
+		    </if>
+			<if test="auctionAssets.auction_bail != null  and auctionAssets.auction_bail!= ''" >
+		        auction_assets.auction_bail = #{auctionAssets.auction_bail},
+		    </if>
+			<if test="auctionAssets.auction_bidding_cycle != null  and auctionAssets.auction_bidding_cycle!= ''" >
+		        auction_assets.auction_bidding_cycle = #{auctionAssets.auction_bidding_cycle},
+		    </if>
+			<if test="auctionAssets.auction_location != null  and auctionAssets.auction_location!= ''" >
+		        auction_assets.auction_location = #{auctionAssets.auction_location},
+		    </if>
+			<if test="auctionAssets.auction_starting_price != null  and auctionAssets.auction_starting_price!= ''" >
+		        auction_assets.auction_starting_price = #{auctionAssets.auction_starting_price},
+		    </if>
+			<if test="auctionAssets.auction_fare_increase != null  and auctionAssets.auction_fare_increase!= ''" >
+		        auction_assets.auction_fare_increase = #{auctionAssets.auction_fare_increase},
+		    </if>
+			<if test="auctionAssets.auction_listing_start_time != null  and auctionAssets.auction_listing_start_time!= ''" >
+		        auction_assets.auction_listing_start_time = #{auctionAssets.auction_listing_start_time},
+		    </if>
+			<if test="auctionAssets.auction_listing_end_time != null  and auctionAssets.auction_listing_end_time!= ''" >
+		        auction_assets.auction_listing_end_time = #{auctionAssets.auction_listing_end_time},
+		    </if>
+			<if test="auctionAssets.auction_project_announcement != null  and auctionAssets.auction_project_announcement!= ''" >
+		        auction_assets.auction_project_announcement = #{auctionAssets.auction_project_announcement},
+		    </if>
+			<if test="auctionAssets.auction_contacts != null  and auctionAssets.auction_contacts!= ''" >
+		        auction_assets.auction_contacts = #{auctionAssets.auction_contacts},
+		    </if>
+			<if test="auctionAssets.auction_contact_number != null  and auctionAssets.auction_contact_number!= ''" >
+		        auction_assets.auction_contact_number = #{auctionAssets.auction_contact_number},
+		    </if>
+			<if test="auctionAssets.auction_verify != null  and auctionAssets.auction_verify!= ''" >
+		        auction_assets.auction_verify = #{auctionAssets.auction_verify},
+		    </if>
+			<if test="auctionAssets.auction_assets_img != null  and auctionAssets.auction_assets_img!= ''" >
+		        auction_assets.auction_assets_img = #{auctionAssets.auction_assets_img},
+		    </if>
+			<if test="auctionAssets.auction_assets_createuid != null  and auctionAssets.auction_assets_createuid!= ''" >
+		        auction_assets.auction_assets_createuid = #{auctionAssets.auction_assets_createuid},
+		    </if>
+			<if test="auctionAssets.auction_assets_createtime != null  and auctionAssets.auction_assets_createtime!= ''" >
+		        auction_assets.auction_assets_createtime = #{auctionAssets.auction_assets_createtime},
+		    </if>
+			<if test="auctionAssets.auction_assets_updatetime != null  and auctionAssets.auction_assets_updatetime!= ''" >
+		        auction_assets.auction_assets_updatetime = #{auctionAssets.auction_assets_updatetime},
+		    </if>
+    </trim>
+  </sql>
+  <sql id="Inserts_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+	         <if test="paramKey.auction_assets_id != null  and paramKey.auction_assets_id!= ''" >
+	          auction_assets_id,
+	        </if>
+	         <if test="paramKey.auction_project_name != null  and paramKey.auction_project_name!= ''" >
+	          auction_project_name,
+	        </if>
+	         <if test="paramKey.auction_project_number != null  and paramKey.auction_project_number!= ''" >
+	          auction_project_number,
+	        </if>
+	         <if test="paramKey.auction_product_solutions != null  and paramKey.auction_product_solutions!= ''" >
+	          auction_product_solutions,
+	        </if>
+	         <if test="paramKey.auction_classify != null  and paramKey.auction_classify!= ''" >
+	          auction_classify,
+	        </if>
+	         <if test="paramKey.auction_bail != null  and paramKey.auction_bail!= ''" >
+	          auction_bail,
+	        </if>
+	         <if test="paramKey.auction_bidding_cycle != null  and paramKey.auction_bidding_cycle!= ''" >
+	          auction_bidding_cycle,
+	        </if>
+	         <if test="paramKey.auction_location != null  and paramKey.auction_location!= ''" >
+	          auction_location,
+	        </if>
+	         <if test="paramKey.auction_starting_price != null  and paramKey.auction_starting_price!= ''" >
+	          auction_starting_price,
+	        </if>
+	         <if test="paramKey.auction_fare_increase != null  and paramKey.auction_fare_increase!= ''" >
+	          auction_fare_increase,
+	        </if>
+	         <if test="paramKey.auction_listing_start_time != null  and paramKey.auction_listing_start_time!= ''" >
+	          auction_listing_start_time,
+	        </if>
+	         <if test="paramKey.auction_listing_end_time != null  and paramKey.auction_listing_end_time!= ''" >
+	          auction_listing_end_time,
+	        </if>
+	         <if test="paramKey.auction_project_announcement != null  and paramKey.auction_project_announcement!= ''" >
+	          auction_project_announcement,
+	        </if>
+	         <if test="paramKey.auction_contacts != null  and paramKey.auction_contacts!= ''" >
+	          auction_contacts,
+	        </if>
+	         <if test="paramKey.auction_contact_number != null  and paramKey.auction_contact_number!= ''" >
+	          auction_contact_number,
+	        </if>
+	         <if test="paramKey.auction_verify != null  and paramKey.auction_verify!= ''" >
+	          auction_verify,
+	        </if>
+	         <if test="paramKey.auction_assets_img != null  and paramKey.auction_assets_img!= ''" >
+	          auction_assets_img,
+	        </if>
+	         <if test="paramKey.auction_assets_createuid != null  and paramKey.auction_assets_createuid!= ''" >
+	          auction_assets_createuid,
+	        </if>
+	         <if test="paramKey.auction_assets_createtime != null  and paramKey.auction_assets_createtime!= ''" >
+	          auction_assets_createtime,
+	        </if>
+	         <if test="paramKey.auction_assets_updatetime != null  and paramKey.auction_assets_updatetime!= ''" >
+	          auction_assets_updatetime,
+	        </if>
+    </trim>
+    values  
+    <foreach collection="paramValue" item="item" index="index" separator="," >  
+        (
+		          <if test="item.auction_assets_id != null and item.auction_assets_id!= ''" >
+			      	#{item.auction_assets_id},
+			      </if>
+		          <if test="item.auction_project_name != null and item.auction_project_name!= ''" >
+			      	#{item.auction_project_name},
+			      </if>
+		          <if test="item.auction_project_number != null and item.auction_project_number!= ''" >
+			      	#{item.auction_project_number},
+			      </if>
+		          <if test="item.auction_product_solutions != null and item.auction_product_solutions!= ''" >
+			      	#{item.auction_product_solutions},
+			      </if>
+		          <if test="item.auction_classify != null and item.auction_classify!= ''" >
+			      	#{item.auction_classify},
+			      </if>
+		          <if test="item.auction_bail != null and item.auction_bail!= ''" >
+			      	#{item.auction_bail},
+			      </if>
+		          <if test="item.auction_bidding_cycle != null and item.auction_bidding_cycle!= ''" >
+			      	#{item.auction_bidding_cycle},
+			      </if>
+		          <if test="item.auction_location != null and item.auction_location!= ''" >
+			      	#{item.auction_location},
+			      </if>
+		          <if test="item.auction_starting_price != null and item.auction_starting_price!= ''" >
+			      	#{item.auction_starting_price},
+			      </if>
+		          <if test="item.auction_fare_increase != null and item.auction_fare_increase!= ''" >
+			      	#{item.auction_fare_increase},
+			      </if>
+		          <if test="item.auction_listing_start_time != null and item.auction_listing_start_time!= ''" >
+			      	#{item.auction_listing_start_time},
+			      </if>
+		          <if test="item.auction_listing_end_time != null and item.auction_listing_end_time!= ''" >
+			      	#{item.auction_listing_end_time},
+			      </if>
+		          <if test="item.auction_project_announcement != null and item.auction_project_announcement!= ''" >
+			      	#{item.auction_project_announcement},
+			      </if>
+		          <if test="item.auction_contacts != null and item.auction_contacts!= ''" >
+			      	#{item.auction_contacts},
+			      </if>
+		          <if test="item.auction_contact_number != null and item.auction_contact_number!= ''" >
+			      	#{item.auction_contact_number},
+			      </if>
+		          <if test="item.auction_verify != null and item.auction_verify!= ''" >
+			      	#{item.auction_verify},
+			      </if>
+		          <if test="item.auction_assets_img != null and item.auction_assets_img!= ''" >
+			      	#{item.auction_assets_img},
+			      </if>
+		          <if test="item.auction_assets_createuid != null and item.auction_assets_createuid!= ''" >
+			      	#{item.auction_assets_createuid},
+			      </if>
+		          <if test="item.auction_assets_createtime != null and item.auction_assets_createtime!= ''" >
+			      	#{item.auction_assets_createtime},
+			      </if>
+		          <if test="item.auction_assets_updatetime != null and item.auction_assets_updatetime!= ''" >
+			      	#{item.auction_assets_updatetime},
+			      </if>
+        )  
+    </foreach> 
+  </sql>
+  <sql id="Insert_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+    		<if test="auction_assets_id != null  and auction_assets_id!= ''" >
+	          auction_assets_id,
+	        </if>
+    		<if test="auction_project_name != null  and auction_project_name!= ''" >
+	          auction_project_name,
+	        </if>
+    		<if test="auction_project_number != null  and auction_project_number!= ''" >
+	          auction_project_number,
+	        </if>
+    		<if test="auction_product_solutions != null  and auction_product_solutions!= ''" >
+	          auction_product_solutions,
+	        </if>
+    		<if test="auction_classify != null  and auction_classify!= ''" >
+	          auction_classify,
+	        </if>
+    		<if test="auction_bail != null  and auction_bail!= ''" >
+	          auction_bail,
+	        </if>
+    		<if test="auction_bidding_cycle != null  and auction_bidding_cycle!= ''" >
+	          auction_bidding_cycle,
+	        </if>
+    		<if test="auction_location != null  and auction_location!= ''" >
+	          auction_location,
+	        </if>
+    		<if test="auction_starting_price != null  and auction_starting_price!= ''" >
+	          auction_starting_price,
+	        </if>
+    		<if test="auction_fare_increase != null  and auction_fare_increase!= ''" >
+	          auction_fare_increase,
+	        </if>
+    		<if test="auction_listing_start_time != null  and auction_listing_start_time!= ''" >
+	          auction_listing_start_time,
+	        </if>
+    		<if test="auction_listing_end_time != null  and auction_listing_end_time!= ''" >
+	          auction_listing_end_time,
+	        </if>
+    		<if test="auction_project_announcement != null  and auction_project_announcement!= ''" >
+	          auction_project_announcement,
+	        </if>
+    		<if test="auction_contacts != null  and auction_contacts!= ''" >
+	          auction_contacts,
+	        </if>
+    		<if test="auction_contact_number != null  and auction_contact_number!= ''" >
+	          auction_contact_number,
+	        </if>
+    		<if test="auction_verify != null  and auction_verify!= ''" >
+	          auction_verify,
+	        </if>
+    		<if test="auction_assets_img != null  and auction_assets_img!= ''" >
+	          auction_assets_img,
+	        </if>
+    		<if test="auction_assets_createuid != null  and auction_assets_createuid!= ''" >
+	          auction_assets_createuid,
+	        </if>
+    		<if test="auction_assets_createtime != null  and auction_assets_createtime!= ''" >
+	          auction_assets_createtime,
+	        </if>
+    		<if test="auction_assets_updatetime != null  and auction_assets_updatetime!= ''" >
+	          auction_assets_updatetime,
+	        </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+	      <if test="auction_assets_id != null and auction_assets_id!= ''" >
+	      	#{auction_assets_id},
+	      </if>
+	      <if test="auction_project_name != null and auction_project_name!= ''" >
+	      	#{auction_project_name},
+	      </if>
+	      <if test="auction_project_number != null and auction_project_number!= ''" >
+	      	#{auction_project_number},
+	      </if>
+	      <if test="auction_product_solutions != null and auction_product_solutions!= ''" >
+	      	#{auction_product_solutions},
+	      </if>
+	      <if test="auction_classify != null and auction_classify!= ''" >
+	      	#{auction_classify},
+	      </if>
+	      <if test="auction_bail != null and auction_bail!= ''" >
+	      	#{auction_bail},
+	      </if>
+	      <if test="auction_bidding_cycle != null and auction_bidding_cycle!= ''" >
+	      	#{auction_bidding_cycle},
+	      </if>
+	      <if test="auction_location != null and auction_location!= ''" >
+	      	#{auction_location},
+	      </if>
+	      <if test="auction_starting_price != null and auction_starting_price!= ''" >
+	      	#{auction_starting_price},
+	      </if>
+	      <if test="auction_fare_increase != null and auction_fare_increase!= ''" >
+	      	#{auction_fare_increase},
+	      </if>
+	      <if test="auction_listing_start_time != null and auction_listing_start_time!= ''" >
+	      	#{auction_listing_start_time},
+	      </if>
+	      <if test="auction_listing_end_time != null and auction_listing_end_time!= ''" >
+	      	#{auction_listing_end_time},
+	      </if>
+	      <if test="auction_project_announcement != null and auction_project_announcement!= ''" >
+	      	#{auction_project_announcement},
+	      </if>
+	      <if test="auction_contacts != null and auction_contacts!= ''" >
+	      	#{auction_contacts},
+	      </if>
+	      <if test="auction_contact_number != null and auction_contact_number!= ''" >
+	      	#{auction_contact_number},
+	      </if>
+	      <if test="auction_verify != null and auction_verify!= ''" >
+	      	#{auction_verify},
+	      </if>
+	      <if test="auction_assets_img != null and auction_assets_img!= ''" >
+	      	#{auction_assets_img},
+	      </if>
+	      <if test="auction_assets_createuid != null and auction_assets_createuid!= ''" >
+	      	#{auction_assets_createuid},
+	      </if>
+	      <if test="auction_assets_createtime != null and auction_assets_createtime!= ''" >
+	      	#{auction_assets_createtime},
+	      </if>
+	      <if test="auction_assets_updatetime != null and auction_assets_updatetime!= ''" >
+	      	#{auction_assets_updatetime},
+	      </if>
+    </trim>
+  </sql>
+  <sql id="Where_Update_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="auctionAssetsQuery.auction_assets_id != null and auctionAssetsQuery.auction_assets_id!= ''" >
+	      	and auction_assets.auction_assets_id=#{auctionAssetsQuery.auction_assets_id}
+	      </when>
+	      <when test="auctionAssetsQuery.auction_project_name != null and auctionAssetsQuery.auction_project_name!= ''" >
+	      	and auction_assets.auction_project_name=#{auctionAssetsQuery.auction_project_name}
+	      </when>
+	      <when test="auctionAssetsQuery.auction_project_number != null and auctionAssetsQuery.auction_project_number!= ''" >
+	      	and auction_assets.auction_project_number=#{auctionAssetsQuery.auction_project_number}
+	      </when>
+	      <when test="auctionAssetsQuery.auction_product_solutions != null and auctionAssetsQuery.auction_product_solutions!= ''" >
+	      	and auction_assets.auction_product_solutions=#{auctionAssetsQuery.auction_product_solutions}
+	      </when>
+	      <when test="auctionAssetsQuery.auction_classify != null and auctionAssetsQuery.auction_classify!= ''" >
+	      	and auction_assets.auction_classify=#{auctionAssetsQuery.auction_classify}
+	      </when>
+	      <when test="auctionAssetsQuery.auction_bail != null and auctionAssetsQuery.auction_bail!= ''" >
+	      	and auction_assets.auction_bail=#{auctionAssetsQuery.auction_bail}
+	      </when>
+	      <when test="auctionAssetsQuery.auction_bidding_cycle != null and auctionAssetsQuery.auction_bidding_cycle!= ''" >
+	      	and auction_assets.auction_bidding_cycle=#{auctionAssetsQuery.auction_bidding_cycle}
+	      </when>
+	      <when test="auctionAssetsQuery.auction_location != null and auctionAssetsQuery.auction_location!= ''" >
+	      	and auction_assets.auction_location=#{auctionAssetsQuery.auction_location}
+	      </when>
+	      <when test="auctionAssetsQuery.auction_starting_price != null and auctionAssetsQuery.auction_starting_price!= ''" >
+	      	and auction_assets.auction_starting_price=#{auctionAssetsQuery.auction_starting_price}
+	      </when>
+	      <when test="auctionAssetsQuery.auction_fare_increase != null and auctionAssetsQuery.auction_fare_increase!= ''" >
+	      	and auction_assets.auction_fare_increase=#{auctionAssetsQuery.auction_fare_increase}
+	      </when>
+	      <when test="auctionAssetsQuery.auction_listing_start_time != null and auctionAssetsQuery.auction_listing_start_time!= ''" >
+	      	and auction_assets.auction_listing_start_time=#{auctionAssetsQuery.auction_listing_start_time}
+	      </when>
+	      <when test="auctionAssetsQuery.auction_listing_end_time != null and auctionAssetsQuery.auction_listing_end_time!= ''" >
+	      	and auction_assets.auction_listing_end_time=#{auctionAssetsQuery.auction_listing_end_time}
+	      </when>
+	      <when test="auctionAssetsQuery.auction_project_announcement != null and auctionAssetsQuery.auction_project_announcement!= ''" >
+	      	and auction_assets.auction_project_announcement=#{auctionAssetsQuery.auction_project_announcement}
+	      </when>
+	      <when test="auctionAssetsQuery.auction_contacts != null and auctionAssetsQuery.auction_contacts!= ''" >
+	      	and auction_assets.auction_contacts=#{auctionAssetsQuery.auction_contacts}
+	      </when>
+	      <when test="auctionAssetsQuery.auction_contact_number != null and auctionAssetsQuery.auction_contact_number!= ''" >
+	      	and auction_assets.auction_contact_number=#{auctionAssetsQuery.auction_contact_number}
+	      </when>
+	      <when test="auctionAssetsQuery.auction_verify != null and auctionAssetsQuery.auction_verify!= ''" >
+	      	and auction_assets.auction_verify=#{auctionAssetsQuery.auction_verify}
+	      </when>
+	      <when test="auctionAssetsQuery.auction_assets_img != null and auctionAssetsQuery.auction_assets_img!= ''" >
+	      	and auction_assets.auction_assets_img=#{auctionAssetsQuery.auction_assets_img}
+	      </when>
+	      <when test="auctionAssetsQuery.auction_assets_createuid != null and auctionAssetsQuery.auction_assets_createuid!= ''" >
+	      	and auction_assets.auction_assets_createuid=#{auctionAssetsQuery.auction_assets_createuid}
+	      </when>
+	      <when test="auctionAssetsQuery.auction_assets_createtime != null and auctionAssetsQuery.auction_assets_createtime!= ''" >
+	      	and auction_assets.auction_assets_createtime=#{auctionAssetsQuery.auction_assets_createtime}
+	      </when>
+	      <when test="auctionAssetsQuery.auction_assets_updatetime != null and auctionAssetsQuery.auction_assets_updatetime!= ''" >
+	      	and auction_assets.auction_assets_updatetime=#{auctionAssetsQuery.auction_assets_updatetime}
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+    <sql id="Where_Del_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="auction_assets_id != null and auction_assets_id!= ''" >
+	      	and auction_assets.auction_assets_id=#{auction_assets_id}
+	      </when>
+	      <when test="auction_project_name != null and auction_project_name!= ''" >
+	      	and auction_assets.auction_project_name=#{auction_project_name}
+	      </when>
+	      <when test="auction_project_number != null and auction_project_number!= ''" >
+	      	and auction_assets.auction_project_number=#{auction_project_number}
+	      </when>
+	      <when test="auction_product_solutions != null and auction_product_solutions!= ''" >
+	      	and auction_assets.auction_product_solutions=#{auction_product_solutions}
+	      </when>
+	      <when test="auction_classify != null and auction_classify!= ''" >
+	      	and auction_assets.auction_classify=#{auction_classify}
+	      </when>
+	      <when test="auction_bail != null and auction_bail!= ''" >
+	      	and auction_assets.auction_bail=#{auction_bail}
+	      </when>
+	      <when test="auction_bidding_cycle != null and auction_bidding_cycle!= ''" >
+	      	and auction_assets.auction_bidding_cycle=#{auction_bidding_cycle}
+	      </when>
+	      <when test="auction_location != null and auction_location!= ''" >
+	      	and auction_assets.auction_location=#{auction_location}
+	      </when>
+	      <when test="auction_starting_price != null and auction_starting_price!= ''" >
+	      	and auction_assets.auction_starting_price=#{auction_starting_price}
+	      </when>
+	      <when test="auction_fare_increase != null and auction_fare_increase!= ''" >
+	      	and auction_assets.auction_fare_increase=#{auction_fare_increase}
+	      </when>
+	      <when test="auction_listing_start_time != null and auction_listing_start_time!= ''" >
+	      	and auction_assets.auction_listing_start_time=#{auction_listing_start_time}
+	      </when>
+	      <when test="auction_listing_end_time != null and auction_listing_end_time!= ''" >
+	      	and auction_assets.auction_listing_end_time=#{auction_listing_end_time}
+	      </when>
+	      <when test="auction_project_announcement != null and auction_project_announcement!= ''" >
+	      	and auction_assets.auction_project_announcement=#{auction_project_announcement}
+	      </when>
+	      <when test="auction_contacts != null and auction_contacts!= ''" >
+	      	and auction_assets.auction_contacts=#{auction_contacts}
+	      </when>
+	      <when test="auction_contact_number != null and auction_contact_number!= ''" >
+	      	and auction_assets.auction_contact_number=#{auction_contact_number}
+	      </when>
+	      <when test="auction_verify != null and auction_verify!= ''" >
+	      	and auction_assets.auction_verify=#{auction_verify}
+	      </when>
+	      <when test="auction_assets_img != null and auction_assets_img!= ''" >
+	      	and auction_assets.auction_assets_img=#{auction_assets_img}
+	      </when>
+	      <when test="auction_assets_createuid != null and auction_assets_createuid!= ''" >
+	      	and auction_assets.auction_assets_createuid=#{auction_assets_createuid}
+	      </when>
+	      <when test="auction_assets_createtime != null and auction_assets_createtime!= ''" >
+	      	and auction_assets.auction_assets_createtime=#{auction_assets_createtime}
+	      </when>
+	      <when test="auction_assets_updatetime != null and auction_assets_updatetime!= ''" >
+	      	and auction_assets.auction_assets_updatetime=#{auction_assets_updatetime}
+	      </when>
+	     <when test="ids != null and ids!= ''" >
+	      		and auction_assets.auction_assets_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		           #{id}
+		        </foreach>
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+  <sql id="Where_Select_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="auction_assets_id != null and auction_assets_id!= ''" >
+	      	and auction_assets.auction_assets_id=#{auction_assets_id}
+	      </if>
+	      <if test="auction_project_name != null and auction_project_name!= ''" >
+	      	and auction_assets.auction_project_name=#{auction_project_name}
+	      </if>
+	      <if test="auction_project_number != null and auction_project_number!= ''" >
+	      	and auction_assets.auction_project_number=#{auction_project_number}
+	      </if>
+	      <if test="auction_product_solutions != null and auction_product_solutions!= ''" >
+	      	and auction_assets.auction_product_solutions=#{auction_product_solutions}
+	      </if>
+	      <if test="auction_classify != null and auction_classify!= ''" >
+	      	and auction_assets.auction_classify=#{auction_classify}
+	      </if>
+	      <if test="auction_bail != null and auction_bail!= ''" >
+	      	and auction_assets.auction_bail=#{auction_bail}
+	      </if>
+	      <if test="auction_bidding_cycle != null and auction_bidding_cycle!= ''" >
+			  <![CDATA[ and auction_assets.auction_bidding_cycle <= #{auction_bidding_cycle}]]>
+	      </if>
+	      <if test="auction_location != null and auction_location!= ''" >
+	      	and auction_assets.auction_location=#{auction_location}
+	      </if>
+	      <if test="auction_starting_price != null and auction_starting_price!= ''" >
+	      	and auction_assets.auction_starting_price=#{auction_starting_price}
+	      </if>
+	      <if test="auction_fare_increase != null and auction_fare_increase!= ''" >
+	      	and auction_assets.auction_fare_increase=#{auction_fare_increase}
+	      </if>
+	      <if test="auction_listing_start_time != null and auction_listing_start_time!= ''" >
+	      	and auction_assets.auction_listing_start_time=#{auction_listing_start_time}
+	      </if>
+	      <if test="auction_listing_end_time != null and auction_listing_end_time!= ''" >
+	      	and auction_assets.auction_listing_end_time=#{auction_listing_end_time}
+	      </if>
+	      <if test="auction_project_announcement != null and auction_project_announcement!= ''" >
+	      	and auction_assets.auction_project_announcement=#{auction_project_announcement}
+	      </if>
+	      <if test="auction_contacts != null and auction_contacts!= ''" >
+	      	and auction_assets.auction_contacts=#{auction_contacts}
+	      </if>
+	      <if test="auction_contact_number != null and auction_contact_number!= ''" >
+	      	and auction_assets.auction_contact_number=#{auction_contact_number}
+	      </if>
+	      <if test="auction_verify != null and auction_verify!= ''" >
+	      	and auction_assets.auction_verify=#{auction_verify}
+	      </if>
+	      <if test="auction_assets_img != null and auction_assets_img!= ''" >
+	      	and auction_assets.auction_assets_img=#{auction_assets_img}
+	      </if>
+	      <if test="auction_assets_createuid != null and auction_assets_createuid!= ''" >
+	      	and auction_assets.auction_assets_createuid=#{auction_assets_createuid}
+	      </if>
+	      <if test="auction_assets_createtime != null and auction_assets_createtime!= ''" >
+	      	and auction_assets.auction_assets_createtime=#{auction_assets_createtime}
+	      </if>
+	      <if test="auction_assets_updatetime != null and auction_assets_updatetime!= ''" >
+	      	and auction_assets.auction_assets_updatetime=#{auction_assets_updatetime}
+	      </if>
+		<if test="auction_ownership_amount != null and auction_ownership_amount!= ''" >
+			and auction_overview.auction_ownership_amount=#{auction_ownership_amount}
+		</if>
+		<if test="allSearch != null and allSearch!= ''" >
+			and (auction_assets.auction_project_name like  '%${allSearch}%'
+				or auction_assets.auction_product_solutions like  '%${allSearch}%'
+			)
+		</if>
+	     <if test="ids != null and ids!= ''" >
+	      	and auction_assets.auction_assets_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+  
+  <sql id="Where_SelectTree_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="auction_assets_id != null and auction_assets_id!= ''" >
+	      	and parent.auction_assets_id=#{auction_assets_id}
+	      </if>
+	      <if test="auction_project_name != null and auction_project_name!= ''" >
+	      	and parent.auction_project_name=#{auction_project_name}
+	      </if>
+	      <if test="auction_project_number != null and auction_project_number!= ''" >
+	      	and parent.auction_project_number=#{auction_project_number}
+	      </if>
+	      <if test="auction_product_solutions != null and auction_product_solutions!= ''" >
+	      	and parent.auction_product_solutions=#{auction_product_solutions}
+	      </if>
+	      <if test="auction_classify != null and auction_classify!= ''" >
+	      	and parent.auction_classify=#{auction_classify}
+	      </if>
+	      <if test="auction_bail != null and auction_bail!= ''" >
+	      	and parent.auction_bail=#{auction_bail}
+	      </if>
+	      <if test="auction_bidding_cycle != null and auction_bidding_cycle!= ''" >
+	      	and parent.auction_bidding_cycle=#{auction_bidding_cycle}
+	      </if>
+	      <if test="auction_location != null and auction_location!= ''" >
+	      	and parent.auction_location=#{auction_location}
+	      </if>
+	      <if test="auction_starting_price != null and auction_starting_price!= ''" >
+	      	and parent.auction_starting_price=#{auction_starting_price}
+	      </if>
+	      <if test="auction_fare_increase != null and auction_fare_increase!= ''" >
+	      	and parent.auction_fare_increase=#{auction_fare_increase}
+	      </if>
+	      <if test="auction_listing_start_time != null and auction_listing_start_time!= ''" >
+	      	and parent.auction_listing_start_time=#{auction_listing_start_time}
+	      </if>
+	      <if test="auction_listing_end_time != null and auction_listing_end_time!= ''" >
+	      	and parent.auction_listing_end_time=#{auction_listing_end_time}
+	      </if>
+	      <if test="auction_project_announcement != null and auction_project_announcement!= ''" >
+	      	and parent.auction_project_announcement=#{auction_project_announcement}
+	      </if>
+	      <if test="auction_contacts != null and auction_contacts!= ''" >
+	      	and parent.auction_contacts=#{auction_contacts}
+	      </if>
+	      <if test="auction_contact_number != null and auction_contact_number!= ''" >
+	      	and parent.auction_contact_number=#{auction_contact_number}
+	      </if>
+	      <if test="auction_verify != null and auction_verify!= ''" >
+	      	and parent.auction_verify=#{auction_verify}
+	      </if>
+	      <if test="auction_assets_img != null and auction_assets_img!= ''" >
+	      	and parent.auction_assets_img=#{auction_assets_img}
+	      </if>
+	      <if test="auction_assets_createuid != null and auction_assets_createuid!= ''" >
+	      	and parent.auction_assets_createuid=#{auction_assets_createuid}
+	      </if>
+	      <if test="auction_assets_createtime != null and auction_assets_createtime!= ''" >
+	      	and parent.auction_assets_createtime=#{auction_assets_createtime}
+	      </if>
+	      <if test="auction_assets_updatetime != null and auction_assets_updatetime!= ''" >
+	      	and parent.auction_assets_updatetime=#{auction_assets_updatetime}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and parent.auction_assets_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+</mapper>

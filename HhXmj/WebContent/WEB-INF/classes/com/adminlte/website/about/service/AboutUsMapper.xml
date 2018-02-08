@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="aboutUsMapper" >
+  <select id="select" resultType="java.util.Map" parameterType="java.util.Map" >
+    select about_us.*, s.sys_user_name
+    from about_us
+    LEFT JOIN sys_user s ON s.sys_user_id = about_us.about_us_createuid
+    <include refid="aboutUsCommonMapper.Where_Select_Sql" />
+  </select>
+  
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from about_us
+    <include refid="aboutUsCommonMapper.Where_Del_Sql" />
+  </delete>
+  <insert id="insert" parameterType="java.util.Map" >
+    insert into about_us <include refid="aboutUsCommonMapper.Insert_Sql" />
+  </insert>
+  <insert id="inserts" parameterType="java.util.List" >
+    insert into about_us <include refid="aboutUsCommonMapper.Inserts_Sql" />
+  </insert>
+  <update id="update" parameterType="java.util.Map" >
+    update about_us 
+    <include refid="aboutUsCommonMapper.Update_Sql" />
+    <include refid="aboutUsCommonMapper.Where_Update_Sql" />
+  </update>
+  <select id="count" parameterType="java.util.Map" resultType="java.lang.Integer" >
+    select count(*) from about_us 
+    <if test="_parameter != null" >
+      <include refid="aboutUsCommonMapper.Where_Select_Sql" />
+    </if>
+  </select>	
+</mapper>

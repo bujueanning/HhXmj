@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bondSiteCommonMapper" >
+  <sql id="Update_Sql" >
+    <trim prefix="set" suffixOverrides="," >
+			<if test="bondSite.bond_site_id != null  and bondSite.bond_site_id!= ''" >
+		        bond_site.bond_site_id = #{bondSite.bond_site_id},
+		    </if>
+			<if test="bondSite.bond_site_pid != null  and bondSite.bond_site_pid!= ''" >
+		        bond_site.bond_site_pid = #{bondSite.bond_site_pid},
+		    </if>
+			<if test="bondSite.bond_location_name != null  and bondSite.bond_location_name!= ''" >
+		        bond_site.bond_location_name = #{bondSite.bond_location_name},
+		    </if>
+			<if test="bondSite.bond_site_state != null  and bondSite.bond_site_state!= ''" >
+		        bond_site.bond_site_state = #{bondSite.bond_site_state},
+		    </if>
+			<if test="bondSite.join_site != null  and bondSite.join_site!= ''" >
+		        bond_site.join_site = #{bondSite.join_site},
+		    </if>
+    </trim>
+  </sql>
+  <sql id="Inserts_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+	         <if test="paramKey.bond_site_id != null  and paramKey.bond_site_id!= ''" >
+	          bond_site_id,
+	        </if>
+	         <if test="paramKey.bond_site_pid != null  and paramKey.bond_site_pid!= ''" >
+	          bond_site_pid,
+	        </if>
+	         <if test="paramKey.bond_location_name != null  and paramKey.bond_location_name!= ''" >
+	          bond_location_name,
+	        </if>
+	         <if test="paramKey.bond_site_state != null  and paramKey.bond_site_state!= ''" >
+	          bond_site_state,
+	        </if>
+    </trim>
+    values  
+    <foreach collection="paramValue" item="item" index="index" separator="," >  
+        (
+		          <if test="item.bond_site_id != null and item.bond_site_id!= ''" >
+			      	#{item.bond_site_id},
+			      </if>
+		          <if test="item.bond_site_pid != null and item.bond_site_pid!= ''" >
+			      	#{item.bond_site_pid},
+			      </if>
+		          <if test="item.bond_location_name != null and item.bond_location_name!= ''" >
+			      	#{item.bond_location_name},
+			      </if>
+		          <if test="item.bond_site_state != null and item.bond_site_state!= ''" >
+			      	#{item.bond_site_state},
+			      </if>
+        )  
+    </foreach> 
+  </sql>
+  <sql id="Insert_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+    		<if test="bond_site_id != null  and bond_site_id!= ''" >
+	          bond_site_id,
+	        </if>
+    		<if test="bond_site_pid != null  and bond_site_pid!= ''" >
+	          bond_site_pid,
+	        </if>
+    		<if test="bond_location_name != null  and bond_location_name!= ''" >
+	          bond_location_name,
+	        </if>
+    		<if test="bond_site_state != null  and bond_site_state!= ''" >
+	          bond_site_state,
+	        </if>
+    		<if test="join_site != null  and join_site!= ''" >
+	          join_site,
+	        </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+	      <if test="bond_site_id != null and bond_site_id!= ''" >
+	      	#{bond_site_id},
+	      </if>
+	      <if test="bond_site_pid != null and bond_site_pid!= ''" >
+	      	#{bond_site_pid},
+	      </if>
+	      <if test="bond_location_name != null and bond_location_name!= ''" >
+	      	#{bond_location_name},
+	      </if>
+	      <if test="bond_site_state != null and bond_site_state!= ''" >
+	      	#{bond_site_state},
+	      </if>
+	      <if test="join_site != null and join_site!= ''" >
+	      	#{join_site},
+	      </if>
+    </trim>
+  </sql>
+  <sql id="Where_Update_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="bondSiteQuery.bond_site_id != null and bondSiteQuery.bond_site_id!= ''" >
+	      	and bond_site.bond_site_id=#{bondSiteQuery.bond_site_id}
+	      </when>
+	      <when test="bondSiteQuery.bond_site_pid != null and bondSiteQuery.bond_site_pid!= ''" >
+	      	and bond_site.bond_site_pid=#{bondSiteQuery.bond_site_pid}
+	      </when>
+	      <when test="bondSiteQuery.bond_location_name != null and bondSiteQuery.bond_location_name!= ''" >
+	      	and bond_site.bond_location_name=#{bondSiteQuery.bond_location_name}
+	      </when>
+	      <when test="bondSiteQuery.bond_site_state != null and bondSiteQuery.bond_site_state!= ''" >
+	      	and bond_site.bond_site_state=#{bondSiteQuery.bond_site_state}
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+    <sql id="Where_Del_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="bond_site_id != null and bond_site_id!= ''" >
+	      	and bond_site.bond_site_id=#{bond_site_id}
+	      </when>
+	      <when test="bond_site_pid != null and bond_site_pid!= ''" >
+	      	and bond_site.bond_site_pid=#{bond_site_pid}
+	      </when>
+	      <when test="bond_location_name != null and bond_location_name!= ''" >
+	      	and bond_site.bond_location_name=#{bond_location_name}
+	      </when>
+	      <when test="bond_site_state != null and bond_site_state!= ''" >
+	      	and bond_site.bond_site_state=#{bond_site_state}
+	      </when>
+	     <when test="ids != null and ids!= ''" >
+	      		and bond_site.bond_site_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		           #{id}
+		        </foreach>
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+  <sql id="Where_Select_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="bond_site_id != null and bond_site_id!= ''" >
+	      	and bond_site.bond_site_id=#{bond_site_id}
+	      </if>
+	      <!-- 得到pid为省的id，省的下级市 -->
+	      <if test="bond_site_pid != null and bond_site_pid!= ''" >
+	      	and bond_site.bond_site_pid=#{bond_site_pid}
+	      </if>
+	      <if test="bond_location_name != null and bond_location_name!= ''" >
+	      	and bond_site.bond_location_name=#{bond_location_name}
+	      </if>
+	      <if test="bond_site_state != null and bond_site_state!= ''" >
+	      	and bond_site.bond_site_state=#{bond_site_state}
+	      </if>
+	      <if test="join_site != null and join_site!= ''" >
+	      	and bond_site.join_site=#{join_site}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and bond_site.bond_site_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+  
+  <sql id="Where_SelectTree_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="bond_site_id != null and bond_site_id!= ''" >
+	      	and parent.bond_site_id=#{bond_site_id}
+	      </if>
+	      <if test="bond_site_pid != null and bond_site_pid!= ''" >
+	      	and parent.bond_site_pid=#{bond_site_pid}
+	      </if>
+	      <if test="bond_location_name != null and bond_location_name!= ''" >
+	      	and parent.bond_location_name=#{bond_location_name}
+	      </if>
+	      <if test="bond_site_state != null and bond_site_state!= ''" >
+	      	and parent.bond_site_state=#{bond_site_state}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and parent.bond_site_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+</mapper>

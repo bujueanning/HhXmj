@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sysRoleActivitiCommonMapper" >
+	
+  <resultMap id="BaseResultMap" type="com.adminlte.sys.role.activiti.pojo.SysRoleActiviti" >
+		 <id column="sys_role_activiti_id" property="sysRoleActivitiId"/> 
+	   	 <result column="sys_role_id" property="sysRoleId"/>
+	   	 <result column="sys_activiti_id" property="sysActivitiId"/>
+	   	 <result column="sys_role_activiti_type" property="sysRoleActivitiType"/>
+  </resultMap>
+ 
+  
+  <sql id="Base_Column_List" >
+			SYS_ROLE_ACTIVITI_ID ,	
+			SYS_ROLE_ID ,	
+			SYS_ACTIVITI_ID ,	
+			SYS_ROLE_ACTIVITI_TYPE 	
+  </sql>
+   <sql id="Base_Value_List" >
+			#{sysRoleActivitiId} ,	
+			#{sysRoleId} ,	
+			#{sysActivitiId} ,	
+			#{sysRoleActivitiType} 	
+  </sql>
+  <sql id="Update_Selective" >
+    <trim prefix="set" suffixOverrides="," >
+			<if test="sysRoleActiviti.sysRoleActivitiId != null" >
+		        sys_role_activiti_id = #{sysRoleActiviti.sysRoleActivitiId},
+		    </if>
+			<if test="sysRoleActiviti.sysRoleId != null" >
+		        sys_role_id = #{sysRoleActiviti.sysRoleId},
+		    </if>
+			<if test="sysRoleActiviti.sysActivitiId != null" >
+		        sys_activiti_id = #{sysRoleActiviti.sysActivitiId},
+		    </if>
+			<if test="sysRoleActiviti.sysRoleActivitiType != null" >
+		        sys_role_activiti_type = #{sysRoleActiviti.sysRoleActivitiType},
+		    </if>
+    </trim>
+  </sql>
+  <sql id="Insert_Selective" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+    		<if test="sysRoleActivitiId != null" >
+	          sys_role_activiti_id,
+	        </if>
+    		<if test="sysRoleId != null" >
+	          sys_role_id,
+	        </if>
+    		<if test="sysActivitiId != null" >
+	          sys_activiti_id,
+	        </if>
+    		<if test="sysRoleActivitiType != null" >
+	          sys_role_activiti_type,
+	        </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+	      <if test="sysRoleActivitiId != null" >
+	      	#{sysRoleActivitiId},
+	      </if>
+	      <if test="sysRoleId != null" >
+	      	#{sysRoleId},
+	      </if>
+	      <if test="sysActivitiId != null" >
+	      	#{sysActivitiId},
+	      </if>
+	      <if test="sysRoleActivitiType != null" >
+	      	#{sysRoleActivitiType},
+	      </if>
+    </trim>
+  </sql>	
+</mapper>

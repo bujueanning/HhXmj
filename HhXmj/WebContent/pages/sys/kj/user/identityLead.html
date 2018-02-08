@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache,no-store">
+    <meta http-equiv="expires" content="0"/>
+    <title>鑫淼聚不良资产处置平台</title>
+    <meta http-equiv="keywords" content="鑫淼聚,资产管理,鑫淼聚,东方证券资产管理有限公司,投资,理财,基金，私募,集合理财,券商,专户理财,券商资管,资管,定向客户,宏观经济,业绩,领先"/>
+    <meta http-equiv="description" content="鑫淼聚资产管理有限公司是中国证券会批准设立的首家券商资产管理公司；自1998年开始从事客户资产管理业务，2002年首批获得从事客户资产管理业务资格，2005年成为首批开展券商集合理财业务的证券公司，2010年成为首家获准设立的券商资产管理公司。 "/>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+     <link rel="stylesheet" type="text/css" href="../css/user.css"/>
+    <script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="../js/global.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/jcarousellite_1.0.1.js"></script>
+    <script type="text/javascript" src="../js/iepng.js"></script>
+    <script type="text/javascript" src="../js/jquery.extend.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/easing.js"></script>
+    <script type="text/javascript" src="../js/adduser.js"></script>
+	<style>
+	    #idCardBackImg,#idCardFrontImg {
+	        opacity: 0;
+	        position: absolute;
+	        z-index: 10;
+			width: 222px;
+			height:116px;
+			left: 0px;
+			top:0px;
+	    }
+		label.error{
+			color:red
+		}
+		imgDel {
+			position:absolute;
+			right:-5px;
+			top:-5px;
+			cursor:pointor;
+		}
+	</style>
+</head>
+<body>
+<!--注册登录-->
+<div class="top_wrap"> 	
+    <div class="top">
+        <a href="sys/kj/index"><img src="../img/logo.png"  class="fl logo"/></a>
+        <img src="../img/tel.png" alt="" class="fl tel" />
+        <div class="fl links">
+            <a href="../login/login.html">登录</a><br />
+            <a href="../login/reg_index.html">注册</a>
+        </div>
+        <div class="fr search">
+            <form name="formT" id="formT" method="post" target="_blank" action="">
+                <input class="input inputFocus" type="text" name="inputSearchQuery" id="inputSearchQueryT" maxlength="12"/>
+                <input type="hidden" name="service" value=""/>
+                <input type="hidden" name="sp" value="S0"/>
+                <input type="hidden" name="Form0" value="category,inputSearchQuery,$Submit"/>
+                <input type="hidden" name="category" value="-1"/>
+                <input type="submit" value="" class="btn_search hand" />
+            </form>
+        </div>
+    </div>
+</div>
+<!--导航-->
+<div class="nav">
+    <div class="nav_c">
+        <ul class="ul">
+            <li class="li li_first">
+                <a href="../index.html" class="span">首页</a>
+            </li>
+		    <li class="li">
+		        <a href="../Bond_disposal.html" class="span">资产委外</a>
+		   </li>
+		    <li class="li">
+		        <a href="../Asset_auction.html" class="span">资产拍卖</a>
+		    </li>
+		    <li class="li">
+		        <a href="../service.html" class="span">业务服务</a>
+		    </li>
+		    <li class="li libg">
+		        <a href="../help.html" class="span">客户专区</a>
+		    </li>
+		    <li class="li">
+		        <a href="../about.html" class="span">走进鑫淼聚</a>
+				<div class="nav_sub">
+				        <dl>
+				            <dd>
+				                <a href="../about.html">公司介绍</a>
+				                | <br/>
+				                <a href="../contact.html">联系我们</a>
+				                | 
+				            </dd>
+				        </dl>
+				</div>
+		    </li>    
+        </ul>
+    </div>
+</div>
+<!--网站公告-->
+  <div class="notice">
+      <div class="notice_c">
+          <img src="../img/notice.png" class="fl img" />
+          <div class="notices">
+              <div class="bd">
+                  <ul>
+                      <li><a href="contents.html" >关于暂停通联支付民生银行卡开户（11月28日15:00起）的通知</a></li>
+                      <li><a href="contents.html" >个人金融信息安全</a></li>
+                      <li><a href="contents.html">关于通联支付交易系统暂停邮储银行快捷开户服务的提示</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  
+    <div class="wrap" style="    margin-top: 20px;">
+    	
+ 	 	<div class="w1000 bc mt10">
+		<!--左侧导航-->
+		<div class="w1000 bc mt10">
+		  	<div class="w130 fl">
+			    <div class="treebox">
+					<ul class="menu">
+						<li class="level1" style="border-top:1px solid #ca0821;">
+							<a href="#none"><em class="ico ico1"></em>个人信息<i class="down"></i></a>
+							<ul class="level2">
+								<li><a href="adduser_info.html#addUserInfo">完善资料</a></li>
+								<li><a href="adduser_info.html#modify_ped">修改密码</a></li>
+							</ul>
+						</li>
+						<li class="level1">
+							<a href="#none"><em class="ico ico2"></em>发布管理<i></i></a>
+							<ul class="level2">
+								<li><a href="javascript:;">我的发布</a></li>
+								<li><a href="javascript:;">浏览记录</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			    <div class="ad mt10">
+		        <img width="140px" src="../img/ad5.png">
+		        </div>
+		    </div>
+		  </div>
+		<!--右侧信息-->
+		<div class="space-right left" style="    margin-left: 8px;">
+		<div class="space-right left">
+			<div class="w850 fr">
+				<div class="border p20">
+					<div class="tishi-box s2">
+					<div class="left-ico"><i class="img-ico "></i></div>
+					<div class="right-info">
+						<ul>
+			                <li><h5><b>
+			                      请先完善个人信息,工作人员会在1-2工作日内审核完成发放发布权限！<a href="adduser_info.html">去完善个人信息。</a>或10秒之后自动跳转到完善信息页面。
+								</br>
+			              </b>
+			              
+			              </h5></li>
+						</ul>
+					</div>       
+			    	<div class="clr"></div>
+				</div>
+			</div>
+			<script>
+			 function ok(){
+			    window.parent.parent.location.href="adduser_info.html";
+			 }
+			 window.setTimeout("ok();",9000);
+			 function countDown(secs){
+			       jump.innerText=secs;
+			       if(--secs>0)
+			          setTimeout( "countDown(" +secs+ ")" ,900);
+			    }
+			    countDown(3);
+			</script>
+
+		</div>		
+		</div>
+		</div>
+		<div class="clear"></div>			
+		</div>
+		</div>
+		<!--尾部-->
+		<div class="sitemap">
+		    <div class="sitemap_c">
+		  		<div class="foot-box clearfix">
+					<p class="a-box">
+						<a href="javascript:void(0);" >客户中心</a> |
+						<a href="javascript:void(0);">关于我们</a> |
+						<a href="javascript:void(0);" title="联系我们">联系我们</a> |
+						<a href="" title="">服务热线</a>
+						<strong style="color: #fff;">0311-8853898</strong>
+					</p>
+					<p class="foot-auth">版权所有·鑫淼聚 © 2017 |<a href="http://www.miitbeian.gov.cn" style="color: #fff;"> 京ICP证160759</a></p>
+					<p class="a-box" style="font-size: 12px;">鑫淼聚技有限公司&nbsp; &nbsp;&nbsp; |&nbsp; &nbsp;&nbsp;  北京市通州区东三环西路16号</p>
+				</div>
+		    </div>
+	</div>
+      <script type="text/javascript">
+    	<!--导航树-->
+    	$(function(){
+			$(".treebox .level1>a").click(function(){
+				$(this).addClass('current')  
+				.find('i').addClass('down')  
+				.parent().next().slideDown('slow','easeOutQuad')  
+				.parent().siblings().children('a').removeClass('current')
+				.find('i').removeClass('down').parent().next().slideUp('slow','easeOutQuad');
+				 return false; //阻止默认时间
+			});
+		})
+    	
+	
+	$('#Join').on('click',function(){
+//      $("#open_Texts").html("展开提示消息");
+       $("#Join_condition").show();
+  		$("#guide_condition").hide();
+  		$("#guide_grcon").hide();
+  		$("#Prompt_condition").hide();
+    });
+	$('#guide').on('click',function(){
+//      $("#open_Texts").html("展开提示消息");
+       $("#Join_condition").hide();
+  		$("#guide_condition").show();
+  		$("#guide_grcon").hide();
+  		$("#Prompt_condition").hide();
+    });
+	$('#guide_gr').on('click',function(){
+//      $("#open_Texts").html("展开提示消息");
+       $("#Join_condition").hide();
+  		$("#guide_condition").hide();
+  		$("#guide_grcon").show();
+  		$("#Prompt_condition").hide();
+    });
+	$('#Prompt').on('click',function(){
+//      $("#open_Texts").html("展开提示消息");
+       $("#Join_condition").hide();
+  		$("#guide_condition").hide();
+  		$("#guide_grcon").hide();
+  		$("#Prompt_condition").show();
+    });
+    </script>
+</body>
+</html>

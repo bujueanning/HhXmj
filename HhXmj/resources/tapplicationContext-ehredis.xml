@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/aop 
+						http://www.springframework.org/schema/aop/spring-aop.xsd
+						http://www.springframework.org/schema/context 
+						http://www.springframework.org/schema/context/spring-context.xsd
+						http://www.springframework.org/schema/tx 
+						http://www.springframework.org/schema/tx/spring-tx.xsd
+						http://www.springframework.org/schema/task 
+						http://www.springframework.org/schema/task/spring-task.xsd
+						http://www.springframework.org/schema/cache
+						http://www.springframework.org/schema/cache/spring-cache.xsd
+	">
+	<!-- 启动组件扫描注解 -->
+	<context:component-scan base-package="com.adminlte.base.test"></context:component-scan>
+	<!-- Cache配置 -->
+	<cache:annotation-driven cache-manager="cacheManagerAll"
+		key-generator="myKeyGenerator" />
+	<bean id="myKeyGenerator" class="com.adminlte.cache.MyKeyGenerator" />
+	<!-- EHCache配置 -->
+	<bean id="ehCacheFactory" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+		<property name="configLocation" value="classpath:ehcache_jgroup.xml"></property>
+		<property name="shared" value="true" />
+	</bean>
+	
+	<bean id="ehCacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">
+		<property name="cacheManager" ref="ehCacheFactory"></property>
+	</bean>
+    
+	<!-- redis 相关配置 -->
+	<bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+		<property name="maxTotal" value="100" />
+		<property name="maxIdle" value="30" />
+		<property name="testOnBorrow" value="true" />
+		<property name="testOnReturn" value="true" />
+		<property name="maxWaitMillis" value="1000" />
+	</bean>
+	<bean id="JedisConnectionFactory"
+		class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
+		p:host-name="localhost" p:port="6379" p:password="" p:pool-config-ref="poolConfig" />
+		
+	<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+		<property name="connectionFactory" ref="JedisConnectionFactory" />
+		<property name="keySerializer">
+			<bean
+				class="org.springframework.data.redis.serializer.StringRedisSerializer" />
+		</property>
+		<property name="valueSerializer">
+			<bean
+				class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer" />
+		</property>
+
+	</bean>
+	<!-- 配置缓存 -->  
+   <bean id="redisCacheManager" class="org.springframework.data.redis.cache.RedisCacheManager">  
+       <constructor-arg ref="redisTemplate" />
+       <property name="usePrefix" value="true" /> <!-- allEntries=true 根据cachename清空数据 --> 
+   </bean>
+	<!-- 自定义ehcache+redis-->
+   <bean id="cacheManagerAll" class="org.springframework.cache.support.SimpleCacheManager">  
+        <property name="caches">  
+            <set>  
+               <bean id="ehRedisCache" class="com.adminlte.cache.EhRedisCache">  
+                     <property name="redisCacheManager" ref="redisCacheManager" />  
+                     <property name="ehCacheManager" ref="ehCacheManager"/> 
+                     <property name="name" value="common1"/> 
+                <!-- <property name="liveTime" value="3600"/>  --> 
+                </bean>
+                <bean id="ehRedisCache" class="com.adminlte.cache.EhRedisCache">  
+                     <property name="redisCacheManager" ref="redisCacheManager" />  
+                     <property name="ehCacheManager" ref="ehCacheManager"/> 
+                     <property name="name" value="common2"/> 
+                <!-- <property name="liveTime" value="3600"/>  --> 
+                </bean>
+            </set>  
+        </property>  
+    </bean>  
+</beans>

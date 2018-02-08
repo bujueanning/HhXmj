@@ -1,0 +1,860 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="auctionInfoCommonMapper" >
+  <sql id="Update_Sql" >
+    <trim prefix="set" suffixOverrides="," >
+			<if test="auctionInfo.auction_info_id != null  and auctionInfo.auction_info_id!= ''" >
+		        auction_info.auction_info_id = #{auctionInfo.auction_info_id},
+		    </if>
+			<if test="auctionInfo.projectName != null  and auctionInfo.projectName!= ''" >
+		        auction_info.projectName = #{auctionInfo.projectName},
+		    </if>
+			<if test="auctionInfo.projectNO != null  and auctionInfo.projectNO!= ''" >
+		        auction_info.projectNO = #{auctionInfo.projectNO},
+		    </if>
+			<if test="auctionInfo.industryOwned != null  and auctionInfo.industryOwned!= ''" >
+		        auction_info.industryOwned = #{auctionInfo.industryOwned},
+		    </if>
+			<if test="auctionInfo.projectLocation != null  and auctionInfo.projectLocation!= ''" >
+		        auction_info.projectLocation = #{auctionInfo.projectLocation},
+		    </if>
+			<if test="auctionInfo.underlyingAssetName != null  and auctionInfo.underlyingAssetName!= ''" >
+		        auction_info.underlyingAssetName = #{auctionInfo.underlyingAssetName},
+		    </if>
+			<if test="auctionInfo.businessNature != null  and auctionInfo.businessNature!= ''" >
+		        auction_info.businessNature = #{auctionInfo.businessNature},
+		    </if>
+			<if test="auctionInfo.projectAmount != null  and auctionInfo.projectAmount!= ''" >
+		        auction_info.projectAmount = #{auctionInfo.projectAmount},
+		    </if>
+			<if test="auctionInfo.operation != null  and auctionInfo.operation!= ''" >
+		        auction_info.operation = #{auctionInfo.operation},
+		    </if>
+			<if test="auctionInfo.listingQuantity != null  and auctionInfo.listingQuantity!= ''" >
+		        auction_info.listingQuantity = #{auctionInfo.listingQuantity},
+		    </if>
+			<if test="auctionInfo.unitPrice != null  and auctionInfo.unitPrice!= ''" >
+		        auction_info.unitPrice = #{auctionInfo.unitPrice},
+		    </if>
+			<if test="auctionInfo.bond != null  and auctionInfo.bond!= ''" >
+		        auction_info.bond = #{auctionInfo.bond},
+		    </if>
+			<if test="auctionInfo.stockRight != null  and auctionInfo.stockRight!= ''" >
+		        auction_info.stockRight = #{auctionInfo.stockRight},
+		    </if>
+			<if test="auctionInfo.biddingCycle != null  and auctionInfo.biddingCycle!= ''" >
+		        auction_info.biddingCycle = #{auctionInfo.biddingCycle},
+		    </if>
+			<if test="auctionInfo.floorPrice != null  and auctionInfo.floorPrice!= ''" >
+		        auction_info.floorPrice = #{auctionInfo.floorPrice},
+		    </if>
+			<if test="auctionInfo.creditorPrincipal != null  and auctionInfo.creditorPrincipal!= ''" >
+		        auction_info.creditorPrincipal = #{auctionInfo.creditorPrincipal},
+		    </if>
+			<if test="auctionInfo.ensurePrincipal != null  and auctionInfo.ensurePrincipal!= ''" >
+		        auction_info.ensurePrincipal = #{auctionInfo.ensurePrincipal},
+		    </if>
+			<if test="auctionInfo.mortgagePrincipal != null  and auctionInfo.mortgagePrincipal!= ''" >
+		        auction_info.mortgagePrincipal = #{auctionInfo.mortgagePrincipal},
+		    </if>
+			<if test="auctionInfo.pledgePrincipal != null  and auctionInfo.pledgePrincipal!= ''" >
+		        auction_info.pledgePrincipal = #{auctionInfo.pledgePrincipal},
+		    </if>
+			<if test="auctionInfo.creditorInterest != null  and auctionInfo.creditorInterest!= ''" >
+		        auction_info.creditorInterest = #{auctionInfo.creditorInterest},
+		    </if>
+			<if test="auctionInfo.creditorInterest2 != null  and auctionInfo.creditorInterest2!= ''" >
+		        auction_info.creditorInterest2 = #{auctionInfo.creditorInterest2},
+		    </if>
+			<if test="auctionInfo.importantInfo != null  and auctionInfo.importantInfo!= ''" >
+		        auction_info.importantInfo = #{auctionInfo.importantInfo},
+		    </if>
+			<if test="auctionInfo.listingStart != null  and auctionInfo.listingStart!= ''" >
+		        auction_info.listingStart = #{auctionInfo.listingStart},
+		    </if>
+			<if test="auctionInfo.listingEnd != null  and auctionInfo.listingEnd!= ''" >
+		        auction_info.listingEnd = #{auctionInfo.listingEnd},
+		    </if>
+			<if test="auctionInfo.contacts != null  and auctionInfo.contacts!= ''" >
+		        auction_info.contacts = #{auctionInfo.contacts},
+		    </if>
+			<if test="auctionInfo.contactInformation != null  and auctionInfo.contactInformation!= ''" >
+		        auction_info.contactInformation = #{auctionInfo.contactInformation},
+		    </if>
+			<if test="auctionInfo.notice != null  and auctionInfo.notice!= ''" >
+		        auction_info.notice = #{auctionInfo.notice},
+		    </if>
+			<if test="auctionInfo.idCardFrontImg != null  and auctionInfo.idCardFrontImg!= ''" >
+		        auction_info.idCardFrontImg = #{auctionInfo.idCardFrontImg},
+		    </if>
+			<if test="auctionInfo.status != null  and auctionInfo.status!= ''" >
+		        auction_info.status = #{auctionInfo.status},
+		    </if>
+    </trim>
+  </sql>
+  <sql id="Inserts_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+	         <if test="paramKey.auction_info_id != null  and paramKey.auction_info_id!= ''" >
+	          auction_info_id,
+	        </if>
+	         <if test="paramKey.projectName != null  and paramKey.projectName!= ''" >
+	          projectName,
+	        </if>
+	         <if test="paramKey.projectNO != null  and paramKey.projectNO!= ''" >
+	          projectNO,
+	        </if>
+	         <if test="paramKey.industryOwned != null  and paramKey.industryOwned!= ''" >
+	          industryOwned,
+	        </if>
+	         <if test="paramKey.projectLocation != null  and paramKey.projectLocation!= ''" >
+	          projectLocation,
+	        </if>
+	         <if test="paramKey.underlyingAssetName != null  and paramKey.underlyingAssetName!= ''" >
+	          underlyingAssetName,
+	        </if>
+	         <if test="paramKey.businessNature != null  and paramKey.businessNature!= ''" >
+	          businessNature,
+	        </if>
+	         <if test="paramKey.projectAmount != null  and paramKey.projectAmount!= ''" >
+	          projectAmount,
+	        </if>
+	         <if test="paramKey.operation != null  and paramKey.operation!= ''" >
+	          operation,
+	        </if>
+	         <if test="paramKey.listingQuantity != null  and paramKey.listingQuantity!= ''" >
+	          listingQuantity,
+	        </if>
+	         <if test="paramKey.unitPrice != null  and paramKey.unitPrice!= ''" >
+	          unitPrice,
+	        </if>
+	         <if test="paramKey.bond != null  and paramKey.bond!= ''" >
+	          bond,
+	        </if>
+	         <if test="paramKey.stockRight != null  and paramKey.stockRight!= ''" >
+	          stockRight,
+	        </if>
+	         <if test="paramKey.biddingCycle != null  and paramKey.biddingCycle!= ''" >
+	          biddingCycle,
+	        </if>
+	         <if test="paramKey.floorPrice != null  and paramKey.floorPrice!= ''" >
+	          floorPrice,
+	        </if>
+	         <if test="paramKey.creditorPrincipal != null  and paramKey.creditorPrincipal!= ''" >
+	          creditorPrincipal,
+	        </if>
+	         <if test="paramKey.ensurePrincipal != null  and paramKey.ensurePrincipal!= ''" >
+	          ensurePrincipal,
+	        </if>
+	         <if test="paramKey.mortgagePrincipal != null  and paramKey.mortgagePrincipal!= ''" >
+	          mortgagePrincipal,
+	        </if>
+	         <if test="paramKey.pledgePrincipal != null  and paramKey.pledgePrincipal!= ''" >
+	          pledgePrincipal,
+	        </if>
+	         <if test="paramKey.creditorInterest != null  and paramKey.creditorInterest!= ''" >
+	          creditorInterest,
+	        </if>
+	         <if test="paramKey.creditorInterest2 != null  and paramKey.creditorInterest2!= ''" >
+	          creditorInterest2,
+	        </if>
+	         <if test="paramKey.importantInfo != null  and paramKey.importantInfo!= ''" >
+	          importantInfo,
+	        </if>
+	         <if test="paramKey.listingStart != null  and paramKey.listingStart!= ''" >
+	          listingStart,
+	        </if>
+	         <if test="paramKey.listingEnd != null  and paramKey.listingEnd!= ''" >
+	          listingEnd,
+	        </if>
+	         <if test="paramKey.contacts != null  and paramKey.contacts!= ''" >
+	          contacts,
+	        </if>
+	         <if test="paramKey.contactInformation != null  and paramKey.contactInformation!= ''" >
+	          contactInformation,
+	        </if>
+	         <if test="paramKey.notice != null  and paramKey.notice!= ''" >
+	          notice,
+	        </if>
+	         <if test="paramKey.idCardFrontImg != null  and paramKey.idCardFrontImg!= ''" >
+	          idCardFrontImg,
+	        </if>
+	         <if test="paramKey.status != null  and paramKey.status!= ''" >
+	          status,
+	        </if>
+    </trim>
+    values  
+    <foreach collection="paramValue" item="item" index="index" separator="," >  
+        (
+		          <if test="item.auction_info_id != null and item.auction_info_id!= ''" >
+			      	#{item.auction_info_id},
+			      </if>
+		          <if test="item.projectName != null and item.projectName!= ''" >
+			      	#{item.projectName},
+			      </if>
+		          <if test="item.projectNO != null and item.projectNO!= ''" >
+			      	#{item.projectNO},
+			      </if>
+		          <if test="item.industryOwned != null and item.industryOwned!= ''" >
+			      	#{item.industryOwned},
+			      </if>
+		          <if test="item.projectLocation != null and item.projectLocation!= ''" >
+			      	#{item.projectLocation},
+			      </if>
+		          <if test="item.underlyingAssetName != null and item.underlyingAssetName!= ''" >
+			      	#{item.underlyingAssetName},
+			      </if>
+		          <if test="item.businessNature != null and item.businessNature!= ''" >
+			      	#{item.businessNature},
+			      </if>
+		          <if test="item.projectAmount != null and item.projectAmount!= ''" >
+			      	#{item.projectAmount},
+			      </if>
+		          <if test="item.operation != null and item.operation!= ''" >
+			      	#{item.operation},
+			      </if>
+		          <if test="item.listingQuantity != null and item.listingQuantity!= ''" >
+			      	#{item.listingQuantity},
+			      </if>
+		          <if test="item.unitPrice != null and item.unitPrice!= ''" >
+			      	#{item.unitPrice},
+			      </if>
+		          <if test="item.bond != null and item.bond!= ''" >
+			      	#{item.bond},
+			      </if>
+		          <if test="item.stockRight != null and item.stockRight!= ''" >
+			      	#{item.stockRight},
+			      </if>
+		          <if test="item.biddingCycle != null and item.biddingCycle!= ''" >
+			      	#{item.biddingCycle},
+			      </if>
+		          <if test="item.floorPrice != null and item.floorPrice!= ''" >
+			      	#{item.floorPrice},
+			      </if>
+		          <if test="item.creditorPrincipal != null and item.creditorPrincipal!= ''" >
+			      	#{item.creditorPrincipal},
+			      </if>
+		          <if test="item.ensurePrincipal != null and item.ensurePrincipal!= ''" >
+			      	#{item.ensurePrincipal},
+			      </if>
+		          <if test="item.mortgagePrincipal != null and item.mortgagePrincipal!= ''" >
+			      	#{item.mortgagePrincipal},
+			      </if>
+		          <if test="item.pledgePrincipal != null and item.pledgePrincipal!= ''" >
+			      	#{item.pledgePrincipal},
+			      </if>
+		          <if test="item.creditorInterest != null and item.creditorInterest!= ''" >
+			      	#{item.creditorInterest},
+			      </if>
+		          <if test="item.creditorInterest2 != null and item.creditorInterest2!= ''" >
+			      	#{item.creditorInterest2},
+			      </if>
+		          <if test="item.importantInfo != null and item.importantInfo!= ''" >
+			      	#{item.importantInfo},
+			      </if>
+		          <if test="item.listingStart != null and item.listingStart!= ''" >
+			      	#{item.listingStart},
+			      </if>
+		          <if test="item.listingEnd != null and item.listingEnd!= ''" >
+			      	#{item.listingEnd},
+			      </if>
+		          <if test="item.contacts != null and item.contacts!= ''" >
+			      	#{item.contacts},
+			      </if>
+		          <if test="item.contactInformation != null and item.contactInformation!= ''" >
+			      	#{item.contactInformation},
+			      </if>
+		          <if test="item.notice != null and item.notice!= ''" >
+			      	#{item.notice},
+			      </if>
+		          <if test="item.idCardFrontImg != null and item.idCardFrontImg!= ''" >
+			      	#{item.idCardFrontImg},
+			      </if>
+		          <if test="item.status != null and item.status!= ''" >
+			      	#{item.status},
+			      </if>
+        )  
+    </foreach> 
+  </sql>
+  <sql id="Insert_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+    		<if test="auction_info_id != null  and auction_info_id!= ''" >
+	          auction_info_id,
+	        </if>
+    		<if test="projectName != null  and projectName!= ''" >
+	          projectName,
+	        </if>
+    		<if test="projectNO != null  and projectNO!= ''" >
+	          projectNO,
+	        </if>
+    		<if test="industryOwned != null  and industryOwned!= ''" >
+	          industryOwned,
+	        </if>
+    		<if test="projectLocation != null  and projectLocation!= ''" >
+	          projectLocation,
+	        </if>
+    		<if test="underlyingAssetName != null  and underlyingAssetName!= ''" >
+	          underlyingAssetName,
+	        </if>
+    		<if test="businessNature != null  and businessNature!= ''" >
+	          businessNature,
+	        </if>
+    		<if test="projectAmount != null  and projectAmount!= ''" >
+	          projectAmount,
+	        </if>
+    		<if test="operation != null  and operation!= ''" >
+	          operation,
+	        </if>
+    		<if test="listingQuantity != null  and listingQuantity!= ''" >
+	          listingQuantity,
+	        </if>
+    		<if test="unitPrice != null  and unitPrice!= ''" >
+	          unitPrice,
+	        </if>
+    		<if test="bond != null  and bond!= ''" >
+	          bond,
+	        </if>
+    		<if test="stockRight != null  and stockRight!= ''" >
+	          stockRight,
+	        </if>
+    		<if test="biddingCycle != null  and biddingCycle!= ''" >
+	          biddingCycle,
+	        </if>
+    		<if test="floorPrice != null  and floorPrice!= ''" >
+	          floorPrice,
+	        </if>
+    		<if test="creditorPrincipal != null  and creditorPrincipal!= ''" >
+	          creditorPrincipal,
+	        </if>
+    		<if test="ensurePrincipal != null  and ensurePrincipal!= ''" >
+	          ensurePrincipal,
+	        </if>
+    		<if test="mortgagePrincipal != null  and mortgagePrincipal!= ''" >
+	          mortgagePrincipal,
+	        </if>
+    		<if test="pledgePrincipal != null  and pledgePrincipal!= ''" >
+	          pledgePrincipal,
+	        </if>
+    		<if test="creditorInterest != null  and creditorInterest!= ''" >
+	          creditorInterest,
+	        </if>
+    		<if test="creditorInterest2 != null  and creditorInterest2!= ''" >
+	          creditorInterest2,
+	        </if>
+    		<if test="importantInfo != null  and importantInfo!= ''" >
+	          importantInfo,
+	        </if>
+    		<if test="listingStart != null  and listingStart!= ''" >
+	          listingStart,
+	        </if>
+    		<if test="listingEnd != null  and listingEnd!= ''" >
+	          listingEnd,
+	        </if>
+    		<if test="contacts != null  and contacts!= ''" >
+	          contacts,
+	        </if>
+    		<if test="contactInformation != null  and contactInformation!= ''" >
+	          contactInformation,
+	        </if>
+    		<if test="notice != null  and notice!= ''" >
+	          notice,
+	        </if>
+    		<if test="idCardFrontImg != null  and idCardFrontImg!= ''" >
+	          idCardFrontImg,
+	        </if>
+    		<if test="status != null  and status!= ''" >
+	          status,
+	        </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+	      <if test="auction_info_id != null and auction_info_id!= ''" >
+	      	#{auction_info_id},
+	      </if>
+	      <if test="projectName != null and projectName!= ''" >
+	      	#{projectName},
+	      </if>
+	      <if test="projectNO != null and projectNO!= ''" >
+	      	#{projectNO},
+	      </if>
+	      <if test="industryOwned != null and industryOwned!= ''" >
+	      	#{industryOwned},
+	      </if>
+	      <if test="projectLocation != null and projectLocation!= ''" >
+	      	#{projectLocation},
+	      </if>
+	      <if test="underlyingAssetName != null and underlyingAssetName!= ''" >
+	      	#{underlyingAssetName},
+	      </if>
+	      <if test="businessNature != null and businessNature!= ''" >
+	      	#{businessNature},
+	      </if>
+	      <if test="projectAmount != null and projectAmount!= ''" >
+	      	#{projectAmount},
+	      </if>
+	      <if test="operation != null and operation!= ''" >
+	      	#{operation},
+	      </if>
+	      <if test="listingQuantity != null and listingQuantity!= ''" >
+	      	#{listingQuantity},
+	      </if>
+	      <if test="unitPrice != null and unitPrice!= ''" >
+	      	#{unitPrice},
+	      </if>
+	      <if test="bond != null and bond!= ''" >
+	      	#{bond},
+	      </if>
+	      <if test="stockRight != null and stockRight!= ''" >
+	      	#{stockRight},
+	      </if>
+	      <if test="biddingCycle != null and biddingCycle!= ''" >
+	      	#{biddingCycle},
+	      </if>
+	      <if test="floorPrice != null and floorPrice!= ''" >
+	      	#{floorPrice},
+	      </if>
+	      <if test="creditorPrincipal != null and creditorPrincipal!= ''" >
+	      	#{creditorPrincipal},
+	      </if>
+	      <if test="ensurePrincipal != null and ensurePrincipal!= ''" >
+	      	#{ensurePrincipal},
+	      </if>
+	      <if test="mortgagePrincipal != null and mortgagePrincipal!= ''" >
+	      	#{mortgagePrincipal},
+	      </if>
+	      <if test="pledgePrincipal != null and pledgePrincipal!= ''" >
+	      	#{pledgePrincipal},
+	      </if>
+	      <if test="creditorInterest != null and creditorInterest!= ''" >
+	      	#{creditorInterest},
+	      </if>
+	      <if test="creditorInterest2 != null and creditorInterest2!= ''" >
+	      	#{creditorInterest2},
+	      </if>
+	      <if test="importantInfo != null and importantInfo!= ''" >
+	      	#{importantInfo},
+	      </if>
+	      <if test="listingStart != null and listingStart!= ''" >
+	      	#{listingStart},
+	      </if>
+	      <if test="listingEnd != null and listingEnd!= ''" >
+	      	#{listingEnd},
+	      </if>
+	      <if test="contacts != null and contacts!= ''" >
+	      	#{contacts},
+	      </if>
+	      <if test="contactInformation != null and contactInformation!= ''" >
+	      	#{contactInformation},
+	      </if>
+	      <if test="notice != null and notice!= ''" >
+	      	#{notice},
+	      </if>
+	      <if test="idCardFrontImg != null and idCardFrontImg!= ''" >
+	      	#{idCardFrontImg},
+	      </if>
+	      <if test="status != null and status!= ''" >
+	      	#{status},
+	      </if>
+    </trim>
+  </sql>
+  <sql id="Where_Update_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="auctionInfoQuery.auction_info_id != null and auctionInfoQuery.auction_info_id!= ''" >
+	      	and auction_info.auction_info_id=#{auctionInfoQuery.auction_info_id}
+	      </when>
+	      <when test="auctionInfoQuery.projectName != null and auctionInfoQuery.projectName!= ''" >
+	      	and auction_info.projectName=#{auctionInfoQuery.projectName}
+	      </when>
+	      <when test="auctionInfoQuery.projectNO != null and auctionInfoQuery.projectNO!= ''" >
+	      	and auction_info.projectNO=#{auctionInfoQuery.projectNO}
+	      </when>
+	      <when test="auctionInfoQuery.industryOwned != null and auctionInfoQuery.industryOwned!= ''" >
+	      	and auction_info.industryOwned=#{auctionInfoQuery.industryOwned}
+	      </when>
+	      <when test="auctionInfoQuery.projectLocation != null and auctionInfoQuery.projectLocation!= ''" >
+	      	and auction_info.projectLocation=#{auctionInfoQuery.projectLocation}
+	      </when>
+	      <when test="auctionInfoQuery.underlyingAssetName != null and auctionInfoQuery.underlyingAssetName!= ''" >
+	      	and auction_info.underlyingAssetName=#{auctionInfoQuery.underlyingAssetName}
+	      </when>
+	      <when test="auctionInfoQuery.businessNature != null and auctionInfoQuery.businessNature!= ''" >
+	      	and auction_info.businessNature=#{auctionInfoQuery.businessNature}
+	      </when>
+	      <when test="auctionInfoQuery.projectAmount != null and auctionInfoQuery.projectAmount!= ''" >
+	      	and auction_info.projectAmount=#{auctionInfoQuery.projectAmount}
+	      </when>
+	      <when test="auctionInfoQuery.operation != null and auctionInfoQuery.operation!= ''" >
+	      	and auction_info.operation=#{auctionInfoQuery.operation}
+	      </when>
+	      <when test="auctionInfoQuery.listingQuantity != null and auctionInfoQuery.listingQuantity!= ''" >
+	      	and auction_info.listingQuantity=#{auctionInfoQuery.listingQuantity}
+	      </when>
+	      <when test="auctionInfoQuery.unitPrice != null and auctionInfoQuery.unitPrice!= ''" >
+	      	and auction_info.unitPrice=#{auctionInfoQuery.unitPrice}
+	      </when>
+	      <when test="auctionInfoQuery.bond != null and auctionInfoQuery.bond!= ''" >
+	      	and auction_info.bond=#{auctionInfoQuery.bond}
+	      </when>
+	      <when test="auctionInfoQuery.stockRight != null and auctionInfoQuery.stockRight!= ''" >
+	      	and auction_info.stockRight=#{auctionInfoQuery.stockRight}
+	      </when>
+	      <when test="auctionInfoQuery.biddingCycle != null and auctionInfoQuery.biddingCycle!= ''" >
+	      	and auction_info.biddingCycle=#{auctionInfoQuery.biddingCycle}
+	      </when>
+	      <when test="auctionInfoQuery.floorPrice != null and auctionInfoQuery.floorPrice!= ''" >
+	      	and auction_info.floorPrice=#{auctionInfoQuery.floorPrice}
+	      </when>
+	      <when test="auctionInfoQuery.creditorPrincipal != null and auctionInfoQuery.creditorPrincipal!= ''" >
+	      	and auction_info.creditorPrincipal=#{auctionInfoQuery.creditorPrincipal}
+	      </when>
+	      <when test="auctionInfoQuery.ensurePrincipal != null and auctionInfoQuery.ensurePrincipal!= ''" >
+	      	and auction_info.ensurePrincipal=#{auctionInfoQuery.ensurePrincipal}
+	      </when>
+	      <when test="auctionInfoQuery.mortgagePrincipal != null and auctionInfoQuery.mortgagePrincipal!= ''" >
+	      	and auction_info.mortgagePrincipal=#{auctionInfoQuery.mortgagePrincipal}
+	      </when>
+	      <when test="auctionInfoQuery.pledgePrincipal != null and auctionInfoQuery.pledgePrincipal!= ''" >
+	      	and auction_info.pledgePrincipal=#{auctionInfoQuery.pledgePrincipal}
+	      </when>
+	      <when test="auctionInfoQuery.creditorInterest != null and auctionInfoQuery.creditorInterest!= ''" >
+	      	and auction_info.creditorInterest=#{auctionInfoQuery.creditorInterest}
+	      </when>
+	      <when test="auctionInfoQuery.creditorInterest2 != null and auctionInfoQuery.creditorInterest2!= ''" >
+	      	and auction_info.creditorInterest2=#{auctionInfoQuery.creditorInterest2}
+	      </when>
+	      <when test="auctionInfoQuery.importantInfo != null and auctionInfoQuery.importantInfo!= ''" >
+	      	and auction_info.importantInfo=#{auctionInfoQuery.importantInfo}
+	      </when>
+	      <when test="auctionInfoQuery.listingStart != null and auctionInfoQuery.listingStart!= ''" >
+	      	and auction_info.listingStart=#{auctionInfoQuery.listingStart}
+	      </when>
+	      <when test="auctionInfoQuery.listingEnd != null and auctionInfoQuery.listingEnd!= ''" >
+	      	and auction_info.listingEnd=#{auctionInfoQuery.listingEnd}
+	      </when>
+	      <when test="auctionInfoQuery.contacts != null and auctionInfoQuery.contacts!= ''" >
+	      	and auction_info.contacts=#{auctionInfoQuery.contacts}
+	      </when>
+	      <when test="auctionInfoQuery.contactInformation != null and auctionInfoQuery.contactInformation!= ''" >
+	      	and auction_info.contactInformation=#{auctionInfoQuery.contactInformation}
+	      </when>
+	      <when test="auctionInfoQuery.notice != null and auctionInfoQuery.notice!= ''" >
+	      	and auction_info.notice=#{auctionInfoQuery.notice}
+	      </when>
+	      <when test="auctionInfoQuery.idCardFrontImg != null and auctionInfoQuery.idCardFrontImg!= ''" >
+	      	and auction_info.idCardFrontImg=#{auctionInfoQuery.idCardFrontImg}
+	      </when>
+	      <when test="auctionInfoQuery.status != null and auctionInfoQuery.status!= ''" >
+	      	and auction_info.status=#{auctionInfoQuery.status}
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+    <sql id="Where_Del_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="auction_info_id != null and auction_info_id!= ''" >
+	      	and auction_info.auction_info_id=#{auction_info_id}
+	      </when>
+	      <when test="projectName != null and projectName!= ''" >
+	      	and auction_info.projectName=#{projectName}
+	      </when>
+	      <when test="projectNO != null and projectNO!= ''" >
+	      	and auction_info.projectNO=#{projectNO}
+	      </when>
+	      <when test="industryOwned != null and industryOwned!= ''" >
+	      	and auction_info.industryOwned=#{industryOwned}
+	      </when>
+	      <when test="projectLocation != null and projectLocation!= ''" >
+	      	and auction_info.projectLocation=#{projectLocation}
+	      </when>
+	      <when test="underlyingAssetName != null and underlyingAssetName!= ''" >
+	      	and auction_info.underlyingAssetName=#{underlyingAssetName}
+	      </when>
+	      <when test="businessNature != null and businessNature!= ''" >
+	      	and auction_info.businessNature=#{businessNature}
+	      </when>
+	      <when test="projectAmount != null and projectAmount!= ''" >
+	      	and auction_info.projectAmount=#{projectAmount}
+	      </when>
+	      <when test="operation != null and operation!= ''" >
+	      	and auction_info.operation=#{operation}
+	      </when>
+	      <when test="listingQuantity != null and listingQuantity!= ''" >
+	      	and auction_info.listingQuantity=#{listingQuantity}
+	      </when>
+	      <when test="unitPrice != null and unitPrice!= ''" >
+	      	and auction_info.unitPrice=#{unitPrice}
+	      </when>
+	      <when test="bond != null and bond!= ''" >
+	      	and auction_info.bond=#{bond}
+	      </when>
+	      <when test="stockRight != null and stockRight!= ''" >
+	      	and auction_info.stockRight=#{stockRight}
+	      </when>
+	      <when test="biddingCycle != null and biddingCycle!= ''" >
+	      	and auction_info.biddingCycle=#{biddingCycle}
+	      </when>
+	      <when test="floorPrice != null and floorPrice!= ''" >
+	      	and auction_info.floorPrice=#{floorPrice}
+	      </when>
+	      <when test="creditorPrincipal != null and creditorPrincipal!= ''" >
+	      	and auction_info.creditorPrincipal=#{creditorPrincipal}
+	      </when>
+	      <when test="ensurePrincipal != null and ensurePrincipal!= ''" >
+	      	and auction_info.ensurePrincipal=#{ensurePrincipal}
+	      </when>
+	      <when test="mortgagePrincipal != null and mortgagePrincipal!= ''" >
+	      	and auction_info.mortgagePrincipal=#{mortgagePrincipal}
+	      </when>
+	      <when test="pledgePrincipal != null and pledgePrincipal!= ''" >
+	      	and auction_info.pledgePrincipal=#{pledgePrincipal}
+	      </when>
+	      <when test="creditorInterest != null and creditorInterest!= ''" >
+	      	and auction_info.creditorInterest=#{creditorInterest}
+	      </when>
+	      <when test="creditorInterest2 != null and creditorInterest2!= ''" >
+	      	and auction_info.creditorInterest2=#{creditorInterest2}
+	      </when>
+	      <when test="importantInfo != null and importantInfo!= ''" >
+	      	and auction_info.importantInfo=#{importantInfo}
+	      </when>
+	      <when test="listingStart != null and listingStart!= ''" >
+	      	and auction_info.listingStart=#{listingStart}
+	      </when>
+	      <when test="listingEnd != null and listingEnd!= ''" >
+	      	and auction_info.listingEnd=#{listingEnd}
+	      </when>
+	      <when test="contacts != null and contacts!= ''" >
+	      	and auction_info.contacts=#{contacts}
+	      </when>
+	      <when test="contactInformation != null and contactInformation!= ''" >
+	      	and auction_info.contactInformation=#{contactInformation}
+	      </when>
+	      <when test="notice != null and notice!= ''" >
+	      	and auction_info.notice=#{notice}
+	      </when>
+	      <when test="idCardFrontImg != null and idCardFrontImg!= ''" >
+	      	and auction_info.idCardFrontImg=#{idCardFrontImg}
+	      </when>
+	      <when test="status != null and status!= ''" >
+	      	and auction_info.status=#{status}
+	      </when>
+	     <when test="ids != null and ids!= ''" >
+	      		and auction_info.auction_info_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		           #{id}
+		        </foreach>
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+  <sql id="Where_Select_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="auction_info_id != null and auction_info_id!= ''" >
+	      	and auction_info.auction_info_id=#{auction_info_id}
+	      </if>
+	      <if test="projectName != null and projectName!= ''" >
+	      	and auction_info.projectName=#{projectName}
+	      </if>
+	      <if test="projectNO != null and projectNO!= ''" >
+	      	and auction_info.projectNO=#{projectNO}
+	      </if>
+	      <if test="industryOwned != null and industryOwned!= ''" >
+	      	and auction_info.industryOwned=#{industryOwned}
+	      </if>
+	      <if test="projectLocation != null and projectLocation!= ''" >
+	      	and auction_info.projectLocation=#{projectLocation}
+	      </if>
+	      <if test="underlyingAssetName != null and underlyingAssetName!= ''" >
+	      	and auction_info.underlyingAssetName=#{underlyingAssetName}
+	      </if>
+	      <if test="businessNature != null and businessNature!= ''" >
+	      	and auction_info.businessNature=#{businessNature}
+	      </if>
+	      <if test="projectAmount != null and projectAmount!= ''" >
+	      	and auction_info.projectAmount=#{projectAmount}
+	      </if>
+	      <if test="operation != null and operation!= ''" >
+	      	and auction_info.operation=#{operation}
+	      </if>
+	      <if test="listingQuantity != null and listingQuantity!= ''" >
+	      	and auction_info.listingQuantity=#{listingQuantity}
+	      </if>
+	      <if test="unitPrice != null and unitPrice!= ''" >
+	      	and auction_info.unitPrice=#{unitPrice}
+	      </if>
+	      <if test="bond != null and bond!= ''" >
+	      	and auction_info.bond=#{bond}
+	      </if>
+	      <if test="stockRight != null and stockRight!= ''" >
+	      	and auction_info.stockRight=#{stockRight}
+	      </if>
+	      <if test="biddingCycle != null and biddingCycle!= ''" >
+	      	and auction_info.biddingCycle=#{biddingCycle}
+	      </if>
+	      <if test="floorPrice != null and floorPrice!= ''" >
+	      	and auction_info.floorPrice=#{floorPrice}
+	      </if>
+	      <if test="creditorPrincipal != null and creditorPrincipal!= ''" >
+	      	and auction_info.creditorPrincipal=#{creditorPrincipal}
+	      </if>
+	      <if test="ensurePrincipal != null and ensurePrincipal!= ''" >
+	      	and auction_info.ensurePrincipal=#{ensurePrincipal}
+	      </if>
+	      <if test="mortgagePrincipal != null and mortgagePrincipal!= ''" >
+	      	and auction_info.mortgagePrincipal=#{mortgagePrincipal}
+	      </if>
+	      <if test="pledgePrincipal != null and pledgePrincipal!= ''" >
+	      	and auction_info.pledgePrincipal=#{pledgePrincipal}
+	      </if>
+	      <if test="creditorInterest != null and creditorInterest!= ''" >
+	      	and auction_info.creditorInterest=#{creditorInterest}
+	      </if>
+	      <if test="creditorInterest2 != null and creditorInterest2!= ''" >
+	      	and auction_info.creditorInterest2=#{creditorInterest2}
+	      </if>
+	      <if test="importantInfo != null and importantInfo!= ''" >
+	      	and auction_info.importantInfo=#{importantInfo}
+	      </if>
+	      <if test="listingStart != null and listingStart!= ''" >
+	      	and auction_info.listingStart=#{listingStart}
+	      </if>
+	      <if test="listingEnd != null and listingEnd!= ''" >
+	      	and auction_info.listingEnd=#{listingEnd}
+	      </if>
+	      <if test="contacts != null and contacts!= ''" >
+	      	and auction_info.contacts=#{contacts}
+	      </if>
+	      <if test="contactInformation != null and contactInformation!= ''" >
+	      	and auction_info.contactInformation=#{contactInformation}
+	      </if>
+	      <if test="notice != null and notice!= ''" >
+	      	and auction_info.notice=#{notice}
+	      </if>
+	      <if test="idCardFrontImg != null and idCardFrontImg!= ''" >
+	      	and auction_info.idCardFrontImg=#{idCardFrontImg}
+	      </if>
+	      <if test="status != null and status!= ''" >
+	      	and auction_info.status=#{status}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and auction_info.auction_info_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+  
+  <sql id="Where_SelectTree_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="auction_info_id != null and auction_info_id!= ''" >
+	      	and parent.auction_info_id=#{auction_info_id}
+	      </if>
+	      <if test="projectName != null and projectName!= ''" >
+	      	and parent.projectName=#{projectName}
+	      </if>
+	      <if test="projectNO != null and projectNO!= ''" >
+	      	and parent.projectNO=#{projectNO}
+	      </if>
+	      <if test="industryOwned != null and industryOwned!= ''" >
+	      	and parent.industryOwned=#{industryOwned}
+	      </if>
+	      <if test="projectLocation != null and projectLocation!= ''" >
+	      	and parent.projectLocation=#{projectLocation}
+	      </if>
+	      <if test="underlyingAssetName != null and underlyingAssetName!= ''" >
+	      	and parent.underlyingAssetName=#{underlyingAssetName}
+	      </if>
+	      <if test="businessNature != null and businessNature!= ''" >
+	      	and parent.businessNature=#{businessNature}
+	      </if>
+	      <if test="projectAmount != null and projectAmount!= ''" >
+	      	and parent.projectAmount=#{projectAmount}
+	      </if>
+	      <if test="operation != null and operation!= ''" >
+	      	and parent.operation=#{operation}
+	      </if>
+	      <if test="listingQuantity != null and listingQuantity!= ''" >
+	      	and parent.listingQuantity=#{listingQuantity}
+	      </if>
+	      <if test="unitPrice != null and unitPrice!= ''" >
+	      	and parent.unitPrice=#{unitPrice}
+	      </if>
+	      <if test="bond != null and bond!= ''" >
+	      	and parent.bond=#{bond}
+	      </if>
+	      <if test="stockRight != null and stockRight!= ''" >
+	      	and parent.stockRight=#{stockRight}
+	      </if>
+	      <if test="biddingCycle != null and biddingCycle!= ''" >
+	      	and parent.biddingCycle=#{biddingCycle}
+	      </if>
+	      <if test="floorPrice != null and floorPrice!= ''" >
+	      	and parent.floorPrice=#{floorPrice}
+	      </if>
+	      <if test="creditorPrincipal != null and creditorPrincipal!= ''" >
+	      	and parent.creditorPrincipal=#{creditorPrincipal}
+	      </if>
+	      <if test="ensurePrincipal != null and ensurePrincipal!= ''" >
+	      	and parent.ensurePrincipal=#{ensurePrincipal}
+	      </if>
+	      <if test="mortgagePrincipal != null and mortgagePrincipal!= ''" >
+	      	and parent.mortgagePrincipal=#{mortgagePrincipal}
+	      </if>
+	      <if test="pledgePrincipal != null and pledgePrincipal!= ''" >
+	      	and parent.pledgePrincipal=#{pledgePrincipal}
+	      </if>
+	      <if test="creditorInterest != null and creditorInterest!= ''" >
+	      	and parent.creditorInterest=#{creditorInterest}
+	      </if>
+	      <if test="creditorInterest2 != null and creditorInterest2!= ''" >
+	      	and parent.creditorInterest2=#{creditorInterest2}
+	      </if>
+	      <if test="importantInfo != null and importantInfo!= ''" >
+	      	and parent.importantInfo=#{importantInfo}
+	      </if>
+	      <if test="listingStart != null and listingStart!= ''" >
+	      	and parent.listingStart=#{listingStart}
+	      </if>
+	      <if test="listingEnd != null and listingEnd!= ''" >
+	      	and parent.listingEnd=#{listingEnd}
+	      </if>
+	      <if test="contacts != null and contacts!= ''" >
+	      	and parent.contacts=#{contacts}
+	      </if>
+	      <if test="contactInformation != null and contactInformation!= ''" >
+	      	and parent.contactInformation=#{contactInformation}
+	      </if>
+	      <if test="notice != null and notice!= ''" >
+	      	and parent.notice=#{notice}
+	      </if>
+	      <if test="idCardFrontImg != null and idCardFrontImg!= ''" >
+	      	and parent.idCardFrontImg=#{idCardFrontImg}
+	      </if>
+	      <if test="status != null and status!= ''" >
+	      	and parent.status=#{status}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and parent.auction_info_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+</mapper>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="releaseNoticeMapper" >
+  <select id="select" resultType="java.util.Map" parameterType="java.util.Map" >
+    select release_notice.*, s.sys_user_name
+    from release_notice
+    LEFT JOIN sys_user s ON s.sys_user_id = release_notice.release_notice_createuid
+     
+    <include refid="releaseNoticeCommonMapper.Where_Select_Sql" />
+  </select>
+  
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from release_notice
+    <include refid="releaseNoticeCommonMapper.Where_Del_Sql" />
+  </delete>
+  <insert id="insert" parameterType="java.util.Map" >
+    insert into release_notice <include refid="releaseNoticeCommonMapper.Insert_Sql" />
+  </insert>
+  <insert id="inserts" parameterType="java.util.List" >
+    insert into release_notice <include refid="releaseNoticeCommonMapper.Inserts_Sql" />
+  </insert>
+  <update id="update" parameterType="java.util.Map" >
+    update release_notice 
+    <include refid="releaseNoticeCommonMapper.Update_Sql" />
+    <include refid="releaseNoticeCommonMapper.Where_Update_Sql" />
+  </update>
+  <select id="count" parameterType="java.util.Map" resultType="java.lang.Integer" >
+    select count(*) from release_notice 
+    <if test="_parameter != null" >
+      <include refid="releaseNoticeCommonMapper.Where_Select_Sql" />
+    </if>
+  </select>	
+</mapper>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="manageNoticeMapper" >
+  <select id="select" resultType="java.util.Map" parameterType="java.util.Map" >
+    select manage_notice.*, s.sys_user_name
+    from manage_notice
+    LEFT JOIN sys_user s ON s.sys_user_id = manage_notice.manage_notice_createuid
+     
+    <include refid="manageNoticeCommonMapper.Where_Select_Sql" />
+  </select>
+  
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from manage_notice
+    <include refid="manageNoticeCommonMapper.Where_Del_Sql" />
+  </delete>
+  <insert id="insert" parameterType="java.util.Map" >
+    insert into manage_notice <include refid="manageNoticeCommonMapper.Insert_Sql" />
+  </insert>
+  <insert id="inserts" parameterType="java.util.List" >
+    insert into manage_notice <include refid="manageNoticeCommonMapper.Inserts_Sql" />
+  </insert>
+  <update id="update" parameterType="java.util.Map" >
+    update manage_notice 
+    <include refid="manageNoticeCommonMapper.Update_Sql" />
+    <include refid="manageNoticeCommonMapper.Where_Update_Sql" />
+  </update>
+  <select id="count" parameterType="java.util.Map" resultType="java.lang.Integer" >
+    select count(*) from manage_notice 
+    <if test="_parameter != null" >
+      <include refid="manageNoticeCommonMapper.Where_Select_Sql" />
+    </if>
+  </select>	
+</mapper>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bondImgupMapper" >
+  <select id="select" resultType="java.util.Map" parameterType="java.util.Map" >
+    select * from bond_imgup 
+    <include refid="bondImgupCommonMapper.Where_Select_Sql" />
+  </select>
+  <select id="selectIndex" resultType="java.util.Map" parameterType="java.util.Map" >
+  	select bond_imgup.imgup_index from bond_imgup
+  	<include refid="bondImgupCommonMapper.Where_Select_Sql" />
+  </select>
+  <select id="selectTree" resultType="java.util.Map" parameterType="java.util.Map" >
+  	select *,if(childNu=0,false,true) lazy from(
+	    select
+	    parent.*,
+	        	imgup.imgup_name,
+	    bond_imgup_id  treekey,
+	    bond_imgup_name  treetitle,
+	    (SELECT COUNT(*) FROM BOND_IMGUP child WHERE child.BOND_IMGUP_PID=parent.BOND_IMGUP_ID) childNu
+	    from bond_imgup parent
+        	LEFT JOIN imgup imgup ON imgup.imgup_id=parent.imgup_id
+	    <include refid="bondImgupCommonMapper.Where_SelectTree_Sql" />
+	   ) tree
+  </select>
+  <select id="selectAllTree" resultType="java.util.Map" parameterType="java.util.Map" >
+	    select
+	    parent.*,
+	        	imgup.imgup_name,
+	    bond_imgup_id  treekey,
+	    bond_imgup_name  treetitle,
+	    (SELECT COUNT(*) FROM BOND_IMGUP child WHERE child.BOND_IMGUP_PID=parent.BOND_IMGUP_ID) childNu
+	    from bond_imgup parent
+        	LEFT JOIN imgup imgup ON imgup.imgup_id=parent.imgup_id
+	   <include refid="bondImgupCommonMapper.Where_SelectTree_Sql" />
+  </select>
+  
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from bond_imgup
+    <include refid="bondImgupCommonMapper.Where_Del_Sql" />
+  </delete>
+  <insert id="insert" parameterType="java.util.Map" >
+    insert into bond_imgup <include refid="bondImgupCommonMapper.Insert_Sql" />
+  </insert>
+  <insert id="inserts" parameterType="java.util.List" >
+    insert into bond_imgup <include refid="bondImgupCommonMapper.Inserts_Sql" />
+  </insert>
+  <update id="update" parameterType="java.util.Map" >
+    update bond_imgup 
+    <include refid="bondImgupCommonMapper.Update_Sql" />
+    <include refid="bondImgupCommonMapper.Where_Update_Sql" />
+  </update>
+  <select id="count" parameterType="java.util.Map" resultType="java.lang.Integer" >
+    select count(*) from bond_imgup 
+    <if test="_parameter != null" >
+      <include refid="bondImgupCommonMapper.Where_Select_Sql" />
+    </if>
+  </select>	
+</mapper>

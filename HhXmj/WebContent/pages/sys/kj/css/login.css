@@ -1,0 +1,297 @@
+.mt10 {
+    margin-top: 10px;
+}
+.w1000 {
+    width: 1000px;
+}
+.bc {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.clear {
+    clear: both;
+}
+.box {
+}
+.box_tab {
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid #e1e1e1;
+    border-top: 2px solid #ca0821;
+    padding-right: 10px;
+    overflow: hidden;
+    background-color: #fff;
+}
+.box_tab h5 {
+    font-size: 18px;
+    padding-left: 20px;
+    font-weight: 300;
+    font-family: "微软雅黑";
+    float: left;
+}
+.box_con {
+    border: 1px solid #e1e1e1;
+    border-top: none;
+    background-color: #fff;
+}
+.login_box {
+    background-color: #fff;
+    overflow: hidden;
+}
+.login_con {
+    border-right: 1px solid #eee;
+    padding-top: 20px;
+    width: 635px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+.fl {
+    float: left;
+    display: inline;
+}
+.login-table-1 {
+    margin: 20px 0 20px 100px;
+}
+p, form, table, tr, td {
+    margin: 0;
+    padding: 0;
+}
+.login_con table th {
+    padding-right: 10px;
+    font-size: 16px;
+}
+.login-table-1 th {
+    font-size: 15px;
+    font-weight: 300;
+    padding: 10px 0;
+}
+.login-table-1 td {
+    padding: 10px 0;
+}
+.login-table-1 input[type=text], .login-table-1 input[type=password] {
+    height: 30px;
+        float: left;
+}
+.inpt {
+    padding: 2px 5px;
+    border: 1px solid #aeaeae;
+    border-radius: 3px;
+    height: 24px;
+    box-sizing: border-box;
+    outline: none;
+    height: 30px;
+}
+.ml10 {
+    margin-left: 10px;
+}
+.co_r {
+    color: #ff0000;
+}
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #666;
+    blr: expression(this.onFocus=this.blur());
+}
+.ml5 {
+    margin-left: 5px;
+}
+.f12 {
+    font-size: 12px;
+}
+.w150 {
+    width: 150px;
+}
+.button-3 {
+    height: 35px;
+    line-height: 35px;
+    border: 1px solid #f4b200;
+    border-radius: 5px;
+    font-size: 15px;
+    display: inline-block;
+    text-align: center;
+    background-color: #f4b200;
+    color: #fff;
+    cursor: pointer;
+}
+.tc {
+    text-align: center;
+}
+.login_infor {
+    width: 320px;
+    padding-top: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    text-align: center;
+}
+.fr {
+    float: right;
+    display: inline;
+}
+/*忘记密码*/
+.box_con2 {
+    height: 350px;
+}
+.login_box {
+    background-color: #fff;
+    overflow: hidden;
+}
+.register-right, .register-left {
+    margin-top: 40px;
+}
+.register-left {
+    float: left;
+    width: 290px;
+}
+.invest-step-2 {
+    background: none repeat scroll 0 0 #fff;
+    height: 51px;
+    margin-left: 35px;
+    padding-top: 5px;
+    text-align: center;
+    width: 200px;
+}
+.invest-step-2 li {
+    background: url("../img/register-setp-bg.png") no-repeat scroll 0 0;
+    color: #878787;
+    display: block;
+    float: left;
+    font-size: 16px;
+    height: 38px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    width: 200px;
+}
+.register-title {
+    height: 10px;
+    padding: 0 30px 35px;
+}
+.register-title h3 {
+    color: #D80000;
+    float: left;
+    font-size: 30px;
+    font-weight: normal;
+}
+.register-table {
+    border-spacing: 0;
+    margin-left: 300px;
+}
+caption, th {
+    text-align: left;
+}
+.register-table td {
+    height: 45px;
+}
+.input-txt, .input-txt-2 {
+    border: 1px solid #cdcdcd;
+    height: 27px;
+}
+.input-txt {
+    width: 200px;
+        float: left;
+}
+.btn-register {
+    background: url("../img/register_submit.gif") no-repeat scroll 0 0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    height: 36px;
+    overflow: hidden;
+    width: 200px;
+    margin-top: 10px;
+        margin-bottom: 20px;
+    float: left;
+}
+.yzmhq{
+	    background-color: #C9C9C9;
+    /* width: 240px; */
+    padding: 2px 10px;
+    /* height: 25px; */
+        float: left;
+    border: 1px solid #7C7C7C;
+    border-radius: 5px;
+}
+/*注册*/
+.login_box {
+    background-color: #fff;
+    overflow: hidden;
+}
+.reg-s ul {
+    width: 700px;
+    height: 300px;
+    margin-left: 120px;
+}
+.reg-s ul li {
+    float: left;
+    width: 330px;
+    height: 260px;
+    cursor: pointer;
+}
+.reg-s ul li.l-a a {
+    display: block;
+    width: 330px;
+    height: 260px;
+    background: url(../img/l-a.png) 0 0 no-repeat;
+}
+.reg-s ul li {
+    float: left;
+    width: 330px;
+    height: 260px;
+    cursor: pointer;
+}
+.reg-s ul li.l-c a {
+    display: block;
+    width: 330px;
+    height: 260px;
+    background: url(../img/l-c.png) 0 0 no-repeat;
+}
+.reg-s ul li.l-c a:hover {
+    background: url(../img/l-d.png) 0 0 no-repeat;
+}
+.reg-s ul li.l-a a:hover {
+    background: url(../img/l-b.png) 0 0 no-repeat;
+}	
+/*公司注册*/
+.regbox-wrap {
+    background: url(../img/img-2.png) 80% center no-repeat;
+    padding-bottom: 25px;
+}
+.reg-content {
+    padding-left: 80px;
+}
+.mt50 {
+    margin-top: 50px;
+}
+
+.reg-content table th, .reg-content table td {
+    padding: 5px 0;
+    vertical-align: top;
+}
+.reg-table-1 td input {
+    margin-right: 5px;
+}
+.reg-content table input {
+   /* height: 30px;*/
+    float: left;
+}
+.w200 {
+    width: 200px;
+}
+.reg-table-1 span {
+    padding: 2px 5px;
+    /*border: 1px solid #aeaeae;*/
+    border-radius: 3px;
+    height: 24px;
+    box-sizing: border-box;
+    outline: none;
+    height: 30px;
+    float: left;
+}
+.reg-table-1 th {
+    width: 85px;
+    height: 40px;
+    font-weight: normal;
+    font-size: 14px;
+    text-align: right;
+}

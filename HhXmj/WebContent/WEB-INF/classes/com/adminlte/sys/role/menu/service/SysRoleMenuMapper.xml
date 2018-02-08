@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sysRoleMenuMapper" >
+  <select id="select" resultType="java.util.Map" parameterType="java.util.Map" >
+    select * from sys_role_menu
+    <include refid="sysRoleMenuCommonMapper.Where_Select_Sql" />
+  </select>
+  
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from sys_role_menu
+    <include refid="sysRoleMenuCommonMapper.Where_Del_Sql" />
+  </delete>
+  <insert id="insert" parameterType="java.util.Map" >
+    insert into sys_role_menu <include refid="sysRoleMenuCommonMapper.Insert_Sql" />
+  </insert>
+  <insert id="inserts" parameterType="java.util.List" >
+    insert into sys_role_menu <include refid="sysRoleMenuCommonMapper.Inserts_Sql" />
+  </insert>
+  <update id="update" parameterType="java.util.Map" >
+    update sys_role_menu 
+    <include refid="sysRoleMenuCommonMapper.Update_Sql" />
+    <include refid="sysRoleMenuCommonMapper.Where_Update_Sql" />
+  </update>
+  <select id="count" parameterType="java.util.Map" resultType="java.lang.Integer" >
+    select count(*) from sys_role_menu 
+    <if test="_parameter != null" >
+      <include refid="sysRoleMenuCommonMapper.Where_Select_Sql" />
+    </if>
+  </select>	
+</mapper>

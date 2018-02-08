@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dictAssetsMapper" >
+  <select id="select" resultType="java.util.Map" parameterType="java.util.Map" >
+    select dict_assets.* 
+    from dict_assets 
+     
+    <include refid="dictAssetsCommonMapper.Where_Select_Sql" />
+  </select>
+  <select id="selectTree" resultType="java.util.Map" parameterType="java.util.Map" >
+  	select *,if(childNu=0,false,true) lazy from(
+	    select
+	    parent.*,
+	    dict_assets_id  treekey,
+	    dict_assets_name  treetitle,
+	    (SELECT COUNT(*) FROM DICT_ASSETS child WHERE child.DICT_ASSETS_PID=parent.DICT_ASSETS_ID) childNu
+	    from dict_assets parent
+	    <include refid="dictAssetsCommonMapper.Where_SelectTree_Sql" />
+	   ) tree
+  </select>
+  <select id="selectAllTree" resultType="java.util.Map" parameterType="java.util.Map" >
+	    select
+	    parent.*,
+	    dict_assets_id  treekey,
+	    dict_assets_name  treetitle,
+	    (SELECT COUNT(*) FROM DICT_ASSETS child WHERE child.DICT_ASSETS_PID=parent.DICT_ASSETS_ID) childNu
+	    from dict_assets parent
+	   <include refid="dictAssetsCommonMapper.Where_SelectTree_Sql" />
+  </select>
+  
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from dict_assets
+    <include refid="dictAssetsCommonMapper.Where_Del_Sql" />
+  </delete>
+  <insert id="insert" parameterType="java.util.Map" >
+    insert into dict_assets <include refid="dictAssetsCommonMapper.Insert_Sql" />
+  </insert>
+  <insert id="inserts" parameterType="java.util.List" >
+    insert into dict_assets <include refid="dictAssetsCommonMapper.Inserts_Sql" />
+  </insert>
+  <update id="update" parameterType="java.util.Map" >
+    update dict_assets 
+    <include refid="dictAssetsCommonMapper.Update_Sql" />
+    <include refid="dictAssetsCommonMapper.Where_Update_Sql" />
+  </update>
+  <select id="count" parameterType="java.util.Map" resultType="java.lang.Integer" >
+    select count(*) from dict_assets 
+    <if test="_parameter != null" >
+      <include refid="dictAssetsCommonMapper.Where_Select_Sql" />
+    </if>
+  </select>	
+</mapper>

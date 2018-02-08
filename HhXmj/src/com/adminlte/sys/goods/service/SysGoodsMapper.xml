@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sysGoodsMapper" >
+  <select id="select" resultType="java.util.Map" parameterType="java.util.Map" >
+    select sys_goods.* 
+        	,sysgoodstyped.sys_dict_name sys_goods_type_n
+        	,sysuser.sys_user_name
+        	,sysgoodsauditd.sys_dict_name sys_goods_audit_n
+    from sys_goods 
+        	LEFT JOIN sys_dict sysgoodstyped ON sysgoodstyped.sys_dict_id=sys_goods_type_d
+        	LEFT JOIN sys_user sysuser ON sysuser.sys_user_id=sys_goods.sys_user_id
+        	LEFT JOIN sys_dict sysgoodsauditd ON sysgoodsauditd.sys_dict_id=sys_goods_audit_d
+     
+    <include refid="sysGoodsCommonMapper.Where_Select_Sql" />
+  </select>
+  
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from sys_goods
+    <include refid="sysGoodsCommonMapper.Where_Del_Sql" />
+  </delete>
+  <insert id="insert" parameterType="java.util.Map" >
+    insert into sys_goods <include refid="sysGoodsCommonMapper.Insert_Sql" />
+  </insert>
+  <insert id="inserts" parameterType="java.util.List" >
+    insert into sys_goods <include refid="sysGoodsCommonMapper.Inserts_Sql" />
+  </insert>
+  <update id="update" parameterType="java.util.Map" >
+    update sys_goods 
+    <include refid="sysGoodsCommonMapper.Update_Sql" />
+    <include refid="sysGoodsCommonMapper.Where_Update_Sql" />
+  </update>
+  <select id="count" parameterType="java.util.Map" resultType="java.lang.Integer" >
+    select count(*) from sys_goods 
+    <if test="_parameter != null" >
+      <include refid="sysGoodsCommonMapper.Where_Select_Sql" />
+    </if>
+  </select>	
+</mapper>

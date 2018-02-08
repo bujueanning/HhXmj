@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sysCommonMapper" >
+  <select id="selectColumn" resultType="java.util.Map" parameterType="java.util.Map" >
+    select COLUMN_NAME,COLUMN_COMMENT, DATA_TYPE  from information_schema.columns where table_name=#{tableName} AND TABLE_SCHEMA='adminltemy';
+  </select>
+  <select id="selectTable" resultType="java.lang.String" parameterType="java.util.Map" >
+    select DISTINCT TABLE_COMMENT  from information_schema.TABLES  WHERE TABLE_NAME=#{tableName}  AND TABLE_SCHEMA='adminltemy';
+  </select>
+ 	
+</mapper>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sysAccMapper" >
+  <select id="select" resultType="java.util.Map" parameterType="java.util.Map" >
+    select sys_acc.* 
+    from sys_acc 
+     
+    <include refid="sysAccCommonMapper.Where_Select_Sql" />
+  </select>
+  
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from sys_acc
+    <include refid="sysAccCommonMapper.Where_Del_Sql" />
+  </delete>
+  <insert id="insert" parameterType="java.util.Map" >
+    insert into sys_acc <include refid="sysAccCommonMapper.Insert_Sql" />
+  </insert>
+  <insert id="inserts" parameterType="java.util.List" >
+    insert into sys_acc <include refid="sysAccCommonMapper.Inserts_Sql" />
+  </insert>
+  <update id="update" parameterType="java.util.Map" >
+    update sys_acc 
+    <include refid="sysAccCommonMapper.Update_Sql" />
+    <include refid="sysAccCommonMapper.Where_Update_Sql" />
+  </update>
+  <select id="count" parameterType="java.util.Map" resultType="java.lang.Integer" >
+    select count(*) from sys_acc 
+    <if test="_parameter != null" >
+      <include refid="sysAccCommonMapper.Where_Select_Sql" />
+    </if>
+  </select>	
+</mapper>

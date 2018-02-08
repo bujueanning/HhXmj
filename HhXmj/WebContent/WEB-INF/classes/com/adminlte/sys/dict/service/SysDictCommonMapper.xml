@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sysDictCommonMapper" >
+  <sql id="Update_Sql" >
+    <trim prefix="set" suffixOverrides="," >
+			<if test="sysDict.sys_dict_id != null  and sysDict.sys_dict_id!= ''" >
+		        sys_dict_id = #{sysDict.sys_dict_id},
+		    </if>
+			<if test="sysDict.sys_dict_pid != null  and sysDict.sys_dict_pid!= ''" >
+		        sys_dict_pid = #{sysDict.sys_dict_pid},
+		    </if>
+			<if test="sysDict.sys_dict_name != null  and sysDict.sys_dict_name!= ''" >
+		        sys_dict_name = #{sysDict.sys_dict_name},
+		    </if>
+			<if test="sysDict.sys_dict_value != null  and sysDict.sys_dict_value!= ''" >
+		        sys_dict_value = #{sysDict.sys_dict_value},
+		    </if>
+			<if test="sysDict.sys_dict_seq != null  and sysDict.sys_dict_seq!= ''" >
+		        sys_dict_seq = #{sysDict.sys_dict_seq},
+		    </if>
+			<if test="sysDict.sys_dict_active != null  and sysDict.sys_dict_active!= ''" >
+		        sys_dict_active = #{sysDict.sys_dict_active},
+		    </if>
+			<if test="sysDict.sys_dict_createdate != null  and sysDict.sys_dict_createdate!= ''" >
+		        sys_dict_createdate = #{sysDict.sys_dict_createdate},
+		    </if>
+			<if test="sysDict.sys_dict_updatedate != null  and sysDict.sys_dict_updatedate!= ''" >
+		        sys_dict_updatedate = #{sysDict.sys_dict_updatedate},
+		    </if>
+			<if test="sysDict.sys_dict_createuid != null  and sysDict.sys_dict_createuid!= ''" >
+		        sys_dict_createuid = #{sysDict.sys_dict_createuid},
+		    </if>
+			<if test="sysDict.sys_dict_updateuid != null  and sysDict.sys_dict_updateuid!= ''" >
+		        sys_dict_updateuid = #{sysDict.sys_dict_updateuid},
+		    </if>
+    </trim>
+  </sql>
+  <sql id="Inserts_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+	         <if test="paramKey.sys_dict_id != null  and paramKey.sys_dict_id!= ''" >
+	          sys_dict_id,
+	        </if>
+	         <if test="paramKey.sys_dict_pid != null  and paramKey.sys_dict_pid!= ''" >
+	          sys_dict_pid,
+	        </if>
+	         <if test="paramKey.sys_dict_name != null  and paramKey.sys_dict_name!= ''" >
+	          sys_dict_name,
+	        </if>
+	         <if test="paramKey.sys_dict_value != null  and paramKey.sys_dict_value!= ''" >
+	          sys_dict_value,
+	        </if>
+	         <if test="paramKey.sys_dict_seq != null  and paramKey.sys_dict_seq!= ''" >
+	          sys_dict_seq,
+	        </if>
+	         <if test="paramKey.sys_dict_active != null  and paramKey.sys_dict_active!= ''" >
+	          sys_dict_active,
+	        </if>
+	         <if test="paramKey.sys_dict_createdate != null  and paramKey.sys_dict_createdate!= ''" >
+	          sys_dict_createdate,
+	        </if>
+	         <if test="paramKey.sys_dict_updatedate != null  and paramKey.sys_dict_updatedate!= ''" >
+	          sys_dict_updatedate,
+	        </if>
+	         <if test="paramKey.sys_dict_createuid != null  and paramKey.sys_dict_createuid!= ''" >
+	          sys_dict_createuid,
+	        </if>
+	         <if test="paramKey.sys_dict_updateuid != null  and paramKey.sys_dict_updateuid!= ''" >
+	          sys_dict_updateuid,
+	        </if>
+    </trim>
+    values  
+    <foreach collection="paramValue" item="item" index="index" separator="," >  
+        (
+		          <if test="item.sys_dict_id != null and item.sys_dict_id!= ''" >
+			      	#{item.sys_dict_id},
+			      </if>
+		          <if test="item.sys_dict_pid != null and item.sys_dict_pid!= ''" >
+			      	#{item.sys_dict_pid},
+			      </if>
+		          <if test="item.sys_dict_name != null and item.sys_dict_name!= ''" >
+			      	#{item.sys_dict_name},
+			      </if>
+		          <if test="item.sys_dict_value != null and item.sys_dict_value!= ''" >
+			      	#{item.sys_dict_value},
+			      </if>
+		          <if test="item.sys_dict_seq != null and item.sys_dict_seq!= ''" >
+			      	#{item.sys_dict_seq},
+			      </if>
+		          <if test="item.sys_dict_active != null and item.sys_dict_active!= ''" >
+			      	#{item.sys_dict_active},
+			      </if>
+		          <if test="item.sys_dict_createdate != null and item.sys_dict_createdate!= ''" >
+			      	#{item.sys_dict_createdate},
+			      </if>
+		          <if test="item.sys_dict_updatedate != null and item.sys_dict_updatedate!= ''" >
+			      	#{item.sys_dict_updatedate},
+			      </if>
+		          <if test="item.sys_dict_createuid != null and item.sys_dict_createuid!= ''" >
+			      	#{item.sys_dict_createuid},
+			      </if>
+		          <if test="item.sys_dict_updateuid != null and item.sys_dict_updateuid!= ''" >
+			      	#{item.sys_dict_updateuid},
+			      </if>
+        )  
+    </foreach> 
+  </sql>
+  <sql id="Insert_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+    		<if test="sys_dict_id != null  and sys_dict_id!= ''" >
+	          sys_dict_id,
+	        </if>
+    		<if test="sys_dict_pid != null  and sys_dict_pid!= ''" >
+	          sys_dict_pid,
+	        </if>
+    		<if test="sys_dict_name != null  and sys_dict_name!= ''" >
+	          sys_dict_name,
+	        </if>
+    		<if test="sys_dict_value != null  and sys_dict_value!= ''" >
+	          sys_dict_value,
+	        </if>
+    		<if test="sys_dict_seq != null  and sys_dict_seq!= ''" >
+	          sys_dict_seq,
+	        </if>
+    		<if test="sys_dict_active != null  and sys_dict_active!= ''" >
+	          sys_dict_active,
+	        </if>
+    		<if test="sys_dict_createdate != null  and sys_dict_createdate!= ''" >
+	          sys_dict_createdate,
+	        </if>
+    		<if test="sys_dict_updatedate != null  and sys_dict_updatedate!= ''" >
+	          sys_dict_updatedate,
+	        </if>
+    		<if test="sys_dict_createuid != null  and sys_dict_createuid!= ''" >
+	          sys_dict_createuid,
+	        </if>
+    		<if test="sys_dict_updateuid != null  and sys_dict_updateuid!= ''" >
+	          sys_dict_updateuid,
+	        </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+	      <if test="sys_dict_id != null and sys_dict_id!= ''" >
+	      	#{sys_dict_id},
+	      </if>
+	      <if test="sys_dict_pid != null and sys_dict_pid!= ''" >
+	      	#{sys_dict_pid},
+	      </if>
+	      <if test="sys_dict_name != null and sys_dict_name!= ''" >
+	      	#{sys_dict_name},
+	      </if>
+	      <if test="sys_dict_value != null and sys_dict_value!= ''" >
+	      	#{sys_dict_value},
+	      </if>
+	      <if test="sys_dict_seq != null and sys_dict_seq!= ''" >
+	      	#{sys_dict_seq},
+	      </if>
+	      <if test="sys_dict_active != null and sys_dict_active!= ''" >
+	      	#{sys_dict_active},
+	      </if>
+	      <if test="sys_dict_createdate != null and sys_dict_createdate!= ''" >
+	      	#{sys_dict_createdate},
+	      </if>
+	      <if test="sys_dict_updatedate != null and sys_dict_updatedate!= ''" >
+	      	#{sys_dict_updatedate},
+	      </if>
+	      <if test="sys_dict_createuid != null and sys_dict_createuid!= ''" >
+	      	#{sys_dict_createuid},
+	      </if>
+	      <if test="sys_dict_updateuid != null and sys_dict_updateuid!= ''" >
+	      	#{sys_dict_updateuid},
+	      </if>
+    </trim>
+  </sql>
+  <sql id="Where_Update_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="sysDictQuery.sys_dict_id != null and sysDictQuery.sys_dict_id!= ''" >
+	      	and sys_dict_id=#{sysDictQuery.sys_dict_id}
+	      </when>
+	      <when test="sysDictQuery.sys_dict_pid != null and sysDictQuery.sys_dict_pid!= ''" >
+	      	and sys_dict_pid=#{sysDictQuery.sys_dict_pid}
+	      </when>
+	      <when test="sysDictQuery.sys_dict_name != null and sysDictQuery.sys_dict_name!= ''" >
+	      	and sys_dict_name=#{sysDictQuery.sys_dict_name}
+	      </when>
+	      <when test="sysDictQuery.sys_dict_value != null and sysDictQuery.sys_dict_value!= ''" >
+	      	and sys_dict_value=#{sysDictQuery.sys_dict_value}
+	      </when>
+	      <when test="sysDictQuery.sys_dict_seq != null and sysDictQuery.sys_dict_seq!= ''" >
+	      	and sys_dict_seq=#{sysDictQuery.sys_dict_seq}
+	      </when>
+	      <when test="sysDictQuery.sys_dict_active != null and sysDictQuery.sys_dict_active!= ''" >
+	      	and sys_dict_active=#{sysDictQuery.sys_dict_active}
+	      </when>
+	      <when test="sysDictQuery.sys_dict_createdate != null and sysDictQuery.sys_dict_createdate!= ''" >
+	      	and sys_dict_createdate=#{sysDictQuery.sys_dict_createdate}
+	      </when>
+	      <when test="sysDictQuery.sys_dict_updatedate != null and sysDictQuery.sys_dict_updatedate!= ''" >
+	      	and sys_dict_updatedate=#{sysDictQuery.sys_dict_updatedate}
+	      </when>
+	      <when test="sysDictQuery.sys_dict_createuid != null and sysDictQuery.sys_dict_createuid!= ''" >
+	      	and sys_dict_createuid=#{sysDictQuery.sys_dict_createuid}
+	      </when>
+	      <when test="sysDictQuery.sys_dict_updateuid != null and sysDictQuery.sys_dict_updateuid!= ''" >
+	      	and sys_dict_updateuid=#{sysDictQuery.sys_dict_updateuid}
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+    <sql id="Where_Del_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="sys_dict_id != null and sys_dict_id!= ''" >
+	      	and sys_dict_id=#{sys_dict_id}
+	      </when>
+	      <when test="sys_dict_pid != null and sys_dict_pid!= ''" >
+	      	and sys_dict_pid=#{sys_dict_pid}
+	      </when>
+	      <when test="sys_dict_name != null and sys_dict_name!= ''" >
+	      	and sys_dict_name=#{sys_dict_name}
+	      </when>
+	      <when test="sys_dict_value != null and sys_dict_value!= ''" >
+	      	and sys_dict_value=#{sys_dict_value}
+	      </when>
+	      <when test="sys_dict_seq != null and sys_dict_seq!= ''" >
+	      	and sys_dict_seq=#{sys_dict_seq}
+	      </when>
+	      <when test="sys_dict_active != null and sys_dict_active!= ''" >
+	      	and sys_dict_active=#{sys_dict_active}
+	      </when>
+	      <when test="sys_dict_createdate != null and sys_dict_createdate!= ''" >
+	      	and sys_dict_createdate=#{sys_dict_createdate}
+	      </when>
+	      <when test="sys_dict_updatedate != null and sys_dict_updatedate!= ''" >
+	      	and sys_dict_updatedate=#{sys_dict_updatedate}
+	      </when>
+	      <when test="sys_dict_createuid != null and sys_dict_createuid!= ''" >
+	      	and sys_dict_createuid=#{sys_dict_createuid}
+	      </when>
+	      <when test="sys_dict_updateuid != null and sys_dict_updateuid!= ''" >
+	      	and sys_dict_updateuid=#{sys_dict_updateuid}
+	      </when>
+	     <when test="ids != null and ids!= ''" >
+	      		and sys_dict_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		           #{id}
+		        </foreach>
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+  <sql id="Where_Select_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="sys_dict_id != null and sys_dict_id!= ''" >
+	      	and sys_dict_id=#{sys_dict_id}
+	      </if>
+	      <if test="sys_dict_pid != null and sys_dict_pid!= ''" >
+	      	and sys_dict_pid=#{sys_dict_pid}
+	      </if>
+	      <if test="sys_dict_name != null and sys_dict_name!= ''" >
+	      	and sys_dict_name=#{sys_dict_name}
+	      </if>
+	      <if test="sys_dict_value != null and sys_dict_value!= ''" >
+	      	and sys_dict_value=#{sys_dict_value}
+	      </if>
+	      <if test="sys_dict_seq != null and sys_dict_seq!= ''" >
+	      	and sys_dict_seq=#{sys_dict_seq}
+	      </if>
+	      <if test="sys_dict_active != null and sys_dict_active!= ''" >
+	      	and sys_dict_active=#{sys_dict_active}
+	      </if>
+	      <if test="sys_dict_createdate != null and sys_dict_createdate!= ''" >
+	      	and sys_dict_createdate=#{sys_dict_createdate}
+	      </if>
+	      <if test="sys_dict_updatedate != null and sys_dict_updatedate!= ''" >
+	      	and sys_dict_updatedate=#{sys_dict_updatedate}
+	      </if>
+	      <if test="sys_dict_createuid != null and sys_dict_createuid!= ''" >
+	      	and sys_dict_createuid=#{sys_dict_createuid}
+	      </if>
+	      <if test="sys_dict_updateuid != null and sys_dict_updateuid!= ''" >
+	      	and sys_dict_updateuid=#{sys_dict_updateuid}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and sys_dict_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+</mapper>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dictAssetsCommonMapper" >
+  <sql id="Update_Sql" >
+    <trim prefix="set" suffixOverrides="," >
+			<if test="dictAssets.dict_assets_id != null  and dictAssets.dict_assets_id!= ''" >
+		        dict_assets.dict_assets_id = #{dictAssets.dict_assets_id},
+		    </if>
+			<if test="dictAssets.dict_assets_pid != null  and dictAssets.dict_assets_pid!= ''" >
+		        dict_assets.dict_assets_pid = #{dictAssets.dict_assets_pid},
+		    </if>
+			<if test="dictAssets.dict_assets_key != null  and dictAssets.dict_assets_key!= ''" >
+		        dict_assets.dict_assets_key = #{dictAssets.dict_assets_key},
+		    </if>
+			<if test="dictAssets.dict_assets_name != null  and dictAssets.dict_assets_name!= ''" >
+		        dict_assets.dict_assets_name = #{dictAssets.dict_assets_name},
+		    </if>
+			<if test="dictAssets.dict_assets_state != null  and dictAssets.dict_assets_state!= ''" >
+		        dict_assets.dict_assets_state = #{dictAssets.dict_assets_state},
+		    </if>
+    </trim>
+  </sql>
+  <sql id="Inserts_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+	         <if test="paramKey.dict_assets_id != null  and paramKey.dict_assets_id!= ''" >
+	          dict_assets_id,
+	        </if>
+	         <if test="paramKey.dict_assets_pid != null  and paramKey.dict_assets_pid!= ''" >
+	          dict_assets_pid,
+	        </if>
+	         <if test="paramKey.dict_assets_key != null  and paramKey.dict_assets_key!= ''" >
+	          dict_assets_key,
+	        </if>
+	         <if test="paramKey.dict_assets_name != null  and paramKey.dict_assets_name!= ''" >
+	          dict_assets_name,
+	        </if>
+	         <if test="paramKey.dict_assets_state != null  and paramKey.dict_assets_state!= ''" >
+	          dict_assets_state,
+	        </if>
+    </trim>
+    values  
+    <foreach collection="paramValue" item="item" index="index" separator="," >  
+        (
+		          <if test="item.dict_assets_id != null and item.dict_assets_id!= ''" >
+			      	#{item.dict_assets_id},
+			      </if>
+		          <if test="item.dict_assets_pid != null and item.dict_assets_pid!= ''" >
+			      	#{item.dict_assets_pid},
+			      </if>
+		          <if test="item.dict_assets_key != null and item.dict_assets_key!= ''" >
+			      	#{item.dict_assets_key},
+			      </if>
+		          <if test="item.dict_assets_name != null and item.dict_assets_name!= ''" >
+			      	#{item.dict_assets_name},
+			      </if>
+		          <if test="item.dict_assets_state != null and item.dict_assets_state!= ''" >
+			      	#{item.dict_assets_state},
+			      </if>
+        )  
+    </foreach> 
+  </sql>
+  <sql id="Insert_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+    		<if test="dict_assets_id != null  and dict_assets_id!= ''" >
+	          dict_assets_id,
+	        </if>
+    		<if test="dict_assets_pid != null  and dict_assets_pid!= ''" >
+	          dict_assets_pid,
+	        </if>
+    		<if test="dict_assets_key != null  and dict_assets_key!= ''" >
+	          dict_assets_key,
+	        </if>
+    		<if test="dict_assets_name != null  and dict_assets_name!= ''" >
+	          dict_assets_name,
+	        </if>
+    		<if test="dict_assets_state != null  and dict_assets_state!= ''" >
+	          dict_assets_state,
+	        </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+	      <if test="dict_assets_id != null and dict_assets_id!= ''" >
+	      	#{dict_assets_id},
+	      </if>
+	      <if test="dict_assets_pid != null and dict_assets_pid!= ''" >
+	      	#{dict_assets_pid},
+	      </if>
+	      <if test="dict_assets_key != null and dict_assets_key!= ''" >
+	      	#{dict_assets_key},
+	      </if>
+	      <if test="dict_assets_name != null and dict_assets_name!= ''" >
+	      	#{dict_assets_name},
+	      </if>
+	      <if test="dict_assets_state != null and dict_assets_state!= ''" >
+	      	#{dict_assets_state},
+	      </if>
+    </trim>
+  </sql>
+  <sql id="Where_Update_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="dictAssetsQuery.dict_assets_id != null and dictAssetsQuery.dict_assets_id!= ''" >
+	      	and dict_assets.dict_assets_id=#{dictAssetsQuery.dict_assets_id}
+	      </when>
+	      <when test="dictAssetsQuery.dict_assets_pid != null and dictAssetsQuery.dict_assets_pid!= ''" >
+	      	and dict_assets.dict_assets_pid=#{dictAssetsQuery.dict_assets_pid}
+	      </when>
+	      <when test="dictAssetsQuery.dict_assets_key != null and dictAssetsQuery.dict_assets_key!= ''" >
+	      	and dict_assets.dict_assets_key=#{dictAssetsQuery.dict_assets_key}
+	      </when>
+	      <when test="dictAssetsQuery.dict_assets_name != null and dictAssetsQuery.dict_assets_name!= ''" >
+	      	and dict_assets.dict_assets_name=#{dictAssetsQuery.dict_assets_name}
+	      </when>
+	      <when test="dictAssetsQuery.dict_assets_state != null and dictAssetsQuery.dict_assets_state!= ''" >
+	      	and dict_assets.dict_assets_state=#{dictAssetsQuery.dict_assets_state}
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+    <sql id="Where_Del_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="dict_assets_id != null and dict_assets_id!= ''" >
+	      	and dict_assets.dict_assets_id=#{dict_assets_id}
+	      </when>
+	      <when test="dict_assets_pid != null and dict_assets_pid!= ''" >
+	      	and dict_assets.dict_assets_pid=#{dict_assets_pid}
+	      </when>
+	      <when test="dict_assets_key != null and dict_assets_key!= ''" >
+	      	and dict_assets.dict_assets_key=#{dict_assets_key}
+	      </when>
+	      <when test="dict_assets_name != null and dict_assets_name!= ''" >
+	      	and dict_assets.dict_assets_name=#{dict_assets_name}
+	      </when>
+	      <when test="dict_assets_state != null and dict_assets_state!= ''" >
+	      	and dict_assets.dict_assets_state=#{dict_assets_state}
+	      </when>
+	     <when test="ids != null and ids!= ''" >
+	      		and dict_assets.dict_assets_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		           #{id}
+		        </foreach>
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+  <sql id="Where_Select_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="dict_assets_id != null and dict_assets_id!= ''" >
+	      	and dict_assets.dict_assets_id=#{dict_assets_id}
+	      </if>
+	      <if test="dict_assets_pid != null and dict_assets_pid!= ''" >
+	      	and dict_assets.dict_assets_pid=#{dict_assets_pid}
+	      </if>
+	      <if test="dict_assets_key != null and dict_assets_key!= ''" >
+	      	and dict_assets.dict_assets_key=#{dict_assets_key}
+	      </if>
+	      <if test="dict_assets_name != null and dict_assets_name!= ''" >
+	      	and dict_assets.dict_assets_name=#{dict_assets_name}
+	      </if>
+	      <if test="dict_assets_state != null and dict_assets_state!= ''" >
+	      	and dict_assets.dict_assets_state=#{dict_assets_state} ORDER BY dict_assets_pid
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and dict_assets.dict_assets_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+  
+  <sql id="Where_SelectTree_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="dict_assets_id != null and dict_assets_id!= ''" >
+	      	and parent.dict_assets_id=#{dict_assets_id}
+	      </if>
+	      <if test="dict_assets_pid != null and dict_assets_pid!= ''" >
+	      	and parent.dict_assets_pid=#{dict_assets_pid}
+	      </if>
+	      <if test="dict_assets_key != null and dict_assets_key!= ''" >
+	      	and parent.dict_assets_key=#{dict_assets_key}
+	      </if>
+	      <if test="dict_assets_name != null and dict_assets_name!= ''" >
+	      	and parent.dict_assets_name=#{dict_assets_name}
+	      </if>
+	      <if test="dict_assets_state != null and dict_assets_state!= ''" >
+	      	and parent.dict_assets_state=#{dict_assets_state}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and parent.dict_assets_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+</mapper>

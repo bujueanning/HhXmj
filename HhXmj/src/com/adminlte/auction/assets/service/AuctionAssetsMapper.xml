@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="auctionAssetsMapper" >
+  <select id="select" resultType="java.util.Map" parameterType="java.util.Map" >
+    SELECT
+    auction_assets.*, auction_listing.*, auction_overview.*,
+    (SELECT
+      dict_assets_name
+      FROM
+      dict_assets
+      WHERE
+      dict_assets_pid = 'auction_product_solutions'
+      AND dict_assets_key = auction_assets.auction_product_solutions
+    ) AS auction_product_solutions1,
+    (SELECT
+      dict_assets_name
+      FROM
+      dict_assets
+      WHERE
+      dict_assets_pid = 'auction_classify'
+      AND dict_assets_key = auction_assets.auction_classify
+    ) AS auction_classify1,
+    (
+    SELECT
+    dict_assets_name
+    FROM
+    dict_assets
+    WHERE
+    dict_assets_pid = 'auction_verify'
+    AND dict_assets_key = auction_assets.auction_verify
+    ) AS auction_verify1,
+    (
+    SELECT
+    dict_assets_name
+    FROM
+    dict_assets
+    WHERE
+    dict_assets_pid = 'auction_location'
+    AND dict_assets_key = auction_assets.auction_location
+    ) AS auction_location1
+    FROM
+    auction_assets
+    LEFT JOIN auction_listing ON auction_assets.auction_assets_id = auction_listing.auction_assets_id
+    LEFT JOIN auction_overview ON auction_assets.auction_assets_id = auction_overview.auction_assets_id
+    <include refid="auctionAssetsCommonMapper.Where_Select_Sql" />
+  </select>
+
+  <select id="find" resultType="java.util.Map" parameterType="java.util.Map" >
+    SELECT
+    auction_assets.*, auction_listing.*, auction_overview.*, auction_price.*
+    FROM
+    auction_assets
+    LEFT JOIN auction_listing ON auction_assets.auction_assets_id = auction_listing.auction_assets_id
+    LEFT JOIN auction_overview ON auction_assets.auction_assets_id = auction_overview.auction_assets_id
+    LEFT JOIN auction_price ON auction_assets.auction_assets_id = auction_price.auction_assets_id
+    where auction_price.auction_current_price = (select MAX(auction_current_price) FROM auction_price where auction_assets_id = #{auction_assets_id})
+    AND auction_assets.auction_assets_id = #{auction_assets_id}
+  </select>
+  
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from auction_assets
+    <include refid="auctionAssetsCommonMapper.Where_Del_Sql" />
+  </delete>
+  <insert id="insert" parameterType="java.util.Map" >
+    insert into auction_assets <include refid="auctionAssetsCommonMapper.Insert_Sql" />
+  </insert>
+  <insert id="inserts" parameterType="java.util.List" >
+    insert into auction_assets <include refid="auctionAssetsCommonMapper.Inserts_Sql" />
+  </insert>
+  <update id="update" parameterType="java.util.Map" >
+    update auction_assets 
+    <include refid="auctionAssetsCommonMapper.Update_Sql" />
+    <include refid="auctionAssetsCommonMapper.Where_Update_Sql" />
+  </update>
+  <select id="count" parameterType="java.util.Map" resultType="java.lang.Integer" >
+    select count(*) from auction_assets
+    LEFT JOIN auction_listing ON auction_assets.auction_assets_id = auction_listing.auction_assets_id
+    LEFT JOIN auction_overview ON auction_assets.auction_assets_id = auction_overview.auction_assets_id
+    <if test="_parameter != null" >
+      <include refid="auctionAssetsCommonMapper.Where_Select_Sql" />
+    </if>
+  </select>	
+</mapper>

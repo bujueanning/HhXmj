@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="killProcessCommonMapper" >
+  <sql id="Update_Sql" >
+    <trim prefix="set" suffixOverrides="," >
+			<if test="killProcess.kill_id != null  and killProcess.kill_id!= ''" >
+		        kill_process.kill_id = #{killProcess.kill_id},
+		    </if>
+			<if test="killProcess.kill_time != null  and killProcess.kill_time!= ''" >
+		        kill_process.kill_time = #{killProcess.kill_time},
+		    </if>
+			<if test="killProcess.kill_name != null  and killProcess.kill_name!= ''" >
+		        kill_process.kill_name = #{killProcess.kill_name},
+		    </if>
+    </trim>
+  </sql>
+  <sql id="Inserts_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+	         <if test="paramKey.kill_id != null  and paramKey.kill_id!= ''" >
+	          kill_id,
+	        </if>
+	         <if test="paramKey.kill_time != null  and paramKey.kill_time!= ''" >
+	          kill_time,
+	        </if>
+	         <if test="paramKey.kill_name != null  and paramKey.kill_name!= ''" >
+	          kill_name,
+	        </if>
+    </trim>
+    values  
+    <foreach collection="paramValue" item="item" index="index" separator="," >  
+        (
+		          <if test="item.kill_id != null and item.kill_id!= ''" >
+			      	#{item.kill_id},
+			      </if>
+		          <if test="item.kill_time != null and item.kill_time!= ''" >
+			      	#{item.kill_time},
+			      </if>
+		          <if test="item.kill_name != null and item.kill_name!= ''" >
+			      	#{item.kill_name},
+			      </if>
+        )  
+    </foreach> 
+  </sql>
+  <sql id="Insert_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+    		<if test="kill_id != null  and kill_id!= ''" >
+	          kill_id,
+	        </if>
+    		<if test="kill_time != null  and kill_time!= ''" >
+	          kill_time,
+	        </if>
+    		<if test="kill_name != null  and kill_name!= ''" >
+	          kill_name,
+	        </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+	      <if test="kill_id != null and kill_id!= ''" >
+	      	#{kill_id},
+	      </if>
+	      <if test="kill_time != null and kill_time!= ''" >
+	      	#{kill_time},
+	      </if>
+	      <if test="kill_name != null and kill_name!= ''" >
+	      	#{kill_name},
+	      </if>
+    </trim>
+  </sql>
+  <sql id="Where_Update_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="killProcessQuery.kill_id != null and killProcessQuery.kill_id!= ''" >
+	      	and kill_process.kill_id=#{killProcessQuery.kill_id}
+	      </when>
+	      <when test="killProcessQuery.kill_time != null and killProcessQuery.kill_time!= ''" >
+	      	and kill_process.kill_time=#{killProcessQuery.kill_time}
+	      </when>
+	      <when test="killProcessQuery.kill_name != null and killProcessQuery.kill_name!= ''" >
+	      	and kill_process.kill_name=#{killProcessQuery.kill_name}
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+    <sql id="Where_Del_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="kill_id != null and kill_id!= ''" >
+	      	and kill_process.kill_id=#{kill_id}
+	      </when>
+	      <when test="kill_time != null and kill_time!= ''" >
+	      	and kill_process.kill_time=#{kill_time}
+	      </when>
+	      <when test="kill_name != null and kill_name!= ''" >
+	      	and kill_process.kill_name=#{kill_name}
+	      </when>
+	     <when test="ids != null and ids!= ''" >
+	      		and kill_process.kill_process_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		           #{id}
+		        </foreach>
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+  <sql id="Where_Select_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="kill_id != null and kill_id!= ''" >
+	      	and kill_process.kill_id=#{kill_id}
+	      </if>
+	      <if test="kill_time != null and kill_time!= ''" >
+	      	and kill_process.kill_time=#{kill_time}
+	      </if>
+	      <if test="kill_name != null and kill_name!= ''" >
+	      	and kill_process.kill_name=#{kill_name}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and kill_process.kill_process_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+  
+  <sql id="Where_SelectTree_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="kill_id != null and kill_id!= ''" >
+	      	and parent.kill_id=#{kill_id}
+	      </if>
+	      <if test="kill_time != null and kill_time!= ''" >
+	      	and parent.kill_time=#{kill_time}
+	      </if>
+	      <if test="kill_name != null and kill_name!= ''" >
+	      	and parent.kill_name=#{kill_name}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and parent.kill_process_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+</mapper>

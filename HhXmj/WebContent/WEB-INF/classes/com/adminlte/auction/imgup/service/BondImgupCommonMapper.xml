@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bondImgupCommonMapper" >
+  <sql id="Update_Sql" >
+    <trim prefix="set" suffixOverrides="," >
+			<if test="bondImgup.imgup_id != null  and bondImgup.imgup_id!= ''" >
+		        bond_imgup.imgup_id = #{bondImgup.imgup_id},
+		    </if>
+			<if test="bondImgup.imgup_path != null  and bondImgup.imgup_path!= ''" >
+		        bond_imgup.imgup_path = #{bondImgup.imgup_path},
+		    </if>
+			<if test="bondImgup.imgup_createuid != null  and bondImgup.imgup_createuid!= ''" >
+		        bond_imgup.imgup_createuid = #{bondImgup.imgup_createuid},
+		    </if>
+			<if test="bondImgup.imgup_createdate != null  and bondImgup.imgup_createdate!= ''" >
+		        bond_imgup.imgup_createdate = #{bondImgup.imgup_createdate},
+		    </if>
+			<if test="bondImgup.imgup_updateuid != null  and bondImgup.imgup_updateuid!= ''" >
+		        bond_imgup.imgup_updateuid = #{bondImgup.imgup_updateuid},
+		    </if>
+			<if test="bondImgup.imgup_updatedate != null  and bondImgup.imgup_updatedate!= ''" >
+		        bond_imgup.imgup_updatedate = #{bondImgup.imgup_updatedate},
+		    </if>
+			<if test="bondImgup.imgup_pid != null  and bondImgup.imgup_pid!= ''" >
+		        bond_imgup.imgup_pid = #{bondImgup.imgup_pid},
+		    </if>
+			<if test="bondImgup.imgup_index != null  and bondImgup.imgup_index!= ''" >
+		        bond_imgup.imgup_index = #{bondImgup.imgup_index},
+		    </if>
+    </trim>
+  </sql>
+  <sql id="Inserts_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+	         <if test="paramKey.imgup_id != null  and paramKey.imgup_id!= ''" >
+	          imgup_id,
+	        </if>
+	         <if test="paramKey.imgup_path != null  and paramKey.imgup_path!= ''" >
+	          imgup_path,
+	        </if>
+	         <if test="paramKey.imgup_createuid != null  and paramKey.imgup_createuid!= ''" >
+	          imgup_createuid,
+	        </if>
+	         <if test="paramKey.imgup_createdate != null  and paramKey.imgup_createdate!= ''" >
+	          imgup_createdate,
+	        </if>
+	         <if test="paramKey.imgup_updateuid != null  and paramKey.imgup_updateuid!= ''" >
+	          imgup_updateuid,
+	        </if>
+	         <if test="paramKey.imgup_updatedate != null  and paramKey.imgup_updatedate!= ''" >
+	          imgup_updatedate,
+	        </if>
+	         <if test="paramKey.imgup_pid != null  and paramKey.imgup_pid!= ''" >
+	          imgup_pid,
+	        </if>
+	         <if test="paramKey.imgup_index != null  and paramKey.imgup_index!= ''" >
+	          imgup_index,
+	        </if>
+    </trim>
+    values  
+    <foreach collection="paramValue" item="item" index="index" separator="," >  
+        (
+		          <if test="item.imgup_id != null and item.imgup_id!= ''" >
+			      	#{item.imgup_id},
+			      </if>
+		          <if test="item.imgup_path != null and item.imgup_path!= ''" >
+			      	#{item.imgup_path},
+			      </if>
+		          <if test="item.imgup_createuid != null and item.imgup_createuid!= ''" >
+			      	#{item.imgup_createuid},
+			      </if>
+		          <if test="item.imgup_createdate != null and item.imgup_createdate!= ''" >
+			      	#{item.imgup_createdate},
+			      </if>
+		          <if test="item.imgup_updateuid != null and item.imgup_updateuid!= ''" >
+			      	#{item.imgup_updateuid},
+			      </if>
+		          <if test="item.imgup_updatedate != null and item.imgup_updatedate!= ''" >
+			      	#{item.imgup_updatedate},
+			      </if>
+		          <if test="item.imgup_pid != null and item.imgup_pid!= ''" >
+			      	#{item.imgup_pid},
+			      </if>
+		          <if test="item.imgup_index != null and item.imgup_index!= ''" >
+			      	#{item.imgup_index},
+			      </if>
+        )  
+    </foreach> 
+  </sql>
+  <sql id="Insert_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+    		<if test="imgup_id != null  and imgup_id!= ''" >
+	          imgup_id,
+	        </if>
+    		<if test="imgup_path != null  and imgup_path!= ''" >
+	          imgup_path,
+	        </if>
+    		<if test="imgup_createuid != null  and imgup_createuid!= ''" >
+	          imgup_createuid,
+	        </if>
+    		<if test="imgup_createdate != null  and imgup_createdate!= ''" >
+	          imgup_createdate,
+	        </if>
+    		<if test="imgup_updateuid != null  and imgup_updateuid!= ''" >
+	          imgup_updateuid,
+	        </if>
+    		<if test="imgup_updatedate != null  and imgup_updatedate!= ''" >
+	          imgup_updatedate,
+	        </if>
+    		<if test="imgup_pid != null  and imgup_pid!= ''" >
+	          imgup_pid,
+	        </if>
+    		<if test="imgup_index != null  and imgup_index!= ''" >
+	          imgup_index,
+	        </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+	      <if test="imgup_id != null and imgup_id!= ''" >
+	      	#{imgup_id},
+	      </if>
+	      <if test="imgup_path != null and imgup_path!= ''" >
+	      	#{imgup_path},
+	      </if>
+	      <if test="imgup_createuid != null and imgup_createuid!= ''" >
+	      	#{imgup_createuid},
+	      </if>
+	      <if test="imgup_createdate != null and imgup_createdate!= ''" >
+	      	#{imgup_createdate},
+	      </if>
+	      <if test="imgup_updateuid != null and imgup_updateuid!= ''" >
+	      	#{imgup_updateuid},
+	      </if>
+	      <if test="imgup_updatedate != null and imgup_updatedate!= ''" >
+	      	#{imgup_updatedate},
+	      </if>
+	      <if test="imgup_pid != null and imgup_pid!= ''" >
+	      	#{imgup_pid},
+	      </if>
+	      <if test="imgup_index != null and imgup_index!= ''" >
+	      	#{imgup_index},
+	      </if>
+    </trim>
+  </sql>
+  <sql id="Where_Update_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="bondImgupQuery.imgup_id != null and bondImgupQuery.imgup_id!= ''" >
+	      	and bond_imgup.imgup_id=#{bondImgupQuery.imgup_id}
+	      </when>
+	      <when test="bondImgupQuery.imgup_path != null and bondImgupQuery.imgup_path!= ''" >
+	      	and bond_imgup.imgup_path=#{bondImgupQuery.imgup_path}
+	      </when>
+	      <when test="bondImgupQuery.imgup_createuid != null and bondImgupQuery.imgup_createuid!= ''" >
+	      	and bond_imgup.imgup_createuid=#{bondImgupQuery.imgup_createuid}
+	      </when>
+	      <when test="bondImgupQuery.imgup_createdate != null and bondImgupQuery.imgup_createdate!= ''" >
+	      	and bond_imgup.imgup_createdate=#{bondImgupQuery.imgup_createdate}
+	      </when>
+	      <when test="bondImgupQuery.imgup_updateuid != null and bondImgupQuery.imgup_updateuid!= ''" >
+	      	and bond_imgup.imgup_updateuid=#{bondImgupQuery.imgup_updateuid}
+	      </when>
+	      <when test="bondImgupQuery.imgup_updatedate != null and bondImgupQuery.imgup_updatedate!= ''" >
+	      	and bond_imgup.imgup_updatedate=#{bondImgupQuery.imgup_updatedate}
+	      </when>
+	      <when test="bondImgupQuery.imgup_pid != null and bondImgupQuery.imgup_pid!= ''" >
+	      	and bond_imgup.imgup_pid=#{bondImgupQuery.imgup_pid}
+	      </when>
+	      <when test="bondImgupQuery.imgup_index != null and bondImgupQuery.imgup_index!= ''" >
+	      	and bond_imgup.imgup_index=#{bondImgupQuery.imgup_index}
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+    <sql id="Where_Del_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="imgup_id != null and imgup_id!= ''" >
+	      	and bond_imgup.imgup_id=#{imgup_id}
+	      </when>
+	      <when test="imgup_path != null and imgup_path!= ''" >
+	      	and bond_imgup.imgup_path=#{imgup_path}
+	      </when>
+	      <when test="imgup_createuid != null and imgup_createuid!= ''" >
+	      	and bond_imgup.imgup_createuid=#{imgup_createuid}
+	      </when>
+	      <when test="imgup_createdate != null and imgup_createdate!= ''" >
+	      	and bond_imgup.imgup_createdate=#{imgup_createdate}
+	      </when>
+	      <when test="imgup_updateuid != null and imgup_updateuid!= ''" >
+	      	and bond_imgup.imgup_updateuid=#{imgup_updateuid}
+	      </when>
+	      <when test="imgup_updatedate != null and imgup_updatedate!= ''" >
+	      	and bond_imgup.imgup_updatedate=#{imgup_updatedate}
+	      </when>
+	      <when test="imgup_pid != null and imgup_pid!= ''" >
+	      	and bond_imgup.imgup_pid=#{imgup_pid}
+	      </when>
+	      <when test="imgup_index != null and imgup_index!= ''" >
+	      	and bond_imgup.imgup_index=#{imgup_index}
+	      </when>
+	     <when test="ids != null and ids!= ''" >
+	      		and bond_imgup.bond_imgup_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		           #{id}
+		        </foreach>
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+  <sql id="Where_Select_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="imgup_id != null and imgup_id!= ''" >
+	      	and bond_imgup.imgup_id=#{imgup_id}
+	      </if>
+	      <if test="imgup_path != null and imgup_path!= ''" >
+	      	and bond_imgup.imgup_path=#{imgup_path}
+	      </if>
+	      <if test="imgup_createuid != null and imgup_createuid!= ''" >
+	      	and bond_imgup.imgup_createuid=#{imgup_createuid}
+	      </if>
+	      <if test="imgup_createdate != null and imgup_createdate!= ''" >
+	      	and bond_imgup.imgup_createdate=#{imgup_createdate}
+	      </if>
+	      <if test="imgup_updateuid != null and imgup_updateuid!= ''" >
+	      	and bond_imgup.imgup_updateuid=#{imgup_updateuid}
+	      </if>
+	      <if test="imgup_updatedate != null and imgup_updatedate!= ''" >
+	      	and bond_imgup.imgup_updatedate=#{imgup_updatedate}
+	      </if>
+	      <if test="imgup_pid != null and imgup_pid!= ''" >
+	      	and bond_imgup.imgup_pid=#{imgup_pid}
+	      </if>
+	      <if test="imgup_index != null and imgup_index!= ''" >
+	      	and bond_imgup.imgup_index=#{imgup_index}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and bond_imgup.bond_imgup_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+  
+  <sql id="Where_SelectTree_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="imgup_id != null and imgup_id!= ''" >
+	      	and parent.imgup_id=#{imgup_id}
+	      </if>
+	      <if test="imgup_path != null and imgup_path!= ''" >
+	      	and parent.imgup_path=#{imgup_path}
+	      </if>
+	      <if test="imgup_createuid != null and imgup_createuid!= ''" >
+	      	and parent.imgup_createuid=#{imgup_createuid}
+	      </if>
+	      <if test="imgup_createdate != null and imgup_createdate!= ''" >
+	      	and parent.imgup_createdate=#{imgup_createdate}
+	      </if>
+	      <if test="imgup_updateuid != null and imgup_updateuid!= ''" >
+	      	and parent.imgup_updateuid=#{imgup_updateuid}
+	      </if>
+	      <if test="imgup_updatedate != null and imgup_updatedate!= ''" >
+	      	and parent.imgup_updatedate=#{imgup_updatedate}
+	      </if>
+	      <if test="imgup_pid != null and imgup_pid!= ''" >
+	      	and parent.imgup_pid=#{imgup_pid}
+	      </if>
+	      <if test="imgup_index != null and imgup_index!= ''" >
+	      	and parent.imgup_index=#{imgup_index}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and parent.bond_imgup_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+</mapper>

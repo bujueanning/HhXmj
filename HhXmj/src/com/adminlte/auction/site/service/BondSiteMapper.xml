@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bondSiteMapper" >
+  <select id="select" resultType="java.util.Map" parameterType="java.util.Map" >
+    select bond_site.* 
+    from bond_site 
+     
+    <include refid="bondSiteCommonMapper.Where_Select_Sql" />
+  </select>
+  <select id="selectTree" resultType="java.util.Map" parameterType="java.util.Map" >
+  	select *,if(childNu=0,false,true) lazy from(
+	    select
+	    parent.*,
+	    bond_site_id  treekey,
+	    bond_site_name  treetitle,
+	    (SELECT COUNT(*) FROM BOND_SITE child WHERE child.BOND_SITE_PID=parent.BOND_SITE_ID) childNu
+	    from bond_site parent
+	    <include refid="bondSiteCommonMapper.Where_SelectTree_Sql" />
+	   ) tree
+  </select>
+  <select id="selectAllTree" resultType="java.util.Map" parameterType="java.util.Map" >
+	    select
+	    parent.*,
+	    bond_site_id  treekey,
+	    bond_site_name  treetitle,
+	    (SELECT COUNT(*) FROM BOND_SITE child WHERE child.BOND_SITE_PID=parent.BOND_SITE_ID) childNu
+	    from bond_site parent
+	   <include refid="bondSiteCommonMapper.Where_SelectTree_Sql" />
+  </select>
+  
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from bond_site
+    <include refid="bondSiteCommonMapper.Where_Del_Sql" />
+  </delete>
+  <insert id="insert" parameterType="java.util.Map" >
+    insert into bond_site <include refid="bondSiteCommonMapper.Insert_Sql" />
+  </insert>
+  <insert id="inserts" parameterType="java.util.List" >
+    insert into bond_site <include refid="bondSiteCommonMapper.Inserts_Sql" />
+  </insert>
+  <update id="update" parameterType="java.util.Map" >
+    update bond_site 
+    <include refid="bondSiteCommonMapper.Update_Sql" />
+    <include refid="bondSiteCommonMapper.Where_Update_Sql" />
+  </update>
+  <select id="count" parameterType="java.util.Map" resultType="java.lang.Integer" >
+    select count(*) from bond_site 
+    <if test="_parameter != null" >
+      <include refid="bondSiteCommonMapper.Where_Select_Sql" />
+    </if>
+  </select>	
+</mapper>

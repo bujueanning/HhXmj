@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sysRoleMenuCommonMapper" >
+  <sql id="Update_Sql" >
+    <trim prefix="set" suffixOverrides="," >
+			<if test="sysRoleMenu.sys_role_menu_id != null  and sysRoleMenu.sys_role_menu_id!= ''" >
+		        sys_role_menu_id = #{sysRoleMenu.sys_role_menu_id},
+		    </if>
+			<if test="sysRoleMenu.sys_role_id != null  and sysRoleMenu.sys_role_id!= ''" >
+		        sys_role_id = #{sysRoleMenu.sys_role_id},
+		    </if>
+			<if test="sysRoleMenu.sys_menu_id != null  and sysRoleMenu.sys_menu_id!= ''" >
+		        sys_menu_id = #{sysRoleMenu.sys_menu_id},
+		    </if>
+			<if test="sysRoleMenu.sys_role_menu_type != null  and sysRoleMenu.sys_role_menu_type!= ''" >
+		        sys_role_menu_type = #{sysRoleMenu.sys_role_menu_type},
+		    </if>
+			<if test="sysRoleMenu.sys_role_menu_createdate != null  and sysRoleMenu.sys_role_menu_createdate!= ''" >
+		        sys_role_menu_createdate = #{sysRoleMenu.sys_role_menu_createdate},
+		    </if>
+			<if test="sysRoleMenu.sys_role_menu_updatedate != null  and sysRoleMenu.sys_role_menu_updatedate!= ''" >
+		        sys_role_menu_updatedate = #{sysRoleMenu.sys_role_menu_updatedate},
+		    </if>
+			<if test="sysRoleMenu.sys_role_menu_createuid != null  and sysRoleMenu.sys_role_menu_createuid!= ''" >
+		        sys_role_menu_createuid = #{sysRoleMenu.sys_role_menu_createuid},
+		    </if>
+			<if test="sysRoleMenu.sys_role_menu_updateuid != null  and sysRoleMenu.sys_role_menu_updateuid!= ''" >
+		        sys_role_menu_updateuid = #{sysRoleMenu.sys_role_menu_updateuid},
+		    </if>
+    </trim>
+  </sql>
+  <sql id="Inserts_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+	         <if test="paramKey.sys_role_menu_id != null  and paramKey.sys_role_menu_id!= ''" >
+	          sys_role_menu_id,
+	        </if>
+	         <if test="paramKey.sys_role_id != null  and paramKey.sys_role_id!= ''" >
+	          sys_role_id,
+	        </if>
+	         <if test="paramKey.sys_menu_id != null  and paramKey.sys_menu_id!= ''" >
+	          sys_menu_id,
+	        </if>
+	         <if test="paramKey.sys_role_menu_type != null  and paramKey.sys_role_menu_type!= ''" >
+	          sys_role_menu_type,
+	        </if>
+	         <if test="paramKey.sys_role_menu_createdate != null  and paramKey.sys_role_menu_createdate!= ''" >
+	          sys_role_menu_createdate,
+	        </if>
+	         <if test="paramKey.sys_role_menu_updatedate != null  and paramKey.sys_role_menu_updatedate!= ''" >
+	          sys_role_menu_updatedate,
+	        </if>
+	         <if test="paramKey.sys_role_menu_createuid != null  and paramKey.sys_role_menu_createuid!= ''" >
+	          sys_role_menu_createuid,
+	        </if>
+	         <if test="paramKey.sys_role_menu_updateuid != null  and paramKey.sys_role_menu_updateuid!= ''" >
+	          sys_role_menu_updateuid,
+	        </if>
+    </trim>
+    values  
+    <foreach collection="paramValue" item="item" index="index" separator="," >  
+        (
+		          <if test="item.sys_role_menu_id != null and item.sys_role_menu_id!= ''" >
+			      	#{item.sys_role_menu_id},
+			      </if>
+		          <if test="item.sys_role_id != null and item.sys_role_id!= ''" >
+			      	#{item.sys_role_id},
+			      </if>
+		          <if test="item.sys_menu_id != null and item.sys_menu_id!= ''" >
+			      	#{item.sys_menu_id},
+			      </if>
+		          <if test="item.sys_role_menu_type != null and item.sys_role_menu_type!= ''" >
+			      	#{item.sys_role_menu_type},
+			      </if>
+		          <if test="item.sys_role_menu_createdate != null and item.sys_role_menu_createdate!= ''" >
+			      	#{item.sys_role_menu_createdate},
+			      </if>
+		          <if test="item.sys_role_menu_updatedate != null and item.sys_role_menu_updatedate!= ''" >
+			      	#{item.sys_role_menu_updatedate},
+			      </if>
+		          <if test="item.sys_role_menu_createuid != null and item.sys_role_menu_createuid!= ''" >
+			      	#{item.sys_role_menu_createuid},
+			      </if>
+		          <if test="item.sys_role_menu_updateuid != null and item.sys_role_menu_updateuid!= ''" >
+			      	#{item.sys_role_menu_updateuid},
+			      </if>
+        )  
+    </foreach> 
+  </sql>
+  <sql id="Insert_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+    		<if test="sys_role_menu_id != null  and sys_role_menu_id!= ''" >
+	          sys_role_menu_id,
+	        </if>
+    		<if test="sys_role_id != null  and sys_role_id!= ''" >
+	          sys_role_id,
+	        </if>
+    		<if test="sys_menu_id != null  and sys_menu_id!= ''" >
+	          sys_menu_id,
+	        </if>
+    		<if test="sys_role_menu_type != null  and sys_role_menu_type!= ''" >
+	          sys_role_menu_type,
+	        </if>
+    		<if test="sys_role_menu_createdate != null  and sys_role_menu_createdate!= ''" >
+	          sys_role_menu_createdate,
+	        </if>
+    		<if test="sys_role_menu_updatedate != null  and sys_role_menu_updatedate!= ''" >
+	          sys_role_menu_updatedate,
+	        </if>
+    		<if test="sys_role_menu_createuid != null  and sys_role_menu_createuid!= ''" >
+	          sys_role_menu_createuid,
+	        </if>
+    		<if test="sys_role_menu_updateuid != null  and sys_role_menu_updateuid!= ''" >
+	          sys_role_menu_updateuid,
+	        </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+	      <if test="sys_role_menu_id != null and sys_role_menu_id!= ''" >
+	      	#{sys_role_menu_id},
+	      </if>
+	      <if test="sys_role_id != null and sys_role_id!= ''" >
+	      	#{sys_role_id},
+	      </if>
+	      <if test="sys_menu_id != null and sys_menu_id!= ''" >
+	      	#{sys_menu_id},
+	      </if>
+	      <if test="sys_role_menu_type != null and sys_role_menu_type!= ''" >
+	      	#{sys_role_menu_type},
+	      </if>
+	      <if test="sys_role_menu_createdate != null and sys_role_menu_createdate!= ''" >
+	      	#{sys_role_menu_createdate},
+	      </if>
+	      <if test="sys_role_menu_updatedate != null and sys_role_menu_updatedate!= ''" >
+	      	#{sys_role_menu_updatedate},
+	      </if>
+	      <if test="sys_role_menu_createuid != null and sys_role_menu_createuid!= ''" >
+	      	#{sys_role_menu_createuid},
+	      </if>
+	      <if test="sys_role_menu_updateuid != null and sys_role_menu_updateuid!= ''" >
+	      	#{sys_role_menu_updateuid},
+	      </if>
+    </trim>
+  </sql>
+  <sql id="Where_Update_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="sysRoleMenuQuery.sys_role_menu_id != null and sysRoleMenuQuery.sys_role_menu_id!= ''" >
+	      	and sys_role_menu_id=#{sysRoleMenuQuery.sys_role_menu_id}
+	      </when>
+	      <when test="sysRoleMenuQuery.sys_role_id != null and sysRoleMenuQuery.sys_role_id!= ''" >
+	      	and sys_role_id=#{sysRoleMenuQuery.sys_role_id}
+	      </when>
+	      <when test="sysRoleMenuQuery.sys_menu_id != null and sysRoleMenuQuery.sys_menu_id!= ''" >
+	      	and sys_menu_id=#{sysRoleMenuQuery.sys_menu_id}
+	      </when>
+	      <when test="sysRoleMenuQuery.sys_role_menu_type != null and sysRoleMenuQuery.sys_role_menu_type!= ''" >
+	      	and sys_role_menu_type=#{sysRoleMenuQuery.sys_role_menu_type}
+	      </when>
+	      <when test="sysRoleMenuQuery.sys_role_menu_createdate != null and sysRoleMenuQuery.sys_role_menu_createdate!= ''" >
+	      	and sys_role_menu_createdate=#{sysRoleMenuQuery.sys_role_menu_createdate}
+	      </when>
+	      <when test="sysRoleMenuQuery.sys_role_menu_updatedate != null and sysRoleMenuQuery.sys_role_menu_updatedate!= ''" >
+	      	and sys_role_menu_updatedate=#{sysRoleMenuQuery.sys_role_menu_updatedate}
+	      </when>
+	      <when test="sysRoleMenuQuery.sys_role_menu_createuid != null and sysRoleMenuQuery.sys_role_menu_createuid!= ''" >
+	      	and sys_role_menu_createuid=#{sysRoleMenuQuery.sys_role_menu_createuid}
+	      </when>
+	      <when test="sysRoleMenuQuery.sys_role_menu_updateuid != null and sysRoleMenuQuery.sys_role_menu_updateuid!= ''" >
+	      	and sys_role_menu_updateuid=#{sysRoleMenuQuery.sys_role_menu_updateuid}
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+    <sql id="Where_Del_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="sys_role_menu_id != null and sys_role_menu_id!= ''" >
+	      	and sys_role_menu_id=#{sys_role_menu_id}
+	      </when>
+	      <when test="sys_role_id != null and sys_role_id!= ''" >
+	      	and sys_role_id=#{sys_role_id}
+	      </when>
+	      <when test="sys_menu_id != null and sys_menu_id!= ''" >
+	      	and sys_menu_id=#{sys_menu_id}
+	      </when>
+	      <when test="sys_role_menu_type != null and sys_role_menu_type!= ''" >
+	      	and sys_role_menu_type=#{sys_role_menu_type}
+	      </when>
+	      <when test="sys_role_menu_createdate != null and sys_role_menu_createdate!= ''" >
+	      	and sys_role_menu_createdate=#{sys_role_menu_createdate}
+	      </when>
+	      <when test="sys_role_menu_updatedate != null and sys_role_menu_updatedate!= ''" >
+	      	and sys_role_menu_updatedate=#{sys_role_menu_updatedate}
+	      </when>
+	      <when test="sys_role_menu_createuid != null and sys_role_menu_createuid!= ''" >
+	      	and sys_role_menu_createuid=#{sys_role_menu_createuid}
+	      </when>
+	      <when test="sys_role_menu_updateuid != null and sys_role_menu_updateuid!= ''" >
+	      	and sys_role_menu_updateuid=#{sys_role_menu_updateuid}
+	      </when>
+	     <when test="ids != null and ids!= ''" >
+	      		and sys_role_menu_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		           #{id}
+		        </foreach>
+	      </when>
+	      <when test="roleids != null and roleids !=''" >
+	      		and sys_role_id in 
+	      		<foreach collection="roleids" item="roleid" index="index"
+		            open="(" close=")" separator=",">
+		           #{roleid}
+		        </foreach>
+	      </when>
+	      <when test="menuids != null and menuids !=''" >
+	      		and sys_menu_id in 
+	      		<foreach collection="menuids" item="menuid" index="index"
+		            open="(" close=")" separator=",">
+		           #{menuid}
+		        </foreach>
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+  <sql id="Where_Select_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="sys_role_menu_id != null and sys_role_menu_id!= ''" >
+	      	and sys_role_menu_id=#{sys_role_menu_id}
+	      </if>
+	      <if test="sys_role_id != null and sys_role_id!= ''" >
+	      	and sys_role_id=#{sys_role_id}
+	      </if>
+	      <if test="sys_menu_id != null and sys_menu_id!= ''" >
+	      	and sys_menu_id=#{sys_menu_id}
+	      </if>
+	      <if test="sys_role_menu_type != null and sys_role_menu_type!= ''" >
+	      	and sys_role_menu_type=#{sys_role_menu_type}
+	      </if>
+	      <if test="sys_role_menu_createdate != null and sys_role_menu_createdate!= ''" >
+	      	and sys_role_menu_createdate=#{sys_role_menu_createdate}
+	      </if>
+	      <if test="sys_role_menu_updatedate != null and sys_role_menu_updatedate!= ''" >
+	      	and sys_role_menu_updatedate=#{sys_role_menu_updatedate}
+	      </if>
+	      <if test="sys_role_menu_createuid != null and sys_role_menu_createuid!= ''" >
+	      	and sys_role_menu_createuid=#{sys_role_menu_createuid}
+	      </if>
+	      <if test="sys_role_menu_updateuid != null and sys_role_menu_updateuid!= ''" >
+	      	and sys_role_menu_updateuid=#{sys_role_menu_updateuid}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and sys_role_menu_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+</mapper>

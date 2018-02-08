@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="killProcessMapper" >
+  <select id="select" resultType="java.util.Map" parameterType="java.util.Map" >
+    select kill_process.* 
+    from kill_process 
+     
+    <include refid="killProcessCommonMapper.Where_Select_Sql" />
+  </select>
+  
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from kill_process
+    <include refid="killProcessCommonMapper.Where_Del_Sql" />
+  </delete>
+  <insert id="insert" parameterType="java.util.Map" >
+    insert into kill_process <include refid="killProcessCommonMapper.Insert_Sql" />
+  </insert>
+  <insert id="inserts" parameterType="java.util.List" >
+    insert into kill_process <include refid="killProcessCommonMapper.Inserts_Sql" />
+  </insert>
+  <update id="update" parameterType="java.util.Map" >
+    update kill_process 
+    <include refid="killProcessCommonMapper.Update_Sql" />
+    <include refid="killProcessCommonMapper.Where_Update_Sql" />
+  </update>
+  <select id="count" parameterType="java.util.Map" resultType="java.lang.Integer" >
+    select count(*) from kill_process 
+    <if test="_parameter != null" >
+      <include refid="killProcessCommonMapper.Where_Select_Sql" />
+    </if>
+  </select>	
+</mapper>

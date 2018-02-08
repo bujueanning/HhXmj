@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
+	updateCheck="false">
+	<diskStore path="java.io.tmpdir" />
+	<cacheManagerPeerProviderFactory
+		class="net.sf.ehcache.distribution.jgroups.JGroupsCacheManagerPeerProviderFactory"
+		properties="
+		  connect=TCP(bind_addr=127.0.0.1;bind_port=50062):  
+         TCPPING(initial_hosts=127.0.0.1[50062],127.0.0.1[50061]]):
+         MERGE2(min_interval=3000;max_interval=5000):     
+         FD_ALL(interval=5000):
+         FD(timeout=5000;max_tries=48;):
+         pbcast.NAKACK(retransmit_timeout=100,200,300,600,1200,2400,4800;discard_delivered_msgs=true;use_mcast_xmit=false):  
+         pbcast.STABLE(stability_delay=1000;desired_avg_gossip=20000;max_bytes=0):
+         pbcast.GMS(print_local_addr=true;join_timeout=5000)"
+		propertySeparator="::" />
+
+	<defaultCache maxEntriesLocalHeap="10000" eternal="true"
+		timeToIdleSeconds="120" timeToLiveSeconds="120" maxEntriesLocalDisk="10000000"
+		diskExpiryThreadIntervalSeconds="120" memoryStoreEvictionPolicy="LRU">
+		<cacheEventListenerFactory
+			class="net.sf.ehcache.distribution.jgroups.JGroupsCacheReplicatorFactory"
+			properties="replicateAsynchronously=true, replicatePuts=true, 
+            replicateUpdates=true, replicateUpdatesViaCopy=false, 
+            replicateRemovals=true" />
+            <!-- cacheEventListenerFactory的配置参数: 
+				replicatePuts                默认为true.新加入的缓存中的元素是否要复制到其它节点中去.
+				replicateUpdates             默认为true.当新加入的元素与已存在的元素键值出现冲突时,是否要覆盖已存在元素. 
+				replicateRemovals            默认为true.被移去的元素是否要复制。 
+				replicateAsynchronously      默认为true.true表示复制是异步的,false表示复制是同步的. 
+				replicateUpdatesViaCopy      默认为true.新加入的缓存中的元素是否要复制到其它缓存中,或者一条删除消息是否发送.
+				asynchronousReplicationIntervalMillis   milliseconds默认值为1000,最小值为10.只有在replicateAsynchronously=true,该属性才适用.
+		    -->
+		
+	</defaultCache>
+	<cache name="common1" maxEntriesLocalHeap="10000" eternal="true"
+		timeToIdleSeconds="120" timeToLiveSeconds="120" maxEntriesLocalDisk="10000000"
+		diskExpiryThreadIntervalSeconds="120" memoryStoreEvictionPolicy="LRU">
+		<cacheEventListenerFactory
+			class="net.sf.ehcache.distribution.jgroups.JGroupsCacheReplicatorFactory"
+			properties="replicateAsynchronously=true, replicatePuts=true, 
+            replicateUpdates=true, replicateUpdatesViaCopy=false, 
+            replicateRemovals=true" />
+            <persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="common2" maxEntriesLocalHeap="10000" eternal="true"
+		timeToIdleSeconds="120" timeToLiveSeconds="120" maxEntriesLocalDisk="10000000"
+		diskExpiryThreadIntervalSeconds="120" memoryStoreEvictionPolicy="LRU">
+		<cacheEventListenerFactory
+			class="net.sf.ehcache.distribution.jgroups.JGroupsCacheReplicatorFactory"
+			properties="replicateAsynchronously=true, replicatePuts=true, 
+            replicateUpdates=true, replicateUpdatesViaCopy=false, 
+            replicateRemovals=true" />
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="shiroSessionCache" maxEntriesLocalHeap="10000" eternal="true"
+		timeToIdleSeconds="120" timeToLiveSeconds="120" maxEntriesLocalDisk="10000000"
+		diskExpiryThreadIntervalSeconds="120" memoryStoreEvictionPolicy="LRU">
+		<cacheEventListenerFactory
+			class="net.sf.ehcache.distribution.jgroups.JGroupsCacheReplicatorFactory"
+			properties="replicateAsynchronously=true, replicatePuts=true, 
+            replicateUpdates=true, replicateUpdatesViaCopy=false, 
+            replicateRemovals=true" />
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="shiroRealmAuthenticationCache" maxEntriesLocalHeap="10000" eternal="true"
+		timeToIdleSeconds="120" timeToLiveSeconds="120" maxEntriesLocalDisk="10000000"
+		diskExpiryThreadIntervalSeconds="120" memoryStoreEvictionPolicy="LRU">
+		<cacheEventListenerFactory
+			class="net.sf.ehcache.distribution.jgroups.JGroupsCacheReplicatorFactory"
+			properties="replicateAsynchronously=true, replicatePuts=true, 
+            replicateUpdates=true, replicateUpdatesViaCopy=false, 
+            replicateRemovals=true" />
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="shiroRealmAuthorizationCache" maxEntriesLocalHeap="10000" eternal="true"
+		timeToIdleSeconds="120" timeToLiveSeconds="120" maxEntriesLocalDisk="10000000"
+		diskExpiryThreadIntervalSeconds="120" memoryStoreEvictionPolicy="LRU">
+		<cacheEventListenerFactory
+			class="net.sf.ehcache.distribution.jgroups.JGroupsCacheReplicatorFactory"
+			properties="replicateAsynchronously=true, replicatePuts=true, 
+            replicateUpdates=true, replicateUpdatesViaCopy=false, 
+            replicateRemovals=true" />
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<!--
+    ·name：Cache的唯一标识
+    · maxElementsInMemory：内存中最大缓存对象数。
+    · maxElementsOnDisk：磁盘中最大缓存对象数，若是0表示无穷大。
+    · eternal：Element是否永久有效，一但设置了，timeout将不起作用。
+    · overflowToDisk：配置此属性，当内存中Element数量达到maxElementsInMemory时，Ehcache将会Element写到磁盘中。
+    · timeToIdleSeconds：设置Element在失效前的允许闲置时间。仅当element不是永久有效时使用，可选属性，默认值是0，也就是可闲置时间无穷大。
+    · timeToLiveSeconds：设置Element在失效前允许存活时间。最大时间介于创建时间和失效时间之间。仅当element不是永久有效时使用，默认是0.，也就是element存活时间无穷大。
+    · diskPersistent：是否缓存虚拟机重启期数据。（这个虚拟机是指什么虚拟机一直没看明白是什么,有高人还希望能指点一二）。
+    · diskExpiryThreadIntervalSeconds：磁盘失效线程运行时间间隔，默认是120秒。
+    · diskSpoolBufferSizeMB：这个参数设置DiskStore（磁盘缓存）的缓存区大小。默认是30MB。每个Cache都应该有自己的一个缓冲区。
+    · memoryStoreEvictionPolicy：当达到maxElementsInMemory限制时，Ehcache将会根据指定的策略去清理内存。默认策略是LRU（最近最少使用）。你可以设置为FIFO（先进先出）或是LFU（较少使用）。这里比较遗憾，Ehcache并没有提供一个用户定制策略的接口，仅仅支持三种指定策略，感觉做的不够理想。
+    -->
+</ehcache>

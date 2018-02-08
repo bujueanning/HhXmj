@@ -1,0 +1,957 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache,no-store">
+    <meta http-equiv="expires" content="0"/>
+    <title>鑫淼聚不良资产处置平台</title>
+    <meta http-equiv="keywords" content="鑫淼聚,资产管理,鑫淼聚,东方证券资产管理有限公司,投资,理财,基金，私募,集合理财,券商,专户理财,券商资管,资管,定向客户,宏观经济,业绩,领先"/>
+    <meta http-equiv="description" content="鑫淼聚资产管理有限公司是中国证券会批准设立的首家券商资产管理公司；自1998年开始从事客户资产管理业务，2002年首批获得从事客户资产管理业务资格，2005年成为首批开展券商集合理财业务的证券公司，2010年成为首家获准设立的券商资产管理公司。 "/>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+     <link rel="stylesheet" type="text/css" href="../css/user.css"/>
+    <script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="../js/global.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/jcarousellite_1.0.1.js"></script>
+    <script type="text/javascript" src="../js/iepng.js"></script>
+    <script type="text/javascript" src="../js/jquery.extend.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../js/easing.js"></script>
+	<style>
+	    #idCardBackImg,#idCardFrontImg {
+	        opacity: 0;
+	        position: absolute;
+	        z-index: 10;
+			width: 222px;
+			height:116px;
+			left: 0px;
+			top:0px;
+	    }
+		label.error{
+			color:red
+		}
+		imgDel {
+			position:absolute;
+			right:-5px;
+			top:-5px;
+			cursor:pointor;
+		}
+	</style>
+</head>
+<body>
+<!--注册登录-->
+<div class="top_wrap"> 	
+    <div class="top">
+        <a href="index.html"><img src="../img/logo.png"  class="fl logo"/></a>
+        <img src="../img/tel.png" alt="" class="fl tel" />
+        <div class="fl links">
+            <a href="../login/login.html">登录</a><br />
+            <a href="../login/reg_index.html">注册</a>
+        </div>
+        <div class="fr search">
+            <form name="formT" id="formT" method="post"   action="">
+                <input class="input inputFocus" type="text" name="inputSearchQuery" id="inputSearchQueryT" maxlength="12"/>
+                <input type="hidden" name="service" value=""/>
+                <input type="hidden" name="sp" value="S0"/>
+                <input type="hidden" name="Form0" value="category,inputSearchQuery,$Submit"/>
+                <input type="hidden" name="category" value="-1"/>
+                <input type="submit" value="" class="btn_search hand" />
+            </form>
+        </div>
+    </div>
+</div>
+<!--导航-->
+<div class="nav">
+    <div class="nav_c">
+        <ul class="ul">
+            <li class="li li_first">
+                <a href="../index.html" class="span">首页</a>
+            </li>
+		    <li class="li">
+		        <a href="../Bond_disposal.html" class="span">资产委外</a>
+		   </li>
+		    <li class="li">
+		        <a href="../Asset_auction.html" class="span">资产拍卖</a>
+		    </li>
+		    <li class="li">
+		        <a href="../service.html" class="span">业务服务</a>
+		    </li>
+		    <li class="li libg">
+		        <a href="../help.html" class="span">客户专区</a>
+		    </li>
+		    <li class="li">
+		        <a href="../about.html" class="span">走进鑫淼聚</a>
+				<div class="nav_sub">
+				        <dl>
+				            <dd>
+				                <a href="../about.html">公司介绍</a>
+				                | <br/>
+				                <a href="../contact.html">联系我们</a>
+				                | 
+				            </dd>
+				        </dl>
+				</div>
+		    </li>    
+        </ul>
+    </div>
+</div>
+<!--网站公告-->
+  <div class="notice">
+      <div class="notice_c">
+          <img src="../img/notice.png" class="fl img" />
+          <div class="notices">
+              <div class="bd">
+                  <ul>
+                      <li><a href="contents.html" >关于暂停通联支付民生银行卡开户（11月28日15:00起）的通知</a></li>
+                      <li><a href="contents.html" >个人金融信息安全</a></li>
+                      <li><a href="contents.html">关于通联支付交易系统暂停邮储银行快捷开户服务的提示</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  
+    <div class="wrap" style="    margin-top: 20px;">
+    	
+ 	 	<div class="w1000 bc mt10">
+			<!--左侧导航-->
+			<div class="w1000 bc mt10">
+			  	<div class="w130 fl">
+				    <div class="treebox">
+						<ul class="menu">
+							<li class="level1" style="border-top:1px solid #ca0821;">
+								<a href="#none"><em class="ico ico1"></em>个人信息<i class="down"></i></a>
+								<ul class="level2">
+									<li><a id="addUser" href="javascript:;">完善资料</a></li>
+									<li><a id="modify_pwd" href="javascript:;">修改密码</a></li>
+								</ul>
+							</li>
+							<li class="level1">
+								<a href="#none"><em class="ico ico2"></em>发布管理<i></i></a>
+								<ul class="level2">
+									<li><a id="infomation" href="javascript:;">我的发布</a></li>
+									<li><a id="asset" href="javascript:;">我的拍卖</a></li>
+									<li><a id="transaction" href="javascript:;">购买资产</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				    <div class="ad mt10">
+			        <img width="140px" src="../img/ad5.png">
+			        </div>
+			    </div>
+			  </div>
+			<!--右侧信息-->
+			<div class="space-right left" style="    margin-left: 8px;">
+				<div class="space-right left">
+					<!--个人完善资料-->
+					<div class="w850 fr" id="addUserInfo" style="display: block;">
+				<div class="box_tab">
+					    <h5>完善资料信息</h5>
+				</div>
+				<div class="border no-topb">
+				    <div class="info-box-body">
+				    	<form action="" id="submitForm" method="post">			   
+							<table style="width:520px;" class="reg-table-1">
+								<input type="hidden" id="backUrl" name="backUrl" value="">
+								<input type="hidden" id="formCode" name="formCode" value="MARDEAL_REG_FORM">
+								<input type="hidden" id="userInfoStatus" name="userInfoStatus" value="1">
+								<input type="hidden" id="userId" name="userId" value="3580">
+				             </table>
+				             <table class="table-c-5" width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tbody>
+								<tr>
+				          			<th style="width:150px">
+											登录账号：
+									 </th>
+				          			<td>
+										15231113633
+									</td>
+				        		</tr>
+						
+						        <tr>
+						          <th style="width:150px"><font color="red">*</font>&nbsp;姓名：</th>
+						          <td>
+									<input type="text" id="name" name="name" class="inpt w200" value="">
+						            <label id="error_name" class="error"></label>
+								  </td>
+						        </tr>
+						
+								<tr id="certNo">
+						          <th style="width:150px"><font color="red">*</font>&nbsp;身份证号 ：</th>
+						          <td>
+									<input type="text" id="certNo" name="certNo" value="" maxlength="20" class="inpt w200" onselectstart="return false">
+						            <label id="error_certNo" class="error"></label>
+									<input type="hidden" id="certType" name="certType" value="P01">
+								  </td>
+						        </tr>
+								<tr>
+									<th style="width:150px"><font color="red">*</font>&nbsp;请上传身份证<br>资料正反面：</th>
+									<td class="yinhangka">
+										<ul>
+											<li class="bank_list">
+												<span id="idCardFrontImg_view" style="position:relative;display:none;top:-20px;left:-20px;">
+						                            <a   title="身份证正面" href="">
+														<img id="idCardFrontImgImg" style="width:225px;height:100px;" src="">
+													</a>
+													<img id="frontImgDel" tilte="删除" onclick="doDelImg('idCardFrontImg')" src="" class="imgDel">
+												</span>
+												点击添加正面
+												<input type="file" id="idCardFrontImg" name="idCardFrontImg" value="" onchange="javascript:checkAttr('91','idCardFrontImg','N','N','[\s\S]*.(jpg|jpeg|gif|png|pdf|JPG|JPEG|GIF|PNG)$','','','edit','idCardFrontImg','null')">
+												<br><label id="error_idCardFrontImg" class="error"></label>
+											</li>
+										</ul>
+										<ul>
+											<li class="bank_list">
+												<span id="idCardBackImg_view" style="position:relative;display:none;top:-20px;left:-20px;">
+						                             <a   title="身份证正面" href="">
+														<img id="idCardBackImgImg" style="width:225px;height:100px;">
+													</a>
+													<img id="backImgDel" tilte="删除" onclick="doDelImg('idCardBackImg')" src="" class="imgDel">                                                      
+												</span>
+												 点击添加反面
+												<input type="file" id="idCardBackImg" name="idCardBackImg" value="" onchange="javascript:checkAttr('91','idCardBackImg','N','N','[\s\S]*.(jpg|jpeg|gif|png|pdf|JPG|JPEG|GIF|PNG)$','','','edit','idCardBackImg','null')">
+												<br><label id="error_idCardBackImg" class="error"></label>
+											</li>
+										</ul>
+									</td>
+								</tr>
+								<tr>
+									<th>&nbsp;</th>
+									<td>
+								   		<input type="button" id="submitBtn" value="提交" class="btn-1" onclick="btnClickBind()">
+										<span style="color: #00A0EA;font-size: 12px;    float: right;"><a href="javascript:;" id="companyx">公司信息完善</a></span>
+										&nbsp;&nbsp;
+										</td>
+									</tr>
+					             </tbody>
+				            </table>
+				   		</form>
+				        </div>
+				    </div>
+				</div>
+					<!--公司完善资料-->
+					<div class="w850 fr" id="addcompanyInfo" style="display: none;">
+					<div class="box_tab">
+						    <h5>完善资料信息</h5>
+					</div>
+					<div class="border no-topb">
+					    <div class="info-box-body">
+					    	<form action="" id="submitForm" method="post">			   
+								<table style="width:520px;" class="reg-table-1">
+									<input type="hidden" id="backUrl" name="backUrl" value="">
+									<input type="hidden" id="formCode" name="formCode" value="MARDEAL_REG_FORM">
+									<input type="hidden" id="userInfoStatus" name="userInfoStatus" value="1">
+									<input type="hidden" id="userId" name="userId" value="3580">
+					             </table>
+					             <table class="table-c-5" width="100%" border="0" cellspacing="0" cellpadding="0">
+								<tbody>
+									<tr>
+					          			<th style="width:150px">
+												登录账号：
+										 </th>
+					          			<td>
+											15231113633
+										</td>
+					        		</tr>
+							
+							        <tr>
+							          <th style="width:150px"><font color="red">*</font>&nbsp;公司名称：</th>
+							          <td>
+										<input type="text" id="name" name="name" class="inpt w200" value="">
+							            <label id="error_name" class="error"></label>
+									  </td>
+							        </tr>
+							
+									<tr id="certNo">
+							          <th style="width:150px"><font color="red">*</font>&nbsp;社会信用代码 ：</th>
+							          <td>
+										<input type="text" id="certNo" name="certNo" value="" maxlength="20" class="inpt w200" onselectstart="return false">
+							            <label id="error_certNo" class="error"></label>
+										<input type="hidden" id="certType" name="certType" value="P01">
+									  </td>
+							        </tr>
+									<tr>
+										<th style="width:150px"><font color="red">*</font>&nbsp;请上传营业执照照片<br>请上传会员合同照片：</th>
+										<td class="yinhangka">
+											<ul>
+												<li class="bank_list">
+													<span id="idCardFrontImg_view" style="position:relative;display:none;top:-20px;left:-20px;">
+							                            <a   title="请上传营业执照照片" href="">
+															<img id="idCardFrontImgImg" style="width:225px;height:100px;" src="https://bigdeal.tjfae.com:443">
+														</a>
+														<img id="frontImgDel" tilte="删除" onclick="doDelImg('idCardFrontImg')" src="https://stc.tjfae.com/front/images/icon/ico_cancel.png" class="imgDel">
+													</span>
+													请上传营业执照照片
+													<input type="file" id="idCardFrontImg" name="idCardFrontImg" value="" onchange="javascript:checkAttr('91','idCardFrontImg','N','N','[\s\S]*.(jpg|jpeg|gif|png|pdf|JPG|JPEG|GIF|PNG)$','','','edit','idCardFrontImg','null')">
+													<br><label id="error_idCardFrontImg" class="error"></label>
+												</li>
+											</ul>
+											<ul>
+												<li class="bank_list">
+													<span id="idCardBackImg_view" style="position:relative;display:none;top:-20px;left:-20px;">
+							                             <a   title="请上传会员合同照片" href="">
+															<img id="idCardBackImgImg" style="width:225px;height:100px;">
+														</a>
+														<img id="backImgDel" tilte="删除" onclick="doDelImg('idCardBackImg')" src="https://stc.tjfae.com/front/images/icon/ico_cancel.png" class="imgDel">                                                      
+													</span>
+													 请上传会员合同照片
+													<input type="file" id="idCardBackImg" name="idCardBackImg" value="" onchange="javascript:checkAttr('91','idCardBackImg','N','N','[\s\S]*.(jpg|jpeg|gif|png|pdf|JPG|JPEG|GIF|PNG)$','','','edit','idCardBackImg','null')">
+													<br><label id="error_idCardBackImg" class="error"></label>
+												</li>
+											</ul>
+										</td>
+									</tr>
+									<tr>
+										<th>&nbsp;</th>
+										<td>
+									   		<input type="button" id="submitBtn" value="提交" class="btn-1" onclick="btnClickBind()">
+											<span style="color: #00A0EA;font-size: 12px;    float: right;"><a href="javascript:;" id="users">个人信息完善</a></span>
+											&nbsp;&nbsp;
+											</td>
+										</tr>
+						             </tbody>
+					            </table>
+					   		</form>
+					        </div>
+					    </div>
+					</div>	
+					<!--修改密码-->
+					<div class="w850 fr" id="modify_ped" style="display: none;">
+					<div class="box_tab">
+						    <h5>修改密码</h5>
+					</div>
+					<div class="border no-topb">
+					    <div class="info-box-body"><form action="https://bigdeal.tjfae.com/user/modify_pwd.htm" id="submitForm" method="post">
+						<input type="hidden" id="pwdType" name="pwdType" value="password">
+						<input type="hidden" id="pwdTypeName" name="pwdTypeName" value="登录密码">
+						<input type="hidden" id="backUrl" name="backUrl" value="">
+					        <table class="table-c-5" width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tbody>
+								<tr>
+					          		<th style="width:150px">
+										登录账号：
+									</th>
+					          		<td>
+										15231113633
+									</td>
+					        	</tr>
+							
+								<tr id="oldPwdTr">
+						          <th style="width:150px">原始密码 ：</th>
+						          	<td>
+										<input type="password" id="oldPwd" name="oldPwd" value="" maxlength="16" class="input-2" onblur="checkOldPwd()" onselectstart="return false" oncopy="return false" onpaste="return false">
+							            <span id="oldPwd_span" style="color:red"></span>
+										<span id="oldPwd_tip" style="color:gray">输入您的原始密码</span>
+									</td>
+						        </tr>
+								<tr id="tipsRow" style="display:none">
+									<th style="width:150px">友情提醒：</th>
+									<td><span style="color:blue">您未设置密码，请直接设置新密码</span></td>
+								</tr>
+								<tr>
+									<th style="width:150px">新密码：</th>
+									<td>
+										<input type="password" id="password" name="password" value="" maxlength="16" class="input-2" onblur="checkPassword()" onselectstart="return false" oncopy="return false" onpaste="return false">
+										<span id="password_span" style="color:red">*</span>
+										<span id="password_tip" style="color:gray"></span>
+									</td>
+								</tr>
+								
+								<tr>
+									<th style="width:150px">确认密码：</th>
+									<td>
+										<input type="password" id="confirmPwd" name="confirmPwd" value="" maxlength="20" class="input-2" onblur="checkConfirmPwd()" onselectstart="return false" oncopy="return false" onpaste="return false">
+										<span id="confirmPwd_span" style="color:red">*</span>
+										<span id="confirmPwd_tip" style="color:gray">请再次输入新密码</span>
+									</td>
+								</tr>
+							    <tr>
+									<th></th>
+									<td>
+										<input type="button" id="submitBtn" value="修改" class="btn-1" onclick="btnClickBind()">
+									</td>
+								</tr>
+					              </tbody>
+					        </table>
+					   </form>
+					</div>
+					</div>
+					</div>
+				
+					<!--发布信息-->
+					<div class="w850 fr"  id="my_infomation" style="display: none;">
+						<div class="space-right w850 fr" style="background-color: white;">
+							<div class="bc location bai_se" style="height:60px;border: 0;margin-bottom: 0px;">
+							   <div style="float:left; width:240px; margin-top:0px; margin-left:0px;padding:0px;" align="left" height="100%"> 
+								  <img height="60px;" width="200" style=" margin-left:-12px; " src="../img/infomation.png">
+							   </div>
+							   <div align="center" class="zcfb">
+							       <a href="bond/disposal/index">  信息发布	</a>
+							   </div>					  
+							</div>
+							<!-- tab页 -->
+							<!--<form action="" name="form1" id="form1" method="post">
+							  <input type="hidden" name="state" id="state" value="">
+						    </form>-->
+							<div class="" style="background-color: white;border-bottom:1px #ccc solid;">
+							<div class="tab-box">
+						        <div class="box">
+									<div class="box_tab" style="border: none;border-bottom: 1px solid #e1e1e1;">
+										<ul>            
+								            <li id="positionLi" onclick="positionTab()" class="hover">资产处置</li>
+								            <li id="delegationFailedLi" onclick="delegationFailedTab()" class="">资产委外</li>
+									        <li style="margin-left: 475px;font-size: 12px;">
+										        <select id="sel" class="inpt w100">
+										        	<option value="">全部状态</option>
+										        	<option value="01">待审核</option>
+										        	<option value="03">已发布</option>
+										        	<option value="09">已结束</option>
+										        </select>
+								            </li>
+										</ul>
+									</div>
+									<!--资产处置-->
+									<div id="positionDiv" class="btop-none p20 " style="display: block;">							
+									<form id="positionTable" class="tb1 w" style="table-layout:fixed;" width="100%" border="0" cellspacing="0" cellpadding="0">
+									    <div class="box p15">
+									      	<div class="box_con1" style="border-style:none;">					 
+										        <div class="record-list">
+									    			<table class="table-list-2 mt10" width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout: fixed;word-wrap:break-word;">					
+														<tr>
+															<th>项目名称</th>
+													        <th>资产编号</th>
+													        <th>欠款（元)</th>
+													        <th>挂牌开始时间</th>
+													        <th>挂牌结束时间</th>
+													        <th>转让比例</th>
+													        <th>状&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;态</th>
+													        <th>发布时间</th>
+													        <th width="50px">操&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作</th>
+														</tr>					
+														<tr>
+															<td><a href="../custom.html" title="东方红产业升级">东方红产业升级</a></td>
+												            <td>000619</td>
+												            <td>123.3123.00</td>
+												            <td>2017-08-04</td>
+												            <td>2017-08-14</td>
+												            <td><span class="span_down">89%</span></td>
+												            <td><span class="span_down">已发布</span></td> 
+												            <td>2017-08-04</td>
+												            <td><a href="../custom.html"  >查看详情</a></td>
+														</tr>
+														<tr>
+															<td><a href=""   title="某国有独资企业融资">某国有独资企业融资</a></td>
+															<td>000619</td>
+												            <td>123.3123.00</td>
+												            <td>2017-08-04</td>
+												            <td>2017-08-14</td>
+												            <td><span class="span_down">89%</span></td>
+												            <td><span class="span_down">待审核</span></td> 
+												            <td>2017-08-04</td>
+												            <td><a href="Publish.html"  >修&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;改</a></td>
+														</tr>					
+														<tr>
+															<td><a href=""   title="某国有独资企业融资">某国有独资企业融资</a></td>
+															<td>000619</td>
+												            <td>123.3123.00</td>
+												            <td>2017-08-04</td>
+												            <td>2017-08-14</td>
+												            <td><span class="span_down">89%</span></td>
+												            <td><span class="span_down">已完成</span></td> 
+												            <td>2017-08-04</td>
+												            <td><a href="../bargain_xq.html" >查看详情</a></td>
+														</tr>
+												</table>
+												</div>
+												<div class="clr mt20"></div>
+												<div class="pages">					
+													<div class="pages-box">
+														<div class="pages">
+															<form name="page_slider_765" action=" " method="post">
+																<input type="hidden" name="ucAccount" value="1708150006">
+																<input type="hidden" maxlength="8" name="currentPage" title="输入页码按回车" size="2" value="1" onkeydown="if(event.keyCode==13){goto765('');return false;}">
+															  	<input type="text" name="tmpHiddenField2" style="display:none;">  	  		
+															  		<span class="disabled" title="已是首页"> &lt; </span>
+															  	  	<span class="current">1</span>
+																	<span class="disabled" title="已是首页"> &gt; </span>													  			
+																<input type="hidden" value="" name="checkBoxSelected">
+															</form>
+														</div>
+													</div>
+												</div>				
+											</div>
+											<div class="clr"></div>
+										</div>
+									</form>							
+									</div>
+									<!--资产委外-->
+									<div id="delegationFailedDiv" class="btop-none p20 " style="display: none;">							
+									    <form	 id="delegationFailedTable" class="tb1 w" width="100%" border="0" cellspacing="0" cellpadding="0">
+									    	<div class="box p15">
+									      	<div class="box_con1" style="border-style:none;">					 
+										        <div class="record-list">
+									    			<table class="table-list-2 mt10" width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout: fixed;word-wrap:break-word;">					
+														<tr>
+															<th>项目名称</th>
+													        <th>资产编号</th>
+													        <th>欠款（元)</th>
+													        <th>挂牌开始时间</th>
+													        <th>挂牌结束时间</th>
+													        <th>转让比例</th>
+													        <th>状&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;态</th>
+													        <th>发布时间</th>
+													        <th width="60px">操&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作</th>
+														</tr>					
+														<tr>
+															<td><a href="../custom_zcw.html" title="鑫淼聚产业升级">鑫淼聚产业升级</a></td>
+												            <td>000619</td>
+												            <td>123.3123.00</td>
+												            <td>2017-08-04</td>
+												            <td>2017-08-14</td>
+												            <td><span class="span_down">89%</span></td>
+												            <td><span class="span_down">已发布</span></td> 
+												            <td>2017-08-04</td>
+												            <td><a href="../xz_custom.html"  >选择处置方</a></td>
+														</tr>
+														<tr>
+															<td><a href="../custom_zcw.html"   title="某国有独资企业融资">鑫淼聚产业升级</a></td>
+															<td>000619</td>
+												            <td>123.3123.00</td>
+												            <td>2017-08-04</td>
+												            <td>2017-08-14</td>
+												            <td><span class="span_down">89%</span></td>
+												            <td><span class="span_down">待审核</span></td> 
+												            <td>2017-08-04</td>
+												            <td><a href="Publish.html"  >修&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;改</a></td>
+														</tr>					
+														<tr>
+															<td><a href=""   title="某国有独资企业融资">某国有独资企业融资</a></td>
+															<td>000619</td>
+												            <td>123.3123.00</td>
+												            <td>2017-08-04</td>
+												            <td>2017-08-14</td>
+												            <td><span class="span_down">89%</span></td>
+												            <td><span class="span_down">已完成</span></td> 
+												            <td>2017-08-04</td>
+												            <td><a href="../bargain_xq.html" >查看详情</a></td>
+														</tr>
+												</table>
+												</div>
+												<div class="clr mt20"></div>
+												<div class="pages">					
+													<div class="pages-box">
+														<div class="pages">
+															<form name="page_slider_765" action=" " method="post">
+																<input type="hidden" name="ucAccount" value="1708150006">
+																<input type="hidden" maxlength="8" name="currentPage" title="输入页码按回车" size="2" value="1" onkeydown="if(event.keyCode==13){goto765('');return false;}">
+															  	<input type="text" name="tmpHiddenField2" style="display:none;">  	  		
+															  		<span class="disabled" title="已是首页"> &lt; </span>
+															  	  	<span class="current">1</span>
+																	<span class="disabled" title="已是首页"> &gt; </span>													  			
+																<input type="hidden" value="" name="checkBoxSelected">
+															</form>
+														</div>
+													</div>
+												</div>				
+											</div>
+											<div class="clr"></div>
+										</div>
+										</div>
+									    </form>							    
+									</div>
+								</div>
+							</div>
+							</div>
+					
+		 			</div>
+				</div>		
+				<!--资产拍卖-->
+				<div class="w850 fr"  id="my_asset" style="display: none;">
+					<div class="space-right w850 fr" style="background-color: white;">
+						<div class="bc location bai_se" style="height:60px;border: 0;">
+						   <div style="float:left; width:240px; margin-top:0px; margin-left:0px;padding:0px;" align="left" height="100%"> 
+							  <img height="60px;" width="200" style=" margin-left:-12px; " src="../img/infomation.png">
+						   </div>
+						   <div align="center" class="zcfb">
+						       <a href="Publish.html">  拍卖发布	</a>
+						   </div>
+						</div>
+						<!-- tab页 -->
+						<form action="" name="form1" id="form1" method="post">
+						  <input type="hidden" name="state" id="state" value="">
+					    </form>
+						<div class="" style="background-color: white;border-bottom:1px #ccc solid;">
+						<div class="tab-box mt10">
+					        <ul>
+					            <li id="fundInfoLi" class="cur">
+					                <a hidefocus="true">我的拍卖</a>
+					            </li>
+					           				            
+					            <li style="margin-left: 606px;">
+							        <select id="sel" class="inpt w100">
+							        	<option value="">全部状态</option>
+							        	<option value="01">待审核</option>
+							        	<option value="03">已完成</option>
+							        	<option value="09">未成功</option>
+							        </select>
+					            </li>
+					        </ul>
+					    </div>
+						</div>
+				<div class="box w850">
+			      	<div class="box_con1" style="border-style:none;">
+						 <div class="p15">
+				            <div class="record-list">
+			    	<form action=" " name="form1" id="form1" method="post">
+						<table class="table-list-2 mt10" width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout: fixed;word-wrap:break-word;">					
+								<tr>
+									<th>企业名称</th>
+							        <th>资产编号</th>
+							        <th>欠款（元)</th>
+							        <th>挂牌开始时间</th>
+							        <th>挂牌结束时间</th>
+							        <th>转让比例</th>
+							        <th>状&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;态</th>
+							        <th>发布时间</th>
+							        <th width="50px">操&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作</th>
+								</tr>					
+								<tr>
+									<td><a href="../custom.html"   title="东方红产业升级">东方红产业升级</a></td>
+						            <td>000619</td>
+						            <td>123.3123.00</td>
+						            <td>2017-08-04</td>
+						            <td>2017-08-14</td>
+						            <td><span class="span_down">89%</span></td>
+						            <td><span class="span_down">已完成</span></td> 
+						            <td>2017-08-04</td>
+						            <td><a href="../bargain_xq.html"  >查看详情</a></td>
+								</tr>
+								<tr>
+									<td><a href=""   title="某国有独资企业融资">某国有独资企业融资</a></td>
+									<td>000619</td>
+						            <td>123.3123.00</td>
+						            <td>2017-08-04</td>
+						            <td>2017-08-14</td>
+						            <td><span class="span_down">89%</span></td>
+						            <td><span class="span_down">待审核</span></td> 
+						            <td>2017-08-04</td>
+						            <td><a href="Publish_asset.html"  >修&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;改</a></td>
+								</tr>					
+								<tr>
+									<td><a href="../custom.html"   title="某国有独资企业融资">某国有独资企业融资</a></td>
+									<td>000619</td>
+						            <td>123.3123.00</td>
+						            <td>2017-08-04</td>
+						            <td>2017-08-14</td>
+						            <td><span class="span_down">89%</span></td>
+						            <td><span class="span_down">未成功</span></td> 
+						            <td>2017-08-04</td>
+						            <td><a href="../failcause.html"  >查看详情</a></td>
+								</tr>
+						</table>
+					</form>
+					</div>
+					<div class="clr mt20"></div>
+					<div class="pages">					
+						<div class="pages-box">
+							<div class="pages">
+								<form name="page_slider_765" action=" " method="post">
+											<input type="hidden" name="ucAccount" value="1708150006">
+											 <input type="hidden" maxlength="8" name="currentPage" title="输入页码按回车" size="2" value="1" onkeydown="if(event.keyCode==13){goto765('');return false;}">
+								  	<input type="text" name="tmpHiddenField2" style="display:none;">  	  		<span class="disabled" title="已是首页"> &lt; </span>
+								  	  				<span class="current">1</span>
+										  	  		<span class="disabled" title="已是首页"> &gt; </span>
+								  			
+									<input type="hidden" value="" name="checkBoxSelected">
+								</form>
+							</div>
+						</div>
+					</div>
+					</div>
+					</div>
+					<div class="clr"></div>
+				</div>
+	 			</div>
+				</div>		
+				
+			    <!--交易信息-->
+				<div class="w850 fr"  id="my_transaction" style="display: none;">
+					<div class="space-right w850 fr" style="background-color: white;">
+						<div class="bc location bai_se" style="height:60px;border: 0;">
+						   <div style="float:left; width:240px; margin-top:0px; margin-left:0px;padding:0px;" align="left" height="100%"> 
+							  <img height="60px;" width="200" style=" margin-left:-12px; " src="https://stc.tjfae.com/front/images/infomation.png">
+						   </div>
+						   <div align="center" class="zcfb">
+						       <a href="Publish.html">  信息发布	</a>
+						   </div>
+						</div>
+						<!-- tab页 -->
+						<form action="/myInfomation/my_infomation_view.htm" name="form1" id="form1" method="post">
+						  <input type="hidden" name="state" id="state" value="">
+					    </form>
+						<div class="" style="background-color: white;border-bottom:1px #ccc solid;">
+						<div class="tab-box mt10">
+					        <ul>
+					            <li id="fundInfoLi" class="cur">
+					                <a hidefocus="true">购买资产</a>
+					            </li>
+					           				            
+					            <li style="margin-left: 606px;">
+							        <select id="sel" class="inpt w100">
+							        	<option value="">全部状态</option>
+							        	<option value="01">待审核</option>
+							        	<option value="03">已完成</option>
+							        	<option value="09">未成功</option>
+							        </select>
+					            </li>
+					        </ul>
+					    </div>
+						</div>
+				<div class="box w850">
+			      	<div class="box_con1" style="border-style:none;">
+						 <div class="p15">
+				            <div class="record-list">
+			    	<form action="/myInfomation/my_browzerecord_view.htm" name="form1" id="form1" method="post">
+						<table class="table-list-2 mt10" width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout: fixed;word-wrap:break-word;">					
+								<tr>
+									<th>企业名称</th>
+							        <th>资产编号</th>
+							        <th>欠款（元)</th>
+							        <th>挂牌开始时间</th>
+							        <th>挂牌结束时间</th>
+							        <th>转让比例</th>
+							        <th>状&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;态</th>
+							        <th>发布时间</th>
+							        <th width="50px">操&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作</th>
+								</tr>					
+								<tr>
+									<td><a href="../custom.html"   title="东方红产业升级">东方红产业升级</a></td>
+						            <td>000619</td>
+						            <td>123.3123.00</td>
+						            <td>2017-08-04</td>
+						            <td>2017-08-14</td>
+						            <td><span class="span_down">89%</span></td>
+						            <td><span class="span_down">已完成</span></td> 
+						            <td>2017-08-04</td>
+						            <td><a href="../bargain_xq.html"  >查看详情</a></td>
+								</tr>
+								<tr>
+									<td><a href=""   title="某国有独资企业融资">某国有独资企业融资</a></td>
+									<td>000619</td>
+						            <td>123.3123.00</td>
+						            <td>2017-08-04</td>
+						            <td>2017-08-14</td>
+						            <td><span class="span_down">89%</span></td>
+						            <td><span class="span_down">待审核</span></td> 
+						            <td>2017-08-04</td>
+						            <td><a href="Publish.html"  >修&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;改</a></td>
+								</tr>					
+								<tr>
+									<td><a href="../custom.html"   title="某国有独资企业融资">某国有独资企业融资</a></td>
+									<td>000619</td>
+						            <td>123.3123.00</td>
+						            <td>2017-08-04</td>
+						            <td>2017-08-14</td>
+						            <td><span class="span_down">89%</span></td>
+						            <td><span class="span_down">未成功</span></td> 
+						            <td>2017-08-04</td>
+						            <td><a href="../failcause.html"  >查看详情</a></td>
+								</tr>
+						</table>
+					</form>
+					</div>
+					<div class="clr mt20"></div>
+					<div class="pages">					
+						<div class="pages-box">
+							<div class="pages">
+								<form name="page_slider_765" action="https://bigdeal.tjfae.com/myInfomation/my_browzerecord_view.htm" method="post">
+											<input type="hidden" name="ucAccount" value="1708150006">
+											 <input type="hidden" maxlength="8" name="currentPage" title="输入页码按回车" size="2" value="1" onkeydown="if(event.keyCode==13){goto765('');return false;}">
+								  	<input type="text" name="tmpHiddenField2" style="display:none;">  	  		<span class="disabled" title="已是首页"> &lt; </span>
+								  	  				<span class="current">1</span>
+										  	  		<span class="disabled" title="已是首页"> &gt; </span>
+								  			
+									<input type="hidden" value="" name="checkBoxSelected">
+								</form>
+							</div>
+						</div>
+					</div>
+					</div>
+					</div>
+					<div class="clr"></div>
+				</div>
+	 			</div>
+				</div>		
+			</div>
+			
+		</div>
+		
+		
+		
+		<div class="clear"></div>			
+	</div>
+		
+		<!--尾部-->
+		<div class="sitemap">
+		    <div class="sitemap_c">
+		  		<div class="foot-box clearfix">
+					<p class="a-box">
+						<a href="javascript:void(0);" >客户中心</a> |
+						<a href="javascript:void(0);">关于我们</a> |
+						<a href="javascript:void(0);" title="联系我们">联系我们</a> |
+						<a href="" title="">服务热线</a>
+						<strong style="color: #fff;">0311-8853898</strong>
+					</p>
+					<p class="foot-auth">版权所有·鑫淼聚 © 2017 |<a href="http://www.miitbeian.gov.cn" style="color: #fff;"> 京ICP证160759</a></p>
+					<p class="a-box" style="font-size: 12px;">鑫淼聚技有限公司&nbsp; &nbsp;&nbsp; |&nbsp; &nbsp;&nbsp;  北京市通州区东三环西路16号</p>
+				</div>
+		    </div>
+	</div>
+      <script type="text/javascript">
+      	//资产处置tab
+function positionTab(){
+	//隐藏样式
+	$("#favoriteDiv").hide();
+	$("#favoriteLi").removeClass();
+	$("#inProgressDiv").hide();
+	$("#inProgressLi").removeClass();
+	$("#transferDiv").hide();
+	$("#transferLi").removeClass();
+	$("#delegationFailedDiv").hide();
+	$("#delegationFailedLi").removeClass();
+	//显示样式
+	$("#positionDiv").show();
+	$("#positionLi").addClass("hover");
+	jQuery.ajax({
+		url:"https://trade.tjfae.com/home/user/get_balance.htm",
+		async:false,
+		success:function(data){
+			$("#positionTable tr td").remove();
+			$("#positionTable").append(data);
+		}
+	});
+}
+//资产处置tab
+
+//资产委外tab
+function delegationFailedTab(){
+	//隐藏样式
+	$("#favoriteDiv").hide();
+	$("#favoriteLi").removeClass();
+	$("#inProgressDiv").hide();
+	$("#inProgressLi").removeClass();
+	$("#transferDiv").hide();
+	$("#transferLi").removeClass();
+	$("#positionDiv").hide();
+	$("#positionLi").removeClass();
+	//显示样式
+	$("#delegationFailedDiv").show();
+	$("#delegationFailedLi").addClass("hover");
+	jQuery.ajax({
+		url:"https://trade.tjfae.com/home/user/get_delegate_failed.htm",
+		success:function(data){
+			$("#delegationFailedTable tr td").remove();
+			$("#delegationFailedTable").append(data);
+		}
+	});
+}
+//li标签hover切换
+function changeHover(liId){
+	var tempUrl = "";
+	$("li[name='tableLi']").each(function(){ 
+            tempUrl=$(this).attr("id") 
+            if((tempUrl.indexOf(liId) >= 0 )){ 
+                 $(this).attr("class","hover"); 
+                return false; 
+            }else{
+				$(this).attr("class",""); 
+			} 
+       });
+}
+    	<!--导航树-->
+    	$(function(){
+			$(".treebox .level1>a").click(function(){
+				$(this).addClass('current')  
+				.find('i').addClass('down')  
+				.parent().next().slideDown('slow','easeOutQuad')  
+				.parent().siblings().children('a').removeClass('current')
+				.find('i').removeClass('down').parent().next().slideUp('slow','easeOutQuad');
+				 return false; //阻止默认时间
+			});
+		})
+    	
+	$(function(){
+    var liobj=$(".level2 li a");
+    liobj.each(function(){
+        $(this).click(function(){
+        liobj.removeClass("selectedMenu")
+            $(this).addClass("selectedMenu");
+            //return false;    //加这句来阻止跳转 可用来调试效果
+        });
+    });
+});
+
+
+	$('#addUser').on('click',function(){
+//      $("#open_Texts").html("展开提示消息");
+       $("#addUserInfo").show();
+  		$("#modify_ped").hide();
+  		$("#my_infomation").hide();
+  		$("#my_transaction").hide();
+  		$("#my_asset").hide();
+    });
+	$('#modify_pwd').on('click',function(){
+//      $("#open_Texts").html("展开提示消息");
+       $("#addUserInfo").hide();
+  		$("#modify_ped").show();
+  		$("#my_infomation").hide();
+  		$("#my_transaction").hide();
+  		$("#my_asset").hide();
+    });
+    $('#infomation').on('click',function(){
+//      $("#open_Texts").html("展开提示消息");
+       $("#addUserInfo").hide();
+  		$("#modify_ped").hide();
+  		$("#my_infomation").show();
+  		$("#my_transaction").hide();
+  		$("#my_asset").hide();
+    });
+    $('#transaction').on('click',function(){
+//      $("#open_Texts").html("展开提示消息");
+       $("#addUserInfo").hide();
+  		$("#modify_ped").hide();
+  		$("#my_infomation").hide();
+  		$("#my_transaction").show();
+  		$("#my_asset").hide();
+    });
+       $('#asset').on('click',function(){
+//      $("#open_Texts").html("展开提示消息");
+       $("#addUserInfo").hide();
+  		$("#modify_ped").hide();
+  		$("#my_infomation").hide();
+  		$("#my_transaction").hide();
+  		$("#my_asset").show();
+  		$("#jbxgk").hide();
+    });
+	$('#companyx').on('click',function(){
+//      $("#open_Texts").html("展开提示消息");
+       $("#addcompanyInfo").show();
+  		$("#addUserInfo").hide();
+    });
+	$('#users').on('click',function(){
+//      $("#open_Texts").html("展开提示消息");
+        $("#addcompanyInfo").hide();
+  		$("#addUserInfo").show();
+    });
+    </script>
+    
+    <script type="text/javascript" src="../js/adduser.js"></script>
+    <script type="text/javascript" src="../js/modify_pwd.js"></script>
+</body>
+</html>

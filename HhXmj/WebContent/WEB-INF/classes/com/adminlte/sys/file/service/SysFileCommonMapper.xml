@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sysFileCommonMapper" >
+  <sql id="Update_Sql" >
+    <trim prefix="set" suffixOverrides="," >
+			<if test="sysFile.sys_file_id != null  and sysFile.sys_file_id!= ''" >
+		        sys_file.sys_file_id = #{sysFile.sys_file_id},
+		    </if>
+			<if test="sysFile.sys_file1_name != null  and sysFile.sys_file1_name!= ''" >
+		        sys_file.sys_file1_name = #{sysFile.sys_file1_name},
+		    </if>
+			<if test="sysFile.sys_file1_addr != null  and sysFile.sys_file1_addr!= ''" >
+		        sys_file.sys_file1_addr = #{sysFile.sys_file1_addr},
+		    </if>
+			<if test="sysFile.sys_file_updatedate != null  and sysFile.sys_file_updatedate!= ''" >
+		        sys_file.sys_file_updatedate = #{sysFile.sys_file_updatedate},
+		    </if>
+			<if test="sysFile.sys_file_createdate != null  and sysFile.sys_file_createdate!= ''" >
+		        sys_file.sys_file_createdate = #{sysFile.sys_file_createdate},
+		    </if>
+			<if test="sysFile.sys_file_updateuid != null  and sysFile.sys_file_updateuid!= ''" >
+		        sys_file.sys_file_updateuid = #{sysFile.sys_file_updateuid},
+		    </if>
+			<if test="sysFile.sys_file_createuid != null  and sysFile.sys_file_createuid!= ''" >
+		        sys_file.sys_file_createuid = #{sysFile.sys_file_createuid},
+		    </if>
+		    <!-- 用户的id -->
+		    <if test="sysFile.sys_user_id != null  and sysFile.sys_user_id!= ''" >
+		        sys_file.sys_user_id = #{sysFile.sys_user_id},
+		    </if>
+		    <!-- 两张图片 -->
+		    <if test="sysFile.sys_file2_name != null  and sysFile.sys_file2_name!= ''" >
+		        sys_file.sys_file2_name = #{sysFile.sys_file2_name},
+		    </if>
+			<if test="sysFile.sys_file2_addr != null  and sysFile.sys_file2_addr!= ''" >
+		        sys_file.sys_file2_addr = #{sysFile.sys_file2_addr},
+		    </if>
+    </trim>
+  </sql>
+  <sql id="Inserts_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+	         <if test="paramKey.sys_file_id != null  and paramKey.sys_file_id!= ''" >
+	          sys_file_id,
+	        </if>
+	         <if test="paramKey.sys_file_name != null  and paramKey.sys_file_name!= ''" >
+	          sys_file_name,
+	        </if>
+	         <if test="paramKey.sys_file_addr != null  and paramKey.sys_file_addr!= ''" >
+	          sys_file_addr,
+	        </if>
+	         <if test="paramKey.sys_file_updatedate != null  and paramKey.sys_file_updatedate!= ''" >
+	          sys_file_updatedate,
+	        </if>
+	         <if test="paramKey.sys_file_createdate != null  and paramKey.sys_file_createdate!= ''" >
+	          sys_file_createdate,
+	        </if>
+	         <if test="paramKey.sys_file_updateuid != null  and paramKey.sys_file_updateuid!= ''" >
+	          sys_file_updateuid,
+	        </if>
+	         <if test="paramKey.sys_file_createuid != null  and paramKey.sys_file_createuid!= ''" >
+	          sys_file_createuid,
+	        </if>
+    </trim>
+    values  
+    <foreach collection="paramValue" item="item" index="index" separator="," >  
+        (
+		          <if test="item.sys_file_id != null and item.sys_file_id!= ''" >
+			      	#{item.sys_file_id},
+			      </if>
+		          <if test="item.sys_file_name != null and item.sys_file_name!= ''" >
+			      	#{item.sys_file_name},
+			      </if>
+		          <if test="item.sys_file_addr != null and item.sys_file_addr!= ''" >
+			      	#{item.sys_file_addr},
+			      </if>
+		          <if test="item.sys_file_updatedate != null and item.sys_file_updatedate!= ''" >
+			      	#{item.sys_file_updatedate},
+			      </if>
+		          <if test="item.sys_file_createdate != null and item.sys_file_createdate!= ''" >
+			      	#{item.sys_file_createdate},
+			      </if>
+		          <if test="item.sys_file_updateuid != null and item.sys_file_updateuid!= ''" >
+			      	#{item.sys_file_updateuid},
+			      </if>
+		          <if test="item.sys_file_createuid != null and item.sys_file_createuid!= ''" >
+			      	#{item.sys_file_createuid},
+			      </if>
+        )  
+    </foreach> 
+  </sql>
+  <sql id="Insert_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+    		<if test="sys_file_id != null  and sys_file_id!= ''" >
+	          sys_file_id,
+	        </if>
+    		<if test="sys_file1_name != null  and sys_file1_name!= ''" >
+	          sys_file1_name,
+	        </if>
+    		<if test="sys_file1_addr != null  and sys_file1_addr!= ''" >
+	          sys_file1_addr,
+	        </if>
+    		<if test="sys_file_updatedate != null  and sys_file_updatedate!= ''" >
+	          sys_file_updatedate,
+	        </if>
+    		<if test="sys_file_createdate != null  and sys_file_createdate!= ''" >
+	          sys_file_createdate,
+	        </if>
+    		<if test="sys_file_updateuid != null  and sys_file_updateuid!= ''" >
+	          sys_file_updateuid,
+	        </if>
+    		<if test="sys_file_createuid != null  and sys_file_createuid!= ''" >
+	          sys_file_createuid,
+	        </if>
+	        <!-- 12月6日 用户的id -->
+	        <if test="sys_user_id != null  and sys_user_id!= ''" >
+	          sys_user_id,
+	        </if>
+	        <!-- 12月7日 一条放两个图片 -->
+	        <if test="sys_file2_name != null  and sys_file2_name!= ''" >
+	          sys_file2_name,
+	        </if>
+    		<if test="sys_file2_addr != null  and sys_file2_addr!= ''" >
+	          sys_file2_addr,
+	        </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+	      <if test="sys_file_id != null and sys_file_id!= ''" >
+	      	#{sys_file_id},
+	      </if>
+	      <if test="sys_file1_name != null and sys_file1_name!= ''" >
+	      	#{sys_file1_name},
+	      </if>
+	      <if test="sys_file1_addr != null and sys_file1_addr!= ''" >
+	      	#{sys_file1_addr},
+	      </if>
+	      <if test="sys_file_updatedate != null and sys_file_updatedate!= ''" >
+	      	#{sys_file_updatedate},
+	      </if>
+	      <if test="sys_file_createdate != null and sys_file_createdate!= ''" >
+	      	#{sys_file_createdate},
+	      </if>
+	      <if test="sys_file_updateuid != null and sys_file_updateuid!= ''" >
+	      	#{sys_file_updateuid},
+	      </if>
+	      <if test="sys_file_createuid != null and sys_file_createuid!= ''" >
+	      	#{sys_file_createuid},
+	      </if>
+	      <!-- 用户的id -->
+	      <if test="sys_user_id != null and sys_user_id!= ''" >
+	      	#{sys_user_id},
+	      </if>
+	      <!-- 放两个图片 -->
+	      <if test="sys_file2_name != null and sys_file2_name!= ''" >
+	      	#{sys_file2_name},
+	      </if>
+	      <if test="sys_file2_addr != null and sys_file2_addr!= ''" >
+	      	#{sys_file2_addr},
+	      </if>
+    </trim>
+  </sql>
+  <sql id="Where_Update_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="sysFileQuery.sys_file_id != null and sysFileQuery.sys_file_id!= ''" >
+	      	and sys_file.sys_file_id=#{sysFileQuery.sys_file_id}
+	      </when>
+	      <when test="sysFileQuery.sys_file1_name != null and sysFileQuery.sys_file1_name!= ''" >
+	      	and sys_file.sys_file1_name=#{sysFileQuery.sys_file1_name}
+	      </when>
+	      <when test="sysFileQuery.sys_file1_addr != null and sysFileQuery.sys_file1_addr!= ''" >
+	      	and sys_file.sys_file1_addr=#{sysFileQuery.sys_file1_addr}
+	      </when>
+	      <when test="sysFileQuery.sys_file_updatedate != null and sysFileQuery.sys_file_updatedate!= ''" >
+	      	and sys_file.sys_file_updatedate=#{sysFileQuery.sys_file_updatedate}
+	      </when>
+	      <when test="sysFileQuery.sys_file_createdate != null and sysFileQuery.sys_file_createdate!= ''" >
+	      	and sys_file.sys_file_createdate=#{sysFileQuery.sys_file_createdate}
+	      </when>
+	      <when test="sysFileQuery.sys_file_updateuid != null and sysFileQuery.sys_file_updateuid!= ''" >
+	      	and sys_file.sys_file_updateuid=#{sysFileQuery.sys_file_updateuid}
+	      </when>
+	      <when test="sysFileQuery.sys_file_createuid != null and sysFileQuery.sys_file_createuid!= ''" >
+	      	and sys_file.sys_file_createuid=#{sysFileQuery.sys_file_createuid}
+	      </when>
+	      <!-- 用户表的id -->
+	      <when test="sysFileQuery.sys_user_id != null and sysFileQuery.sys_user_id!= ''" >
+	      	and sys_file.sys_user_id=#{sysFileQuery.sys_user_id}
+	      </when>
+	      <!-- 两张图片 -->
+	      <when test="sysFileQuery.sys_file2_name != null and sysFileQuery.sys_file2_name!= ''" >
+	      	and sys_file.sys_file2_name=#{sysFileQuery.sys_file2_name}
+	      </when>
+	      <when test="sysFileQuery.sys_file2_addr != null and sysFileQuery.sys_file2_addr!= ''" >
+	      	and sys_file.sys_file2_addr=#{sysFileQuery.sys_file2_addr}
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+    <sql id="Where_Del_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="sys_file_id != null and sys_file_id!= ''" >
+	      	and sys_file.sys_file_id=#{sys_file_id}
+	      </when>
+	      <when test="sys_file_name != null and sys_file_name!= ''" >
+	      	and sys_file.sys_file_name=#{sys_file_name}
+	      </when>
+	      <when test="sys_file_addr != null and sys_file_addr!= ''" >
+	      	and sys_file.sys_file_addr=#{sys_file_addr}
+	      </when>
+	      <when test="sys_file_updatedate != null and sys_file_updatedate!= ''" >
+	      	and sys_file.sys_file_updatedate=#{sys_file_updatedate}
+	      </when>
+	      <when test="sys_file_createdate != null and sys_file_createdate!= ''" >
+	      	and sys_file.sys_file_createdate=#{sys_file_createdate}
+	      </when>
+	      <when test="sys_file_updateuid != null and sys_file_updateuid!= ''" >
+	      	and sys_file.sys_file_updateuid=#{sys_file_updateuid}
+	      </when>
+	      <when test="sys_file_createuid != null and sys_file_createuid!= ''" >
+	      	and sys_file.sys_file_createuid=#{sys_file_createuid}
+	      </when>
+	     <when test="ids != null and ids!= ''" >
+	      		and sys_file.sys_file_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		           #{id}
+		        </foreach>
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+  <sql id="Where_Select_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="sys_file_id != null and sys_file_id!= ''" >
+	      	and sys_file.sys_file_id=#{sys_file_id}
+	      </if>
+	      <if test="sys_file1_name != null and sys_file1_name!= ''" >
+	      	and sys_file.sys_file1_name=#{sys_file1_name}
+	      </if>
+	      <if test="sys_file1_addr != null and sys_file1_addr!= ''" >
+	      	and sys_file.sys_file1_addr=#{sys_file1_addr}
+	      </if>
+	      <if test="sys_file_updatedate != null and sys_file_updatedate!= ''" >
+	      	and sys_file.sys_file_updatedate=#{sys_file_updatedate}
+	      </if>
+	      <if test="sys_file_createdate != null and sys_file_createdate!= ''" >
+	      	and sys_file.sys_file_createdate=#{sys_file_createdate}
+	      </if>
+	      <if test="sys_file_updateuid != null and sys_file_updateuid!= ''" >
+	      	and sys_file.sys_file_updateuid=#{sys_file_updateuid}
+	      </if>
+	      <if test="sys_file_createuid != null and sys_file_createuid!= ''" >
+	      	and sys_file.sys_file_createuid=#{sys_file_createuid}
+	      </if>
+	      <!-- 用户表的id -->
+	      <if test="sys_user_id != null and sys_user_id!= ''" >
+	      	and sys_file.sys_user_id=#{sys_user_id}
+	      </if>
+	      <!-- 两张图片 -->
+	      <if test="sys_file2_name != null and sys_file2_name!= ''" >
+	      	and sys_file.sys_file2_name=#{sys_file2_name}
+	      </if>
+	      <if test="sys_file2_addr != null and sys_file2_addr!= ''" >
+	      	and sys_file.sys_file2_addr=#{sys_file2_addr}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and sys_file.sys_file_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+  
+  <sql id="Where_SelectTree_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="sys_file_id != null and sys_file_id!= ''" >
+	      	and parent.sys_file_id=#{sys_file_id}
+	      </if>
+	      <if test="sys_file_name != null and sys_file_name!= ''" >
+	      	and parent.sys_file_name=#{sys_file_name}
+	      </if>
+	      <if test="sys_file_addr != null and sys_file_addr!= ''" >
+	      	and parent.sys_file_addr=#{sys_file_addr}
+	      </if>
+	      <if test="sys_file_updatedate != null and sys_file_updatedate!= ''" >
+	      	and parent.sys_file_updatedate=#{sys_file_updatedate}
+	      </if>
+	      <if test="sys_file_createdate != null and sys_file_createdate!= ''" >
+	      	and parent.sys_file_createdate=#{sys_file_createdate}
+	      </if>
+	      <if test="sys_file_updateuid != null and sys_file_updateuid!= ''" >
+	      	and parent.sys_file_updateuid=#{sys_file_updateuid}
+	      </if>
+	      <if test="sys_file_createuid != null and sys_file_createuid!= ''" >
+	      	and parent.sys_file_createuid=#{sys_file_createuid}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and parent.sys_file_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+</mapper>

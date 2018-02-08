@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sysUserCommonMapper" >
+  <sql id="Update_Sql" >
+    <trim prefix="set" suffixOverrides="," >
+			<if test="sysUser.sys_user_id != null  and sysUser.sys_user_id!= ''" >
+		        sys_user_id = #{sysUser.sys_user_id},
+		    </if>
+		    <if test="sysUser.sys_file_1 != null  and sysUser.sys_file_1!= ''" >
+		        sys_file_1 = #{sysUser.sys_file_1},
+		    </if>
+		    <if test="sysUser.sys_file_2 != null  and sysUser.sys_file_2!= ''" >
+		        sys_file_2 = #{sysUser.sys_file_2},
+		    </if>
+			<if test="sysUser.sys_user_name != null  and sysUser.sys_user_name!= ''" >
+		        sys_user_name = #{sysUser.sys_user_name},
+		    </if>
+			<if test="sysUser.sys_user_account != null  and sysUser.sys_user_account!= ''" >
+		        sys_user_account = #{sysUser.sys_user_account},
+		    </if>
+			<if test="sysUser.sys_user_password != null  and sysUser.sys_user_password!= ''" >
+		        sys_user_password = #{sysUser.sys_user_password},
+		    </if>
+			<if test="sysUser.sys_user_login_date != null  and sysUser.sys_user_login_date!= ''" >
+		        sys_user_login_date = #{sysUser.sys_user_login_date},
+		    </if>
+			<if test="sysUser.sys_user_login_ip != null  and sysUser.sys_user_login_ip!= ''" >
+		        sys_user_login_ip = #{sysUser.sys_user_login_ip},
+		    </if>
+			<if test="sysUser.sys_user_status_d != null  and sysUser.sys_user_status_d!= ''" >
+		        sys_user_status_d = #{sysUser.sys_user_status_d},
+		    </if>
+			<if test="sysUser.sys_user_card != null  and sysUser.sys_user_card!= ''" >
+		        sys_user_card = #{sysUser.sys_user_card},
+		    </if>
+			<if test="sysUser.sys_user_flag_c != null  and sysUser.sys_user_flag_c!= ''" >
+		        sys_user_flag_c = #{sysUser.sys_user_flag_c},
+		    </if>
+			<if test="sysUser.sys_user_reg_date != null  and sysUser.sys_user_reg_date!= ''" >
+		        sys_user_reg_date = #{sysUser.sys_user_reg_date},
+		    </if>
+			<if test="sysUser.sys_user_reg_type_d != null  and sysUser.sys_user_reg_type_d!= ''" >
+		        sys_user_reg_type_d = #{sysUser.sys_user_reg_type_d},
+		    </if>
+			<if test="sysUser.sys_area_id != null  and sysUser.sys_area_id!= ''" >
+		        sys_area_id = #{sysUser.sys_area_id},
+		    </if>
+			<if test="sysUser.sys_org_id != null  and sysUser.sys_org_id!= ''" >
+		        sys_org_id = #{sysUser.sys_org_id},
+		    </if>
+			<if test="sysUser.sys_user_createdate != null  and sysUser.sys_user_createdate!= ''" >
+		        sys_user_createdate = #{sysUser.sys_user_createdate},
+		    </if>
+			<if test="sysUser.sys_user_updatedate != null  and sysUser.sys_user_updatedate!= ''" >
+		        sys_user_updatedate = #{sysUser.sys_user_updatedate},
+		    </if>
+			<if test="sysUser.sys_user_createuid != null  and sysUser.sys_user_createuid!= ''" >
+		        sys_user_createuid = #{sysUser.sys_user_createuid},
+		    </if>
+			<if test="sysUser.sys_user_updateuid != null  and sysUser.sys_user_updateuid!= ''" >
+		        sys_user_updateuid = #{sysUser.sys_user_updateuid},
+		    </if>
+		    <!-- 11月24日 公司的地址 -->
+			<if test="sysUser.sys_company_area != null  and sysUser.sys_company_area!= ''" >
+		        sys_company_area = #{sysUser.sys_company_area},
+		    </if>
+    </trim>
+  </sql>
+  <sql id="Inserts_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+	         <if test="paramKey.sys_user_id != null  and paramKey.sys_user_id!= ''" >
+	          sys_user_id,
+	        </if>
+	        <if test="paramKey.sys_file_1 != null  and paramKey.sys_file_1!= ''" >
+	          sys_file_1,
+	        </if>
+	        <if test="paramKey.sys_file_2 != null  and paramKey.sys_file_2!= ''" >
+	          sys_file_2,
+	        </if>
+	         <if test="paramKey.sys_user_name != null  and paramKey.sys_user_name!= ''" >
+	          sys_user_name,
+	        </if>
+	         <if test="paramKey.sys_user_account != null  and paramKey.sys_user_account!= ''" >
+	          sys_user_account,
+	        </if>
+	         <if test="paramKey.sys_user_password != null  and paramKey.sys_user_password!= ''" >
+	          sys_user_password,
+	        </if>
+	         <if test="paramKey.sys_user_login_date != null  and paramKey.sys_user_login_date!= ''" >
+	          sys_user_login_date,
+	        </if>
+	         <if test="paramKey.sys_user_login_ip != null  and paramKey.sys_user_login_ip!= ''" >
+	          sys_user_login_ip,
+	        </if>
+	         <if test="paramKey.sys_user_status_d != null  and paramKey.sys_user_status_d!= ''" >
+	          sys_user_status_d,
+	        </if>
+	         <if test="paramKey.sys_user_card != null  and paramKey.sys_user_card!= ''" >
+	          sys_user_card,
+	        </if>
+	         <if test="paramKey.sys_user_flag_c != null  and paramKey.sys_user_flag_c!= ''" >
+	          sys_user_flag_c,
+	        </if>
+	         <if test="paramKey.sys_user_reg_date != null  and paramKey.sys_user_reg_date!= ''" >
+	          sys_user_reg_date,
+	        </if>
+	         <if test="paramKey.sys_user_reg_type_d != null  and paramKey.sys_user_reg_type_d!= ''" >
+	          sys_user_reg_type_d,
+	        </if>
+	         <if test="paramKey.sys_area_id != null  and paramKey.sys_area_id!= ''" >
+	          sys_area_id,
+	        </if>
+	         <if test="paramKey.sys_org_id != null  and paramKey.sys_org_id!= ''" >
+	          sys_org_id,
+	        </if>
+	         <if test="paramKey.sys_user_createdate != null  and paramKey.sys_user_createdate!= ''" >
+	          sys_user_createdate,
+	        </if>
+	         <if test="paramKey.sys_user_updatedate != null  and paramKey.sys_user_updatedate!= ''" >
+	          sys_user_updatedate,
+	        </if>
+	         <if test="paramKey.sys_user_createuid != null  and paramKey.sys_user_createuid!= ''" >
+	          sys_user_createuid,
+	        </if>
+	         <if test="paramKey.sys_user_updateuid != null  and paramKey.sys_user_updateuid!= ''" >
+	          sys_user_updateuid,
+	        </if>
+    </trim>
+    values  
+    <foreach collection="paramValue" item="item" index="index" separator="," >  
+        (
+		          <if test="item.sys_user_id != null and item.sys_user_id!= ''" >
+			      	#{item.sys_user_id},
+			      </if>
+			      <if test="item.sys_file_1 != null and item.sys_file_1!= ''" >
+			      	#{item.sys_file_1},
+			      </if>
+			      <if test="item.sys_file_2 != null and item.sys_file_2!= ''" >
+			      	#{item.sys_file_2},
+			      </if>
+		          <if test="item.sys_user_name != null and item.sys_user_name!= ''" >
+			      	#{item.sys_user_name},
+			      </if>
+		          <if test="item.sys_user_account != null and item.sys_user_account!= ''" >
+			      	#{item.sys_user_account},
+			      </if>
+		          <if test="item.sys_user_password != null and item.sys_user_password!= ''" >
+			      	#{item.sys_user_password},
+			      </if>
+		          <if test="item.sys_user_login_date != null and item.sys_user_login_date!= ''" >
+			      	#{item.sys_user_login_date},
+			      </if>
+		          <if test="item.sys_user_login_ip != null and item.sys_user_login_ip!= ''" >
+			      	#{item.sys_user_login_ip},
+			      </if>
+		          <if test="item.sys_user_status_d != null and item.sys_user_status_d!= ''" >
+			      	#{item.sys_user_status_d},
+			      </if>
+		          <if test="item.sys_user_card != null and item.sys_user_card!= ''" >
+			      	#{item.sys_user_card},
+			      </if>
+		          <if test="item.sys_user_flag_c != null and item.sys_user_flag_c!= ''" >
+			      	#{item.sys_user_flag_c},
+			      </if>
+		          <if test="item.sys_user_reg_date != null and item.sys_user_reg_date!= ''" >
+			      	#{item.sys_user_reg_date},
+			      </if>
+		          <if test="item.sys_user_reg_type_d != null and item.sys_user_reg_type_d!= ''" >
+			      	#{item.sys_user_reg_type_d},
+			      </if>
+		          <if test="item.sys_area_id != null and item.sys_area_id!= ''" >
+			      	#{item.sys_area_id},
+			      </if>
+		          <if test="item.sys_org_id != null and item.sys_org_id!= ''" >
+			      	#{item.sys_org_id},
+			      </if>
+		          <if test="item.sys_user_createdate != null and item.sys_user_createdate!= ''" >
+			      	#{item.sys_user_createdate},
+			      </if>
+		          <if test="item.sys_user_updatedate != null and item.sys_user_updatedate!= ''" >
+			      	#{item.sys_user_updatedate},
+			      </if>
+		          <if test="item.sys_user_createuid != null and item.sys_user_createuid!= ''" >
+			      	#{item.sys_user_createuid},
+			      </if>
+		          <if test="item.sys_user_updateuid != null and item.sys_user_updateuid!= ''" >
+			      	#{item.sys_user_updateuid},
+			      </if>
+        )  
+    </foreach> 
+  </sql>
+  <sql id="Insert_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+    		<if test="sys_user_id != null  and sys_user_id!= ''" >
+	          sys_user_id,
+	        </if>
+    		<if test="sys_user_name != null  and sys_user_name!= ''" >
+	          sys_user_name,
+	        </if>
+    		<if test="sys_user_account != null  and sys_user_account!= ''" >
+	          sys_user_account,
+	        </if>
+    		<if test="sys_user_password != null  and sys_user_password!= ''" >
+	          sys_user_password,
+	        </if>
+    		<if test="sys_user_login_date != null  and sys_user_login_date!= ''" >
+	          sys_user_login_date,
+	        </if>
+    		<if test="sys_user_login_ip != null  and sys_user_login_ip!= ''" >
+	          sys_user_login_ip,
+	        </if>
+    		<if test="sys_user_status_d != null  and sys_user_status_d!= ''" >
+	          sys_user_status_d,
+	        </if>
+    		<if test="sys_user_card != null  and sys_user_card!= ''" >
+	          sys_user_card,
+	        </if>
+    		<if test="sys_user_flag_c != null  and sys_user_flag_c!= ''" >
+	          sys_user_flag_c,
+	        </if>
+    		<if test="sys_user_reg_date != null  and sys_user_reg_date!= ''" >
+	          sys_user_reg_date,
+	        </if>
+    		<if test="sys_user_reg_type_d != null  and sys_user_reg_type_d!= ''" >
+	          sys_user_reg_type_d,
+	        </if>
+    		<if test="sys_area_id != null  and sys_area_id!= ''" >
+	          sys_area_id,
+	        </if>
+    		<if test="sys_org_id != null  and sys_org_id!= ''" >
+	          sys_org_id,
+	        </if>
+    		<if test="sys_user_createdate != null  and sys_user_createdate!= ''" >
+	          sys_user_createdate,
+	        </if>
+    		<if test="sys_user_updatedate != null  and sys_user_updatedate!= ''" >
+	          sys_user_updatedate,
+	        </if>
+    		<if test="sys_user_createuid != null  and sys_user_createuid!= ''" >
+	          sys_user_createuid,
+	        </if>
+    		<if test="sys_user_updateuid != null  and sys_user_updateuid!= ''" >
+	          sys_user_updateuid,
+	        </if>
+	        <!-- 加入公司的地址 -->
+	        <if test="sys_company_area != null  and sys_company_area!= ''" >
+	          sys_company_area,
+	        </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+	      <if test="sys_user_id != null and sys_user_id!= ''" >
+	      	#{sys_user_id},
+	      </if>
+	      <if test="sys_user_name != null and sys_user_name!= ''" >
+	      	#{sys_user_name},
+	      </if>
+	      <if test="sys_user_account != null and sys_user_account!= ''" >
+	      	#{sys_user_account},
+	      </if>
+	      <if test="sys_user_password != null and sys_user_password!= ''" >
+	      	#{sys_user_password},
+	      </if>
+	      <if test="sys_user_login_date != null and sys_user_login_date!= ''" >
+	      	#{sys_user_login_date},
+	      </if>
+	      <if test="sys_user_login_ip != null and sys_user_login_ip!= ''" >
+	      	#{sys_user_login_ip},
+	      </if>
+	      <if test="sys_user_status_d != null and sys_user_status_d!= ''" >
+	      	#{sys_user_status_d},
+	      </if>
+	      <if test="sys_user_card != null and sys_user_card!= ''" >
+	      	#{sys_user_card},
+	      </if>
+	      <if test="sys_user_flag_c != null and sys_user_flag_c!= ''" >
+	      	#{sys_user_flag_c},
+	      </if>
+	      <if test="sys_user_reg_date != null and sys_user_reg_date!= ''" >
+	      	#{sys_user_reg_date},
+	      </if>
+	      <if test="sys_user_reg_type_d != null and sys_user_reg_type_d!= ''" >
+	      	#{sys_user_reg_type_d},
+	      </if>
+	      <if test="sys_area_id != null and sys_area_id!= ''" >
+	      	#{sys_area_id},
+	      </if>
+	      <if test="sys_org_id != null and sys_org_id!= ''" >
+	      	#{sys_org_id},
+	      </if>
+	      <if test="sys_user_createdate != null and sys_user_createdate!= ''" >
+	      	#{sys_user_createdate},
+	      </if>
+	      <if test="sys_user_updatedate != null and sys_user_updatedate!= ''" >
+	      	#{sys_user_updatedate},
+	      </if>
+	      <if test="sys_user_createuid != null and sys_user_createuid!= ''" >
+	      	#{sys_user_createuid},
+	      </if>
+	      <if test="sys_user_updateuid != null and sys_user_updateuid!= ''" >
+	      	#{sys_user_updateuid},
+	      </if>
+	      <!-- 公司的地址 -->
+	      <if test="sys_company_area != null and sys_company_area!= ''" >
+	      	#{sys_company_area},
+	      </if>
+    </trim>
+  </sql>
+  <sql id="Where_Update_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="sysUserQuery.sys_user_id != null and sysUserQuery.sys_user_id!= ''" >
+	      	and sys_user_id=#{sysUserQuery.sys_user_id}
+	      </when>
+	      <when test="sysUserQuery.sys_user_name != null and sysUserQuery.sys_user_name!= ''" >
+	      	and sys_user_name=#{sysUserQuery.sys_user_name}
+	      </when>
+	      <when test="sysUserQuery.sys_user_account != null and sysUserQuery.sys_user_account!= ''" >
+	      	and sys_user_account=#{sysUserQuery.sys_user_account}
+	      </when>
+	      <when test="sysUserQuery.sys_user_password != null and sysUserQuery.sys_user_password!= ''" >
+	      	and sys_user_password=#{sysUserQuery.sys_user_password}
+	      </when>
+	      <when test="sysUserQuery.sys_user_login_date != null and sysUserQuery.sys_user_login_date!= ''" >
+	      	and sys_user_login_date=#{sysUserQuery.sys_user_login_date}
+	      </when>
+	      <when test="sysUserQuery.sys_user_login_ip != null and sysUserQuery.sys_user_login_ip!= ''" >
+	      	and sys_user_login_ip=#{sysUserQuery.sys_user_login_ip}
+	      </when>
+	      <when test="sysUserQuery.sys_user_status_d != null and sysUserQuery.sys_user_status_d!= ''" >
+	      	and sys_user_status_d=#{sysUserQuery.sys_user_status_d}
+	      </when>
+	      <when test="sysUserQuery.sys_user_card != null and sysUserQuery.sys_user_card!= ''" >
+	      	and sys_user_card=#{sysUserQuery.sys_user_card}
+	      </when>
+	      <when test="sysUserQuery.sys_user_flag_c != null and sysUserQuery.sys_user_flag_c!= ''" >
+	      	and sys_user_flag_c=#{sysUserQuery.sys_user_flag_c}
+	      </when>
+	      <when test="sysUserQuery.sys_user_reg_date != null and sysUserQuery.sys_user_reg_date!= ''" >
+	      	and sys_user_reg_date=#{sysUserQuery.sys_user_reg_date}
+	      </when>
+	      <when test="sysUserQuery.sys_user_reg_type_d != null and sysUserQuery.sys_user_reg_type_d!= ''" >
+	      	and sys_user_reg_type_d=#{sysUserQuery.sys_user_reg_type_d}
+	      </when>
+	      <when test="sysUserQuery.sys_area_id != null and sysUserQuery.sys_area_id!= ''" >
+	      	and sys_area_id=#{sysUserQuery.sys_area_id}
+	      </when>
+	      <when test="sysUserQuery.sys_org_id != null and sysUserQuery.sys_org_id!= ''" >
+	      	and sys_org_id=#{sysUserQuery.sys_org_id}
+	      </when>
+	      <when test="sysUserQuery.sys_user_createdate != null and sysUserQuery.sys_user_createdate!= ''" >
+	      	and sys_user_createdate=#{sysUserQuery.sys_user_createdate}
+	      </when>
+	      <when test="sysUserQuery.sys_user_updatedate != null and sysUserQuery.sys_user_updatedate!= ''" >
+	      	and sys_user_updatedate=#{sysUserQuery.sys_user_updatedate}
+	      </when>
+	      <when test="sysUserQuery.sys_user_createuid != null and sysUserQuery.sys_user_createuid!= ''" >
+	      	and sys_user_createuid=#{sysUserQuery.sys_user_createuid}
+	      </when>
+	      <when test="sysUserQuery.sys_user_updateuid != null and sysUserQuery.sys_user_updateuid!= ''" >
+	      	and sys_user_updateuid=#{sysUserQuery.sys_user_updateuid}
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+    <sql id="Where_Del_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="sys_user_id != null and sys_user_id!= ''" >
+	      	and sys_user_id=#{sys_user_id}
+	      </when>
+	      <when test="sys_user_name != null and sys_user_name!= ''" >
+	      	and sys_user_name=#{sys_user_name}
+	      </when>
+	      <when test="sys_user_account != null and sys_user_account!= ''" >
+	      	and sys_user_account=#{sys_user_account}
+	      </when>
+	      <when test="sys_user_password != null and sys_user_password!= ''" >
+	      	and sys_user_password=#{sys_user_password}
+	      </when>
+	      <when test="sys_user_login_date != null and sys_user_login_date!= ''" >
+	      	and sys_user_login_date=#{sys_user_login_date}
+	      </when>
+	      <when test="sys_user_login_ip != null and sys_user_login_ip!= ''" >
+	      	and sys_user_login_ip=#{sys_user_login_ip}
+	      </when>
+	      <when test="sys_user_status_d != null and sys_user_status_d!= ''" >
+	      	and sys_user_status_d=#{sys_user_status_d}
+	      </when>
+	      <when test="sys_user_card != null and sys_user_card!= ''" >
+	      	and sys_user_card=#{sys_user_card}
+	      </when>
+	      <when test="sys_user_flag_c != null and sys_user_flag_c!= ''" >
+	      	and sys_user_flag_c=#{sys_user_flag_c}
+	      </when>
+	      <when test="sys_user_reg_date != null and sys_user_reg_date!= ''" >
+	      	and sys_user_reg_date=#{sys_user_reg_date}
+	      </when>
+	      <when test="sys_user_reg_type_d != null and sys_user_reg_type_d!= ''" >
+	      	and sys_user_reg_type_d=#{sys_user_reg_type_d}
+	      </when>
+	      <when test="sys_area_id != null and sys_area_id!= ''" >
+	      	and sys_area_id=#{sys_area_id}
+	      </when>
+	      <when test="sys_org_id != null and sys_org_id!= ''" >
+	      	and sys_org_id=#{sys_org_id}
+	      </when>
+	      <when test="sys_user_createdate != null and sys_user_createdate!= ''" >
+	      	and sys_user_createdate=#{sys_user_createdate}
+	      </when>
+	      <when test="sys_user_updatedate != null and sys_user_updatedate!= ''" >
+	      	and sys_user_updatedate=#{sys_user_updatedate}
+	      </when>
+	      <when test="sys_user_createuid != null and sys_user_createuid!= ''" >
+	      	and sys_user_createuid=#{sys_user_createuid}
+	      </when>
+	      <when test="sys_user_updateuid != null and sys_user_updateuid!= ''" >
+	      	and sys_user_updateuid=#{sys_user_updateuid}
+	      </when>
+	     <when test="ids != null and ids!= ''" >
+	      		and sys_user_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		           #{id}
+		        </foreach>
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+  <sql id="Where_Select_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="sys_user_id != null and sys_user_id!= ''" >
+	      	and sys_user_id=#{sys_user_id}
+	      </if>
+	      <if test="sys_user_name != null and sys_user_name!= ''" >
+	      	and sys_user_name like '%${sys_user_name}%'  
+	      </if>
+	      <if test="sys_user_account != null and sys_user_account!= ''" >
+	      	and sys_user_account=#{sys_user_account}
+	      </if>
+	      <if test="sys_user_password != null and sys_user_password!= ''" >
+	      	and sys_user_password=#{sys_user_password}
+	      </if>
+	      <if test="sys_user_login_date != null and sys_user_login_date!= ''" >
+	      	and sys_user_login_date=#{sys_user_login_date}
+	      </if>
+	      <if test="sys_user_login_ip != null and sys_user_login_ip!= ''" >
+	      	and sys_user_login_ip=#{sys_user_login_ip}
+	      </if>
+	      <if test="sys_user_status_d != null and sys_user_status_d!= ''" >
+	      	and sys_user_status_d=#{sys_user_status_d}
+	      </if>
+	      <if test="sys_user_card != null and sys_user_card!= ''" >
+	      	and sys_user_card=#{sys_user_card}
+	      </if>
+	      <if test="sys_user_flag_c != null and sys_user_flag_c!= ''" >
+	      	and sys_user_flag_c=#{sys_user_flag_c}
+	      </if>
+	      <if test="sys_user_reg_date != null and sys_user_reg_date!= ''" >
+	      	and sys_user_reg_date=#{sys_user_reg_date}
+	      </if>
+	      <if test="sys_user_reg_type_d != null and sys_user_reg_type_d!= ''" >
+	      	and sys_user_reg_type_d=#{sys_user_reg_type_d}
+	      </if>
+	      <if test="sys_area_id != null and sys_area_id!= ''" >
+	      	and sys_area_id=#{sys_area_id}
+	      </if>
+	      <if test="sys_org_id != null and sys_org_id!= ''" >
+	      	and sys_org_id=#{sys_org_id}
+	      </if>
+	      <if test="sys_user_createdate != null and sys_user_createdate!= ''" >
+	      	and sys_user_createdate=#{sys_user_createdate}
+	      </if>
+	      <if test="sys_user_updatedate != null and sys_user_updatedate!= ''" >
+	      	and sys_user_updatedate=#{sys_user_updatedate}
+	      </if>
+	      <if test="sys_user_createuid != null and sys_user_createuid!= ''" >
+	      	and sys_user_createuid=#{sys_user_createuid}
+	      </if>
+	      <if test="sys_user_updateuid != null and sys_user_updateuid!= ''" >
+	      	and sys_user_updateuid=#{sys_user_updateuid}
+	      </if>
+			<!-- 11月24日公司的地址 -->
+	      <if test="sys_company_area != null and sys_company_area!= ''" >
+	      	and sys_company_area=#{sys_company_area}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and sys_user_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+     <![CDATA[ order by sys_user_createdate desc ]]>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+</mapper>

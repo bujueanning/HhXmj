@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD SQL Map Config 3.0//EN"  
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	
+	<settings> 
+        <setting name="cacheEnabled" value="false" /><!-- 关闭二级缓存 -->
+        <setting name="lazyLoadingEnabled" value="false"/><!-- 全局关闭懒加载 -->
+        <setting name="multipleResultSetsEnabled" value="true" /><!-- 允许单条语句返回多个数据集 -->
+        <setting name="useColumnLabel" value="true" /> <!-- 使用列标签代替列名称 -->
+         <setting name="useGeneratedKeys" value="false" /><!-- 不要强制生成主键 -->
+        <setting name="defaultExecutorType" value="BATCH" /> <!-- 对于批量更新操作缓存SQL以提高性能  -->
+        <!-- 整合log4j -->  
+        <setting name="logImpl" value="LOG4J"/>
+        
+    </settings>
+</configuration>

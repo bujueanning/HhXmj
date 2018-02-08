@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/aop 
+						http://www.springframework.org/schema/aop/spring-aop.xsd
+						http://www.springframework.org/schema/context 
+						http://www.springframework.org/schema/context/spring-context.xsd
+						http://www.springframework.org/schema/tx 
+						http://www.springframework.org/schema/tx/spring-tx.xsd
+						http://www.springframework.org/schema/task 
+						http://www.springframework.org/schema/task/spring-task.xsd
+						http://www.springframework.org/schema/cache
+						http://www.springframework.org/schema/cache/spring-cache.xsd
+	">
+	<!-- 启动组件扫描注解 -->
+	<context:component-scan base-package="com.adminlte"></context:component-scan>
+	<!-- 引入配置文件 -->
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:dbconfig.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 阿里 druid数据库连接池 -->
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		destroy-method="close">
+		<!-- 数据库基本信息配置 -->
+		<property name="url" value="${db.url}" />
+		<property name="driverClassName" value="${db.driverClassName}" />
+		<property name="username" value="${db.name}" />
+		<property name="password" value="${db.password}" />
+		<!-- 监控数据库 -->
+		<property name="filters" value="stat" />
+		<!-- 最大并发连接数 -->
+		<property name="maxActive" value="20" />
+		<!-- 初始化连接数量 -->
+		<property name="initialSize" value="1" />
+		<!-- 配置获取连接等待超时的时间 -->
+		<property name="maxWait" value="60000" />
+		<!-- 最小空闲连接数 -->
+		<property name="minIdle" value="10" />
+		<!-- 最大空闲连接数 -->
+		<property name="maxIdle" value="15" />
+		<!-- Evict的TimerTask定时线程进行控制 -->
+		<property name="testWhileIdle" value="true" />
+		<!-- Evict的TimerTask定时线程进行控制,配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+		<property name="timeBetweenEvictionRunsMillis" value="60000" />
+		<!-- 代表检查的sql -->
+		<property name="validationQuery" value="SELECT 'x'" />
+		<!-- 连接池中连接，在时间段内一直空闲， 被逐出连接池的时间 -->
+		<property name="minEvictableIdleTimeMillis" value="300000" />
+		<!-- 对拿到的connection进行validateObject校验 -->
+		<property name="testOnBorrow" value="false" />
+		<!-- 就是在进行returnObject对返回的connection进行validateObject校验 -->
+		<property name="testOnReturn" value="false" />
+		<!-- 打开removeAbandoned功能 -->
+		<property name="removeAbandoned" value="true" />
+		<!-- 超过时间限制，回收没有用(废弃)的连接,1800秒，也就是30分钟 -->
+		<property name="removeAbandonedTimeout" value="1800" />
+		<!-- 关闭abanded连接时输出错误日志 -->
+		<property name="logAbandoned" value="true" />
+		<!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+		<property name="poolPreparedStatements" value="false" />
+		<property name="maxPoolPreparedStatementPerConnectionSize"
+			value="20" />
+	</bean>
+
+
+	<!-- 配置mybatis begin -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
+		<!-- mapper扫描 com.adminlte.*.*.service -->
+		<property name="mapperLocations" value="classpath*:com/adminlte/**/*Mapper.xml"></property>
+	</bean>
+
+	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactory" />
+	</bean>
+	<!-- 配置mybatis end -->
+
+	<!-- 对dataSource 数据源进行事务管理 -->
+	<bean name="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
+	<!-- 事务管理 通知 -->
+	<!-- <tx:advice id="txAdvice" transaction-manager="transactionManager"> -->
+	<!-- <tx:attributes> -->
+	<!-- 对insert,update,delete 开头的方法进行事务管理,只要有异常就回滚 -->
+	<!-- <tx:method name="save*" propagation="REQUIRED" rollback-for="java.lang.Throwable"/> -->
+	<!-- <tx:method name="edit*" propagation="REQUIRED" rollback-for="java.lang.Throwable"/> -->
+	<!-- <tx:method name="delete*" propagation="REQUIRED" rollback-for="java.lang.Throwable"/> -->
+	<!-- select,count开头的方法,开启只读,提高数据库访问性能 -->
+	<!-- <tx:method name="find*" read-only="true"/> -->
+	<!-- <tx:method name="list*" read-only="true"/> -->
+	<!-- <tx:method name="page*" read-only="true"/> -->
+	<!-- 对其他方法 使用默认的事务管理 -->
+	<!-- <tx:method name="*"/> -->
+	<!-- </tx:attributes> -->
+	<!-- </tx:advice> -->
+	<!-- 事务 aop 配置 -->
+	<!-- <aop:config proxy-target-class="true"> -->
+	<!-- <aop:pointcut id="serviceMethods" expression="execution(* com.adminlte.*.*.service..*(..))"/> -->
+	<!-- <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethods"/> -->
+	<!-- </aop:config> -->
+
+
+
+	<!-- 使用CGLib动态代理技术,false标准的JDK基于接口的代理将起作用,true基于类的代理将起作用 ,同时 cglib.jar必须在CLASSPATH中 -->
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+	<!-- 启用对事务注解的支持 ，spring-dao.jar冲突启动出错 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<!-- activiti -->
+<!-- 	<bean id="processEngineConfiguration" class="org.activiti.spring.SpringProcessEngineConfiguration"> -->
+<!-- 		<property name="dataSource" ref="dataSource" /> -->
+<!-- 		<property name="transactionManager" ref="transactionManager" /> -->
+<!-- 		<property name="databaseSchemaUpdate" value="true" /> -->
+<!-- 		<property name="jobExecutorActivate" value="false" /> -->
+<!-- 	</bean> -->
+<!-- 	<bean id="processEngine" class="org.activiti.spring.ProcessEngineFactoryBean"> -->
+<!-- 		<property name="processEngineConfiguration" ref="processEngineConfiguration" /> -->
+<!-- 	</bean> -->
+<!-- 	<bean id="repositoryService" factory-bean="processEngine" -->
+<!-- 		factory-method="getRepositoryService" /> -->
+<!-- 	<bean id="runtimeService" factory-bean="processEngine" -->
+<!-- 		factory-method="getRuntimeService" /> -->
+<!-- 	<bean id="formService" factory-bean="processEngine" -->
+<!-- 		factory-method="getFormService" /> -->
+<!-- 	<bean id="taskService" factory-bean="processEngine" -->
+<!-- 		factory-method="getTaskService" /> -->
+<!-- 	<bean id="historyService" factory-bean="processEngine" -->
+<!-- 		factory-method="getHistoryService" /> -->
+<!-- 	<bean id="identityService" factory-bean="processEngine" -->
+<!-- 		factory-method="getIdentityService" /> -->
+<!-- 	<bean id="managementService" factory-bean="processEngine" -->
+<!-- 		factory-method="getManagementService" /> -->
+
+	<!-- 定时任务 -->
+	<!-- <task:scheduled-tasks> -->
+	<!-- <task:scheduled ref="payBatchTask" method="payBatch" cron="0/50 * * 
+		* * ?" /> -->
+	<!-- </task:scheduled-tasks> -->
+	<!-- 任务管理器注解 如@Async -->
+	<task:annotation-driven />
+	<!-- 
+	scheduler="qbScheduler" mode="proxy"
+	<task:scheduler id="qbScheduler" pool-size="10"/>  
+	<bean id="myjob" class="com.adminlte.base.test.MyJob"></bean>  
+	 -->
+  <!-- 
+    <task:scheduled-tasks>  
+     -->
+        <!--  
+            这里表示的是每隔五秒执行一次  
+        -->  
+        <!-- 
+        <task:scheduled ref="myjob" method="task" cron="* * * 15/1 3/1 ?" />  
+    </task:scheduled-tasks>
+     -->  
+</beans>

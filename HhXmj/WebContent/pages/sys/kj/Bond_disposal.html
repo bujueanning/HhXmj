@@ -1,0 +1,923 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache,no-store">
+    <meta http-equiv="expires" content="0"/>
+    <title>鑫淼聚不良资产处置平台</title>
+    <meta http-equiv="keywords" content="鑫淼聚,资产管理,鑫淼聚资产管理有限公司,投资,理财,基金，私募,集合理财,券商,专户理财,券商资管,资管,定向客户,宏观经济,业绩,领先"/>
+    <meta http-equiv="description" content="鑫淼聚资产管理有限公司是中国证券会批准设立的首家券商资产管理公司；自1998年开始从事客户资产管理业务，2002年首批获得从事客户资产管理业务资格，2005年成为首批开展券商集合理财业务的证券公司，2010年成为首家获准设立的券商资产管理公司。 "/>
+    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="js/global.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/jcarousellite_1.0.1.js"></script>
+    <script type="text/javascript" src="js/iepng.js"></script>
+    <script type="text/javascript" src="js/jquery.extend.js"></script>
+    <script type="text/javascript" src="js/jPages.js"></script>
+</head>
+<body>
+	<!--注册登录-->
+<div class="top_wrap"> 	
+    <div class="top">
+        <a href="sys/kj/index"><img src="img/logo.png"  class="fl logo"/></a>
+        <img src="img/tel.png" alt="" class="fl tel" />
+        <div class="fl links">
+            <a href="login/login.html">登录</a><br />
+            <a href="login/reg_index.html">注册</a>
+        </div>
+        <div class="fr search">
+            <form name="formT" id="formT" method="post" target="_blank" action="">
+                <input class="input inputFocus" type="text" name="inputSearchQuery" id="inputSearchQueryT" maxlength="12"/>
+                <input type="hidden" name="service" value=""/>
+                <input type="hidden" name="sp" value="S0"/>
+                <input type="hidden" name="Form0" value="category,inputSearchQuery,$Submit"/>
+                <input type="hidden" name="category" value="-1"/>
+                <input type="submit" value="" class="btn_search hand" />
+            </form>
+        </div>
+    </div>
+</div>
+<!--导航-->
+<div class="nav">
+    <div class="nav_c">
+        <ul class="ul">
+            <li class="li li_first">
+                <a href="sys/kj/index" class="span">首页</a>
+            </li>
+		    <li class="li libg">
+		        <a href="Bond_disposal.html" class="span">资产委外</a>
+		   </li>
+		    <li class="li">
+		        <a href="Asset_auction.html" class="span">资产拍卖</a>
+		    </li>
+		    <li class="li">
+		        <a href="service.html" class="span">业务服务</a>
+		    </li>
+		    <li class="li">
+		        <a href="help.html" class="span">客户专区</a>
+		    </li>
+		    <li class="li">
+		        <a href="about.html" class="span">走进鑫淼聚</a>
+				<div class="nav_sub">
+				        <dl>
+				            <dd>
+				                <a href="about.html">公司介绍</a>
+				                | <br/>
+				                <a href="contact.html">联系我们</a>
+				                | 
+				            </dd>
+				        </dl>
+				</div>
+		    </li>    
+        </ul>
+    </div>
+</div>
+<!--网站公告-->
+  <div class="notice">
+      <div class="notice_c">
+          <img src="img/notice.png" class="fl img" />
+          <div class="notices">
+              <div class="bd">
+                  <ul>
+                      <li><a href="contents.html" >关于暂停通联支付民生银行卡开户（11月28日15:00起）的通知</a></li>
+                      <li><a href="contents.html" >个人金融信息安全</a></li>
+                      <li><a href="contents.html">关于通联支付交易系统暂停邮储银行快捷开户服务的提示</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+    <div class="wrap">
+        <div class="hots_div ">
+    	<div class="screen">	        
+	        <div class="screen_b">	          
+	          <table width="100%" border="0" cellspacing="0" cellpadding="0" class="screen_table" id="choice">
+	           <tr>
+	              <td width="120" style="background:#ca0821; color:#ffffff; font-size:14px;">产品类</td>
+	              <td>
+	                   <ul class="product_ul c">
+	                       	<li xmlb="" class="on">不限</li>			                   
+		                   	<li xmlb="jr02" class="">金融国资</li>
+							<li xmlb="jr01" class="">不良资产</li>
+							<li xmlb="jr03">非国有资产</li>
+							<li xmlb="jr04">招商</li>								
+	                   </ul>
+	              </td>
+	            </tr>
+	            
+	            <tr class="t">
+	              <td style="background:#ca0821; color:#ffffff; font-size:14px;">权属金额</td>
+	              <td>
+                    <ul class="xmxl_ul c">
+                        <li xmxl="" class="on">不限</li>
+                        <li xmxl="01" class="">10万-50万</li>
+		                <li xmxl="02">50万-100万</li>							
+						<li xmxl="03">100万-200万</li>
+						<li xmxl="03">200万以上</li>
+		             </ul>
+	              </td>
+	            </tr>
+	            <tr>
+	              <td style="background:#ca0821; color:#ffffff; font-size:14px;">期限</td>
+	              <td>	              
+                    <ul class="days_ul c">
+                      	  <li data="" class="on">不限</li>
+		                <li data="03" class="">3个月</li>
+		                <li data="06" >6个月</li>
+		                <li data="12">12个月</li>
+		                <li data="24">24个月</li>
+		            </ul>
+	              </td>
+	            </tr>
+	            <tr>
+	              <td style="background:#ca0821; color:#ffffff; font-size:14px;">类别属性</td>
+	              <td>	              
+                    <ul class="rates_ul c">
+                      	  <li data="" class="on">不限</li>
+		                <li data="03" class="" id="zc_table">处置方接单</li>
+		                <li data="06" id="zcw_table">处置方竞单</li>
+		            </ul>
+	              </td>
+	            </tr>
+	            <tr>
+	              <td style="background:#ca0821; color:#ffffff; font-size:14px;">归属省份</td>
+	              <td>	              
+                    <ul class="deadline_ul c">
+                      	  <li data="" class="on">不限</li>
+		                <li data="03" class="">河北省</li>
+		                <li data="06" >石家庄市</li>
+		            </ul>
+	              </td>
+	            </tr>
+	          </table>	
+	       </div>	    
+	 	</div>
+        </div>
+        <div class="index_gdlc" id="zc_tablexs" style="display: block;">
+            <img src="img/corner_1.png" class="corner corner1" />
+	        <img src="img/corner_2.png" class="corner corner2" />
+	        <img src="img/corner_3.png" class="corner corner3" />
+	        <img src="img/corner_4.png" class="corner corner4" />
+	            <h3>
+	                资产委外
+                <!--<ul class="ul">
+                    <li class="li_curr"><span class="span">基金</span></li>
+                    <li><span class="span">专项计划</span></li>
+                </ul>-->
+                <span align="center" class="zcfb">
+				    <a href="user/identityLead.html">  信息发布	</a>
+				</span>
+                <div class="product_search">
+                    <div class="input_div input_div2">
+                        <input id="searchinp" type="text" class="input input2 inputFocus" value="请输入产品代码、名称、类型" />
+                        <input type="button" value="" class="btn_search1 hand"/>
+                        <ul class="nsearchlist"></ul>
+                    </div>
+                    <script type="text/javascript">
+                        var allFunds = [
+                            
+                            "xmgj-2,东方红...,产业升级-产业升级,zBond_disposal.html,东方红产业升级",
+                            
+                            
+                        ];
+                        $(function(){
+                            //搜索框效果
+                            $("#searchinp").bind("keyup",function(){
+                                if($("#searchinp").val() != ""){
+                                    $(".nsearchlist").show();
+                                    $(".nsearchlist").find("li").remove();
+                                    for(var i=0;i<allFunds.length;i++){
+                                        if(allFunds[i].indexOf($("#searchinp").val())>-1){
+                                            var namecode = allFunds[i].split(",");
+                                            $(".nsearchlist").append('<li><a href="'+namecode[3]+'" target="_blank" title="'+namecode[4]+' ['+namecode[0]+']"><span class="snum">'+namecode[2]+'</span>'+namecode[1]+'</a></li>');
+                                        }
+                                    }
+                                }else{
+                                    $(".nsearchlist").hide();
+                                }
+                            });
+                            $("#searchinp").bind("click",function(e){
+                                e.stopPropagation();
+                            });
+                            $(document).bind("click",function(){
+                                $(".nsearchlist").hide();
+                            });
+                        });
+                    </script>
+                </div>
+            </h3>
+			 <div class="index_gdlc_c">
+			    <table class="table_gdlc">
+				    <tr class="tr1">
+				        <th width="150">企业名称</th>
+				        <th width="100">资产编号</th>
+				        <th width="100">欠款（元)</th>
+				        <th width="100">挂牌开始时间</th>
+				        <th width="100">挂牌结束时间</th>
+				        <th width="100">转让比例</th>
+				        <th>状态</th>
+				        <th>发布时间</th>
+				        <th width="100">操作</th>
+				    </tr>
+				        <tr class="tr_even">
+				            <td><a href="custom.html"   >东方红新动力</a></td>
+				            <td>000480</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">待签约</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href="Registration.html#registration"  class="jdan">我要接单</a></td>
+				        </tr>
+				        <tr>
+				            <td><a href="custom.html"   >东方红新动力</a></td>
+				            <td>000480</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">待签约</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href="Registration.html#registration"  class="jdan">我要接单</a></td>
+				        </tr>
+				        <tr class="tr_even">
+				            <td><a href="custom.html">东方红睿丰</a></td>
+				            <td>169101</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">已发布</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href="Registration.html#registration"  class="jdan">我要报名</a></td>
+				        </tr>
+				        <tr>
+				            <td><a href="custom.html"   >东方红睿阳</a></td>
+				            <td>169102</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">待签约</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href="Registration.html#registration" class="jdan">我要报名</a></td>
+				        </tr>
+				        <tr class="tr_even">
+				            <td><a href="custom.html"   >东方红睿元</a></td>
+				            <td>000970</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">待签约</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href="Registration.html#registration" class="jdan">我要接单</a></td>
+				        </tr>
+				        <tr>
+				            <td><a href="custom.html"   >东方红睿轩沪港深</a></td>
+				            <td>169103</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">已发布</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href="Registration.html#registration" class="jdan">我要报名</a></td>
+				        </tr>
+				        <tr class="tr_even" >
+				            <td><a href="custom.html"   >东方红睿轩沪港深</a></td>
+				            <td>169103</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">已发布</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href="Registration.html#registration" class="jdan">我要接单</a></td>
+				        </tr>
+				        <tr>
+				            <td><a href="custom.html"   >东方红睿轩沪港深</a></td>
+				            <td>169103</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">已发布</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href="Registration.html#registration" class="jdan">我要报名</a></td>
+				        </tr>
+				        <tr class="tr_even">
+				            <td><a href=""   >东方红稳健精选C</a></td>
+				            <td>001204</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">待签约</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href="Registration.html#registration" class="jdan">我要接单</a></td>
+				        </tr>
+				        <tr>
+				            <td><a href=""   >东方红睿逸定期开放</a></td>
+				            <td>001309</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">已发布</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href="Registration.html#registration" class="jdan">我要报名</a></td>
+				        </tr>
+				        <tr class="guoqi tr_even" style="display: none;">
+				            <td><a href="custom.html"   >东方红睿轩沪港深</a></td>
+				            <td>169103</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">已发布</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href="Registration.html#registration" class="jdan">我要接单</a></td>
+				        </tr>
+				        <tr class="guoqi " style="display: none;">
+				            <td><a href="custom.html"   >东方红睿轩沪港深</a></td>
+				            <td>169103</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">已发布</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href="Registration.html#registration" class="jdan">我要报名</a></td>
+				        </tr>
+				        <tr class="guoqi tr_even" style="display: none;">
+				            <td><a href="custom.html"   >东方红睿轩沪港深</a></td>
+				            <td>169103</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">已发布</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href="Registration.html#registration" class="jdan">我要接单</a></td>
+				        </tr>
+				        <tr class="guoqi " style="display: none;">
+				            <td><a href="custom.html"   >东方红睿轩沪港深</a></td>
+				            <td>169103</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">已发布</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href="Registration.html#registration" class="jdan">我要报名</a></td>
+				        </tr>
+				        <tr class="guoqi tr_even" style="display: none;">
+				            <td><a href="custom.html"   >东方红睿轩沪港深</a></td>
+				            <td>169103</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">已发布</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href="Registration.html#registration" class="jdan">我要报名</a></td>
+				        </tr>
+				        <tr class="guoqi" style="display: none;">
+				            <td><a href="custom.html"   >东方红睿满沪港深</a></td>
+				            <td>169104</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">已发布</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href="Registration.html#registration" class="jdan">我要接单</a></td>
+				        </tr>
+				        <tr class="guoqi tr_even" style="display: none;">
+				            <td><a href="custom.html"   >东方红睿满沪港深</a></td>
+				            <td>169104</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">已发布</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href="Registration.html#registration" class="jdan">我要报名</a></td>
+				        </tr>
+				        <tr class="guoqi" style="display: none;">
+				            <td><a href="custom.html"   >东方红睿华沪港深</a></td>
+				            <td>169105</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">待签约</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href="Registration.html#registration" class="jdan">我要报名</a></td>
+				        </tr>
+				        <tr class="guoqi tr_even" style="display: none;">
+				            <td><a href="custom.html"   >东方红睿轩沪港深</a></td>
+				            <td>169103</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">已发布</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href="Registration.html#registration" class="jdan">我要接单</a></td>
+				        </tr>
+				        <tr class="guoqi" style="display: none;">
+				            <td><a href="custom.html"   >东方红睿轩沪港深</a></td>
+				            <td>169103</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">已发布</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href="Registration.html#registration" class="jdan">我要报名</a></td>
+				        </tr>
+				        <tr class="guoqi tr_even" style="display: none;">
+				            <td><a href="custom.html"   >东方红睿轩沪港深</a></td>
+				            <td>169103</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">已发布</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href="Registration.html#registration" class="jdan">我要报名</a></td>
+				        </tr>
+				        <tr class="guoqi" style="display: none;">
+				            <td><a href="custom.html"   >东方红睿轩沪港深</a></td>
+				            <td>169103</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">已发布</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href="Registration.html#registration" class="jdan">我要报名</a></td>
+				        </tr>
+				        <tr class="guoqi tr_even" style="display: none;">
+				            <td><a href="custom.html"   >东方红睿轩沪港深</a></td>
+				            <td>169103</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">已发布</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href="Registration.html#registration" class="jdan">我要报名</a></td>
+				        </tr>
+				         <tr id="chakangengduo">
+				         	<td colspan="8" style="padding:10px;text-align: center;cursor: pointer" onclick="gengduo();">点击查看更多</td>
+				         </tr>
+				        <tr id="shouqigengduo" style="display: none;">
+				        	<td colspan="8" style="padding:10px;text-align: center;cursor: pointer" onclick="sqgengduo();">点击收起</td>
+				        </tr>
+			            <script>
+			                function gengduo(){
+			                    $(".guoqi").show();
+			                    $("#chakangengduo").hide();
+			                    $("#shouqigengduo").show();
+			                }
+			                function sqgengduo(){
+			                    $(".guoqi").hide();
+			                    $("#chakangengduo").show();
+			                    $("#shouqigengduo").hide();
+			                }
+			            </script>
+			        </table>
+			   </div>            
+	    </div>
+	    <div class="index_gdlc" id="zcw_tablexs" style="display: none;">
+            <img src="img/corner_1.png" class="corner corner1" />
+	        <img src="img/corner_2.png" class="corner corner2" />
+	        <img src="img/corner_3.png" class="corner corner3" />
+	        <img src="img/corner_4.png" class="corner corner4" />
+	            <h3>
+	                资产委外
+                <!--<ul class="ul">
+                    <li class="li_curr"><span class="span">基金</span></li>
+                    <li><span class="span">专项计划</span></li>
+                </ul>-->
+                <span align="center" class="zcfb">
+				    <a href="user/identityLead.html">  信息发布	</a>
+				</span>
+                <div class="product_search">
+                    <div class="input_div input_div2">
+                        <input id="searchinp" type="text" class="input input2 inputFocus" value="请输入产品代码、名称、类型" />
+                        <input type="button" value="" class="btn_search1 hand"/>
+                        <ul class="nsearchlist"></ul>
+                    </div>
+                    <script type="text/javascript">
+                        var allFunds = [
+                            
+                            "xmgj-2,东方红...,产业升级-产业升级,zBond_disposal.html,东方红产业升级",
+                            
+                            
+                        ];
+                        $(function(){
+                            //搜索框效果
+                            $("#searchinp").bind("keyup",function(){
+                                if($("#searchinp").val() != ""){
+                                    $(".nsearchlist").show();
+                                    $(".nsearchlist").find("li").remove();
+                                    for(var i=0;i<allFunds.length;i++){
+                                        if(allFunds[i].indexOf($("#searchinp").val())>-1){
+                                            var namecode = allFunds[i].split(",");
+                                            $(".nsearchlist").append('<li><a href="'+namecode[3]+'" target="_blank" title="'+namecode[4]+' ['+namecode[0]+']"><span class="snum">'+namecode[2]+'</span>'+namecode[1]+'</a></li>');
+                                        }
+                                    }
+                                }else{
+                                    $(".nsearchlist").hide();
+                                }
+                            });
+                            $("#searchinp").bind("click",function(e){
+                                e.stopPropagation();
+                            });
+                            $(document).bind("click",function(){
+                                $(".nsearchlist").hide();
+                            });
+                        });
+                    </script>
+                </div>
+            </h3>
+			 <div class="index_gdlc_c">
+			    <table class="table_gdlc">
+				    <tr class="tr1">
+				        <th width="150">企业名称</th>
+				        <th width="100">资产编号</th>
+				        <th width="100">欠款（元)</th>
+				        <th width="100">挂牌开始时间</th>
+				        <th width="100">挂牌结束时间</th>
+				        <th width="100">转让比例</th>
+				        <th>状态</th>
+				        <th>发布时间</th>
+				        <th width="100">操作</th>
+				    </tr>
+				        <tr class="tr_even">
+				            <td><a href="custom_zcw.html"   >东方红产业升级</a></td>
+				            <td>000619</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">已发布</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href="Registration.html#registration"><img src="img/btn_car.png"/></a></td>
+				        </tr>
+				        <tr>
+				            <td><a href="custom_zcw.html"   >东方红新动力</a></td>
+				            <td>000480</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">待签约</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href="Registration.html#registration"  ><img src="img/btn_car.png"/></a></td>
+				        </tr>
+				        <tr class="tr_even">
+				            <td><a href="custom_zcw.html">东方红睿丰</a></td>
+				            <td>169101</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">已发布</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href="Registration.html#registration"  >已完成</a></td>
+				        </tr>
+				        <tr>
+				            <td><a href="custom_zcw.html"   >东方红睿阳</a></td>
+				            <td>169102</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">待签约</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href="Registration.html#registration"  >已完成</a></td>
+				        </tr>
+				        <tr class="tr_even">
+				            <td><a href="custom_zcw.html"   >东方红睿元</a></td>
+				            <td>000970</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">待签约</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href="Registration.html#registration"  >已完成</a></td>
+				        </tr>
+				        <tr>
+				            <td><a href="custom_zcw.html"   >东方红中国优势</a></td>
+				            <td>001112</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">已发布</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href="Registration.html#registration"  ><img src="img/btn_car.png"/></a></td>
+				        </tr>
+				        <tr class="tr_even">
+				            <td><a href="custom_zcw.html"  >东方红领先精选</a></td>
+				            <td>001202</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">待签约</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href=""  ><img src="img/btn_car.png"/></a></td>
+				        </tr>
+				        <tr>
+				            <td><a href=""   >东方红稳健精选A</a></td>
+				            <td>001203</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">已发布</span></td> 
+				            <td >2017-08-04</td>
+				            <td>待签约</td>
+				        </tr>
+				        <tr class="tr_even">
+				            <td><a href=""   >东方红稳健精选C</a></td>
+				            <td>001204</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">待签约</span></td> 
+				            <td >2017-08-04</td>
+				            <td>待签约</td>
+				        </tr>
+				        <tr>
+				            <td><a href=""   >东方红睿逸定期开放</a></td>
+				            <td>001309</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">已发布</span></td> 
+				            <td >2017-08-04</td>
+				            <td>已完成</td>
+				        </tr>
+				        <tr class="tr_even">
+				            <td><a href=""   >东方红策略精选A</a></td>
+				            <td>001405</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">待签约</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href=""  ><img src="img/btn_car.png"/></a></td>
+				        </tr>
+				        <tr class="guoqi" style="display: none;">
+				            <td><a href="custom.html"   >东方红策略精选C</a></td>
+				            <td>001406</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">待签约</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href=" "  ><img src="img/btn_car.png"/></a></td>
+				        </tr>
+				        <tr class="guoqi tr_even" style="display: none;">
+				            <td><a href="custom.html"   >东方红京东大数据</a></td>
+				            <td>001564</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">已发布</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href=" "  ><img src="img/btn_car.png"/></a></td>
+				        </tr>
+				        <tr class="guoqi" style="display: none;">
+				            <td><a href="custom.html"   >东方红优势精选</a></td>
+				            <td>001712</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">待签约</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href=" "  ><img src="img/btn_car.png"/></a></td>
+				        </tr>
+				        <tr class="guoqi tr_even" style="display: none;">
+				            <td><a href="custom.html"   >东方红睿轩沪港深</a></td>
+				            <td>169103</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">已发布</span></td> 
+				            <td >2017-08-04</td>
+				            <td>已完成</td>
+				        </tr>
+				        <tr class="guoqi" style="display: none;">
+				            <td><a href="custom.html"   >东方红沪港深</a></td>
+				            <td>002803</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">待签约</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href=" "  ><img src="img/btn_car.png"/></a></td>
+				        </tr>
+				        <tr class="guoqi tr_even" style="display: none;">
+				            <td><a href="custom.html"   >东方红睿满沪港深</a></td>
+				            <td>169104</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">已发布</span></td> 
+				            <td >2017-08-04</td>
+				            <td>已完成</td>
+				        </tr>
+				        <tr class="guoqi" style="display: none;">
+				            <td><a href="custom.html"   >东方红睿华沪港深</a></td>
+				            <td>169105</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">待签约</span></td> 
+				            <td >2017-08-04</td>
+				            <td>已完成</td>
+				        </tr>
+				        <tr class="guoqi tr_even" style="display: none;">
+				            <td><a href="custom.html"   >东方红战略精选A</a></td>
+				            <td>003044</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">已发布</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href=""  ><img src="img/btn_car.png"/></a></td>
+				        </tr>
+				        <tr class="guoqi" style="display: none;">
+				            <td><a href="custom.html"   >东方红战略精选C</a></td>
+				            <td>003045</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">待签约</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href=" "  ><img src="img/btn_car.png"/></a></td>
+				        </tr>
+				        <tr class="guoqi tr_even" style="display: none;">
+				            <td><a href="custom.html"   >东方红价值精选A</a></td>
+				            <td>002783</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">待签约</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href=" "  ><img src="img/btn_car.png"/></a></td>
+				        </tr>
+				        <tr class="guoqi" style="display: none;">
+				            <td><a href=" custom.html"   >东方红价值精选C</a></td>
+				            <td>002784</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">待签约</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href=" "  ><img src="img/btn_car.png"/></a></td>
+				        </tr>
+				        <tr class="guoqi tr_even"  style="display: none;">
+				            <td><a href="custom.html"   >东方红优享红利</a></td>
+				            <td>003396</td>
+				            <td>123.3123.00</td>
+				            <td>2017-08-04</td>
+				            <td>2017-08-14</td>
+				            <td><span class="span_down">89%</span></td>
+				            <td><span class="span_down">待签约</span></td> 
+				            <td >2017-08-04</td>
+				            <td><a href=" "  ><img src="img/btn_car.png"/></a></td>
+				        </tr>
+				         <tr id="chakangengduo">
+				         	<td colspan="8" style="padding:10px;text-align: center;cursor: pointer" onclick="gengduo();">点击查看更多</td>
+				         </tr>
+				        <tr id="shouqigengduo" style="display: none;">
+				        	<td colspan="8" style="padding:10px;text-align: center;cursor: pointer" onclick="sqgengduo();">点击收起</td>
+				        </tr>
+			            <script>
+			                function gengduo(){
+			                    $(".guoqi").show();
+			                    $("#chakangengduo").hide();
+			                    $("#shouqigengduo").show();
+			                }
+			                function sqgengduo(){
+			                    $(".guoqi").hide();
+			                    $("#chakangengduo").show();
+			                    $("#shouqigengduo").hide();
+			                }
+			            </script>
+			        </table>
+			   </div>            
+	    </div>
+    </div>
+<!--尾部-->
+<div class="sitemap">
+    <div class="sitemap_c">
+  		<div class="foot-box clearfix">
+			<p class="a-box">
+				<a href="javascript:void(0);" >客户中心</a> |
+				<a href="javascript:void(0);">关于我们</a> |
+				<a href="javascript:void(0);" title="联系我们">联系我们</a> |
+				<a href="" title="">服务热线</a>
+				<strong style="color: #fff;">0311-8853898</strong>
+			</p>
+			<p class="foot-auth">版权所有·鑫淼聚 © 2017 |<a href="http://www.miitbeian.gov.cn" style="color: #fff;"> 京ICP证160759</a></p>
+			<p class="a-box" style="font-size: 12px;">鑫淼聚技有限公司&nbsp; &nbsp;&nbsp; |&nbsp; &nbsp;&nbsp;  北京市通州区东三环西路16号</p>
+		</div>
+    </div>
+</div>
+<script>
+		$(function(){
+    var liobj=$(".xmxl_ul li");
+    liobj.each(function(){
+        $(this).click(function(){
+        liobj.removeClass("on")
+            $(this).addClass("on");
+            //return false;    //加这句来阻止跳转 可用来调试效果
+        });
+    });
+});
+    $(function(){
+    var liobj=$(".deadline_ul li");
+    liobj.each(function(){
+        $(this).click(function(){
+        liobj.removeClass("on")
+            $(this).addClass("on");
+            //return false;    //加这句来阻止跳转 可用来调试效果
+        });
+    });
+});
+  $(function(){
+    var liobj=$(".rates_ul li");
+    liobj.each(function(){
+        $(this).click(function(){
+        liobj.removeClass("on")
+            $(this).addClass("on");
+            //return false;    //加这句来阻止跳转 可用来调试效果
+        });
+    });
+});
+$(function(){
+    var liobj=$(".days_ul li");
+    liobj.each(function(){
+        $(this).click(function(){
+        liobj.removeClass("on")
+            $(this).addClass("on");
+            //return false;    //加这句来阻止跳转 可用来调试效果
+        });
+    });
+});
+$(function(){
+    var liobj=$(".product_ul li");
+    liobj.each(function(){
+        $(this).click(function(){
+        liobj.removeClass("on")
+            $(this).addClass("on");
+            //return false;    //加这句来阻止跳转 可用来调试效果
+        });
+    });
+});
+
+$('#zc_table').on('click',function(){
+//      $("#open_Texts").html("展开提示消息");
+       $("#zc_tablexs").show();
+  		$("#zcw_tablexs").hide();
+    });
+    $('#zcw_table').on('click',function(){
+//      $("#open_Texts").html("展开提示消息");
+       $("#zc_tablexs").hide();
+  		$("#zcw_tablexs").show();
+    });
+</script>
+</body>
+</html>

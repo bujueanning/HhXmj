@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="manageNoticeCommonMapper" >
+  <sql id="Update_Sql" >
+    <trim prefix="set" suffixOverrides="," >
+			<if test="manageNotice.manage_notice_id != null  and manageNotice.manage_notice_id!= ''" >
+		        manage_notice.manage_notice_id = #{manageNotice.manage_notice_id},
+		    </if>
+			<if test="manageNotice.title != null  and manageNotice.title!= ''" >
+		        manage_notice.title = #{manageNotice.title},
+		    </if>
+			<if test="manageNotice.text != null  and manageNotice.text!= ''" >
+		        manage_notice.text = #{manageNotice.text},
+		    </if>
+			<if test="manageNotice.manage_notice_createuid != null  and manageNotice.manage_notice_createuid!= ''" >
+		        manage_notice.manage_notice_createuid = #{manageNotice.manage_notice_createuid},
+		    </if>
+			<if test="manageNotice.manage_notice_createtime != null  and manageNotice.manage_notice_createtime!= ''" >
+		        manage_notice.manage_notice_createtime = #{manageNotice.manage_notice_createtime},
+		    </if>
+			<if test="manageNotice.manage_notice_updatetime != null  and manageNotice.manage_notice_updatetime!= ''" >
+		        manage_notice.manage_notice_updatetime = #{manageNotice.manage_notice_updatetime},
+		    </if>
+    </trim>
+  </sql>
+  <sql id="Inserts_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+	         <if test="paramKey.manage_notice_id != null  and paramKey.manage_notice_id!= ''" >
+	          manage_notice_id,
+	        </if>
+	         <if test="paramKey.title != null  and paramKey.title!= ''" >
+	          title,
+	        </if>
+	         <if test="paramKey.text != null  and paramKey.text!= ''" >
+	          text,
+	        </if>
+	         <if test="paramKey.manage_notice_createuid != null  and paramKey.manage_notice_createuid!= ''" >
+	          manage_notice_createuid,
+	        </if>
+	         <if test="paramKey.manage_notice_createtime != null  and paramKey.manage_notice_createtime!= ''" >
+	          manage_notice_createtime,
+	        </if>
+	         <if test="paramKey.manage_notice_updatetime != null  and paramKey.manage_notice_updatetime!= ''" >
+	          manage_notice_updatetime,
+	        </if>
+    </trim>
+    values  
+    <foreach collection="paramValue" item="item" index="index" separator="," >  
+        (
+		          <if test="item.manage_notice_id != null and item.manage_notice_id!= ''" >
+			      	#{item.manage_notice_id},
+			      </if>
+		          <if test="item.title != null and item.title!= ''" >
+			      	#{item.title},
+			      </if>
+		          <if test="item.text != null and item.text!= ''" >
+			      	#{item.text},
+			      </if>
+		          <if test="item.manage_notice_createuid != null and item.manage_notice_createuid!= ''" >
+			      	#{item.manage_notice_createuid},
+			      </if>
+		          <if test="item.manage_notice_createtime != null and item.manage_notice_createtime!= ''" >
+			      	#{item.manage_notice_createtime},
+			      </if>
+		          <if test="item.manage_notice_updatetime != null and item.manage_notice_updatetime!= ''" >
+			      	#{item.manage_notice_updatetime},
+			      </if>
+        )  
+    </foreach> 
+  </sql>
+  <sql id="Insert_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+    		<if test="manage_notice_id != null  and manage_notice_id!= ''" >
+	          manage_notice_id,
+	        </if>
+    		<if test="title != null  and title!= ''" >
+	          title,
+	        </if>
+    		<if test="text != null  and text!= ''" >
+	          text,
+	        </if>
+    		<if test="manage_notice_createuid != null  and manage_notice_createuid!= ''" >
+	          manage_notice_createuid,
+	        </if>
+    		<if test="manage_notice_createtime != null  and manage_notice_createtime!= ''" >
+	          manage_notice_createtime,
+	        </if>
+    		<if test="manage_notice_updatetime != null  and manage_notice_updatetime!= ''" >
+	          manage_notice_updatetime,
+	        </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+	      <if test="manage_notice_id != null and manage_notice_id!= ''" >
+	      	#{manage_notice_id},
+	      </if>
+	      <if test="title != null and title!= ''" >
+	      	#{title},
+	      </if>
+	      <if test="text != null and text!= ''" >
+	      	#{text},
+	      </if>
+	      <if test="manage_notice_createuid != null and manage_notice_createuid!= ''" >
+	      	#{manage_notice_createuid},
+	      </if>
+	      <if test="manage_notice_createtime != null and manage_notice_createtime!= ''" >
+	      	#{manage_notice_createtime},
+	      </if>
+	      <if test="manage_notice_updatetime != null and manage_notice_updatetime!= ''" >
+	      	#{manage_notice_updatetime},
+	      </if>
+    </trim>
+  </sql>
+  <sql id="Where_Update_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="manageNoticeQuery.manage_notice_id != null and manageNoticeQuery.manage_notice_id!= ''" >
+	      	and manage_notice.manage_notice_id=#{manageNoticeQuery.manage_notice_id}
+	      </when>
+	      <when test="manageNoticeQuery.title != null and manageNoticeQuery.title!= ''" >
+	      	and manage_notice.title=#{manageNoticeQuery.title}
+	      </when>
+	      <when test="manageNoticeQuery.text != null and manageNoticeQuery.text!= ''" >
+	      	and manage_notice.text=#{manageNoticeQuery.text}
+	      </when>
+	      <when test="manageNoticeQuery.manage_notice_createuid != null and manageNoticeQuery.manage_notice_createuid!= ''" >
+	      	and manage_notice.manage_notice_createuid=#{manageNoticeQuery.manage_notice_createuid}
+	      </when>
+	      <when test="manageNoticeQuery.manage_notice_createtime != null and manageNoticeQuery.manage_notice_createtime!= ''" >
+	      	and manage_notice.manage_notice_createtime=#{manageNoticeQuery.manage_notice_createtime}
+	      </when>
+	      <when test="manageNoticeQuery.manage_notice_updatetime != null and manageNoticeQuery.manage_notice_updatetime!= ''" >
+	      	and manage_notice.manage_notice_updatetime=#{manageNoticeQuery.manage_notice_updatetime}
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+    <sql id="Where_Del_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="manage_notice_id != null and manage_notice_id!= ''" >
+	      	and manage_notice.manage_notice_id=#{manage_notice_id}
+	      </when>
+	      <when test="title != null and title!= ''" >
+	      	and manage_notice.title=#{title}
+	      </when>
+	      <when test="text != null and text!= ''" >
+	      	and manage_notice.text=#{text}
+	      </when>
+	      <when test="manage_notice_createuid != null and manage_notice_createuid!= ''" >
+	      	and manage_notice.manage_notice_createuid=#{manage_notice_createuid}
+	      </when>
+	      <when test="manage_notice_createtime != null and manage_notice_createtime!= ''" >
+	      	and manage_notice.manage_notice_createtime=#{manage_notice_createtime}
+	      </when>
+	      <when test="manage_notice_updatetime != null and manage_notice_updatetime!= ''" >
+	      	and manage_notice.manage_notice_updatetime=#{manage_notice_updatetime}
+	      </when>
+	     <when test="ids != null and ids!= ''" >
+	      		and manage_notice.manage_notice_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		           #{id}
+		        </foreach>
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+  <sql id="Where_Select_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="manage_notice_id != null and manage_notice_id!= ''" >
+	      	and manage_notice.manage_notice_id=#{manage_notice_id}
+	      </if>
+	      <if test="title != null and title!= ''" >
+	      	and manage_notice.title=#{title}
+	      </if>
+	      <if test="text != null and text!= ''" >
+	      	and manage_notice.text=#{text}
+	      </if>
+	      <if test="manage_notice_createuid != null and manage_notice_createuid!= ''" >
+	      	and manage_notice.manage_notice_createuid=#{manage_notice_createuid}
+	      </if>
+	      <if test="manage_notice_createtime != null and manage_notice_createtime!= ''" >
+	      	and manage_notice.manage_notice_createtime=#{manage_notice_createtime}
+	      </if>
+	      <if test="manage_notice_updatetime != null and manage_notice_updatetime!= ''" >
+	      	and manage_notice.manage_notice_updatetime=#{manage_notice_updatetime}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and manage_notice.manage_notice_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+	  ORDER BY manage_notice_createtime DESC
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+  
+  <sql id="Where_SelectTree_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="manage_notice_id != null and manage_notice_id!= ''" >
+	      	and parent.manage_notice_id=#{manage_notice_id}
+	      </if>
+	      <if test="title != null and title!= ''" >
+	      	and parent.title=#{title}
+	      </if>
+	      <if test="text != null and text!= ''" >
+	      	and parent.text=#{text}
+	      </if>
+	      <if test="manage_notice_createuid != null and manage_notice_createuid!= ''" >
+	      	and parent.manage_notice_createuid=#{manage_notice_createuid}
+	      </if>
+	      <if test="manage_notice_createtime != null and manage_notice_createtime!= ''" >
+	      	and parent.manage_notice_createtime=#{manage_notice_createtime}
+	      </if>
+	      <if test="manage_notice_updatetime != null and manage_notice_updatetime!= ''" >
+	      	and parent.manage_notice_updatetime=#{manage_notice_updatetime}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and parent.manage_notice_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+</mapper>

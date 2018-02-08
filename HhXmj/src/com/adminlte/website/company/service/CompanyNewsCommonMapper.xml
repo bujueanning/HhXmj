@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="companyNewsCommonMapper" >
+  <sql id="Update_Sql" >
+    <trim prefix="set" suffixOverrides="," >
+			<if test="companyNews.company_news_id != null  and companyNews.company_news_id!= ''" >
+		        company_news.company_news_id = #{companyNews.company_news_id},
+		    </if>
+			<if test="companyNews.title != null  and companyNews.title!= ''" >
+		        company_news.title = #{companyNews.title},
+		    </if>
+			<if test="companyNews.text != null  and companyNews.text!= ''" >
+		        company_news.text = #{companyNews.text},
+		    </if>
+			<if test="companyNews.company_news_createuid != null  and companyNews.company_news_createuid!= ''" >
+		        company_news.company_news_createuid = #{companyNews.company_news_createuid},
+		    </if>
+			<if test="companyNews.company_news_createtime != null  and companyNews.company_news_createtime!= ''" >
+		        company_news.company_news_createtime = #{companyNews.company_news_createtime},
+		    </if>
+			<if test="companyNews.company_news_updatetime != null  and companyNews.company_news_updatetime!= ''" >
+		        company_news.company_news_updatetime = #{companyNews.company_news_updatetime},
+		    </if>
+    </trim>
+  </sql>
+  <sql id="Inserts_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+	         <if test="paramKey.company_news_id != null  and paramKey.company_news_id!= ''" >
+	          company_news_id,
+	        </if>
+	         <if test="paramKey.title != null  and paramKey.title!= ''" >
+	          title,
+	        </if>
+	         <if test="paramKey.text != null  and paramKey.text!= ''" >
+	          text,
+	        </if>
+	         <if test="paramKey.company_news_createuid != null  and paramKey.company_news_createuid!= ''" >
+	          company_news_createuid,
+	        </if>
+	         <if test="paramKey.company_news_createtime != null  and paramKey.company_news_createtime!= ''" >
+	          company_news_createtime,
+	        </if>
+	         <if test="paramKey.company_news_updatetime != null  and paramKey.company_news_updatetime!= ''" >
+	          company_news_updatetime,
+	        </if>
+    </trim>
+    values  
+    <foreach collection="paramValue" item="item" index="index" separator="," >  
+        (
+		          <if test="item.company_news_id != null and item.company_news_id!= ''" >
+			      	#{item.company_news_id},
+			      </if>
+		          <if test="item.title != null and item.title!= ''" >
+			      	#{item.title},
+			      </if>
+		          <if test="item.text != null and item.text!= ''" >
+			      	#{item.text},
+			      </if>
+		          <if test="item.company_news_createuid != null and item.company_news_createuid!= ''" >
+			      	#{item.company_news_createuid},
+			      </if>
+		          <if test="item.company_news_createtime != null and item.company_news_createtime!= ''" >
+			      	#{item.company_news_createtime},
+			      </if>
+		          <if test="item.company_news_updatetime != null and item.company_news_updatetime!= ''" >
+			      	#{item.company_news_updatetime},
+			      </if>
+        )  
+    </foreach> 
+  </sql>
+  <sql id="Insert_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+    		<if test="company_news_id != null  and company_news_id!= ''" >
+	          company_news_id,
+	        </if>
+    		<if test="title != null  and title!= ''" >
+	          title,
+	        </if>
+    		<if test="text != null  and text!= ''" >
+	          text,
+	        </if>
+    		<if test="company_news_createuid != null  and company_news_createuid!= ''" >
+	          company_news_createuid,
+	        </if>
+    		<if test="company_news_createtime != null  and company_news_createtime!= ''" >
+	          company_news_createtime,
+	        </if>
+    		<if test="company_news_updatetime != null  and company_news_updatetime!= ''" >
+	          company_news_updatetime,
+	        </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+	      <if test="company_news_id != null and company_news_id!= ''" >
+	      	#{company_news_id},
+	      </if>
+	      <if test="title != null and title!= ''" >
+	      	#{title},
+	      </if>
+	      <if test="text != null and text!= ''" >
+	      	#{text},
+	      </if>
+	      <if test="company_news_createuid != null and company_news_createuid!= ''" >
+	      	#{company_news_createuid},
+	      </if>
+	      <if test="company_news_createtime != null and company_news_createtime!= ''" >
+	      	#{company_news_createtime},
+	      </if>
+	      <if test="company_news_updatetime != null and company_news_updatetime!= ''" >
+	      	#{company_news_updatetime},
+	      </if>
+    </trim>
+  </sql>
+  <sql id="Where_Update_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="companyNewsQuery.company_news_id != null and companyNewsQuery.company_news_id!= ''" >
+	      	and company_news.company_news_id=#{companyNewsQuery.company_news_id}
+	      </when>
+	      <when test="companyNewsQuery.title != null and companyNewsQuery.title!= ''" >
+	      	and company_news.title=#{companyNewsQuery.title}
+	      </when>
+	      <when test="companyNewsQuery.text != null and companyNewsQuery.text!= ''" >
+	      	and company_news.text=#{companyNewsQuery.text}
+	      </when>
+	      <when test="companyNewsQuery.company_news_createuid != null and companyNewsQuery.company_news_createuid!= ''" >
+	      	and company_news.company_news_createuid=#{companyNewsQuery.company_news_createuid}
+	      </when>
+	      <when test="companyNewsQuery.company_news_createtime != null and companyNewsQuery.company_news_createtime!= ''" >
+	      	and company_news.company_news_createtime=#{companyNewsQuery.company_news_createtime}
+	      </when>
+	      <when test="companyNewsQuery.company_news_updatetime != null and companyNewsQuery.company_news_updatetime!= ''" >
+	      	and company_news.company_news_updatetime=#{companyNewsQuery.company_news_updatetime}
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+    <sql id="Where_Del_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="company_news_id != null and company_news_id!= ''" >
+	      	and company_news.company_news_id=#{company_news_id}
+	      </when>
+	      <when test="title != null and title!= ''" >
+	      	and company_news.title=#{title}
+	      </when>
+	      <when test="text != null and text!= ''" >
+	      	and company_news.text=#{text}
+	      </when>
+	      <when test="company_news_createuid != null and company_news_createuid!= ''" >
+	      	and company_news.company_news_createuid=#{company_news_createuid}
+	      </when>
+	      <when test="company_news_createtime != null and company_news_createtime!= ''" >
+	      	and company_news.company_news_createtime=#{company_news_createtime}
+	      </when>
+	      <when test="company_news_updatetime != null and company_news_updatetime!= ''" >
+	      	and company_news.company_news_updatetime=#{company_news_updatetime}
+	      </when>
+	     <when test="ids != null and ids!= ''" >
+	      		and company_news.company_news_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		           #{id}
+		        </foreach>
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+  <sql id="Where_Select_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="company_news_id != null and company_news_id!= ''" >
+	      	and company_news.company_news_id=#{company_news_id}
+	      </if>
+	      <if test="title != null and title!= ''" >
+	      	and company_news.title=#{title}
+	      </if>
+	      <if test="text != null and text!= ''" >
+	      	and company_news.text=#{text}
+	      </if>
+	      <if test="company_news_createuid != null and company_news_createuid!= ''" >
+	      	and company_news.company_news_createuid=#{company_news_createuid}
+	      </if>
+	      <if test="company_news_createtime != null and company_news_createtime!= ''" >
+	      	and company_news.company_news_createtime=#{company_news_createtime}
+	      </if>
+	      <if test="company_news_updatetime != null and company_news_updatetime!= ''" >
+	      	and company_news.company_news_updatetime=#{company_news_updatetime}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and company_news.company_news_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+	  ORDER BY company_news_createtime DESC
+	  <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+  
+  <sql id="Where_SelectTree_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="company_news_id != null and company_news_id!= ''" >
+	      	and parent.company_news_id=#{company_news_id}
+	      </if>
+	      <if test="title != null and title!= ''" >
+	      	and parent.title=#{title}
+	      </if>
+	      <if test="text != null and text!= ''" >
+	      	and parent.text=#{text}
+	      </if>
+	      <if test="company_news_createuid != null and company_news_createuid!= ''" >
+	      	and parent.company_news_createuid=#{company_news_createuid}
+	      </if>
+	      <if test="company_news_createtime != null and company_news_createtime!= ''" >
+	      	and parent.company_news_createtime=#{company_news_createtime}
+	      </if>
+	      <if test="company_news_updatetime != null and company_news_updatetime!= ''" >
+	      	and parent.company_news_updatetime=#{company_news_updatetime}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and parent.company_news_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+</mapper>

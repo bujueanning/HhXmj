@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sysUserRoleMapper" >
+  <select id="select" resultType="java.util.Map" parameterType="java.util.Map" >
+    select * from sys_user_role
+    <include refid="sysUserRoleCommonMapper.Where_Select_Sql" />
+  </select>
+  <select id="listMenuIdByUserId" resultType="java.util.Map" parameterType="java.util.Map" >
+    SELECT 
+	sm.sys_menu_id 
+	FROM sys_menu sm
+	LEFT JOIN sys_role_menu srm ON srm.sys_menu_id=sm.sys_menu_id
+	LEFT JOIN sys_user_role sur ON srm.sys_role_id=sur.sys_role_id
+	WHERE sur.sys_user_id=#{sys_user_id}	
+	AND sur.sys_user_role_type='selected'  
+  </select>
+  <select id="listPermByUserId" resultType="java.util.Map" parameterType="java.util.Map" >
+	SELECT 
+	srp.sys_perm_id ,sp.sys_perm_flag 
+	FROM sys_perm sp
+	LEFT JOIN sys_role_perm srp ON sp.sys_perm_id=srp.sys_perm_id
+	LEFT JOIN sys_user_role sur ON srp.sys_role_id=sur.sys_role_id	
+	WHERE sur.sys_user_id=#{sys_user_id}	and srp.sys_role_perm_type=#{sys_role_perm_type}  
+  </select>
+  <delete id="delete" parameterType="java.util.Map" >
+    delete from sys_user_role
+    <include refid="sysUserRoleCommonMapper.Where_Del_Sql" />
+  </delete>
+  <insert id="insert" parameterType="java.util.Map" >
+    insert into sys_user_role <include refid="sysUserRoleCommonMapper.Insert_Sql" />
+  </insert>
+  <insert id="inserts" parameterType="java.util.List" >
+    insert into sys_user_role <include refid="sysUserRoleCommonMapper.Inserts_Sql" />
+  </insert>
+  <update id="update" parameterType="java.util.Map" >
+    update sys_user_role 
+    <include refid="sysUserRoleCommonMapper.Update_Sql" />
+    <include refid="sysUserRoleCommonMapper.Where_Update_Sql" />
+  </update>
+  <select id="count" parameterType="java.util.Map" resultType="java.lang.Integer" >
+    select count(*) from sys_user_role 
+    <if test="_parameter != null" >
+      <include refid="sysUserRoleCommonMapper.Where_Select_Sql" />
+    </if>
+  </select>	
+</mapper>

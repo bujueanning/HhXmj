@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sysRolePermCommonMapper" >
+  <sql id="Update_Sql" >
+    <trim prefix="set" suffixOverrides="," >
+			<if test="sysRolePerm.sys_role_perm_id != null  and sysRolePerm.sys_role_perm_id!= ''" >
+		        sys_role_perm_id = #{sysRolePerm.sys_role_perm_id},
+		    </if>
+			<if test="sysRolePerm.sys_role_id != null  and sysRolePerm.sys_role_id!= ''" >
+		        sys_role_id = #{sysRolePerm.sys_role_id},
+		    </if>
+			<if test="sysRolePerm.sys_perm_id != null  and sysRolePerm.sys_perm_id!= ''" >
+		        sys_perm_id = #{sysRolePerm.sys_perm_id},
+		    </if>
+			<if test="sysRolePerm.sys_role_perm_type != null  and sysRolePerm.sys_role_perm_type!= ''" >
+		        sys_role_perm_type = #{sysRolePerm.sys_role_perm_type},
+		    </if>
+			<if test="sysRolePerm.sys_role_perm_createdate != null  and sysRolePerm.sys_role_perm_createdate!= ''" >
+		        sys_role_perm_createdate = #{sysRolePerm.sys_role_perm_createdate},
+		    </if>
+			<if test="sysRolePerm.sys_role_perm_updatedate != null  and sysRolePerm.sys_role_perm_updatedate!= ''" >
+		        sys_role_perm_updatedate = #{sysRolePerm.sys_role_perm_updatedate},
+		    </if>
+			<if test="sysRolePerm.sys_role_perm_createuid != null  and sysRolePerm.sys_role_perm_createuid!= ''" >
+		        sys_role_perm_createuid = #{sysRolePerm.sys_role_perm_createuid},
+		    </if>
+			<if test="sysRolePerm.sys_role_perm_updateuid != null  and sysRolePerm.sys_role_perm_updateuid!= ''" >
+		        sys_role_perm_updateuid = #{sysRolePerm.sys_role_perm_updateuid},
+		    </if>
+    </trim>
+  </sql>
+  <sql id="Inserts_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+	         <if test="paramKey.sys_role_perm_id != null  and paramKey.sys_role_perm_id!= ''" >
+	          sys_role_perm_id,
+	        </if>
+	         <if test="paramKey.sys_role_id != null  and paramKey.sys_role_id!= ''" >
+	          sys_role_id,
+	        </if>
+	         <if test="paramKey.sys_perm_id != null  and paramKey.sys_perm_id!= ''" >
+	          sys_perm_id,
+	        </if>
+	         <if test="paramKey.sys_role_perm_type != null  and paramKey.sys_role_perm_type!= ''" >
+	          sys_role_perm_type,
+	        </if>
+	         <if test="paramKey.sys_role_perm_createdate != null  and paramKey.sys_role_perm_createdate!= ''" >
+	          sys_role_perm_createdate,
+	        </if>
+	         <if test="paramKey.sys_role_perm_updatedate != null  and paramKey.sys_role_perm_updatedate!= ''" >
+	          sys_role_perm_updatedate,
+	        </if>
+	         <if test="paramKey.sys_role_perm_createuid != null  and paramKey.sys_role_perm_createuid!= ''" >
+	          sys_role_perm_createuid,
+	        </if>
+	         <if test="paramKey.sys_role_perm_updateuid != null  and paramKey.sys_role_perm_updateuid!= ''" >
+	          sys_role_perm_updateuid,
+	        </if>
+    </trim>
+    values  
+    <foreach collection="paramValue" item="item" index="index" separator="," >  
+        (
+		          <if test="item.sys_role_perm_id != null and item.sys_role_perm_id!= ''" >
+			      	#{item.sys_role_perm_id},
+			      </if>
+		          <if test="item.sys_role_id != null and item.sys_role_id!= ''" >
+			      	#{item.sys_role_id},
+			      </if>
+		          <if test="item.sys_perm_id != null and item.sys_perm_id!= ''" >
+			      	#{item.sys_perm_id},
+			      </if>
+		          <if test="item.sys_role_perm_type != null and item.sys_role_perm_type!= ''" >
+			      	#{item.sys_role_perm_type},
+			      </if>
+		          <if test="item.sys_role_perm_createdate != null and item.sys_role_perm_createdate!= ''" >
+			      	#{item.sys_role_perm_createdate},
+			      </if>
+		          <if test="item.sys_role_perm_updatedate != null and item.sys_role_perm_updatedate!= ''" >
+			      	#{item.sys_role_perm_updatedate},
+			      </if>
+		          <if test="item.sys_role_perm_createuid != null and item.sys_role_perm_createuid!= ''" >
+			      	#{item.sys_role_perm_createuid},
+			      </if>
+		          <if test="item.sys_role_perm_updateuid != null and item.sys_role_perm_updateuid!= ''" >
+			      	#{item.sys_role_perm_updateuid},
+			      </if>
+        )  
+    </foreach> 
+  </sql>
+  <sql id="Insert_Sql" >
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+    		<if test="sys_role_perm_id != null  and sys_role_perm_id!= ''" >
+	          sys_role_perm_id,
+	        </if>
+    		<if test="sys_role_id != null  and sys_role_id!= ''" >
+	          sys_role_id,
+	        </if>
+    		<if test="sys_perm_id != null  and sys_perm_id!= ''" >
+	          sys_perm_id,
+	        </if>
+    		<if test="sys_role_perm_type != null  and sys_role_perm_type!= ''" >
+	          sys_role_perm_type,
+	        </if>
+    		<if test="sys_role_perm_createdate != null  and sys_role_perm_createdate!= ''" >
+	          sys_role_perm_createdate,
+	        </if>
+    		<if test="sys_role_perm_updatedate != null  and sys_role_perm_updatedate!= ''" >
+	          sys_role_perm_updatedate,
+	        </if>
+    		<if test="sys_role_perm_createuid != null  and sys_role_perm_createuid!= ''" >
+	          sys_role_perm_createuid,
+	        </if>
+    		<if test="sys_role_perm_updateuid != null  and sys_role_perm_updateuid!= ''" >
+	          sys_role_perm_updateuid,
+	        </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+	      <if test="sys_role_perm_id != null and sys_role_perm_id!= ''" >
+	      	#{sys_role_perm_id},
+	      </if>
+	      <if test="sys_role_id != null and sys_role_id!= ''" >
+	      	#{sys_role_id},
+	      </if>
+	      <if test="sys_perm_id != null and sys_perm_id!= ''" >
+	      	#{sys_perm_id},
+	      </if>
+	      <if test="sys_role_perm_type != null and sys_role_perm_type!= ''" >
+	      	#{sys_role_perm_type},
+	      </if>
+	      <if test="sys_role_perm_createdate != null and sys_role_perm_createdate!= ''" >
+	      	#{sys_role_perm_createdate},
+	      </if>
+	      <if test="sys_role_perm_updatedate != null and sys_role_perm_updatedate!= ''" >
+	      	#{sys_role_perm_updatedate},
+	      </if>
+	      <if test="sys_role_perm_createuid != null and sys_role_perm_createuid!= ''" >
+	      	#{sys_role_perm_createuid},
+	      </if>
+	      <if test="sys_role_perm_updateuid != null and sys_role_perm_updateuid!= ''" >
+	      	#{sys_role_perm_updateuid},
+	      </if>
+    </trim>
+  </sql>
+  <sql id="Where_Update_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="sysRolePermQuery.sys_role_perm_id != null and sysRolePermQuery.sys_role_perm_id!= ''" >
+	      	and sys_role_perm_id=#{sysRolePermQuery.sys_role_perm_id}
+	      </when>
+	      <when test="sysRolePermQuery.sys_role_id != null and sysRolePermQuery.sys_role_id!= ''" >
+	      	and sys_role_id=#{sysRolePermQuery.sys_role_id}
+	      </when>
+	      <when test="sysRolePermQuery.sys_perm_id != null and sysRolePermQuery.sys_perm_id!= ''" >
+	      	and sys_perm_id=#{sysRolePermQuery.sys_perm_id}
+	      </when>
+	      <when test="sysRolePermQuery.sys_role_perm_type != null and sysRolePermQuery.sys_role_perm_type!= ''" >
+	      	and sys_role_perm_type=#{sysRolePermQuery.sys_role_perm_type}
+	      </when>
+	      <when test="sysRolePermQuery.sys_role_perm_createdate != null and sysRolePermQuery.sys_role_perm_createdate!= ''" >
+	      	and sys_role_perm_createdate=#{sysRolePermQuery.sys_role_perm_createdate}
+	      </when>
+	      <when test="sysRolePermQuery.sys_role_perm_updatedate != null and sysRolePermQuery.sys_role_perm_updatedate!= ''" >
+	      	and sys_role_perm_updatedate=#{sysRolePermQuery.sys_role_perm_updatedate}
+	      </when>
+	      <when test="sysRolePermQuery.sys_role_perm_createuid != null and sysRolePermQuery.sys_role_perm_createuid!= ''" >
+	      	and sys_role_perm_createuid=#{sysRolePermQuery.sys_role_perm_createuid}
+	      </when>
+	      <when test="sysRolePermQuery.sys_role_perm_updateuid != null and sysRolePermQuery.sys_role_perm_updateuid!= ''" >
+	      	and sys_role_perm_updateuid=#{sysRolePermQuery.sys_role_perm_updateuid}
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+    <sql id="Where_Del_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+    	 <choose>
+	      <when test="sys_role_perm_id != null and sys_role_perm_id!= ''" >
+	      	and sys_role_perm_id=#{sys_role_perm_id}
+	      </when>
+	      <when test="sys_role_id != null and sys_role_id!= ''" >
+	      	and sys_role_id=#{sys_role_id}
+	      </when>
+	      <when test="sys_perm_id != null and sys_perm_id!= ''" >
+	      	and sys_perm_id=#{sys_perm_id}
+	      </when>
+	      <when test="sys_role_perm_type != null and sys_role_perm_type!= ''" >
+	      	and sys_role_perm_type=#{sys_role_perm_type}
+	      </when>
+	      <when test="sys_role_perm_createdate != null and sys_role_perm_createdate!= ''" >
+	      	and sys_role_perm_createdate=#{sys_role_perm_createdate}
+	      </when>
+	      <when test="sys_role_perm_updatedate != null and sys_role_perm_updatedate!= ''" >
+	      	and sys_role_perm_updatedate=#{sys_role_perm_updatedate}
+	      </when>
+	      <when test="sys_role_perm_createuid != null and sys_role_perm_createuid!= ''" >
+	      	and sys_role_perm_createuid=#{sys_role_perm_createuid}
+	      </when>
+	      <when test="sys_role_perm_updateuid != null and sys_role_perm_updateuid!= ''" >
+	      	and sys_role_perm_updateuid=#{sys_role_perm_updateuid}
+	      </when>
+	     <when test="ids != null and ids!= ''" >
+	      		and sys_role_perm_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		           #{id}
+		        </foreach>
+	      </when>
+	      <when test="roleids != null and roleids !=''" >
+	      		and sys_role_id in 
+	      		<foreach collection="roleids" item="roleid" index="index"
+		            open="(" close=")" separator=",">
+		           #{roleid}
+		        </foreach>
+	      </when>
+	      <when test="permids != null and permids !=''" >
+	      		and sys_perm_id in 
+	      		<foreach collection="permids" item="permid" index="index"
+		            open="(" close=")" separator=",">
+		           #{permid}
+		        </foreach>
+	      </when>
+	      <otherwise> 
+	      1!=1 
+            </otherwise>
+	     </choose>
+    </trim>
+  </sql>
+  <sql id="Where_Select_Sql" >
+    <trim prefix="where" prefixOverrides="and">
+	      <if test="sys_role_perm_id != null and sys_role_perm_id!= ''" >
+	      	and sys_role_perm_id=#{sys_role_perm_id}
+	      </if>
+	      <if test="sys_role_id != null and sys_role_id!= ''" >
+	      	and sys_role_id=#{sys_role_id}
+	      </if>
+	      <if test="sys_perm_id != null and sys_perm_id!= ''" >
+	      	and sys_perm_id=#{sys_perm_id}
+	      </if>
+	      <if test="sys_role_perm_type != null and sys_role_perm_type!= ''" >
+	      	and sys_role_perm_type=#{sys_role_perm_type}
+	      </if>
+	      <if test="sys_role_perm_createdate != null and sys_role_perm_createdate!= ''" >
+	      	and sys_role_perm_createdate=#{sys_role_perm_createdate}
+	      </if>
+	      <if test="sys_role_perm_updatedate != null and sys_role_perm_updatedate!= ''" >
+	      	and sys_role_perm_updatedate=#{sys_role_perm_updatedate}
+	      </if>
+	      <if test="sys_role_perm_createuid != null and sys_role_perm_createuid!= ''" >
+	      	and sys_role_perm_createuid=#{sys_role_perm_createuid}
+	      </if>
+	      <if test="sys_role_perm_updateuid != null and sys_role_perm_updateuid!= ''" >
+	      	and sys_role_perm_updateuid=#{sys_role_perm_updateuid}
+	      </if>
+	     <if test="ids != null and ids!= ''" >
+	      	and sys_role_perm_id in 
+	      		<foreach collection="ids" item="id" index="index"
+		            open="(" close=")" separator=",">
+		            #{id}
+		        </foreach>
+	      </if>
+    </trim>
+    <if test="startNu != null and pageSize != null" >
+      <![CDATA[ limit #{startNu}, #{pageSize} ]]>
+    </if>
+  </sql>
+</mapper>
